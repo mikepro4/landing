@@ -21,17 +21,17 @@ var Enterprise = React.createClass({
 
   render: function () {
     return (
-        <div>
-            <h1>Who are you?</h1>
-            <ul>
-              <li><Link to="exchange" onClick={this.setExchange}>Broker</Link></li>
-              <li><Link to="exchange" onClick={this.setExchange}>Appraiser</Link></li>
-              <li><Link to="exchange" onClick={this.setExchange}>Researcher</Link></li>
-              <li><Link to="enterprise" onClick={this.setEnterprise}>Landlord</Link></li>
-              <li><Link to="enterprise" onClick={this.setEnterprise}>Lender</Link></li>
-              <li><Link to="enterprise" onClick={this.setEnterprise}>Investor</Link></li>
-            </ul>
-        </div>
+      <div>
+        <h1>Who are you?</h1>
+        <ul>
+          <li><Link to="exchange" onClick={this.setExchange}>Broker</Link></li>
+          <li><Link to="exchange" onClick={this.setExchange}>Appraiser</Link></li>
+          <li><Link to="exchange" onClick={this.setExchange}>Researcher</Link></li>
+          <li><Link to="enterprise" onClick={this.setEnterprise}>Landlord</Link></li>
+          <li><Link to="enterprise" onClick={this.setEnterprise}>Lender</Link></li>
+          <li><Link to="enterprise" onClick={this.setEnterprise}>Investor</Link></li>
+        </ul>
+      </div>
     );
   }
 });

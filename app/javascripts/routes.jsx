@@ -1,12 +1,11 @@
 'use strict';
-
 var React         = require('react');
 var Router        = require('react-router');
 var Route         = Router.Route;
 var DefaultRoute  = Router.DefaultRoute;
 var NotFoundRoute = Router.NotFoundRoute;
 
-/* Components */
+/* Pages */
 var App = require('./pages/App.jsx');
 var NotFound = require('./pages/NotFound.jsx');
 var Exchange = require('./pages/Exchange.jsx');
