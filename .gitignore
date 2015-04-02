@@ -1,5 +1,5 @@
 .idea/
-build/
 
 app/bower_components
 node_modules
+build/**
