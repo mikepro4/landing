@@ -14,8 +14,6 @@ var Enterprise = React.createClass({
         <p>Market: {this.props.user.market}</p> 
         <p>Mode: {this.props.user.mode}</p>
 
-        <p onClick={this.loadMarkets}>Get Markets</p>
-
         <ul>
           <li><Link to="underwriting">Underwriting</Link></li>
           <li><Link to="asset-management">Asset Management</Link></li>
