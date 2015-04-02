@@ -1,0 +1,23 @@
+.page_exchange {
+
+  .container {
+    .display(relative);
+    .size(150px, 150px);
+
+    .el1 {
+      .display(absolute);
+      .size(100px, 100px);
+      .topLeft(10px, 10px);
+      z-index: @layer1;
+      background: @light-blue;
+    }
+
+    .el2 {
+      .display(absolute);
+      .size(100px, 100px);
+      .topLeft(20px, 20px);
+      z-index: @layer2;
+      background: black;
+    }
+  }
+}

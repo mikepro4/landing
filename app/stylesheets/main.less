@@ -1,29 +1,30 @@
-@test: #ccc;
+@import "includes.less";
+@import "basics.less";
+
+.cols();
+
+html {
+  .size(100%, 100%);
+  overflow: hidden;
+}
 
 body {
-	font-family: "Avenir Next";
-	background: @test;
+  .display(absolute);
+  .size(100%, 100%);
+  -webkit-font-smoothing: subpixel-antialiased;
+  background: #f0f4f5;
+  overflow: hidden;
+  font: normal normal normal @font-size-base/@line-height-base @font-gotham-book;
+  -webkit-overflow-scrolling: touch;
+  display: block;
 }
 
-h1, h2 {
-	font-weight: 200;
-}
+.application_wrapper {
+  .display(absolute);
+  .size(100%, 100%);
+  .topLeft(0, 0);
+  z-index: @layer1;
+  overflow-x: hidden; 
 
-h2 {
-	background: black;
-	color: white;
-	margin: 0;
-	padding: 5px 10px;
-}
-
-.master {
-	margin-right: 24px;
-	float: left;
-}
-
-.detail {
-	float: left;
-	img {
-		width: 600px;
-	}
+  @import "./pages/exchange.less";
 }

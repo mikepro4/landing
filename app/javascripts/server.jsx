@@ -14,8 +14,6 @@ module.exports = function (req, res, next) {
     var markup = React.renderToString(<Handler />);
     var html   = React.renderToStaticMarkup(<Html title={title}>{markup}</Html>);
 
-    // TODO: send 404 status code 
-    // (see: https://github.com/gpbl/isomorphic-react-template/issues/3)
     res.send('<!DOCTYPE html>' + html);
   });
 };
