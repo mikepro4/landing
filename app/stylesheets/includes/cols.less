@@ -11,11 +11,15 @@
 	* 
 	*/
 	.col + .col:last-child { 
-		float: right; 
+		.respond(@size, {
+			float: right;
+		});
 	}
 
 	.col + .col.end { 
-		float: left; 
+		.respond(@size, {
+			float: left; 
+		});
 	}
 
 	//Cancel the left margin in the first item
@@ -26,33 +30,60 @@
 
 	/*Column, generic*/
 	.col {
-		display: inline;
-		float: left;
-		min-height: 1px;
-		position: relative;
-		margin: 0 0 0 @gutter;
-		background: #ccc;
+		display: block;
+		float: none;
+		.respond(@size, {
+			display: inline;
+			float: left;
+			min-height: 1px;
+			position: relative;
+			margin: 0 0 0 @gutter;
+		});
+	}
+
+	.inline-col {
+		display: inline-block;
+		margin-left: @gutter;
+		&.first {
+			margin-left: 0;
+		}
+		&.middle {
+			vertical-align: middle;
+		}
+		&.bottom {
+			vertical-align: bottom;
+		}
 	}
 
 	/*Columns widths and left margins*/
 	.one {
-		.columns(1);
+		.respond(@size, {
+			.columns(1);
+		});
 	}
 	
 	.two {
-		.columns(2);
+		.respond(@size, {
+			.columns(2);
+		});
 	}
 
 	.three {
-		.columns(3);
+		.respond(@size, {
+			.columns(3);
+		});
 	}
 
 	.four {
-		.columns(4);
+		.respond(@size, {
+			.columns(4);
+		});
 	}
 
 	.six {
-		.columns(6);
+		.respond(@size, {
+			.columns(6);
+		});
 	}
 
 	// .nestedcolumns(children, parent);

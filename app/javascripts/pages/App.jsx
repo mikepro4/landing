@@ -6,6 +6,7 @@ var _ = require('underscore');
 var DocumentTitle = require('react-document-title');
 
 var Header = require('../components/Header.jsx');
+var Footer = require('../components/Footer.jsx');
 var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
 
 var RouteHandler = Router.RouteHandler;
@@ -69,6 +70,7 @@ var App = React.createClass({
             user={this.state.user}
             updateLocalStorage={this.updateLocalStorage}
           />
+          <Footer/>
         </div>
       </DocumentTitle>
     );

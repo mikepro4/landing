@@ -1,3 +1,5 @@
+@tracked-out : .16em;
+
 // Selection
 // -------------------------
 
@@ -41,6 +43,13 @@ a {
 
 }
 
+// Images
+// -------------------------
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
 // Body text
 // -------------------------
 
@@ -61,7 +70,7 @@ h1, h2, h3, h4, h5, h6,
 
   &.underlined {
     font-family: @font-gotham-thin;
-    border-bottom: 1px solid @gray;
+    border-bottom: 1px solid @grey;
     padding-bottom: 0.5em;
     margin-bottom: 1em;
     text-transform: uppercase;
@@ -111,6 +120,10 @@ h5, .h5 {
 h6, .h6 {
   font-size: @font-size-h6;
   font-family: @font-gotham-medium;
+  text-transform: uppercase;
+  letter-spacing: @tracked-out;
+  font-size: 11px;
+  margin-bottom: 1em;
   &.underlined {
     font-size: @font-size-base;
   }

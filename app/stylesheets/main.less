@@ -1,5 +1,6 @@
 @import "includes.less";
 @import "basics.less";
+@import "./includes/mixins.less";
 
 .cols();
 
@@ -12,7 +13,7 @@ body {
   .display(absolute);
   .size(100%, 100%);
   -webkit-font-smoothing: subpixel-antialiased;
-  background: #f0f4f5;
+  background: @white;
   overflow: hidden;
   font: normal normal normal @font-size-base/@line-height-base @font-gotham-book;
   -webkit-overflow-scrolling: touch;
@@ -25,6 +26,13 @@ body {
   .topLeft(0, 0);
   z-index: @layer1;
   overflow-x: hidden; 
-
+  .container {
+  	margin: 0 auto;
+  	width: 87%;
+  	max-width: 1500px;
+    background-color: #ddd;
+  }
   @import "./pages/exchange.less";
 }
+
+@import "./components/components.less";
