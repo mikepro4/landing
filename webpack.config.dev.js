@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require('path');
 
 module.exports = {
   // Entry point for static analyzer:
@@ -25,11 +26,15 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.CommonsChunkPlugin('lib', 'lib.js'),
     new ExtractTextPlugin("[name].css"),
+    new webpack.ResolverPlugin(
+      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
+    )
   ],
 
   resolve: {
     // Allow to omit extensions when requiring these files
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
+    root: [path.join(__dirname, "public/bower_components")]
   },
 
   module: {
