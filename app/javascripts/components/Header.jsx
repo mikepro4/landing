@@ -15,8 +15,11 @@ var Header = React.createClass({
   render: function () {
     return (
       <header>
-        <a href="" onClick={this.goToHome}>Home</a> 
-        <p>Header content</p>
+        <p>Header</p>
+        <ul>
+          <li><a href="" onClick={this.goToHome}>Home</a></li>
+          <li><Link to="splitter">Splitter</Link></li>
+        </ul>
       </header>
     )
   }
