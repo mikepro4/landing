@@ -21,7 +21,7 @@ var Header = React.createClass({
               <h2>Office, retail and industrial lease comps.</h2>
               <p>We collect and verify actual, deal-level transaction records reported directly to us by brokers on the ground. Our comps are recent, accurate and searchable.</p>
             </div>
-            <div className="inline-col middle six">
+            <div className="inline-col middle six screenshot">
               <img src="http://placehold.it/900x600"/>
             </div>
           </div>

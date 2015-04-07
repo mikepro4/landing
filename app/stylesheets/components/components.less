@@ -1,3 +1,5 @@
+@speed : .2s;
+
 section {
 	border-top: 1px solid @grey;
 	border-bottom: 1px solid @grey;
@@ -10,6 +12,22 @@ section {
 .dark-blue-bg {
 	background-color: @dark-blue;
 	color: @white;
+}
+
+.screenshot {
+	padding-top: 5%;
+	img {
+		margin-left: $gutter;
+		border-top: 10px solid #222;
+		.respond(@size, {
+			max-width: 120%;
+			border-top: 20px solid #222;
+		});
+		.transition(max-width @speed ease-in-out);
+		.respond(@huge, {
+			max-width: 100%;
+		});
+	}
 }
 
 @import "./enterprise-intro.less";
