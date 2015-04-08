@@ -2,6 +2,7 @@
 var React = require('react');
 var Router = require('react-router');
 var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
+var Icons = require('../components/Icons.jsx');
 var Link = Router.Link;
 
 var Header = React.createClass({
@@ -13,14 +14,26 @@ var Header = React.createClass({
   },
 
   render: function () {
+    if( this.props.scrollTop > 150) {
+      var headerClass = "visible"
+    } else {
+      var headerClass = "invisible"
+    }
     return (
-      <header>
+      <header className={headerClass}>
         <div className="container">
-          <p>Header</p>
-          <ul>
-            <li><a href="" onClick={this.goToHome}>Home</a></li>
-            <li><Link to="splitter">Splitter</Link></li>
-          </ul>
+          <div className="logo">
+            <Icons type="cs_icon" />
+          </div>
+          <div className="right">
+            <nav>
+              <ul>
+                <li><a href="#">CompStak Comps</a></li>
+                <li><a href="#">National Coverage</a></li>
+              </ul>
+            </nav>
+            <button>Schedule a Demo</button>
+          </div>
         </div>
       </header>
     )

@@ -1,0 +1,70 @@
+.on-page-splitter {
+	border-top: 1px solid @dark-line-blue;
+  border-bottom: 1px solid @dark-line-blue;
+  .container {
+    width: 100%;
+    max-width: none;
+    > div {
+      .transition(background @speed ease-in-out;);
+      &:hover {
+        background-color: @dark-blue-hover;
+      }
+      &.left {
+        border-bottom: 1px solid @dark-line-blue;
+        .respond(@lg, {
+          border-bottom: none;
+          border-right: 1px solid @dark-line-blue;
+          padding-left: ((100% - @site-width)/2);
+        });
+      }
+      &.right {
+        .respond(@lg, {
+          padding-right: ((100% - @site-width)/2);
+          & a {
+            padding-left: 4em;
+          }
+        });
+      }
+      .respond(@lg, {
+        width: 50%;
+        float: left;
+        &.left {
+          a {
+            float: right;
+          }
+        }
+      });
+      a {
+        display: block;
+        padding: 4em ((100% - @site-width)/2) 4em 10%;
+        position: relative;
+        .respond(@lg, {
+          width: 100%;
+          max-width: @max-site-width/2;
+          //padding: 4em 0;
+        });
+        h6 {
+          margin-bottom: 1em;
+        }
+        p {
+          max-width: 325px;
+          margin-bottom: 0;
+          &.h4 {
+            margin-bottom: .6em;
+            max-width: none;
+          }
+        }
+        .arrow {
+          position: absolute;
+          right: 7%;
+          top: 50%;
+          margin-top: -17px;
+          width: 18px;
+          svg path {
+            fill: @light-blue;
+          }
+        }
+      }
+    }
+  }
+}

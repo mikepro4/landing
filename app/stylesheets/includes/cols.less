@@ -11,13 +11,13 @@
 	* 
 	*/
 	.col + .col:last-child { 
-		.respond(@size, {
+		.respond(@md, {
 			float: right;
 		});
 	}
 
 	.col + .col.end { 
-		.respond(@size, {
+		.respond(@md, {
 			float: left; 
 		});
 	}
@@ -32,7 +32,7 @@
 	.col {
 		display: block;
 		float: none;
-		.respond(@size, {
+		.respond(@md, {
 			display: inline;
 			float: left;
 			min-height: 1px;
@@ -57,31 +57,31 @@
 
 	/*Columns widths and left margins*/
 	.one {
-		.respond(@size, {
+		.respond(@md, {
 			.columns(1);
 		});
 	}
 	
 	.two {
-		.respond(@size, {
+		.respond(@md, {
 			.columns(2);
 		});
 	}
 
 	.three {
-		.respond(@size, {
+		.respond(@md, {
 			.columns(3);
 		});
 	}
 
 	.four {
-		.respond(@size, {
+		.respond(@md, {
 			.columns(4);
 		});
 	}
 
 	.six {
-		.respond(@size, {
+		.respond(@md, {
 			.columns(6);
 		});
 	}
@@ -99,4 +99,18 @@
 		.nestedcolumns(4, 6);
 	}
 
+}
+
+// Flip the Order
+.col.right {
+	.respond(@md, {
+		float: right;
+	});
+}
+
+.col.left {
+	.respond(@md, {
+		float: left !important;
+		margin-left: 0;
+	});
 }

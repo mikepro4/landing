@@ -6,9 +6,34 @@ var Link = Router.Link;
 var Footer = React.createClass({
   render: function () {
     return (
-      <footer>
+      <footer className="dark-blue">
         <div className="container">
           <div className="row">
+            <div className="col three">
+              <h6>Enterprise</h6>
+              <ul>
+                <li><Link to="enterprise">Learn More</Link></li>
+                <li><Link to="enterprise">Schedule A Demo</Link></li>
+                <li><Link to="enterprise">Login</Link></li>
+                <li><Link to="enterprise">Support</Link></li>
+                <li><Link to="enterprise">FAQ</Link></li>
+              </ul>
+            </div>
+            <div className="col three">
+              <h6>Contact</h6>
+              <ul>
+                <li><Link to="enterprise">Sales@CompStak.com</Link></li>
+                <li><Link to="enterprise">1-646-926-6707</Link></li>
+              </ul>
+            </div>
+            <div className="col three">
+              <h6>Legal</h6>
+              <ul>
+                <li><Link to="enterprise">Terms of Use</Link></li>
+                <li><Link to="enterprise">Privacy Policy</Link></li>
+                <li><Link to="enterprise">Fair Info Statement</Link></li>
+              </ul>
+            </div>
             <div className="col one">
               <svg width="24px" height="28px" viewBox="0 0 24 28">
               <defs>
@@ -21,46 +46,6 @@ var Footer = React.createClass({
                 </g>
               </g>
               </svg>
-            </div>
-            <div className="col three">
-              <h6>Enterprise</h6>
-              <ul>
-                <li><Link to="enterprise">Sample Comp</Link></li>
-                <li><Link to="enterprise">Coverage</Link></li>
-                <li><Link to="enterprise">Data Verification</Link></li>
-                <li><Link to="enterprise">Analytics</Link></li>
-                <li><Link to="enterprise">Underwriting</Link></li>
-                <li><Link to="enterprise">Asset MGMT & Leasing</Link></li>
-              </ul>
-            </div>
-            <div className="col three">
-              <h6>Product</h6>
-              <ul>
-                <li><Link to="enterprise">Request Demo</Link></li>
-                <li><Link to="enterprise">Login</Link></li>
-                <li><Link to="enterprise">Support</Link></li>
-                <li><Link to="enterprise">FAQ</Link></li>
-              </ul>
-            </div>
-            <div className="col three">
-              <h6>Contact</h6>
-              <ul>
-                <li><Link to="enterprise">Sales@CompStak.com</Link></li>
-                <li><Link to="enterprise">1 646 926 6707</Link></li>
-              </ul>
-              <h6>Company</h6>
-              <ul>
-                <li><Link to="enterprise">About</Link></li>
-                <li><Link to="enterprise">Careers</Link></li>
-              </ul>
-            </div>
-            <div className="col two">
-              <h6>Legal</h6>
-              <ul>
-                <li><Link to="enterprise">Terms of Use</Link></li>
-                <li><Link to="enterprise">Privacy Policy</Link></li>
-                <li><Link to="enterprise">Fair Info Statement</Link></li>
-              </ul>
             </div>
           </div>
         </div>

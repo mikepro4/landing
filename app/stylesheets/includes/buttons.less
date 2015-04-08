@@ -1,0 +1,91 @@
+@btn-bg:                       @light-blue;
+@btn-color:                    @white;
+@btn-hover-color:              @white;
+@btn-border-radius:            3px;
+@btn-height:                   60px;
+@btn-padding:                  0px;
+@btn-border:                   1px solid @light-blue;
+@btn-hover-bg:                 #1278ff;
+@btn-hover-color:              @white;
+@btn-hover-border:             1px solid #1278ff;
+// Buttons
+
+.btn,
+.grid .btn,
+input[type="submit"],
+button {
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  background-image: none;
+  -webkit-appearance: caret;
+  -moz-appearance: caret; /* mobile firefox too! */
+  -webkit-appearance: none;
+  background-color: @btn-bg;
+  color: @btn-color;
+  height: @btn-height;
+  padding: @btn-padding;
+  margin: 0px -.25em 0 0;
+  text-transform: uppercase;
+  letter-spacing: @tracked-out;
+  font-family: @font-gotham-book;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: @btn-height;
+  width: 100%;
+  max-width: 400px;
+  border: @btn-border;
+  position: relative;
+  .border-radius(@btn-border-radius);
+  .transition(background @speed ease-in-out, border @speed ease-in-out, color @speed ease-in-out;);
+}
+
+.btn:hover,
+input[type="submit"]:hover,
+button:hover {
+  color: @btn-hover-color;
+  background-color: @btn-hover-bg;
+  border: @btn-hover-border;
+}
+
+// Loader
+button#willLoad.loading:after,
+.btn#willLoad.loading:after,
+input[type=submit]#willLoad.loading:after {
+  visibility: visible;
+  //.opacity(1);
+  background: transparent;
+  top: 50%;
+}
+
+#willLoad:after {
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 75%;
+  left: 50%;
+  z-index: 10000;
+  margin: -10px 0 0 -10px;
+  border: 2px solid rgba(255,255,255,.5);
+  border-top-color: rgba(255,255,255,1);
+  border-bottom-color: rgba(255,255,255,.5);
+  border-left-color: rgba(255,255,255,1);
+  border-right-color: rgba(255,255,255,.5);
+  border-radius: 100%;
+  content: '';
+  .animation(rotate .6s linear infinite);
+  visibility: hidden;
+  //.opacity(0);
+  //.transition(all @speed ease-in-out);
+  .transition(background @speed ease-in-out, border @speed ease-in-out, color @speed ease-in-out;);
+}
+
+.keyframes(rotate) {
+  0%   { .transform(rotate(0deg)); }
+  100% { .transform(rotate(360deg)); }
+}

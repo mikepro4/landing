@@ -1,0 +1,32 @@
+.sample-comp {
+  .checklist.comp-details {
+    padding-top: 7%;
+    li {
+      margin-bottom: .75em;
+      color: @dark-blue;
+      .respond(@md, {
+        display: inline-block;
+        width: 50%;
+      });
+      .respond(@lg, {
+        display: inline-block;
+        width: 33.333%;
+      });
+      .respond(@xlg, {
+        display: inline-block;
+        width: 25%;
+      });
+      .respond(@huge, {
+        display: inline-block;
+        width: 20%;
+      });
+      span {
+        margin-top: 0px;
+        display: inline;
+      }
+      svg.tick {
+        width: 22px;
+      }
+    }
+  }
+}

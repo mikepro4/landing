@@ -1,4 +1,6 @@
-@tracked-out : .16em;
+* {
+  .box-sizing(border-box);
+}
 
 // Selection
 // -------------------------
@@ -25,7 +27,7 @@
 a {
   color: @link-color;
   text-decoration: none;
-  .transition(color 0.3s ease-in-out);
+  .transition(color @speed ease-in-out, background @speed ease-in-out;);
   .user-select(none);
 
   &:hover {
@@ -57,6 +59,7 @@ p {
   font-size: @font-size-base;
   line-height: @line-height-base;
   margin: 0 0 (@line-height-computed / 2);
+  color: @dark-grey;
 }
 
 // Headings
@@ -65,8 +68,9 @@ p {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-weight: normal;
-  line-height: @line-height-base;
+  line-height: 1.5em;
   color: @dark-blue;
+  margin-bottom: 1.5rem;
 
   &.underlined {
     font-family: @font-gotham-thin;
@@ -78,8 +82,15 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1 {
-  font-size: @font-size-h1;
+  font-size: 30px;
   font-family: @font-gotham-thin;
+  line-height: 1.15em;
+  .respond(@md, {
+    font-size: 36px;
+  });
+  .respond(@lg, {
+    font-size: @font-size-h1;
+  });
   &.underlined {
     font-size: floor(@font-size-base * 2);
   }
@@ -95,7 +106,7 @@ h2, .h2 {
 
 h3, .h3 {
   font-size: @font-size-h3;
-  font-family: @font-gotham-book;
+  font-family: @font-gotham-thin;
   &.underlined {
     font-size: floor(@font-size-base * 1.25);
   }
@@ -103,7 +114,7 @@ h3, .h3 {
 
 h4, .h4 {
   font-size: @font-size-h4;
-  font-family: @font-gotham-medium;
+  font-family: @font-gotham-light;
   &.underlined {
     font-size: floor(@font-size-base * 1.125);
   }
@@ -111,7 +122,7 @@ h4, .h4 {
 
 h5, .h5 {
   font-size: @font-size-h5;
-  font-family: @font-gotham-medium;
+  font-family: @font-gotham-book;
   &.underlined {
     font-size: @font-size-base;
   }
@@ -120,10 +131,11 @@ h5, .h5 {
 h6, .h6 {
   font-size: @font-size-h6;
   font-family: @font-gotham-medium;
+  font-family: @font-gotham-book;
   text-transform: uppercase;
   letter-spacing: @tracked-out;
   font-size: 11px;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
   &.underlined {
     font-size: @font-size-base;
   }
@@ -143,4 +155,92 @@ table {
   td {
     padding-right: 20px;
   }
+}
+
+// Inputs
+// -------------------------
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none;
+  background: @input-bg;
+  border: @input-border;
+  box-shadow: none;
+  outline: none;
+  font-size: 1em;
+  padding: @input-padding;
+  width: 100%;
+  margin: 0px 0 1em 0;
+  line-height: @input-line-height;
+  .border-radius (@input-border-radius);
+  .transition(all @speed ease-in-out);
+  resize: none;
+  vertical-align: top;
+  text-indent: 0px;
+  height: @btn-height;
+}
+
+textarea {
+  line-height: @line-height-base;
+  padding-top: 7px;
+  padding-bottom: 10px;
+  height: 120px;
+}
+
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+  background: @input-focus-bg;
+  border: @input-focus-border;
+  color: @input-focus-color;
+}
+
+svg * {
+  .transition(fill @speed ease-in-out);
+}
+
+::-webkit-input-placeholder {
+  .transition(color @speed ease-in-out);
+   color: @mid-grey;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  .transition(color @speed ease-in-out);
+   color: @mid-grey;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  .transition(color @speed ease-in-out);
+   color: @mid-grey;  
+}
+
+:-ms-input-placeholder {  
+  .transition(color @speed ease-in-out);
+   color: @mid-grey;  
+}
+
+:focus::-webkit-input-placeholder {
+   color: @dark-blue;
+}
+
+:focus:-moz-placeholder { /* Firefox 18- */
+   color: @dark-blue;  
+}
+
+:focus::-moz-placeholder {  /* Firefox 19+ */
+   color: @dark-blue;  
+}
+
+:focus:-ms-input-placeholder {  
+   color: @dark-blue;  
 }

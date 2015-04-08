@@ -1,3 +1,6 @@
+@site-width: 87%;
+@max-site-width: 1500px;
+@speed : .2s;
 @import "includes.less";
 @import "basics.less";
 @import "./includes/mixins.less";
@@ -18,6 +21,7 @@ body {
   font: normal normal normal @font-size-base/@line-height-base @font-gotham-book;
   -webkit-overflow-scrolling: touch;
   display: block;
+  color: @dark-blue;
 }
 
 .application_wrapper {
@@ -27,10 +31,10 @@ body {
   z-index: @layer1;
   overflow-x: hidden; 
   .container {
+    position: relative;
   	margin: 0 auto;
-  	width: 87%;
-  	max-width: 1500px;
-    background-color: #ddd;
+  	width: @site-width;
+  	max-width: @max-site-width;
   }
   @import "./pages/exchange.less";
 }

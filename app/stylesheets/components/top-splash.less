@@ -1,0 +1,64 @@
+.top-splash {
+  text-align: center;
+  padding-top: 4em;
+  h1 {
+    margin-bottom: .35em;
+  }
+  h2 {
+    margin-bottom: 1.5em;
+  }
+  .splash-ui {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2em 0;
+    position: relative;
+    img.macbook {
+      display: none;
+      .respond(@lg, {
+        display: block;
+      });
+    }
+    img.ui {
+      display: none;
+      .respond(@lg, {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: @layer2;
+      });
+    }
+    .respond(@md, {
+      padding: 5em 0;
+    });
+  }
+  form.sign-up {
+    div.input-wrap {
+      input[type="text"] {
+        padding-left: 60px;
+        background-color: transparent;
+        border-color: @light-blue;
+        &:focus {
+          border: @input-border;
+          + label path {
+            fill: @white;
+          }
+        }
+      }
+    }
+  }
+  :focus::-webkit-input-placeholder {
+   color: @mid-grey;
+  }
+
+  :focus:-moz-placeholder { /* Firefox 18- */
+     color: @mid-grey 
+  }
+
+  :focus::-moz-placeholder {  /* Firefox 19+ */
+     color: @mid-grey 
+  }
+
+  :focus:-ms-input-placeholder {  
+     color: @mid-grey 
+  }
+}

@@ -4,6 +4,7 @@ var React = require('react');
 var Router = require('react-router');
 var _ = require('underscore');
 var DocumentTitle = require('react-document-title');
+var $ = require('jquery');
 
 var Header = require('../components/Header.jsx');
 var Footer = require('../components/Footer.jsx');
@@ -22,11 +23,14 @@ var App = React.createClass({
       user: {
         mode: null,
         market: null
-      }
+      },
+      scrollTop: null
     }
   },
 
   componentDidMount: function () {
+    window.addEventListener('scroll', this.onScroll, true);
+
     if(this.getQuery().market) {
       this.updateLocalStorage({
         market: this.getQuery().market
@@ -35,6 +39,17 @@ var App = React.createClass({
 
     this.showInitialPage();
     this.updateLocalStorage();
+  },
+
+  componentWillUnmount: function() {
+      window.removeEventListener('scroll', this.onScroll, false);
+  },
+
+  onScroll: function (event) {
+    var node = this.getDOMNode();
+    this.setState({
+      scrollTop: node.scrollTop
+    })
   },
 
   showInitialPage: function () {
@@ -64,6 +79,7 @@ var App = React.createClass({
         <div className="application_wrapper">
           <Header 
             user={this.state.user}
+            scrollTop={this.state.scrollTop}
           />
           <RouteHandler 
             {...this.props}

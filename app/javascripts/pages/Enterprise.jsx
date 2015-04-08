@@ -2,7 +2,14 @@
 var React = require('react');
 var Router = require('react-router');
 var Link = Router.Link;
+var FauxHeader = require('../components/FauxHeader.jsx');
+var TopSplash = require('../components/TopSplash.jsx');
+var Logos = require('../components/Logos.jsx');
 var Entintro = require('../components/EnterpriseIntro.jsx');
+var EntGranularData = require('../components/GranularData.jsx');
+var SampleComp = require('../components/SampleComp.jsx');
+var OnPgSplitter = require('../components/OnPageSplitter.jsx');
+var BottomSignUp = require('../components/BottomSignUp.jsx');
 
 var Enterprise = React.createClass({
 
@@ -11,14 +18,14 @@ var Enterprise = React.createClass({
   render: function () {
     return (
       <div>
-        <h1>Enterprise</h1>
-        <p>Market: {this.props.user.market}</p> 
-        <p>Mode: {this.props.user.mode}</p>
+        <FauxHeader/>
+        <TopSplash/>
+        <Logos/>
         <Entintro/>
-        <ul>
-          <li><Link to="underwriting">Underwriting</Link></li>
-          <li><Link to="asset-management">Asset Management</Link></li>
-        </ul>
+        <EntGranularData/>
+        <SampleComp/>
+        <BottomSignUp/>
+        <OnPgSplitter/>
       </div>
     )
   }

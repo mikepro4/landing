@@ -4,7 +4,7 @@ var Router = require('react-router');
 var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
 var Link = Router.Link;
 
-var Header = React.createClass({
+var EntIntro = React.createClass({
 
   mixins: [ Router.State, Router.Navigation, HomePageRouterMixin ],
 
@@ -14,15 +14,17 @@ var Header = React.createClass({
 
   render: function () {
     return (
-      <section className="enterprise-intro grey-bg">
+      <section className="ui-block grey-bg enterprise-intro">
         <div className="container">
           <div className="row">
-            <div className="inline-col first middle six">
-              <h2>Office, retail and industrial lease comps.</h2>
-              <p>We collect and verify actual, deal-level transaction records reported directly to us by brokers on the ground. Our comps are recent, accurate and searchable.</p>
+            <div className="col six block-info">
+              <div>
+                <h3 className="h1">Office, retail & industrial lease comps.</h3>
+                <p>We collect and verify actual, deal-level transaction records reported directly to us by brokers on the ground. Our comps are recent, accurate and searchable.</p>
+              </div>
             </div>
-            <div className="inline-col middle six screenshot">
-              <img src="http://placehold.it/900x600"/>
+            <div className="col six screenshot">
+              <img src="http://placehold.it/900x600/ffffff/cccccc&text=UI Screenshot"/>
             </div>
           </div>
         </div>
@@ -31,4 +33,4 @@ var Header = React.createClass({
   }
 });
 
-module.exports = Header;
+module.exports = EntIntro;

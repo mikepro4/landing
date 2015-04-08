@@ -1,7 +1,19 @@
 footer {
+  .container {
+    padding: 50px 0;
+    .respond(@md, {
+      padding: ((100% - @site-width)/2) 0;
+    });
+  }
 	ul {
 		margin-bottom: 40px;
+    .respond(@md, {
+      margin-bottom: 0px;
+    });
 	}
-	.respond(@size, {
+  svg polygon {
+    fill: @white;
+  }
+	.respond(@md, {
 	});
 }

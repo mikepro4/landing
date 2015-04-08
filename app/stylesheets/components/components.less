@@ -1,34 +1,160 @@
-@speed : .2s;
+// General Classes
+// -------------------------
+.blue {
+  color: @light-blue;
+}
 
+// -------------------------
 section {
-	border-top: 1px solid @grey;
-	border-bottom: 1px solid @grey;
+	padding: 7% 0;
+	&.ui-block {
+		padding: 7% 0;
+		.block-info {
+			.align-content(center);
+		}
+	}
 }
 
 .grey-bg {
 	background-color: @light-grey;
 }
 
-.dark-blue-bg {
-	background-color: @dark-blue;
-	color: @white;
+
+.dark-blue {
+  background-color: @dark-blue;
+  color: @mid-grey;
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: @white;
+    &.grey {
+    	color: @grey;
+    }
+    &.mid-grey {
+    	color: @mid-grey;
+    }
+    &.dark-grey {
+    	color: @dark-grey;
+    }
+  }
+  .blue {
+  	color: @light-blue;
+	}
+  p {
+  	color: @mid-grey;
+  }
+  .h1, .h2, .h3, .h4 {
+  	letter-spacing: .015em;
+  }
+  a {
+  	color: @mid-grey;
+  	&:hover {
+  		color: @white;
+  	}
+  }
 }
 
 .screenshot {
-	padding-top: 5%;
 	img {
 		margin-left: $gutter;
 		border-top: 10px solid #222;
-		.respond(@size, {
-			max-width: 120%;
+		.border-radius(6px);
+		.respond(@md, {
+			max-width: 130%;
+			border-top: 15px solid #222;
+		});
+		.respond(@xlg, {
+			max-width: 900px;
 			border-top: 20px solid #222;
 		});
 		.transition(max-width @speed ease-in-out);
 		.respond(@huge, {
-			max-width: 100%;
+			//max-width: 100%;
+		});
+		.box-shadow(0 0px 20px rgba(40, 48, 64, 0.2));
+	}
+	&.left img {
+		.respond(@md, {
+			float: right;
 		});
 	}
 }
 
+.block-info {
+	> div {
+		max-width: 475px;
+	}
+	.respond(@md, {
+		padding-right: 10%;
+		&.right {
+			padding-right: 0;
+			padding-left: 10%;
+		}
+	});
+	.h1 + ul.checklist {
+		margin-top: 3em;
+	}
+}
+
+.checklist {
+	li {
+		margin-bottom: 1.25em;
+		color: @mid-grey;
+		span {
+			display: inline-block;
+			vertical-align: middle;
+			width: 85%;
+			margin-top: -1px;
+		}
+		svg.tick {
+			width: 26px;
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 15px;
+		}
+	}
+}
+
+form.sign-up {
+  max-width: 700px;
+  margin: 0 auto;
+  div.input-wrap {
+    .respond(@md, {
+      width: 60%;
+      display: inline-block;
+      margin-right: -.25em;
+    });
+    position: relative;
+    label {
+      left: 20px;
+      top: 23px;
+      position: absolute;
+      width: 22px;
+    }
+    input[type="text"] {
+      padding-left: 60px;
+      &:focus {
+        border: @input-border;
+        + label path {
+          fill: @dark-blue;
+        }
+      }
+    }
+  }
+  button {
+    .respond(@md, {
+      width: 37%;
+      display: inline-block;
+      margin-right: -.25em;
+      margin-left: 3%;
+    });
+  }
+}
+
+@import "./header.less";
+@import "./faux-header.less";
+@import "./top-splash.less";
+@import "./logos.less";
 @import "./enterprise-intro.less";
+@import "./sample-comp.less";
+@import "./bottom-sign-up.less";
+@import "./on-page-splitter.less";
 @import "./footer.less";
