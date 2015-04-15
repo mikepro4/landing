@@ -13,15 +13,18 @@
         border-bottom: 1px solid @dark-line-blue;
         .respond(@lg, {
           border-bottom: none;
-          border-right: 1px solid @dark-line-blue;
           padding-left: ((100% - @site-width)/2);
+          > a {
+            padding: 4em 15% 4em 0;
+          }
         });
       }
       &.right {
         .respond(@lg, {
           padding-right: ((100% - @site-width)/2);
-          & a {
-            padding-left: 4em;
+          border-left: 1px solid @dark-line-blue;
+          > a {
+            padding: 4em 15% 4em 4em;
           }
         });
       }
@@ -36,7 +39,7 @@
       });
       a {
         display: block;
-        padding: 4em ((100% - @site-width)/2) 4em 10%;
+        padding: 3em 15% 3em ((100% - @site-width)/2);
         position: relative;
         .respond(@lg, {
           width: 100%;

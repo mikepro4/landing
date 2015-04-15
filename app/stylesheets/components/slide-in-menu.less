@@ -1,0 +1,58 @@
+.slide-in-menu {
+  display: none;
+  width: 300px;
+  background-color: @black;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: @layer5;
+  color: @mid-grey;
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: @white;
+    &.grey {
+      color: @grey;
+    }
+    &.mid-grey {
+      color: @mid-grey;
+    }
+    &.dark-grey {
+      color: @dark-grey;
+    }
+  }
+  .blue {
+    color: @light-blue;
+  }
+  p {
+    color: @mid-grey;
+  }
+  .h1, .h2, .h3, .h4 {
+    letter-spacing: .015em;
+  }
+  a {
+    color: @mid-grey;
+    &:hover {
+      color: @white;
+    }
+  }
+  padding: 80px 50px;
+  .button-wrap {
+    button {
+      height: 40px;
+      line-height: 40px;
+      width: 100%;
+      display: inline-block;
+      .respond(@md, {
+        height: 45px;
+        line-height: 45px;
+      });
+    }
+  }
+  h6 {
+    margin-top: 50px;
+  }
+  li a {
+    display: block;
+  }
+}

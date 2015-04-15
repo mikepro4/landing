@@ -15,16 +15,17 @@ var EntIntro = React.createClass({
   render: function () {
     return (
       <section className="ui-block grey-bg enterprise-intro">
-        <div className="container">
+        <div className="container push-left">
           <div className="row">
-            <div className="col six block-info">
+            <div className="col six right screenshot">
+              <img src="/images/ent-intro-screenshot.png"/>
+            </div>
+            <div className="col six left block-info">
               <div>
+                <h5 className="section-header">CompStak Comps</h5>
                 <h3 className="h1">Office, retail & industrial lease comps.</h3>
                 <p>We collect and verify actual, deal-level transaction records reported directly to us by brokers on the ground. Our comps are recent, accurate and searchable.</p>
               </div>
-            </div>
-            <div className="col six screenshot">
-              <img src="http://placehold.it/900x600/ffffff/cccccc&text=UI Screenshot"/>
             </div>
           </div>
         </div>

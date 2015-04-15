@@ -8,6 +8,8 @@ var Logos = require('../components/Logos.jsx');
 var Entintro = require('../components/EnterpriseIntro.jsx');
 var EntGranularData = require('../components/GranularData.jsx');
 var SampleComp = require('../components/SampleComp.jsx');
+var NationalCoverage = require('../components/NationalCoverage.jsx');
+var CoverageMap = require('../components/CoverageMap.jsx');
 var OnPgSplitter = require('../components/OnPageSplitter.jsx');
 var BottomSignUp = require('../components/BottomSignUp.jsx');
 
@@ -18,12 +20,15 @@ var Enterprise = React.createClass({
   render: function () {
     return (
       <div>
+        
         <FauxHeader/>
         <TopSplash/>
         <Logos/>
         <Entintro/>
         <EntGranularData/>
         <SampleComp/>
+        <NationalCoverage/>
+        <CoverageMap/>
         <BottomSignUp/>
         <OnPgSplitter/>
       </div>

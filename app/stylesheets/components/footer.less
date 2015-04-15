@@ -11,8 +11,15 @@ footer {
       margin-bottom: 0px;
     });
 	}
-  svg polygon {
-    fill: @white;
+  .logo {
+    svg {
+      .respond(@lg, {
+        float: right;
+      });
+      polygon {
+        fill: @white;
+      }
+    }
   }
 	.respond(@md, {
 	});

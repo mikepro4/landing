@@ -1,2 +1,59 @@
 .enterprise-intro {
+  .screenshot {
+    position: relative;
+    .respond(@xlg, {
+      &:after {
+        content: '';
+        height: 27px;
+        background-color: #283740;
+        opacity: .03;
+        position: absolute;
+        left: 207px;
+        right: -143px;
+        top: 168px;
+        animation: highlight 2.5s steps(14, end) infinite;
+        -moz-animation: highlight 2.5s steps(14, end) infinite; /* Firefox */
+        -webkit-animation: highlight 2.5s steps(14, end) infinite; /* Safari and Chrome */
+        -o-animation: highlight 2.5s steps(14, end) infinite; /* Opera */
+      }
+    });
+    .respond(@huge, {
+      &:after {
+        right: -293px;
+      }
+    });
+  }
+}
+
+// Row Highlight
+@keyframes highlight
+{
+0%   {.transform(translate3d(0, 0, 0));}
+50% {.transform(translate3d(0, 394px, 0));}
+70% {.transform(translate3d(0, 394px, 0)); opacity: 0;}
+100% {.transform(translate3d(0, 394px, 0)); opacity: 0;}
+}
+
+@-moz-keyframes highlight /* Firefox */
+{
+0%   {.transform(translate3d(0, 0, 0));}
+50% {.transform(translate3d(0, 394px, 0));}
+70% {.transform(translate3d(0, 394px, 0)); opacity: 0;}
+100% {.transform(translate3d(0, 394px, 0)); opacity: 0;}
+}
+
+@-webkit-keyframes highlight /* Safari and Chrome */
+{
+0%   {.transform(translate3d(0, 0, 0));}
+50% {.transform(translate3d(0, 394px, 0));}
+70% {.transform(translate3d(0, 394px, 0)); opacity: 0;}
+100% {.transform(translate3d(0, 394px, 0)); opacity: 0;}
+}
+
+@-o-keyframes highlight /* Opera */
+{
+0%   {.transform(translate3d(0, 0, 0));}
+50% {.transform(translate3d(0, 394px, 0));}
+70% {.transform(translate3d(0, 394px, 0)); opacity: 0;}
+100% {.transform(translate3d(0, 394px, 0)); opacity: 0;}
 }

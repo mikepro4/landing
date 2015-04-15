@@ -1,0 +1,74 @@
+.national-coverage {
+  ul.numbers {
+    margin-top: 2.5em;
+    li {
+      margin-top: 16px;
+      text-transform: uppercase;
+      letter-spacing: @tracked-out;
+      font-size: 11px;
+      font-family: @font-gotham-medium;
+      .number {
+        letter-spacing: .02em;
+        display: inline-block;
+        background-color: @dark-blue;
+        color: @white;
+        padding: 7px 14px;
+        font-size: 18px;
+        font-family: @font-gotham-light;
+        .border-radius(3px);
+        margin-right: 7px;
+        vertical-align: middle;
+        margin-top: -3px;
+        animation: glow 2.5s ease-in-out infinite;
+        -moz-animation: glow 2.5s ease-in-out infinite; /* Firefox */
+        -webkit-animation: glow 2.5s ease-in-out infinite; /* Safari and Chrome */
+        -o-animation: glow 2.5s ease-in-out infinite; /* Opera */
+      }
+      + li {
+        .number {
+          animation: glow 2.5s .25s ease-in-out infinite;
+          -moz-animation: glow 2.5s .25s ease-in-out infinite; /* Firefox */
+          -webkit-animation: glow 2.5s .25s ease-in-out infinite; /* Safari and Chrome */
+          -o-animation: glow 2.5s .25s ease-in-out infinite; /* Opera */
+        }
+        + li {
+          .number {
+            animation: glow 2.5s .5s ease-in-out infinite;
+            -moz-animation: glow 2.5s .5s ease-in-out infinite; /* Firefox */
+            -webkit-animation: glow 2.5s .5s ease-in-out infinite; /* Safari and Chrome */
+            -o-animation: glow 2.5s .5s ease-in-out infinite; /* Opera */
+          }  
+        }
+      }
+    }
+  }
+}
+
+// Glow
+@keyframes glow
+{
+0%   {background-color: @dark-blue;}
+30%  {background-color: @light-blue;}
+100% {background-color: @dark-blue;}
+}
+
+@-moz-keyframes glow /* Firefox */
+{
+0%   {background-color: @dark-blue;}
+30%  {background-color: @light-blue;}
+100% {background-color: @dark-blue;}
+}
+
+@-webkit-keyframes glow /* Safari and Chrome */
+{
+0%   {background-color: @dark-blue;}
+30%  {background-color: @light-blue;}
+100% {background-color: @dark-blue;}
+}
+
+@-o-keyframes glow /* Opera */
+{
+0%   {background-color: @dark-blue;}
+30%  {background-color: @light-blue;}
+100% {background-color: @dark-blue;}
+}

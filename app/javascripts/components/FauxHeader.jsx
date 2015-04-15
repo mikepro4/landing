@@ -23,7 +23,7 @@ var FauxHeader = React.createClass({
           <div className="right-links">
             <ul>
               <li><Link to="enterprise">Login</Link></li>
-              <li><Link to="enterprise">Login</Link></li>
+              <li><Link to="enterprise">Menu</Link></li>
             </ul>
           </div>
         </div>

@@ -2,6 +2,7 @@
 
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require('path');
 
 module.exports = {
 
@@ -31,10 +32,15 @@ module.exports = {
       }
     }),
     new ExtractTextPlugin("[name].css"),
+    new webpack.ResolverPlugin(
+      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
+    )
   ],
 
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
+    // Allow to omit extensions when requiring these files
+    root: [path.join(__dirname, "public/bower_components")]
   },
 
   module: {

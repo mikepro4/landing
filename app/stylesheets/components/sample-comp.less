@@ -1,32 +1,345 @@
 .sample-comp {
-  .checklist.comp-details {
-    padding-top: 7%;
-    li {
-      margin-bottom: .75em;
-      color: @dark-blue;
+  .block-info {
+    padding-right: 5%;
+    height: 152px;
+  }
+  .comp {
+    .box-shadow(0 10px 20px rgba(40, 48, 64, 0.15));
+    .comp-map {
+      position: relative;
+      padding-bottom: 350px;
+      background-image: url(/images/comp-map.gif);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      overflow: hidden;
+      .respond(@xlg, {
+        padding-bottom: 500px;
+      });
+      .tooltip {
+        z-index: @layer3;
+        position: absolute;
+        bottom: 45px;
+        left: -141px;
+        width: 300px;
+        background-color: #363b4a;
+        color: @white;
+        .border-radius(4px);
+        &:after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-top: 10px solid #363b4a;
+          border-bottom: 0px;
+          bottom: -10px;
+          left: 50%;
+          margin-left: -10px;
+        }
+        > div {
+          padding: 13px 18px;
+        }
+        .main-info {
+          .border-radius(4px 4px 0 0);
+          line-height: 1.5em;
+          background-color: #2d313d;
+          .address {
+            display: block;
+            font-size: 14px;
+            font-family: @font-opensans-regular;
+          }
+          .comp-number {
+            color: @mid-grey;
+            display: block;
+            font-family: @font-opensans-regular;
+            font-size: 12px;
+          }
+        }
+        .secondary-info {
+          .tenant {
+            font-family: @font-gotham-light;
+            display: block;
+            font-size: 18px;
+          }
+          .lease-info {
+            font-size: 12px;
+            color: #40b1de;
+          }
+        }
+        .tooltip-buttons {
+          padding: 10px 0 6px;
+          button {
+            font-family: @font-gotham-book;
+            width: 115px;
+            height: 35px;
+            line-height: 35px;
+            float: right;
+            background-color: #2f7090;
+            border-color: #2f7090;
+            &:hover {
+              background-color: #40b1de;
+              border-color: #40b1de;
+            }
+            > svg {
+              width: 5px;
+              display: inline-block;
+              margin-left: 7px;
+            }
+            &.select {
+              float: left;
+              background-color: #464d5e;
+              border-color: #464d5e;
+              color: @grey;
+              text-align: left;
+              > span.checkbox {
+                display: inline-block;
+                width: 17px;
+                height: 17px;
+                .border-radius(3px);
+                border: 1px solid @white;
+                opacity: .5;
+                .transition(opacity @speed ease-in-out);
+                margin-bottom: -4px;
+                margin: 0 10px -4px 8px;
+              }
+              &:hover {
+                background-color: #51596d;
+                border-color: #51596d;
+                color: @white;
+                > span.checkbox {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+      .comp-marker {
+        position: absolute;
+        width: 18px;
+        left: 50%;
+        margin-left: -9px;
+        bottom: 55px;
+        .respond(@xlg, {
+          bottom: 125px;
+        });
+        svg {
+          position: relative;
+          z-index: @layer2;
+        }
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 150px;
+          height: 150px;
+          background-color: @light-blue;
+          opacity: .3;
+          .border-radius(50%);
+          left: -66px;
+          bottom: -69px;
+          z-index: @layer1;
+          .transform(scale(0));
+          animation: radiate 1.5s ease-in-out infinite;
+          -moz-animation: radiate 1.5s ease-in-out infinite; /* Firefox */
+          -webkit-animation: radiate 1.5s ease-in-out infinite; /* Safari and Chrome */
+          -o-animation: radiate 1.5s ease-in-out infinite; /* Opera */
+        }
+      }
+    }
+    .comp-info {
+      padding: 40px 7.5% 7.5%;
+      background-color: @white;
+      position: relative;
+      .comp-buttons {
+        margin-bottom: 40px;
+        > div {
+          display: inline-block;
+          width: 50%;
+          button {
+            font-family: @font-gotham-book;
+            width: 95px;
+            height: 35px;
+            line-height: 35px;
+            background-color: #545a6a;
+            border-color: #545a6a;
+            &:hover {
+              background-color: #2d313d;
+              border-color: #2d313d;
+            }
+            &.update {
+              color: #545a6a;
+              background-color: #f0f4f5;
+              border-color: #f0f4f5;
+            }
+          }
+        }
+      }
+      ul {
+        border-bottom: 1px solid @grey;
+        > li {
+          border-top: 1px solid @grey;
+          padding: 15px 0;
+          font-family: @font-opensans-regular;
+          > div {
+            display: inline-block;
+            width: 50%;
+          }
+        }
+      }
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 20px;
+        bottom: -18px;
+        left: 0;
+        right: 0;
+        background-image: url(/images/deckle.svg);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+      }    
+    }
+  }
+  .comp-callouts {
+    margin-top: 12%;
+    .respond(@md, {
+      margin-top: 0;
+    });
+    ul.checklist {
+      display: inline;
+      font-size: 16px;
+      font-family: @font-gotham-light;
+      position: relative;
+      z-index: @layer4;
       .respond(@md, {
-        display: inline-block;
-        width: 50%;
+        display: block;
+        border-top: 1px solid @light-blue;
+        padding-top: 1em;
+        margin-top: 25px;
+        &.export {
+          margin-right: -7.5%;
+          margin-top: 131px;
+        }
+        &.list-items {
+          margin-top: 142px;
+        }
+        &:after {
+          content: '';
+          display: block;
+          width: 5px;
+          height: 5px;
+          background-color: @light-blue;
+          position: absolute;
+          right: -2px;
+          top: -3px;
+          .border-radius(50%);
+        }
       });
       .respond(@lg, {
-        display: inline-block;
-        width: 33.333%;
+        font-size: 18px;
+        margin-top: 77px;
+        &.export {
+          margin-right: -7.5%;
+          margin-top: 225px;
+        }
+        &.list-items {
+          margin-top: 140px;
+        }
       });
-      .respond(@xlg, {
-        display: inline-block;
-        width: 25%;
-      });
-      .respond(@huge, {
-        display: inline-block;
-        width: 20%;
-      });
-      span {
-        margin-top: 0px;
-        display: inline;
+      li {
+        margin-bottom: .75em;
+        .respond(@sm, {
+          display: inline-block;
+          width: 50%;
+        });
+        .respond(@md, {
+          display: block;
+          width: auto;
+        });
       }
-      svg.tick {
-        width: 22px;
+      span {
+        color: @light-blue;
       }
     }
   }
+  .comp-details {
+    padding-top: 0;
+    .respond(@md, {
+      padding-top: 8%;
+    });
+    h5 {
+      margin: 2em 0 1em;
+      .respond(@md, {
+        margin: 0 0 4em;
+      });
+    }
+    .checklist {
+      display: none;
+      .respond(@md, {
+        display: block;
+      });
+      li {
+        margin-bottom: .75em;
+        color: @dark-blue;
+        .respond(@md, {
+          display: inline-block;
+          width: 50%;
+        });
+        .respond(@lg, {
+          display: inline-block;
+          width: 33.333%;
+        });
+        .respond(@xlg, {
+          display: inline-block;
+          width: 25%;
+        });
+        .respond(@huge, {
+          display: inline-block;
+          width: 20%;
+        });
+        span {
+          margin-top: 0px;
+          display: inline;
+        }
+        svg.tick {
+          width: 22px;
+          margin-right: 7px;
+          margin-top: 1px;
+        }
+      }
+    }
+  }
+}
+
+
+// Location Radiate
+@keyframes radiate
+{
+0%   {}
+50%   {.transform(scale(1)); opacity: 0;}
+100%   {.transform(scale(1)); opacity: 0;}
+}
+
+@-moz-keyframes radiate /* Firefox */
+{
+0%   {}
+50%   {.transform(scale(1)); opacity: 0;}
+100%   {.transform(scale(1)); opacity: 0;}
+}
+
+@-webkit-keyframes radiate /* Safari and Chrome */
+{
+0%   {}
+50%   {.transform(scale(1)); opacity: 0;}
+100%   {.transform(scale(1)); opacity: 0;}
+}
+
+@-o-keyframes radiate /* Opera */
+{
+0%   {}
+50%   {.transform(scale(1)); opacity: 0;}
+100%   {.transform(scale(1)); opacity: 0;}
 }

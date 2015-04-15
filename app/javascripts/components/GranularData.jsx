@@ -15,22 +15,27 @@ var EntGranularData = React.createClass({
 
   render: function () {
     return (
-      <section className="ui-block enterprise-intro">
-        <div className="container">
+      <section className="ui-block granular-data">
+        <div className="container push-right">
           <div className="row">
+            <div className="col six left screenshot">
+              <img src="/images/ent-granular-screenshot.png"/>
+              <div className="granular-animation">
+                <div className="header"></div>
+                <div className="list"></div>
+                <div className="scrollbar"><span></span></div>
+              </div>
+            </div>
             <div className="col six right block-info">
               <div>
                 <h3 className="h1">Granular, accurate, deal-level lease data</h3>
                 <ul className="checklist">
-                  <li><Icons type="tick" /><span>Actual Transaction Data</span></li>
-                  <li><Icons type="tick" /><span>Accurate & Detailed</span></li>
-                  <li><Icons type="tick" /><span>Inifinitely & Instantly Searchable</span></li>
-                  <li><Icons type="tick" /><span>Lease & Property Information</span></li>
+                  <li><Icons type="tick" /><span> Actual Transaction Data</span></li>
+                  <li><Icons type="tick" /><span> Accurate & Detailed</span></li>
+                  <li><Icons type="tick" /><span> Inifinitely & Instantly Searchable</span></li>
+                  <li><Icons type="tick" /><span> Lease & Property Information</span></li>
                 </ul>
               </div>
-            </div>
-            <div className="col six left screenshot">
-              <img src="http://placehold.it/900x600/ffffff/cccccc&text=UI Screenshot"/>
             </div>
           </div>
         </div>

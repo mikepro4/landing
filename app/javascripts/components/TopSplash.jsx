@@ -29,7 +29,7 @@ var TopSplash = React.createClass({
             <button>Schedule a Demo</button>
           </form>
           <div className="splash-ui">
-            <img className="ui" src="http://placehold.it/700x400/cccccc/777777&text=Screenshot GIF"/>
+            <img className="ui" src="http://placehold.it/700x400/cccccc/777777"/>
             <img className="macbook" src="/images/macbook.svg"/>
           </div>
         </div>

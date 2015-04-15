@@ -36,16 +36,16 @@ var Logos = React.createClass({
               <Icons type="logo_hff" />
             </li>
             <li>
-              <Icons type="logo_wells_fargo" />
+              <Icons type="logo_empire" />
             </li>
             <li>
-              <Icons type="logo_wells_fargo" />
+              <Icons type="logo_ar_capital" />
             </li>
             <li>
-              <Icons type="logo_wells_fargo" />
+              <Icons type="logo_davis" />
             </li>
             <li>
-              <Icons type="logo_wells_fargo" />
+              <Icons type="logo_comfort" />
             </li>
           </ul>
         </div>

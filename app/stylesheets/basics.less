@@ -88,7 +88,7 @@ h1, .h1 {
   .respond(@md, {
     font-size: 36px;
   });
-  .respond(@lg, {
+  .respond(@xlg, {
     font-size: @font-size-h1;
   });
   &.underlined {
@@ -121,7 +121,9 @@ h4, .h4 {
 }
 
 h5, .h5 {
-  font-size: @font-size-h5;
+  text-transform: uppercase;
+  letter-spacing: @tracked-out;
+  font-size: 14px;
   font-family: @font-gotham-book;
   &.underlined {
     font-size: @font-size-base;

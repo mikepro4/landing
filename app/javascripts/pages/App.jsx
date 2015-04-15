@@ -4,6 +4,7 @@ var React = require('react');
 var Router = require('react-router');
 var _ = require('underscore');
 var DocumentTitle = require('react-document-title');
+var SlideInMenu = require('../components/SlideInMenu.jsx');
 var $ = require('jquery');
 
 var Header = require('../components/Header.jsx');
@@ -46,7 +47,7 @@ var App = React.createClass({
   },
 
   onScroll: function (event) {
-    var node = this.getDOMNode();
+    var node = this.getDOMNode().parentNode;
     this.setState({
       scrollTop: node.scrollTop
     })
@@ -86,6 +87,7 @@ var App = React.createClass({
             user={this.state.user}
             updateLocalStorage={this.updateLocalStorage}
           />
+          <SlideInMenu/>
           <Footer/>
         </div>
       </DocumentTitle>

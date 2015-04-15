@@ -1,6 +1,5 @@
-@site-width: 87%;
-@max-site-width: 1500px;
 @speed : .2s;
+
 @import "includes.less";
 @import "basics.less";
 @import "./includes/mixins.less";
@@ -9,15 +8,15 @@
 
 html {
   .size(100%, 100%);
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 body {
-  .display(absolute);
+  //.display(absolute);
   .size(100%, 100%);
   -webkit-font-smoothing: subpixel-antialiased;
   background: @white;
-  overflow: hidden;
+  //overflow: hidden;
   font: normal normal normal @font-size-base/@line-height-base @font-gotham-book;
   -webkit-overflow-scrolling: touch;
   display: block;
@@ -25,16 +24,26 @@ body {
 }
 
 .application_wrapper {
-  .display(absolute);
-  .size(100%, 100%);
-  .topLeft(0, 0);
+  // .display(absolute);
+  // .size(100%, 100%);
+  // .topLeft(0, 0);
   z-index: @layer1;
-  overflow-x: hidden; 
+  overflow-x: hidden;
+  position: relative;
   .container {
     position: relative;
   	margin: 0 auto;
   	width: @site-width;
   	max-width: @max-site-width;
+    .transition(padding .5s ease-in-out);
+    .respond(@huge, {
+      &.push-right {
+        padding-left: 300px;
+      }
+      &.push-left {
+        padding-right: 300px;
+      }
+    });
   }
   @import "./pages/exchange.less";
 }

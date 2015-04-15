@@ -34,7 +34,7 @@ var Footer = React.createClass({
                 <li><Link to="enterprise">Fair Info Statement</Link></li>
               </ul>
             </div>
-            <div className="col one">
+            <div className="col one logo">
               <svg width="24px" height="28px" viewBox="0 0 24 28">
               <defs>
               </defs>

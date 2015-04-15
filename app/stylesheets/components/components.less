@@ -1,16 +1,45 @@
 // General Classes
 // -------------------------
 .blue {
-  color: @light-blue;
+  color: @light-blue !important;
+}
+
+.grey {
+  color: @dark-grey !important;
+}
+
+.align-right {
+	text-align: right;
 }
 
 // -------------------------
 section {
-	padding: 7% 0;
+	padding: 12% 0;
+	.respond(@lg, {
+		padding: 100px 0;
+	});
+	.respond(@huge, {
+		padding: 100px 0;
+	});
 	&.ui-block {
-		padding: 7% 0;
-		.block-info {
-			.align-content(center);
+		.row {
+			.block-info {
+				.section-header {
+					color: @light-blue;
+					.respond(@xlg, {
+						position: absolute;
+						top: 0;
+					});
+				}
+				.respond(@xlg, {
+					.flex-display();
+					.align-items(center);
+					height: 600px;
+				});
+				> div {
+					
+				}
+			}
 		}
 	}
 }
@@ -55,17 +84,19 @@ section {
 .screenshot {
 	img {
 		margin-left: $gutter;
-		border-top: 10px solid #222;
-		.border-radius(6px);
+		//border-top: 10px solid #222;
+		margin-bottom: 10%;
+		.border-radius(3px);
 		.respond(@md, {
+			.border-radius(5px);
 			max-width: 130%;
-			border-top: 15px solid #222;
+			//border-top: 15px solid #222;
+			margin-bottom: 0;
 		});
 		.respond(@xlg, {
 			max-width: 900px;
-			border-top: 20px solid #222;
+			//border-top: 20px solid #222;
 		});
-		.transition(max-width @speed ease-in-out);
 		.respond(@huge, {
 			//max-width: 100%;
 		});
@@ -98,7 +129,7 @@ section {
 	li {
 		margin-bottom: 1.25em;
 		color: @mid-grey;
-		span {
+		> span {
 			display: inline-block;
 			vertical-align: middle;
 			width: 85%;
@@ -108,7 +139,7 @@ section {
 			width: 26px;
 			display: inline-block;
 			vertical-align: middle;
-			margin-right: 15px;
+			margin-right: 14px;
 		}
 	}
 }
@@ -150,11 +181,15 @@ form.sign-up {
 }
 
 @import "./header.less";
+@import "./slide-in-menu.less";
 @import "./faux-header.less";
 @import "./top-splash.less";
 @import "./logos.less";
 @import "./enterprise-intro.less";
+@import "./granular-data.less";
 @import "./sample-comp.less";
+@import "./national-coverage.less";
+@import "./coverage-map.less";
 @import "./bottom-sign-up.less";
 @import "./on-page-splitter.less";
 @import "./footer.less";

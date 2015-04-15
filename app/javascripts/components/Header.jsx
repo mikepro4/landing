@@ -14,7 +14,7 @@ var Header = React.createClass({
   },
 
   render: function () {
-    if( this.props.scrollTop > 150) {
+    if(this.props.scrollTop > 150) {
       var headerClass = "visible"
     } else {
       var headerClass = "invisible"
@@ -28,8 +28,8 @@ var Header = React.createClass({
           <div className="right">
             <nav>
               <ul>
-                <li><a href="#">CompStak Comps</a></li>
-                <li><a href="#">National Coverage</a></li>
+                <li><a href="#sample-comp">CompStak Comps</a></li>
+                <li><a href="#coverage">National Coverage</a></li>
               </ul>
             </nav>
             <button>Schedule a Demo</button>
