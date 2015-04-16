@@ -18,7 +18,7 @@ var CoverageMap = React.createClass({
       <section className="grey-bg coverage-map">
         <div className="container">
           <div className="row">
-            <div className="col six right">
+            <div className="col six right map">
               <img src="/images/coverage-map.svg"/>
             </div>
             <div className="col six left block-info">

@@ -24,10 +24,13 @@ var NationalCoverage = React.createClass({
           <div className="row">
             <div className="col six left screenshot">
               <img src="/images/ui-coverage-ny.png"/>
-              <img src="/images/ui-coverage-dallas.png"/>
-              <img src="/images/ui-coverage-bay.png"/>
-              <img src="/images/ui-coverage-chi.png"/>
-              <img src="/images/ui-coverage-dc.png"/>
+              <ul className="pager">
+                <li>•</li>
+                <li className="active">•</li>
+                <li>•</li>
+                <li>•</li>
+                <li>•</li>
+              </ul>
             </div>
             <div className="col six right block-info">
               <div>

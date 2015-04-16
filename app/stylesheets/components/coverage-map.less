@@ -1,5 +1,16 @@
 .coverage-map {
   .block-info {
+    padding-right: 0;
+    margin-top: 7.5%;
+    .respond(@md, {
+      margin-top: 1%;
+    });
+    .respond(@xlg, {
+      margin-top: 4%;
+    });
+    .h1 {
+      max-width: 10em;
+    }
     p {
       max-width: 25em;
     }
@@ -37,10 +48,19 @@
       }
     }
   }
+  .map img,
+  .map svg {
+    .transition(all @speed ease-in-out);
+    .respond(@max-site-width, {
+      width: 110%;
+      max-width: 110%;
+      margin-left: -10%;
+    });
+  }
   .coverage-list {
     padding-top: 7%;
     .checklist li {
-      .respond(@md, {
+      .respond(@sm, {
         display: inline-block;
         width: 50%;
       });

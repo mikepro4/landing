@@ -1,4 +1,42 @@
 .national-coverage {
+  ul.pager {
+    width: 100%;
+    text-align: center;
+    margin: -10px 0 40px;
+    .respond(@sm, {
+      margin-top: -20px;
+    });
+    .respond(@md, {
+      margin-top: 53px;
+      margin-bottom: -63px;
+      text-align: left;
+      float: right;
+    });
+    li {
+      cursor: pointer;
+      vertical-align: top;
+      display: inline-block;
+      text-indent: -999px;
+      overflow: hidden;
+      width: 10px;
+      height: 10px;
+      border: 1px solid @mid-grey;
+      .border-radius(50%);
+      .transition(border @speed ease-in-out, background @speed ease-in-out;);
+      margin-right: 10px;
+      .respond(@md, {
+        margin: 0px 20px 0 0;
+      });
+      &:hover {
+        border-color: @light-blue;
+      }
+      &.active {
+        cursor: default;
+        background-color: @mid-grey;
+        border-color: @mid-grey;
+      }
+    }
+  }
   ul.numbers {
     margin-top: 2.5em;
     li {
