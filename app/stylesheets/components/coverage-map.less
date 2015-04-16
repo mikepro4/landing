@@ -1,37 +1,39 @@
 .coverage-map {
-  .block-info p {
-    max-width: 25em;
-  }
-  .key {
-    margin-top: 2.2em;
-    > div {
-      display: inline-block;
-      margin-right: 40px;
-      text-transform: uppercase;
-      letter-spacing: @tracked-out;
-      font-size: 12px;
-      &.active {
-        color: @light-blue;
-      }
-      &:last-child {
-        margin-right: 0;
-      }
-      span.icon {
+  .block-info {
+    p {
+      max-width: 25em;
+    }
+    .key {
+      margin-top: 2.2em;
+      > div {
         display: inline-block;
-        vertical-align: middle;
-        width: 18px;
-        margin-right: 5px;
-        margin-top: -3px;
-      }
-      span.inactive {
-        display: inline-block;
-        vertical-align: middle;
-        width: 7px;
-        height: 7px;
-        .border-radius(50%);
-        background-color: @mid-grey;
-        margin-right: 5px;
-        margin-top: -3px;
+        margin-right: 40px;
+        text-transform: uppercase;
+        letter-spacing: @tracked-out;
+        font-size: 12px;
+        &.active {
+          color: @light-blue;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        span.icon {
+          display: inline-block;
+          vertical-align: middle;
+          width: 18px;
+          margin-right: 5px;
+          margin-top: -3px;
+        }
+        span.inactive {
+          display: inline-block;
+          vertical-align: middle;
+          width: 7px;
+          height: 7px;
+          .border-radius(50%);
+          background-color: @mid-grey;
+          margin-right: 5px;
+          margin-top: -3px;
+        }
       }
     }
   }

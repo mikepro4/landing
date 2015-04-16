@@ -13,6 +13,7 @@ var Enterprise = require('./pages/Enterprise.jsx');
 var Splitter = require('./pages/Splitter.jsx');
 var Underwriting = require('./pages/Underwriting.jsx');
 var AssetManagement = require('./pages/AssetManagement.jsx');
+var Legal = require('./pages/Legal.jsx');
 
 var routes = (
   <Route name="app" path="/" handler={App}>
@@ -23,6 +24,7 @@ var routes = (
     <Route name="enterprise" path="enterprise/" handler={Enterprise} />
     <Route name="underwriting" path="enterprise/underwriting/" handler={Underwriting} />
     <Route name="asset-management" path="enterprise/asset-management/" handler={AssetManagement} />
+    <Route name="legal" path="legal/" handler={Legal} />
 
     <Route name="exchange" path="exchange/" handler={Exchange} />
 

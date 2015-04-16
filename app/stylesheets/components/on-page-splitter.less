@@ -5,6 +5,8 @@
     width: 100%;
     max-width: none;
     > div {
+      .respond(@lg, {
+      });
       .transition(background @speed ease-in-out;);
       &:hover {
         background-color: @dark-blue-hover;
@@ -25,12 +27,17 @@
           border-left: 1px solid @dark-line-blue;
           > a {
             padding: 4em 15% 4em 4em;
+            .arrow {
+              right: 0;
+            }
           }
         });
       }
       .respond(@lg, {
         width: 50%;
-        float: left;
+        display: inline-block;
+        text-align: left;
+        vertical-align: top;
         &.left {
           a {
             float: right;
@@ -45,6 +52,10 @@
           width: 100%;
           max-width: @max-site-width/2;
           //padding: 4em 0;
+          height: 255px;
+        });
+        .respond(@xlg, {
+          height: auto;
         });
         h6 {
           margin-bottom: 1em;

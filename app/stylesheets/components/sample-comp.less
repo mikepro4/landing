@@ -219,12 +219,11 @@
         border-top: 1px solid @light-blue;
         padding-top: 1em;
         margin-top: 25px;
+        height: 188px;
         &.export {
           margin-right: -7.5%;
-          margin-top: 131px;
         }
         &.list-items {
-          margin-top: 142px;
         }
         &:after {
           content: '';
@@ -240,14 +239,22 @@
       });
       .respond(@lg, {
         font-size: 18px;
-        margin-top: 77px;
+      });
+      .respond(@xlg, {
+        height: 283px;
+        margin-top: 80px;
         &.export {
           margin-right: -7.5%;
-          margin-top: 225px;
+          height: 190px;
+          margin-top: 25px;
         }
         &.list-items {
-          margin-top: 140px;
+          height: 190px;
+          margin-top: 25px;
         }
+      });
+      .respond(@max-width, {
+        font-size: 22px;
       });
       li {
         margin-bottom: .75em;

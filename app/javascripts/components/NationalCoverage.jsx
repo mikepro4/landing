@@ -25,8 +25,8 @@ var NationalCoverage = React.createClass({
             <div className="col six left screenshot">
               <img src="/images/ui-coverage-ny.png"/>
               <img src="/images/ui-coverage-dallas.png"/>
-              <img src="/images/ui-coverage-chi.png"/>
               <img src="/images/ui-coverage-bay.png"/>
+              <img src="/images/ui-coverage-chi.png"/>
               <img src="/images/ui-coverage-dc.png"/>
             </div>
             <div className="col six right block-info">

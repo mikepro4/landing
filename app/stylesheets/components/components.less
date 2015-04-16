@@ -15,6 +15,8 @@
 // -------------------------
 section {
 	padding: 12% 0;
+	overflow-x: hidden;
+	overflow-y: visible;
 	.respond(@lg, {
 		padding: 100px 0;
 	});
@@ -41,6 +43,22 @@ section {
 				}
 			}
 		}
+	}
+}
+
+.default-page-title {
+	background-color: @dark-blue;
+	text-align: center;
+	padding: 5em 0 7em;
+	h1, .h1 {
+		margin: 0;
+		color: @white;
+	}
+	h6, .h6 {
+		//font-family: @font-gotham-medium;
+		color: @light-blue;
+		font-size: 15px;
+		margin: 1.5em 0 1em;
 	}
 }
 
