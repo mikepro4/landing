@@ -1,0 +1,49 @@
+.splitter {
+  .top {
+  padding: 100px 0; 
+    .container {
+      h2 {
+        max-width: 20em;
+        margin-bottom: 2em
+      }
+      .buttons {
+        .respond(@sm, {
+          margin: 0 -1.5%;
+        });
+        .respond(@lg, {
+          margin: 0 -1%;
+        });
+        > a {
+          button {
+            max-width: none;
+            margin: 0 0 5%;
+          }
+          .respond(@sm, {
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 1.5% 3%;
+            width: 47%;
+          });
+          .respond(@lg, {
+            margin: 0 1% 2%;
+            width: 31.333%;
+          });
+        }
+      }
+    }
+  }
+  .logos {
+    &.dark-blue {
+      background-color: @light-grey;
+    }
+    padding: 4em 0;
+    ul li {
+      opacity: .7;
+      svg {
+        * {
+          fill: @dark-blue;
+        }
+      }
+    }
+  }
+}
