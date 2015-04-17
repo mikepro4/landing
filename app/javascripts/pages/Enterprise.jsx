@@ -19,7 +19,7 @@ var Enterprise = React.createClass({
 
   render: function () {
     return (
-      <div>
+      <div className="page-enterprise">
         <FauxHeader/>
         <TopSplash/>
         <Logos/>

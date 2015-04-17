@@ -101,6 +101,25 @@
       }
     }
   }
+
+  .cycle-slideshow {
+    margin-left: $gutter;
+    margin-bottom: 10%;
+    .border-radius(3px);
+    .respond(@md, {
+      .border-radius(5px);
+      max-width: 130%;
+      margin-bottom: 0;
+      float: right;
+      width: 900px;
+    });
+    .respond(@xlg, {
+      width: 900px;
+    });
+    .respond(@huge, {
+      max-width: none;
+    });
+  }
 }
 
 // Glow

@@ -4,6 +4,10 @@ var Router = require('react-router');
 var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
 var Icons = require('../components/Icons.jsx');
 
+if(process.browser) {
+  require('jquery-cycle2');
+}
+
 var Link = Router.Link;
 
 var NationalCoverage = React.createClass({
@@ -15,22 +19,24 @@ var NationalCoverage = React.createClass({
   },
 
   componentDidMount: function () {
+    $('.cycle-slideshow').cycle({
+        speed: 600,
+        manualSpeed: 100
+    });
   },
 
   render: function () {
     return (
-      <section id="coverage" className="ui-block national-coverage">
+      <section id="coverage" className="ui-block national-coverage">   
         <div className="container push-right">
           <div className="row">
-            <div className="col six left screenshot">
-              <img src="/images/ui-coverage-ny.png"/>
-              <ul className="pager">
-                <li><span>•</span></li>
-                <li className="active"><span>•</span></li>
-                <li><span>•</span></li>
-                <li><span>•</span></li>
-                <li><span>•</span></li>
-              </ul>
+            <div className="col six left">
+              <div className="cycle-slideshow">
+                  <img src="/images/ui-coverage-ny.png"/>
+                  <img src="/images/ui-coverage-chi.png"/>
+                  <img src="/images/ui-coverage-ny.png"/>
+                  <img src="/images/ui-coverage-bay.png"/>
+              </div>
             </div>
             <div className="col six right block-info">
               <div>
