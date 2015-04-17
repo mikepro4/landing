@@ -47,6 +47,7 @@ var App = React.createClass({
   },
 
   onScroll: function (event) {
+    // get scrollTop of the body
     var node = this.getDOMNode().parentNode;
     this.setState({
       scrollTop: node.scrollTop

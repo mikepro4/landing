@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "ui": "compstak/fed-ui#^2.2.0"
+    "ui": "compstak/fed-ui#^2.2.0",
+    "jquery-cycle2": "~2.1.6"
   }
 }

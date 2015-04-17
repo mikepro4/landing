@@ -12,7 +12,7 @@ module.exports = function (req, res, next) {
     
     var title  = DocumentTitle.rewind();
     var markup = React.renderToString(<Handler />);
-    var html   = React.renderToStaticMarkup(<Html title={title}>{markup}</Html>);
+    var html   = React.renderToStaticMarkup(<Html title={title} markup={markup}></Html>);
 
     res.send('<!DOCTYPE html>' + html);
   });

@@ -15,9 +15,7 @@ var Html = React.createClass({
           <script src="/static/main.js"></script>
           <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
         </head>
-        <body>
-          {this.props.children}
-        </body>
+        <body dangerouslySetInnerHTML={{__html: this.props.markup}}></body>
       </html>
     );
   }
