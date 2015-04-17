@@ -25,11 +25,11 @@ var NationalCoverage = React.createClass({
             <div className="col six left screenshot">
               <img src="/images/ui-coverage-ny.png"/>
               <ul className="pager">
-                <li>•</li>
-                <li className="active">•</li>
-                <li>•</li>
-                <li>•</li>
-                <li>•</li>
+                <li><span>•</span></li>
+                <li className="active"><span>•</span></li>
+                <li><span>•</span></li>
+                <li><span>•</span></li>
+                <li><span>•</span></li>
               </ul>
             </div>
             <div className="col six right block-info">

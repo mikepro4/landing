@@ -2,39 +2,60 @@
   ul.pager {
     width: 100%;
     text-align: center;
-    margin: -10px 0 40px;
+    margin: -20px 0 40px;
     .respond(@sm, {
       margin-top: -20px;
     });
     .respond(@md, {
-      margin-top: 53px;
-      margin-bottom: -63px;
+      margin-top: 34px;
+      margin-bottom: -64px;
+      margin-right: 10px;
+      margin-left: 0;
       text-align: left;
       float: right;
     });
+    .respond(@huge, {
+      margin-right: 150px;
+      text-align: center;
+    });
     li {
+      span {
+        cursor: pointer;
+        display: block;
+        text-indent: -999px;
+        overflow: hidden;
+        width: 10px;
+        height: 10px;
+        border: 1px solid @mid-grey;
+        .border-radius(50%);
+        .transition(border @speed ease-in-out, background @speed ease-in-out;);
+      }
+      &.active {
+        span {
+          cursor: auto;
+          background-color: @mid-grey;
+          border-color: @mid-grey;
+        }
+        &:hover {
+          span {
+            border-color: @mid-grey;
+          }
+        }
+      }
+      &:hover {
+        span {
+          border-color: @dark-blue;
+        }
+      }
       cursor: pointer;
       vertical-align: top;
       display: inline-block;
-      text-indent: -999px;
-      overflow: hidden;
-      width: 10px;
-      height: 10px;
-      border: 1px solid @mid-grey;
-      .border-radius(50%);
-      .transition(border @speed ease-in-out, background @speed ease-in-out;);
-      margin-right: 10px;
+      padding: 10px;
       .respond(@md, {
-        margin: 0px 20px 0 0;
       });
-      &:hover {
-        border-color: @light-blue;
-      }
-      &.active {
-        cursor: default;
-        background-color: @mid-grey;
-        border-color: @mid-grey;
-      }
+      .respond(@huge, {
+        
+      });
     }
   }
   ul.numbers {
