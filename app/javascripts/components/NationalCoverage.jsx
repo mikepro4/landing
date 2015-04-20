@@ -20,8 +20,14 @@ var NationalCoverage = React.createClass({
 
   componentDidMount: function () {
     $('.cycle-slideshow').cycle({
-        speed: 600,
-        manualSpeed: 100
+        speed: 500,
+        manualSpeed: 500,
+        pager : '.pager',
+        pagerTemplate : '<li><span>•</span></li>',
+        pagerActiveClass : 'active',
+        next : '.next, .next-slide, .slides ul li',
+        prev : '.prev',
+        swipe : true
     });
   },
 
@@ -30,13 +36,16 @@ var NationalCoverage = React.createClass({
       <section id="coverage" className="ui-block national-coverage">   
         <div className="container push-right">
           <div className="row">
-            <div className="col six left">
-              <div className="cycle-slideshow">
+            <div className="col six left screenshot">
+              <div className="screenshot-wrap">
+                <div className="cycle-slideshow">
                   <img src="/images/ui-coverage-ny.png"/>
                   <img src="/images/ui-coverage-chi.png"/>
                   <img src="/images/ui-coverage-ny.png"/>
                   <img src="/images/ui-coverage-bay.png"/>
+                </div>
               </div>
+              <ul className="pager"></ul>
             </div>
             <div className="col six right block-info">
               <div>

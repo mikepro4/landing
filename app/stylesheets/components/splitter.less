@@ -1,22 +1,58 @@
 .splitter {
   .top {
-  padding: 100px 0; 
+    .logo {
+      width: 140px;
+      margin: 0 auto 40px;
+      svg * {
+        fill: @dark-blue;
+      }
+    }
+    text-align: center;
+    padding: 60px 0 50px;
+    .transition(padding @speed ease-in-out);
+    .respond(@xlg, {
+      padding: 90px 0;
+    });
     .container {
+      max-width: 1000px;
       h2 {
-        max-width: 20em;
-        margin-bottom: 2em
+        max-width: 10em;
+        margin: 0 auto .5em;
+        font-family: @font-gotham-extra-light;
+        .respond(@sm, {
+          max-width: 15em;
+        });
+        .respond(@md, {
+          max-width: none;
+        });
+      }
+      .h6 {
+        font-size: 12px;
       }
       .buttons {
+        display: block;
+        margin-top: 60px;
         .respond(@sm, {
-          margin: 0 -1.5%;
+          margin: 60px -1.5% 0;
         });
         .respond(@lg, {
-          margin: 0 -1%;
+          margin: 60px -1% 0;
         });
         > a {
+          display: block;
+          margin: 0 0 5%;
           button {
+            font-size: 12px;
             max-width: none;
-            margin: 0 0 5%;
+            height: 70px;
+            line-height: 70px;
+            background-color: transparent;
+            color: @light-blue;
+            &:hover {
+              border-color: @light-blue;
+              background-color: @light-blue;
+              color: @white;
+            }
           }
           .respond(@sm, {
             display: inline-block;
@@ -33,17 +69,6 @@
     }
   }
   .logos {
-    &.dark-blue {
-      background-color: @light-grey;
-    }
     padding: 4em 0;
-    ul li {
-      opacity: .7;
-      svg {
-        * {
-          fill: @dark-blue;
-        }
-      }
-    }
   }
 }

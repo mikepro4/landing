@@ -100,27 +100,27 @@ section {
 }
 
 .screenshot {
-	img {
+	.screenshot-wrap {
 		margin-left: $gutter;
-		//border-top: 10px solid #222;
 		margin-bottom: 10%;
+    overflow: hidden; 
 		.border-radius(3px);
 		.respond(@md, {
 			.border-radius(5px);
 			max-width: 130%;
-			//border-top: 15px solid #222;
+      width: 130%;
 			margin-bottom: 0;
 		});
 		.respond(@xlg, {
 			max-width: 900px;
-			//border-top: 20px solid #222;
+      width: 900px;
 		});
 		.respond(@huge, {
 			//max-width: 100%;
 		});
 		.box-shadow(0 0px 20px rgba(40, 48, 64, 0.2));
 	}
-	&.left img {
+	&.left .screenshot-wrap {
 		.respond(@md, {
 			float: right;
 		});

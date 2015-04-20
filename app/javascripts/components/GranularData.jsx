@@ -19,11 +19,13 @@ var EntGranularData = React.createClass({
         <div className="container push-right">
           <div className="row">
             <div className="col six left screenshot">
-              <img src="/images/ent-granular-screenshot.png"/>
-              <div className="granular-animation">
-                <div className="header"></div>
-                <div className="list"></div>
-                <div className="scrollbar"><span></span></div>
+              <div className="screenshot-wrap">
+                <img src="/images/ent-granular-screenshot.png"/>
+                <div className="granular-animation">
+                  <div className="header"></div>
+                  <div className="list"></div>
+                  <div className="scrollbar"><span></span></div>
+                </div>
               </div>
             </div>
             <div className="col six right block-info">

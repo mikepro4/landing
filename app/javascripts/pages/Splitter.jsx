@@ -2,6 +2,7 @@
 var React = require('react');
 var Router = require('react-router');
 var Logos = require('../components/Logos.jsx');
+var Icons = require('../components/Icons.jsx');
 var Link = Router.Link;
 
 var Enterprise = React.createClass({
@@ -24,11 +25,14 @@ var Enterprise = React.createClass({
     return (
       <div className="splitter">
         <div className="top">
+          <div className="logo">
+            <Icons type="cs_logo" />
+          </div>
           <div className="container">
-            <p className="h6 blue">Better Data. Better Deals.</p>
-            <h2>Access thousands of unbiased, commercial lease comps from active brokers in your market.</h2>
-            <h1 className="h6">Which are you?</h1>
+            <h2 className="h3">A Massive Commercial Lease Comps Database</h2>
+            <p className="h6 grey">Nationwide • Accurate • Searchable</p>
             <div className="buttons">
+              <h1 className="h6">Which are you?</h1>
               <Link to="exchange" onClick={this.setExchange}><button>Broker</button></Link>
               <Link to="exchange" onClick={this.setExchange}><button>Appraiser</button></Link>
               <Link to="exchange" onClick={this.setExchange}><button>Researcher</button></Link>
@@ -40,7 +44,6 @@ var Enterprise = React.createClass({
         </div>
         <Logos/>
       </div>
-      
     );
   }
 });

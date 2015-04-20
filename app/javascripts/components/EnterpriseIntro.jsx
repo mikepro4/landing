@@ -18,7 +18,9 @@ var EntIntro = React.createClass({
         <div className="container push-left">
           <div className="row">
             <div className="col six right screenshot">
-              <img src="/images/ent-intro-screenshot.png"/>
+              <div className="screenshot-wrap">
+                <img src="/images/ent-intro-screenshot.png"/>
+              </div>
             </div>
             <div className="col six left block-info">
               <div>
