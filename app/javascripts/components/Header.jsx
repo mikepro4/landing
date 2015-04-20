@@ -5,7 +5,7 @@ var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
 var Icons = require('../components/Icons.jsx');
 var Link = Router.Link;
 
-var Header = React.createClass({
+var FauxHeader = React.createClass({
 
   mixins: [ Router.State, Router.Navigation, HomePageRouterMixin ],
 
@@ -14,30 +14,22 @@ var Header = React.createClass({
   },
 
   render: function () {
-    if(this.props.scrollTop > 150) {
-      var headerClass = "visible"
-    } else {
-      var headerClass = "invisible"
-    }
     return (
-      <header className={headerClass}>
-        <div className="container">
+      <div className="dark-blue faux-header">
+        <div className="container row">
           <div className="logo">
-            <Icons type="cs_icon" />
+            <Icons type="cs_logo" />
           </div>
-          <div className="right">
-            <nav>
-              <ul>
-                <li><a href="#sample-comp">CompStak Comps</a></li>
-                <li><a href="#coverage">National Coverage</a></li>
-              </ul>
-            </nav>
-            <button>Schedule a Demo</button>
+          <div className="right-links">
+            <ul>
+              <li><Link to="enterprise">Login</Link></li>
+              <li><a onClick={this.props.toggleMenu}>Menu</a></li>
+            </ul>
           </div>
         </div>
-      </header>
+      </div>
     )
   }
 });
 
-module.exports = Header;
+module.exports = FauxHeader;

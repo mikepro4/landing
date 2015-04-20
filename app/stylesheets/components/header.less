@@ -3,7 +3,7 @@
 header {
   height: 70px;
   background-color: @white;
-  z-index: @layer6;
+  z-index: @layer4;
   position: fixed;
   top: 0;
   left: 0;
@@ -15,14 +15,27 @@ header {
   .transform(translate3d(0, -100px, 0));
   .box-shadow(0 0px 20px rgba(40, 48, 64, 0.1));
   .logo {
+    .transition(all @speed ease-in-out);
     position: absolute;
     left: 0;
     top: 19px;
     width: 26px;
-    .transition(all @speed ease-in-out);
+    cursor: pointer;
     .respond(@md, {
       top: 23px;
     });
+
+    svg {
+      path {
+        .transition(all @speed ease-in-out);
+      }
+    }
+
+    &:hover {
+      path {
+        fill: @light-blue;
+      }
+    }
   }
   &.visible {
     .transform(translate3d(0, 0, 0));
@@ -44,6 +57,12 @@ header {
   }
   nav {
     display: none;
+    li.active {
+      a {
+        color: @light-blue;
+      }
+    }
+
     .respond(@lg, {
       display: inline-block;
       margin-right: 15px;

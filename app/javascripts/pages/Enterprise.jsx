@@ -20,16 +20,16 @@ var Enterprise = React.createClass({
   render: function () {
     return (
       <div className="page-enterprise">
-        <FauxHeader/>
-        <TopSplash/>
-        <Logos/>
-        <Entintro/>
-        <EntGranularData/>
-        <SampleComp/>
-        <NationalCoverage/>
-        <CoverageMap/>
-        <BottomSignUp/>
-        <OnPgSplitter/>
+        <FauxHeader {...this.props}/>
+        <TopSplash {...this.props}/>
+        <Logos {...this.props}/>
+        <Entintro {...this.props}/>
+        <EntGranularData {...this.props}/>
+        <SampleComp {...this.props}/>
+        <NationalCoverage {...this.props}/>
+        <CoverageMap {...this.props}/>
+        <BottomSignUp {...this.props}/>
+        <OnPgSplitter {...this.props}/>
       </div>
     )
   }

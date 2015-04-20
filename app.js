@@ -13,8 +13,10 @@ var cachebuster  = require('./cachebuster');
 var httpProxy    = require("http-proxy");
 var proxy        = new httpProxy.createProxyServer();
 var serverRender = require('./app/javascripts/server.jsx');
+var sendwithus   = require('sendwithus')('live_8e5b7c10333b6e9efd11e45e9636a6efda360a7f');
 
 var app = express();
+var router = express.Router(); 
 
 app.use(logger(app.get('env') === 'production' ? 'combined' : 'dev'));
 app.use(bodyParser.json());
@@ -33,9 +35,35 @@ if (app.get('env') === 'development') {
   require('./dev-tools');
 }
 
-app.all('/api/*', function (req, res) {
-  proxy.web(req, res, {target: 'http://local.exchange.compstak.com/'});
-});
+// app.all('/api/*', function (req, res) {
+//   proxy.web(req, res, {target: 'http://local.exchange.compstak.com/'});
+// });
+
+app.use('/api', router);
+router.route('/demoRequest')
+
+  .post(function(req, res) {
+
+    sendwithus.send({
+      email_id: "tem_seCspv6hAhyUhStS7FoqQT",
+      recipient: { address: 'mikhail@compstak.com'},
+      email_data: { 
+        email: req.body.email, 
+        name: req.body.name, 
+        message: req.body.message,
+        agreedToSubscribe:  req.body.agreedToSubscribe
+      },
+      sender: {
+          address: 'help@compstak.com',
+          name: 'CompStak'
+      }
+    }, function (err, data) {
+      if (err)
+          res.send(err);
+      res.json(data);
+    });
+             
+  });
 
 // use react routes
 app.use('/', serverRender);
