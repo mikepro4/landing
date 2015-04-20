@@ -1,0 +1,155 @@
+.page-demo-request {
+  text-align: center;
+  padding-bottom: 150px;
+  .h2 {
+    margin-top: 5%;
+    font-size: 32px;
+    .respond(@md, {
+      font-size: 41px;
+    });
+  }
+  h4 {
+    font-size: 14px;
+    margin-bottom: .5em;
+    .respond(@md, {
+      font-size: 16px;
+    });
+    &+p {
+      margin-bottom: 50px;
+      a.blue {
+        border-bottom: 1px solid transparent;
+        padding-bottom: 5px;
+        &:hover {
+          border-color: @light-blue;
+        }
+      }
+    }
+  }
+  form.demo-request {
+    text-align: left;
+      max-width: 430px;
+      margin: 0 auto;
+      button {
+        max-width: none;
+      }
+  }
+  .container.contact {
+    margin-top: 50px;
+    a {
+      display: block;
+    }
+  }
+  .success-alert {
+    .transition(all @speed ease-in-out);
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: @dark-blue;
+    //background-color: rgba(40,48,64,.75);
+    padding-top: 15%;
+    .loader {
+      margin: 0 auto;
+      width: 80px;
+      height: 80px;
+      position: relative;
+      .transition(all @speed ease-in-out);
+      .spinner {
+        overflow: hidden;
+        display: block;
+        width: 100%;
+        height: 100%;
+        .border-radius(50%);
+        border: 2px solid rgba(255,255,255,.3);
+        border-top: 2px solid @white;
+        border-left: 2px solid @white;
+        .animation(throb .75s linear infinite;);
+        .transition(all @speed ease-in-out);
+      }
+      .check {
+        .transition(all @speed ease-in-out);
+        .transform(scale(0));
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        background-color: @light-blue;
+        .border-radius(50%);
+        svg {
+          margin: 10px;
+          polygon {
+            .transition(opacity @speed ease-in-out);
+            fill: @white;
+            opacity: 0;
+          }
+          path {
+            fill: transparent;
+          }
+        }
+      }
+    }
+    div.message {
+      .transition(all @speed ease-in-out);
+      margin-top: 25px;
+      .transform(translateY(25px));
+      opacity: 0;
+    }
+  }
+  &.loading {
+    .success-alert {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  &.loaded {
+    .success-alert {
+      visibility: visible;
+      opacity: 1;
+    }
+    .loader {
+      .spinner {
+        opacity: 0;
+      }
+      .check {
+        .transform(scale(1));
+        svg {
+          polygon {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    div.message {
+      .transform(translateY(0px));
+      opacity: 1;
+    }
+  }
+}
+
+// Thobbing
+@keyframes throb
+{
+0%   {.transform(rotate(0deg));}
+100% {.transform(rotate(360deg));}
+}
+
+@-moz-keyframes throb /* Firefox */
+{
+0%   {.transform(rotate(0deg));}
+100% {.transform(rotate(360deg));}
+}
+
+@-webkit-keyframes throb /* Safari and Chrome */
+{
+0%   {.transform(rotate(0deg));}
+100% {.transform(rotate(360deg));}
+}
+
+@-o-keyframes throb /* Opera */
+{
+0%   {.transform(rotate(0deg));}
+100% {.transform(rotate(360deg));}
+}

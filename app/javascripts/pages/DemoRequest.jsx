@@ -2,6 +2,8 @@
 var React = require('react');
 var Router = require('react-router');
 var _ = require('underscore');
+var Header = require('../components/Header.jsx');
+var Icons = require('../components/Icons.jsx');
 var Link = Router.Link;
 
 var DemoRequest = React.createClass({
@@ -70,34 +72,55 @@ var DemoRequest = React.createClass({
 
   render: function () {
     return (
-      <div className="page-demo-request">
-        <form className="demo-request" onSubmit={this.submitForm}>
-          <div className="input-wrap">
-            <label>
-              Name
-            </label>
-            <input type="text" ref="name" value={this.state.name} onChange={this.handleNameInput} placeholder="Name"/>
+      <div className="page-demo-request dark-blue">
+        <Header {...this.props}/>
+        <div className="container">
+          <h1 className="h2">Schedule a Demo</h1>
+          <h4 className="mid-grey">Please fill out your information and we will contact you to schedule your demonstation.</h4>
+          <p><Link className="blue" to="exchange">Are you a Broker, Appraiser or Researcher?</Link></p>
+          <form className="demo-request" onSubmit={this.submitForm}>
+            <div className="input-wrap">
+              <label>
+                Name
+              </label>
+              <input type="text" ref="name" value={this.state.name} onChange={this.handleNameInput} placeholder="Name"/>
+            </div>
+            <div className="input-wrap">
+              <label>
+                Email
+              </label>
+              <input type="text" ref="email" value={this.state.email} onChange={this.handleEmailInput} placeholder="Email Address"/> 
+            </div>
+            <div className="input-wrap">
+              <label>
+                Business
+              </label>
+              <textarea ref="message" value={this.state.message}  onChange={this.handleMessageInput} placeholder="Describe Your Business"/>
+            </div>
+            <div className="input-wrap">
+              <input type="checkbox" ref="agreedToSubscribe"  onChange={this.handleSubscribeInput}  />
+              <label>
+                Subscribe
+              </label>
+            </div>
+            <button>Schedule a Demo</button>
+          </form>
+          <div className="container contact">
+            <h6>Contact us to learn more</h6>
+            <a href="tel:16465203261">1.646.520.3261</a>
+            <a href="mailto:enterprise@compstak.com">Enterprise@CompStak.com</a>
           </div>
-          <div className="input-wrap">
-            <label>
-              Email
-            </label>
-            <input type="text" ref="email" value={this.state.email} onChange={this.handleEmailInput} placeholder="Email Address"/> 
+          <div className="success-alert">
+            <div className="loader">
+              <div className="spinner"></div>
+              <div className="check"><Icons type="tick" /></div>
+            </div>
+            <div className="message">
+              <p className="h1">Thank You</p>
+              <p className="mid-grey">We will contact you shortly.</p>
+            </div>
           </div>
-          <div className="input-wrap">
-            <label>
-              Business
-            </label>
-            <textarea ref="message" value={this.state.message}  onChange={this.handleMessageInput} placeholder="Describe Your Business"/>
-          </div>
-          <div className="input-wrap">
-            <input type="checkbox" ref="agreedToSubscribe"  onChange={this.handleSubscribeInput}  />
-            <label>
-              Subscribe
-            </label>
-          </div>
-          <button>Schedule a Demo</button>
-        </form>
+        </div>
       </div>
     )
   }

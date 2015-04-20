@@ -57,13 +57,15 @@ var Header = React.createClass({
           <div className="logo" onClick={this.scrollToTop}>
             <Icons type="cs_icon" />
           </div>
-          <div className="right">
+          <div className="left">
             <nav>
               <ul>
                 <li><a href="#sample-comp" onClick={this.scrollToElement}>CompStak Comps</a></li>
                 <li><a href="#coverage" onClick={this.scrollToElement}>National Coverage</a></li>
               </ul>
             </nav>
+          </div>
+          <div className="right">
             <Link to="demo-request"><button>Schedule a Demo</button></Link>
           </div>
         </div>

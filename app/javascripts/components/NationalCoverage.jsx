@@ -37,7 +37,8 @@ var NationalCoverage = React.createClass({
                 <div className="cycle-slideshow">
                   <img src="/images/ui-coverage-ny.png"/>
                   <img src="/images/ui-coverage-chi.png"/>
-                  <img src="/images/ui-coverage-ny.png"/>
+                  <img src="/images/ui-coverage-dc.png"/>
+                  <img src="/images/ui-coverage-dallas.png"/>
                   <img src="/images/ui-coverage-bay.png"/>
                 </div>
               </div>

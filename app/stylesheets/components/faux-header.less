@@ -40,6 +40,12 @@ header.faux-header {
   &.visible {
     .transform(translate3d(0, 0, 0));
   }
+  .left {
+    position: absolute;
+    top: 0;
+    left: 45px;
+    right: 220px;
+  }
   .right {
     text-align: right;
   }
@@ -57,9 +63,15 @@ header.faux-header {
   }
   nav {
     display: none;
+    li {
+      cursor: pointer;
+    }
     li.active {
       a {
         color: @light-blue;
+        &:hover {
+          color: @light-blue;
+        }
       }
     }
 

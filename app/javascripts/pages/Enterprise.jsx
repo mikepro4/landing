@@ -15,6 +15,7 @@ var NationalCoverage = require('../components/NationalCoverage.jsx');
 var CoverageMap = require('../components/CoverageMap.jsx');
 var OnPgSplitter = require('../components/OnPageSplitter.jsx');
 var BottomSignUp = require('../components/BottomSignUp.jsx');
+var Footer = require('../components/Footer.jsx');
 
 var Enterprise = React.createClass({
 
@@ -24,7 +25,10 @@ var Enterprise = React.createClass({
     return (
       <DocumentTitle title="CompStak – Enterprise">
         <div className="page-enterprise">
-          <Header {...this.props}/>
+          <Header 
+            {...this.props}
+            mode="dark"
+          />
           <FauxHeader {...this.props}/>
           <TopSplash {...this.props}/>
           <Logos {...this.props}/>
@@ -35,6 +39,7 @@ var Enterprise = React.createClass({
           <CoverageMap {...this.props}/>
           <BottomSignUp {...this.props}/>
           <OnPgSplitter {...this.props}/>
+          <Footer {...this.props}/>
         </div>
       </DocumentTitle>
     )

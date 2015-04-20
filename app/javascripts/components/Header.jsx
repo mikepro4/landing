@@ -13,6 +13,11 @@ var FauxHeader = React.createClass({
     this.selectHomePage(this.props.user)
   },
 
+  componentDidMount: function () {
+    console.log(this.props.mode)
+    console.log(this.isActive('demo-request'))
+  },
+
   render: function () {
     return (
       <div className="dark-blue main-header">

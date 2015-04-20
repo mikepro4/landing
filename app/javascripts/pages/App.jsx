@@ -98,7 +98,6 @@ var App = React.createClass({
               updateLocalStorage={this.updateLocalStorage}
               toggleMenu={this.toggleMenu}
             />
-            <Footer/>
           </div>
 
           <SlideInMenu 
