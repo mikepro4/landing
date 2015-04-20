@@ -133,6 +133,12 @@ var Icons = React.createClass({
               c0.1,0.1,0.3,0.2,0.4,0.2s0.3-0.1,0.4-0.2c0.2-0.2,0.2-0.6,0-0.8L7.4,6.5z"/>
           </svg>
         )
+      case 'hamburger':
+        return (
+          <svg width="12px" height="9px" viewBox="0 0 12 9">
+            <path d="M12,1H0V0h12V1z M12,4H0v1h12V4z M12,8H0v1h12V8z"/>
+          </svg>
+        )
 
     }
   }

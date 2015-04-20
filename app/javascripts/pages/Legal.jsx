@@ -2,9 +2,10 @@
 var React = require('react');
 var Router = require('react-router');
 var Link = Router.Link;
-var FauxHeader = require('../components/FauxHeader.jsx');
+var Header = require('../components/Header.jsx');
 var LegalContent = require('../components/LegalContent.jsx');
 var OnPgSplitter = require('../components/OnPageSplitter.jsx');
+var DocumentTitle = require('react-document-title');
 
 var Legal = React.createClass({
 
@@ -12,12 +13,14 @@ var Legal = React.createClass({
 
   render: function () {
     return (
-      <div>
-        <FauxHeader/>
-        <div className="default-page-title"><h1>Legal</h1></div>
-        <LegalContent/>
-        <OnPgSplitter/>
-      </div>
+      <DocumentTitle title="CompStak – Legal">
+        <div className="page-legal">
+          <Header {...this.props}/>
+          <div className="default-page-title"><h1>Legal</h1></div>
+          <LegalContent/>
+          <OnPgSplitter/>
+        </div>
+      </DocumentTitle>
     )
   }
 });

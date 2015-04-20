@@ -64,7 +64,7 @@ var Header = React.createClass({
                 <li><a href="#coverage" onClick={this.scrollToElement}>National Coverage</a></li>
               </ul>
             </nav>
-            <button>Schedule a Demo</button>
+            <Link to="demo-request"><button>Schedule a Demo</button></Link>
           </div>
         </div>
       </header>
