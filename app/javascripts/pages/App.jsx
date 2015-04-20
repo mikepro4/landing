@@ -9,7 +9,6 @@ var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
 
 // Components
 var SlideInMenu = require('../components/SlideInMenu.jsx');
-var Header = require('../components/Header.jsx');
 var Footer = require('../components/Footer.jsx');
 
 var RouteHandler = Router.RouteHandler;
@@ -88,19 +87,16 @@ var App = React.createClass({
         <div className={classnames({
           'application_wrapper':   true,
           'open-menu':             this.state.menuOpen
-        })}>     
+        })}>    
 
           <div className="page-content">
-            <Header 
-              user={this.state.user}
-              toggleMenu={this.toggleMenu}
-            />
             <RouteHandler 
               {...this.props}
               user={this.state.user}
+              menuOpen={this.state.menuOpen}
               scrollTop={this.state.scrollTop}
               updateLocalStorage={this.updateLocalStorage}
-              menuOpen={this.state.menuOpen}
+              toggleMenu={this.toggleMenu}
             />
             <Footer/>
           </div>
@@ -109,7 +105,7 @@ var App = React.createClass({
             toggleMenu={this.toggleMenu}
           />
           <div className="overlay" onClick={this.toggleMenu}/>
-
+          
         </div>
       </DocumentTitle>
     );
