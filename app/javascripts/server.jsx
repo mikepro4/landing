@@ -10,8 +10,8 @@ var Html   = require('./components/Html.jsx');
 module.exports = function (req, res, next) {
   Router.run(routes, req.url, function (Handler, state) {
     
-    var title  = DocumentTitle.rewind();
     var markup = React.renderToString(<Handler />);
+    var title  = DocumentTitle.rewind();
     var html   = React.renderToStaticMarkup(<Html title={title} markup={markup}></Html>);
 
     res.send('<!DOCTYPE html>' + html);

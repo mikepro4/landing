@@ -3,7 +3,7 @@ var React = require('react');
 var Router = require('react-router');
 var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
 var Icons = require('../components/Icons.jsx');
-var $ = require('jquery');
+var classnames = require('classnames');
 var Link = Router.Link;
 
 var SlideInMenu = React.createClass({
@@ -16,12 +16,13 @@ var SlideInMenu = React.createClass({
 
   render: function () {
     if( this.props.scrollTop > 150) {
-      var menuClass = "visible"
+      var menuClass = true
     } else {
-      var menuClass = "invisible"
+      var menuClass = false
     }
     return (
-      <div className="slide-in-menu {menuClass}">
+      <div className="slide-in-menu">
+        <i className="close-icon" onClick={this.props.toggleMenu}><Icons type="cross"/></i>
         <div className="button-wrap">
           <button>Schedule a Demo</button>
         </div>

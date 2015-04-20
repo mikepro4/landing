@@ -1,8 +1,11 @@
 'use strict';
 var React = require('react');
 var Router = require('react-router');
+var DocumentTitle = require('react-document-title');
 var Link = Router.Link;
+
 var FauxHeader = require('../components/FauxHeader.jsx');
+var Header = require('../components/Header.jsx');
 var TopSplash = require('../components/TopSplash.jsx');
 var Logos = require('../components/Logos.jsx');
 var Entintro = require('../components/EnterpriseIntro.jsx');
@@ -19,18 +22,21 @@ var Enterprise = React.createClass({
 
   render: function () {
     return (
-      <div className="page-enterprise">
-        <FauxHeader/>
-        <TopSplash/>
-        <Logos/>
-        <Entintro/>
-        <EntGranularData/>
-        <SampleComp/>
-        <NationalCoverage/>
-        <CoverageMap/>
-        <BottomSignUp/>
-        <OnPgSplitter/>
-      </div>
+      <DocumentTitle title="CompStak – Enterprise">
+        <div className="page-enterprise">
+          <Header {...this.props}/>
+          <FauxHeader {...this.props}/>
+          <TopSplash {...this.props}/>
+          <Logos {...this.props}/>
+          <Entintro {...this.props}/>
+          <EntGranularData {...this.props}/>
+          <SampleComp {...this.props}/>
+          <NationalCoverage {...this.props}/>
+          <CoverageMap {...this.props}/>
+          <BottomSignUp {...this.props}/>
+          <OnPgSplitter {...this.props}/>
+        </div>
+      </DocumentTitle>
     )
   }
 });

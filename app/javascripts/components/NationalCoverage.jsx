@@ -12,11 +12,7 @@ var Link = Router.Link;
 
 var NationalCoverage = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation, HomePageRouterMixin ],
-
-  goToHome: function () {
-    this.selectHomePage(this.props.user)
-  },
+  mixins: [ Router.State, Router.Navigation ],
 
   componentDidMount: function () {
     $('.cycle-slideshow').cycle({

@@ -28,9 +28,24 @@ body {
   // .size(100%, 100%);
   // .topLeft(0, 0);
   z-index: @layer1;
-  overflow-x: hidden;
   position: relative;
+  left: 0;
+  .transition(all @speed ease-in-out);
+
+  .overlay {
+    .transition(all @speed ease-in-out);
+    .display(fixed);
+    .topLeft(0, 0);
+    .bottomRight(0, 0);
+    content: '';
+    background: @dark-blue;
+    z-index: @layer5;
+    opacity: 0;
+    visibility: hidden;
+  }
+
   .container {
+    .transition(all @speed ease-in-out);
     position: relative;
   	margin: 0 auto;
   	width: @site-width;
@@ -38,7 +53,6 @@ body {
     &.narrow {
       max-width: 800px;
     }
-    .transition(padding .5s ease-in-out);
     .respond(@huge, {
       &.push-right {
         padding-left: 300px;

@@ -1,12 +1,8 @@
 'use strict';
-
 var debug            = require('debug')('app');
 var webpack          = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var webpackConfig    = require('./webpack.config.dev');
-// var livereload       = require('livereload');
-// var fs               = require('fs');
-// var sass             = require('node-sass');
 
 // Run the webpack dev server
 var webpackServer = new WebpackDevServer(webpack(webpackConfig), {

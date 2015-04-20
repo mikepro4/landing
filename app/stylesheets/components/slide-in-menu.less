@@ -7,7 +7,7 @@
   right: -300px;
   top: 0;
   bottom: 0;
-  z-index: @layer1;
+  z-index: @layer-top;
   color: @mid-grey;
   overflow-y: visible;
   overflow-x: hidden;
@@ -57,13 +57,44 @@
   li a {
     display: block;
   }
+
+  .close-icon {
+    .display(absolute);
+    .topRight(35px, 50px);
+    .transition(all @speed ease-in-out);
+    cursor: pointer;
+    opacity: .4;
+
+    path {
+      fill: #fff;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.page-content {
+  .transition(all @speed ease-in-out);
 }
 
 .application_wrapper.open-menu {
-  .transition(all @speed ease-in-out);
-  .transform(translate3d(-300px, 0, 0));
-  overflow-x: visible;
+  .display(absolute);
+  .topLeft(0, 0);
+  .bottomRight(0, 0);
+  overflow: hidden;
+  
+  .page-content {
+    .transform(translate3d(-300px, 0, 0));
+  }
+
   .slide-in-menu {
-    .transform(translate3d(0px, 0, 0));
+    .transform(translate3d(-300px, 0, 0));
+  }
+
+  .overlay {
+    opacity: .75;
+    visibility: visible;
   }
 }

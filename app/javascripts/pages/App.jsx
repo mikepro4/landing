@@ -1,19 +1,18 @@
 "use strict";
-
 var React = require('react');
 var Router = require('react-router');
 var _ = require('underscore');
 var DocumentTitle = require('react-document-title');
-var SlideInMenu = require('../components/SlideInMenu.jsx');
 var $ = require('jquery');
-
-var Header = require('../components/Header.jsx');
-var Footer = require('../components/Footer.jsx');
+var classnames = require('classnames');
 var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
+
+// Components
+var SlideInMenu = require('../components/SlideInMenu.jsx');
+var Footer = require('../components/Footer.jsx');
 
 var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
-
 
 var App = React.createClass({
 
@@ -25,7 +24,8 @@ var App = React.createClass({
         mode: null,
         market: null
       },
-      scrollTop: null
+      scrollTop: null,
+      menuOpen: false
     }
   },
 
@@ -75,21 +75,37 @@ var App = React.createClass({
     })
   },
 
+  toggleMenu: function() {
+    this.setState({
+      menuOpen: !this.state.menuOpen
+    })
+  },
+
   render: function () {
     return (
       <DocumentTitle title="CompStak">
-        <div className="application_wrapper">
-          <Header 
-            user={this.state.user}
-            scrollTop={this.state.scrollTop}
+        <div className={classnames({
+          'application_wrapper':   true,
+          'open-menu':             this.state.menuOpen
+        })}>    
+
+          <div className="page-content">
+            <RouteHandler 
+              {...this.props}
+              user={this.state.user}
+              menuOpen={this.state.menuOpen}
+              scrollTop={this.state.scrollTop}
+              updateLocalStorage={this.updateLocalStorage}
+              toggleMenu={this.toggleMenu}
+            />
+            <Footer/>
+          </div>
+
+          <SlideInMenu 
+            toggleMenu={this.toggleMenu}
           />
-          <RouteHandler 
-            {...this.props}
-            user={this.state.user}
-            updateLocalStorage={this.updateLocalStorage}
-          />
-          <SlideInMenu/>
-          <Footer/>
+          <div className="overlay" onClick={this.toggleMenu}/>
+          
         </div>
       </DocumentTitle>
     );
