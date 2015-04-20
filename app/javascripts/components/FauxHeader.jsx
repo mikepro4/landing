@@ -1,6 +1,7 @@
 'use strict';
 var React = require('react');
 var Router = require('react-router');
+var classnames = require('classnames');
 var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
 var Icons = require('../components/Icons.jsx');
 var Link = Router.Link;
@@ -47,9 +48,11 @@ var Header = React.createClass({
   },
 
   render: function () {
-    var headerClass = this.props.scrollTop > 150 ? "visible" : "invisible";
     return (
-      <header className={headerClass}>
+      <header className={classnames({
+          'faux-header':   true,
+          'visible':       this.props.scrollTop > 150
+        })}>
         <div className="container">
           <div className="logo" onClick={this.scrollToTop}>
             <Icons type="cs_icon" />

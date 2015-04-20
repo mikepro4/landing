@@ -75,21 +75,26 @@
   }
 }
 
+.page-content {
+  .transition(all @speed ease-in-out);
+}
+
 .application_wrapper.open-menu {
-  left: -300px;
+  .display(absolute);
+  .topLeft(0, 0);
+  .bottomRight(0, 0);
+  overflow: hidden;
+  
+  .page-content {
+    .transform(translate3d(-300px, 0, 0));
+  }
+
+  .slide-in-menu {
+    .transform(translate3d(-300px, 0, 0));
+  }
 
   .overlay {
     opacity: .75;
     visibility: visible;
-  }
-
-  .slide-in-menu {
-    right: 0;
-  }
-
-  header {
-    .container {
-      left: -300px;
-    }
   }
 }

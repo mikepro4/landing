@@ -15,9 +15,9 @@ var FauxHeader = React.createClass({
 
   render: function () {
     return (
-      <div className="dark-blue faux-header">
+      <div className="dark-blue main-header">
         <div className="container row">
-          <div className="logo">
+          <div className="logo" onClick={this.goToHome}>
             <Icons type="cs_logo" />
           </div>
           <div className="right-links">

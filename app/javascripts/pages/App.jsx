@@ -88,24 +88,28 @@ var App = React.createClass({
         <div className={classnames({
           'application_wrapper':   true,
           'open-menu':             this.state.menuOpen
-        })}>
-        
-          <Header 
-            toggleMenu={this.toggleMenu}
-          />
-          <RouteHandler 
-            {...this.props}
-            user={this.state.user}
-            scrollTop={this.state.scrollTop}
-            updateLocalStorage={this.updateLocalStorage}
-            menuOpen={this.state.menuOpen}
-          />
+        })}>     
+
+          <div className="page-content">
+            <Header 
+              user={this.state.user}
+              toggleMenu={this.toggleMenu}
+            />
+            <RouteHandler 
+              {...this.props}
+              user={this.state.user}
+              scrollTop={this.state.scrollTop}
+              updateLocalStorage={this.updateLocalStorage}
+              menuOpen={this.state.menuOpen}
+            />
+            <Footer/>
+          </div>
+
           <SlideInMenu 
             toggleMenu={this.toggleMenu}
           />
           <div className="overlay" onClick={this.toggleMenu}/>
 
-          <Footer/>
         </div>
       </DocumentTitle>
     );

@@ -1,43 +1,99 @@
-.faux-header {
-  padding: .5em 0 0;
+// Header
+
+header.faux-header {
+  height: 70px;
+  background-color: @white;
+  z-index: @layer4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   .respond(@md, {
-    padding: 3em 0 0;
+    height: 75px;
   });
-  .respond(@xlg, {
-    padding: 5em 0 0;
-  });
+  .transition(all @speed ease-in-out);
+  .transform(translate3d(0, -100px, 0));
+  .box-shadow(0 0px 20px rgba(40, 48, 64, 0.1));
   .logo {
-    float: left;
+    .transition(all @speed ease-in-out);
+    position: absolute;
+    left: 0;
+    top: 19px;
+    width: 26px;
+    cursor: pointer;
+    .respond(@md, {
+      top: 23px;
+    });
+
     svg {
-      margin-top: 16px;
-      height: 28px;
-      .respond(@md, {
-        margin-top: 15px;
-        height: 32px;
-      });
-      * {
-        fill: @white;
+      path {
+        .transition(all @speed ease-in-out);
+      }
+    }
+
+    &:hover {
+      path {
+        fill: @light-blue;
       }
     }
   }
-  .right-links {
+  &.visible {
+    .transform(translate3d(0, 0, 0));
+  }
+  .right {
     text-align: right;
-    float: right;
-    ul li {
-      display: inline-block;
+  }
+  button {
+    margin: 15px 0 0 0;
+    height: 40px;
+    line-height: 40px;
+    width: 180px;
+    display: inline-block;
+    .respond(@md, {
+      height: 45px;
+      line-height: 45px;
+      width: 200px;
+    });
+  }
+  nav {
+    display: none;
+    li.active {
       a {
-        display: block;
-        padding: 20px 0 20px 30px;
-        text-transform: uppercase;
-        letter-spacing: @tracked-out;
-        font-size: 11px;
-        font-family: @font-gotham-book;
-        cursor: pointer;
-        .respond(@md, {
-          padding: 20px 0 20px 40px;
-          font-size: 13px;
-        });
+        color: @light-blue;
       }
     }
+
+    .respond(@lg, {
+      display: inline-block;
+      margin-right: 15px;
+      li {
+        display: inline-block;
+        a {
+          display: block;
+          height: 75px;
+          padding: 26px 15px;
+          color: @mid-grey;
+          text-transform: uppercase;
+          letter-spacing: @tracked-out;
+          font-size: 11px;
+          font-family: @font-gotham-medium;
+          &:hover {
+            color: @dark-blue;
+          }
+        }
+      }
+    });
+    .respond(@xlg, {
+      li a {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    });
+    .respond(@huge, {
+      li a {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+    });
   }
 }
