@@ -6,10 +6,13 @@ var DocumentTitle = require('react-document-title');
 var $ = require('jquery');
 var classnames = require('classnames');
 var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
+var FPSStats = require('react-stats').FPSStats;
 
 // Components
 var SlideInMenu = require('../components/SlideInMenu.jsx');
+var VideoModal = require('../components/VideoModal.jsx');
 var Footer = require('../components/Footer.jsx');
+
 
 var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
@@ -25,7 +28,8 @@ var App = React.createClass({
         market: null
       },
       scrollTop: null,
-      menuOpen: false
+      menuOpen: false,
+      videoPlaying: false
     }
   },
 
@@ -81,6 +85,12 @@ var App = React.createClass({
     })
   },
 
+  toggleVideoModal: function() {
+    this.setState({
+      videoPlaying: !this.state.videoPlaying
+    })
+  },
+
   render: function () {
     return (
       <DocumentTitle title="CompStak">
@@ -89,19 +99,28 @@ var App = React.createClass({
           'open-menu':             this.state.menuOpen
         })}>    
 
+         <FPSStats/>
+
           <div className="page-content">
             <RouteHandler 
               {...this.props}
               user={this.state.user}
               menuOpen={this.state.menuOpen}
+              videoPlaying={this.state.videoPlaying}
               scrollTop={this.state.scrollTop}
               updateLocalStorage={this.updateLocalStorage}
               toggleMenu={this.toggleMenu}
+              toggleVideoModal={this.toggleVideoModal}
             />
           </div>
 
           <SlideInMenu 
             toggleMenu={this.toggleMenu}
+          />
+
+          <VideoModal
+            videoPlaying={this.state.videoPlaying}
+            toggleVideoModal={this.toggleVideoModal}
           />
           <div className="overlay" onClick={this.toggleMenu}/>
           

@@ -40,7 +40,7 @@ var DemoEmailForm = React.createClass({
     return (
       <form className="sign-up" onSubmit={this.showDemoRequestForm}>
         <div className="input-wrap">
-          <input type="text" ref="email" onChange={this.handleEmailInput} placeholder="Email@CompStak.com"/>
+          <input type="text" ref="email" onChange={this.handleEmailInput} placeholder="Email Address"/>
           <label>
             <Icons type="mail_icon" />
           </label>

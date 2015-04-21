@@ -4,13 +4,14 @@
   .h2 {
     margin-top: 5%;
     font-size: 32px;
+    line-height: 1.1em;
     .respond(@md, {
       font-size: 41px;
     });
   }
   h4 {
     font-size: 14px;
-    margin-bottom: .5em;
+    margin-bottom: 10px;
     .respond(@md, {
       font-size: 16px;
     });
@@ -27,11 +28,11 @@
   }
   form.demo-request {
     text-align: left;
-      max-width: 430px;
-      margin: 0 auto;
-      button {
-        max-width: none;
-      }
+    max-width: 430px;
+    margin: 0 auto;
+    button {
+      max-width: none;
+    }
   }
   .container.contact {
     margin-top: 50px;
@@ -48,7 +49,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: @dark-blue;
+    background-color: rgba(40,48,64, .95);
     //background-color: rgba(40,48,64,.75);
     padding-top: 15%;
     .loader {
@@ -92,6 +93,18 @@
       }
     }
     div.message {
+      .h1 {
+        margin: 0 0 10px 0;
+        font-family: @font-gotham-thin;
+        font-size: 60px;
+        letter-spacing: 1.7px;
+      }
+
+      .mid-grey {
+        font-family: @font-gotham-light;
+        letter-spacing: .3px;
+        font-size: 14px;
+      }
       .transition(all @speed ease-in-out);
       margin-top: 25px;
       .transform(translateY(25px));

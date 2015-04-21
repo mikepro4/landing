@@ -4,18 +4,26 @@ var Router = require('react-router');
 var _ = require('underscore');
 var Header = require('../components/Header.jsx');
 var Icons = require('../components/Icons.jsx');
+var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
+var classnames = require('classnames');
 var Link = Router.Link;
 
 var DemoRequest = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation ],
+  mixins: [ Router.State, Router.Navigation, HomePageRouterMixin ],
+
+  goToHome: function () {
+    this.selectHomePage(this.props.user)
+  },
 
   getInitialState: function() {
     return {
+      loading: false,
+      loaded: false,
       name: null,
       email: this.getQuery().email ? this.getQuery().email : null,
       message: null,
-      agreedToSubscribe: "no"
+      agreedToSubscribe: true
     }
   },
 
@@ -25,7 +33,12 @@ var DemoRequest = React.createClass({
        !_.isEmpty(this.state.email) &&
        !_.isEmpty(this.state.message)
     ) {
-      this.sendEmail(this.state);
+      this.sendEmail({
+        name: this.state.name,
+        email: this.state.email,
+        message: this.state.message,
+        agreedToSubscribe: this.state.agreedToSubscribe ? "yes" : "no"
+      });
     } else {
       alert('Please Fill in Name, Email and Message')
     }
@@ -51,19 +64,36 @@ var DemoRequest = React.createClass({
 
   handleSubscribeInput: function (event) {
     this.setState({
-      agreedToSubscribe: event.target.checked ? "yes" : "no"
+      agreedToSubscribe: event.target.checked
     })
   },
 
   sendEmail: function (data) {
+    // set loading state with a throbber
+    this.setState({
+      loading: true,
+      loaded: false
+    })
+
     $.ajax({
       url: '/api/demoRequest',
       type: 'POST',
       data: JSON.stringify(data),
       contentType: 'application/json',
       success: function(data) {
-        console.log(data);
-      },
+
+        // set loaded state with a tick
+        this.setState({
+          loading: false,
+          loaded: true
+        })
+
+        // go to home page after 3s
+        // _.delay(function () {
+        //   this.goToHome();
+        // }.bind(this), 3000);
+
+      }.bind(this),
       error: function(err) {
         alert(err)
       }
@@ -72,7 +102,12 @@ var DemoRequest = React.createClass({
 
   render: function () {
     return (
-      <div className="page-demo-request dark-blue">
+      <div className={classnames({
+          'page-demo-request':   true,
+          'dark-blue':           true,
+          'loading':             this.state.loading,
+          'loaded':              this.state.loaded
+        })}>
         <Header {...this.props}/>
         <div className="container">
           <h1 className="h2">Schedule a Demo</h1>
@@ -98,7 +133,7 @@ var DemoRequest = React.createClass({
               <textarea ref="message" value={this.state.message}  onChange={this.handleMessageInput} placeholder="Describe Your Business"/>
             </div>
             <div className="input-wrap">
-              <input type="checkbox" ref="agreedToSubscribe"  onChange={this.handleSubscribeInput}  />
+              <input type="checkbox" ref="agreedToSubscribe" defaultChecked={this.state.agreedToSubscribe} onChange={this.handleSubscribeInput}  />
               <label>
                 Subscribe
               </label>
@@ -116,7 +151,7 @@ var DemoRequest = React.createClass({
               <div className="check"><Icons type="tick" /></div>
             </div>
             <div className="message">
-              <p className="h1">Thank You</p>
+              <p className="h1">Thank You!</p>
               <p className="mid-grey">We will contact you shortly.</p>
             </div>
           </div>

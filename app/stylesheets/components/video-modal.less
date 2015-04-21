@@ -1,0 +1,55 @@
+.video-modal {
+  position: fixed;
+  display: none;
+  .topLeft(0, 0);
+  .bottomRight(0, 0);
+  z-index: @layer-top;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(40, 48, 64, 0);
+  .transition(all @speed ease-in-out);
+
+  iframe {
+    .size(800px, 500px);
+  }
+
+  .video_container {
+    .transition(all 1s ease-in-out);
+    .display(absolute);
+    .size(700px, 400px);
+    .topLeft(50%, 50%);
+    margin: -200px 0 0 -350px;
+    opacity: 0;
+  }
+
+  i.close-icon {
+    .display(absolute);
+    .topRight(40px, 40px);
+    .transition(all @speed ease-in-out);
+    opacity: .4;
+    cursor: pointer;
+
+    svg {
+      .size(24px, 24px);
+    }
+
+    * {
+      fill: #fff;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &.visible {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    background: rgba(40, 48, 64, .95);
+
+    .video_container {
+      opacity: 1;
+    }
+  }
+}
