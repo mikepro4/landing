@@ -51,7 +51,7 @@ var Header = React.createClass({
     return (
       <header className={classnames({
           'faux-header':   true,
-          'visible':       this.props.scrollTop > 150
+          'visible':       this.props.scrollTop > 450
         })}>
         <div className="container">
           <div className="logo" onClick={this.scrollToTop}>

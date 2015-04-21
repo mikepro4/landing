@@ -17,8 +17,20 @@ var TopSplash = React.createClass({
           <h2 className="h4 blue">Verified Lease Data & Market Analytics For Major Markets Nationwide</h2>
           <DemoEmailForm />
           <div className="splash-ui">
-            <img className="ui" src="http://placehold.it/700x400/cccccc/777777"/>
-            <img className="macbook" src="/images/macbook.svg"/>
+            <div className="ui-hover">
+              <div className="play_button">
+                <svg  width="68.3px" height="68.3px" viewBox="0 0 68.3 68.3" >
+                    <circle fill="#229CFF" cx="34.1" cy="34.1" r="34.1"/>
+                    <polygon fill="#FFFFFF" points="42.8,34.5 29.5,44 29.5,25.1     "/>
+                </svg>
+              </div>
+              <p className="h4">WATCH OUR VIDEO</p>
+              <aside>ONLY 60 sec</aside>   
+            </div>
+            <video preload="auto" autoPlay loop muted className="enterprise_video ui" poster="/images/video_poster.png">
+              <source src="https://s3.amazonaws.com/compstak/static/landing_pages/enterprise.mp4" type="video/mp4" />
+            </video> 
+            <div className="laptop"></div>
           </div>
         </div>
       </div>
