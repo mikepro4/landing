@@ -27,6 +27,9 @@ var Enterprise = React.createClass({
         <div className="page-enterprise">
           <Header 
             {...this.props}
+            login={true}
+            menu={true}
+            haveAccount={false}
             mode="dark"
           />
           <FauxHeader {...this.props}/>

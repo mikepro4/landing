@@ -33,7 +33,7 @@
     float: right;
     ul li {
       display: inline-block;
-      a {
+      a.nav-url {
         display: block;
         padding: 20px 0 20px 30px;
         text-transform: uppercase;
@@ -45,6 +45,24 @@
           padding: 20px 0 20px 40px;
           font-size: 13px;
         });
+
+        i {
+          display: inline-block;
+          margin: 0 0 0 5px;
+          position: relative;
+
+          * {
+            fill: #a9acb3;
+          }
+        }
+
+        &:hover {
+          i {
+            * {
+              fill: #fff;
+            }
+          }
+        }
       }
     }
   }

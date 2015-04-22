@@ -94,15 +94,15 @@
               color: @grey;
               text-align: left;
               > span.checkbox {
+                .border-radius(3px);
+                .transition(opacity @speed ease-in-out);
                 display: inline-block;
                 width: 17px;
                 height: 17px;
-                .border-radius(3px);
                 border: 1px solid @white;
                 opacity: .5;
-                .transition(opacity @speed ease-in-out);
                 margin-bottom: -4px;
-                margin: 0 10px -4px 8px;
+                margin: 0 10px -4px -8px;
               }
               &:hover {
                 background-color: #51596d;
@@ -160,7 +160,7 @@
           width: 50%;
           button {
             font-family: @font-gotham-book;
-            width: 95px;
+            width: 105px;
             height: 35px;
             line-height: 35px;
             background-color: #545a6a;

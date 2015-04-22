@@ -166,7 +166,7 @@ form.sign-up {
   margin: 0 auto;
   div.input-wrap {
     .respond(@md, {
-      width: 60%;
+      width: 55%;
       display: inline-block;
       margin-right: -.25em;
     });
@@ -176,14 +176,17 @@ form.sign-up {
       top: 23px;
       position: absolute;
       width: 22px;
+
+      path {
+        fill: @light-blue;
+      }
     }
     input[type="text"] {
-      padding-left: 60px;
+      padding-left: 58px;
+      font-size: 14px;
+      letter-spacing: .5px;
       &:focus {
         border: @input-border;
-        + label path {
-          fill: @dark-blue;
-        }
       }
     }
   }
@@ -213,3 +216,4 @@ form.sign-up {
 @import "./footer.less";
 @import "./demo-request.less";
 @import "./video-modal.less";
+@import "./checkbox.less";

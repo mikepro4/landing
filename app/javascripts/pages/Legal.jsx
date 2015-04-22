@@ -15,7 +15,13 @@ var Legal = React.createClass({
     return (
       <DocumentTitle title="CompStak – Legal">
         <div className="page-legal">
-          <Header {...this.props}/>
+          <Header 
+            {...this.props}
+            login={true}
+            menu={true}
+            haveAccount={false}
+            mode="dark"
+          />
           <div className="default-page-title"><h1>Legal</h1></div>
           <LegalContent/>
           <OnPgSplitter/>

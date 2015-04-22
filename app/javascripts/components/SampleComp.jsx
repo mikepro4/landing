@@ -38,8 +38,8 @@ var SampleComp = React.createClass({
                         <span className="tenant">CompStak</span>
                         <span className="lease-info">2014 - Q4 • Office • New Lease • Class B</span>
                         <div className="tooltip-buttons row">
-                          <button className="select"><span className="checkbox"></span>Select</button>
-                          <button>Details<Icons type="tiny_right_arrow" /></button>
+                          <button className="button select"><span className="checkbox"></span>Select</button>
+                          <button className="button">Details<Icons type="tiny_right_arrow" /></button>
                         </div>
                       </div>
                     </div>
@@ -48,8 +48,8 @@ var SampleComp = React.createClass({
                 </div>
                 <div className="comp-info">
                   <div className="comp-buttons row">
-                    <div><button>Export<span className="pointer-line"></span></button></div>
-                    <div className="align-right"><button className="update">Update</button></div>
+                    <div><button className="button">Export<span className="pointer-line"></span></button></div>
+                    <div className="align-right"><button className="button update">Update</button></div>
                   </div>
                   <ul>
                     <li className="row">

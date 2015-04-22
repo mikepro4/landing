@@ -33,12 +33,12 @@ var Enterprise = React.createClass({
             <p className="h6 grey">Nationwide • Accurate • Searchable</p>
             <div className="buttons">
               <h1 className="h6">Which are you?</h1>
-              <Link to="exchange" onClick={this.setExchange}><button>Broker</button></Link>
-              <Link to="exchange" onClick={this.setExchange}><button>Appraiser</button></Link>
-              <Link to="exchange" onClick={this.setExchange}><button>Researcher</button></Link>
-              <Link to="enterprise" onClick={this.setEnterprise}><button>Landlord</button></Link>
-              <Link to="enterprise" onClick={this.setEnterprise}><button>Lender</button></Link>
-              <Link to="enterprise" onClick={this.setEnterprise}><button>Investor</button></Link>
+              <Link className="button" to="exchange" onClick={this.setExchange}>Broker</Link>
+              <Link className="button" to="exchange" onClick={this.setExchange}>Appraiser</Link>
+              <Link className="button" to="exchange" onClick={this.setExchange}>Researcher</Link>
+              <Link className="button" to="enterprise" onClick={this.setEnterprise}>Landlord</Link>
+              <Link className="button" to="enterprise" onClick={this.setEnterprise}>Lender</Link>
+              <Link className="button" to="enterprise" onClick={this.setEnterprise}>Investor</Link>
             </div>
           </div>
         </div>

@@ -66,7 +66,7 @@ var Header = React.createClass({
             </nav>
           </div>
           <div className="right">
-            <Link to="demo-request"><button>Schedule a Demo</button></Link>
+            <Link to="demo-request"><button className="button">Schedule a Demo</button></Link>
           </div>
         </div>
       </header>

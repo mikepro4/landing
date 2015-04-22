@@ -8,6 +8,10 @@ var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
 var classnames = require('classnames');
 var Link = Router.Link;
 
+if(process.browser) {
+  var sweetAlert = require('sweetalert');
+}
+
 var DemoRequest = React.createClass({
 
   mixins: [ Router.State, Router.Navigation, HomePageRouterMixin ],
@@ -40,7 +44,11 @@ var DemoRequest = React.createClass({
         agreedToSubscribe: this.state.agreedToSubscribe ? "yes" : "no"
       });
     } else {
-      alert('Please Fill in Name, Email and Message')
+      sweetAlert(
+        "Please fill in all fields.", 
+        "You must provide your name, valid email address and description of your business", 
+        "error"
+      );
     }
   },
 
@@ -88,14 +96,13 @@ var DemoRequest = React.createClass({
           loaded: true
         })
 
-        // go to home page after 3s
-        // _.delay(function () {
-        //   this.goToHome();
-        // }.bind(this), 3000);
-
       }.bind(this),
       error: function(err) {
-        alert(err)
+        sweetAlert(
+          "Sorry there was an error", 
+          err, 
+          "error"
+        );
       }
     });
   },
@@ -108,7 +115,13 @@ var DemoRequest = React.createClass({
           'loading':             this.state.loading,
           'loaded':              this.state.loaded
         })}>
-        <Header {...this.props}/>
+        <Header 
+          {...this.props}
+          login={false}
+          menu={false}
+          haveAccount={true}
+          mode="dark"
+        />
         <div className="container">
           <h1 className="h2">Schedule a Demo</h1>
           <h4 className="mid-grey">Please fill out your information and we will contact you to schedule your demonstation.</h4>
@@ -138,7 +151,7 @@ var DemoRequest = React.createClass({
                 Subscribe
               </label>
             </div>
-            <button>Schedule a Demo</button>
+            <button className="button">Schedule a Demo</button>
           </form>
           <div className="container contact">
             <h6>Contact us to learn more</h6>

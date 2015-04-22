@@ -1,0 +1,42 @@
+input.checkbox {
+  .user-select(none);
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  z-index: @layer2;
+  left: -9999px;
+
+  // Unchecked Checkbox Style
+  & + label {
+    .user-select(none);
+    .transition(color 0.2s ease-out);
+    cursor: pointer;
+
+    &:hover {
+      &:before {
+        border: 1px solid lighten(#8A8E99, 10%);
+      }
+    }
+
+    &:before {
+      content: "";
+      display: inline-block;
+      position: relative;
+      margin: 0 10px 0 0;
+      top: 5px;
+      .size(16px, 16px);
+      .border-radius(2px);
+      border: 1px solid #8A8E99;
+    }
+  }
+
+  // Checked Checkbox Style
+  &:checked + label {
+
+    &:before {
+      border: 1px solid @light-blue;
+      background: @light-blue url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2017.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0D%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0D%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%0D%0A%09%20viewBox%3D%220%200%20100%20100%22%20enable-background%3D%22new%200%200%20100%20100%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cpolygon%20fill%3D%22%23FFFFFF%22%20points%3D%2238.549%2C78.053%2010.978%2C50.484%2016.272%2C45.189%2038.549%2C67.463%2083.296%2C22.717%2088.59%2C28.011%20%22/%3E%0D%0A%3C/svg%3E%0D%0A') center center no-repeat;
+      background-size: 14px 14px;
+    }
+  }
+}

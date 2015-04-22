@@ -5,6 +5,10 @@ var Icons = require('../components/Icons.jsx');
 var _ = require('underscore');
 var Link = Router.Link;
 
+if(process.browser) {
+  var sweetAlert = require('sweetalert');
+}
+
 var DemoEmailForm = React.createClass({
 
   mixins: [ Router.State, Router.Navigation ],
@@ -20,7 +24,7 @@ var DemoEmailForm = React.createClass({
     if(!_.isEmpty(this.state.email) && this.validateEmail(this.state.email)) {
       this.transitionTo('demo-request', {}, {email: this.state.email});
     } else {
-      alert('please provide correct email')
+      sweetAlert("Incorrect email!", "Please provide correct email address!", "error");
     }
   },
 
@@ -45,7 +49,7 @@ var DemoEmailForm = React.createClass({
             <Icons type="mail_icon" />
           </label>
         </div>
-        <button>Schedule a Demo</button>
+        <button className="button">Schedule a Demo</button>
       </form>
     )
   }

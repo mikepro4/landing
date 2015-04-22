@@ -6,14 +6,19 @@
     margin-bottom: .35em;
   }
   h2 {
-    margin-bottom: 1.5em;
+    font-size: 16px;
+    margin-bottom: 1.8em;
   }
   .splash-ui {
     margin:  auto;
-    display: block;
+    display: none;
     position: relative;
-    padding: 30px 0 45px 0;
+    padding: 30px 0 0 0;
     width: 952px;
+
+    .respond(@lg, {
+      display: block;
+    });
 
     .laptop {
       .display(relative);
@@ -155,7 +160,6 @@
       });
     }
     .ui {
-      display: none;
       .border-radius(3px);
       overflow: hidden;
       .size(707px, 435px);

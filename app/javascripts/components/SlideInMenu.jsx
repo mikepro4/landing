@@ -24,7 +24,7 @@ var SlideInMenu = React.createClass({
       <div className="slide-in-menu">
         <i className="close-icon" onClick={this.props.toggleMenu}><Icons type="cross"/></i>
         <div className="button-wrap" onClick={this.props.toggleMenu}>
-          <Link to="demo-request"><button>Schedule a Demo</button></Link>
+          <Link to="demo-request"><button className="button">Schedule a Demo</button></Link>
         </div>
         <h6>Enterprise</h6>
         <ul onClick={this.props.toggleMenu}>

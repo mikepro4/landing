@@ -26,7 +26,7 @@ var TopSplash = React.createClass({
           <div className="splash-ui">
             <div className="ui-hover" onClick={this.props.toggleVideoModal}>
               <div className="play_button">
-                <svg  width="68.3px" height="68.3px" viewBox="0 0 68.3 68.3" >
+                <svg  width="69px" height="69px" viewBox="0 0 69 69" >
                     <circle fill="#229CFF" cx="34.1" cy="34.1" r="34.1"/>
                     <polygon fill="#FFFFFF" points="42.8,34.5 29.5,44 29.5,25.1     "/>
                 </svg>

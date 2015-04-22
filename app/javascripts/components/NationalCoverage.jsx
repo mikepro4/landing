@@ -15,7 +15,7 @@ var NationalCoverage = React.createClass({
   mixins: [ Router.State, Router.Navigation ],
 
   componentDidMount: function () {
-    $('.cycle-slideshow').cycle({
+    $('.slideshow').cycle({
         speed: 500,
         manualSpeed: 500,
         pager : '.pager',
@@ -34,7 +34,7 @@ var NationalCoverage = React.createClass({
           <div className="row">
             <div className="col six left screenshot">
               <div className="screenshot-wrap">
-                <div className="cycle-slideshow">
+                <div className="slideshow">
                   <img src="/images/ui-coverage-ny.png"/>
                   <img src="/images/ui-coverage-chi.png"/>
                   <img src="/images/ui-coverage-dc.png"/>
