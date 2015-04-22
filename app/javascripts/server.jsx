@@ -13,8 +13,9 @@ module.exports = function (req, res, next) {
     var markup = React.renderToString(<Handler />);
     var title  = DocumentTitle.rewind();
     var html   = React.renderToStaticMarkup(<Html title={title} markup={markup}></Html>);
-
-    res.send('<!DOCTYPE html>' + html);
+    var ieHtmlClass = '<!--[if lt IE 7]><html class="ie ielt9 ielt8 ielt7" lang="en"><![endif]--><!--[if IE 7]><html class="ie ielt9 ielt8 ie7" lang="en"><![endif]--><!--[if IE 8]><html class="ie ielt9 ie8" lang="en"><![endif]--><!--[if IE 9]><html class="ie ie9" lang="en"><![endif]--><!-- [if gt IE 9] <!--><html lang="en"><!-- <![endif]-->';
+    
+    res.send('<!DOCTYPE html>' + ieHtmlClass + html);
   });
 };
 
