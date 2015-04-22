@@ -16,7 +16,7 @@ var DemoRequest = React.createClass({
 
   mixins: [ Router.State, Router.Navigation, HomePageRouterMixin ],
 
-  goToHome: function () {
+  goToHome: function() {
     this.selectHomePage(this.props.user)
   },
 
@@ -28,6 +28,12 @@ var DemoRequest = React.createClass({
       email: this.getQuery().email ? this.getQuery().email : null,
       message: null,
       agreedToSubscribe: true
+    }
+  },
+
+  componentDidMount: function() {
+    if(this.getQuery().email && this.isMounted()) {
+      this.refs.name.getDOMNode().focus();       
     }
   },
 
@@ -128,28 +134,49 @@ var DemoRequest = React.createClass({
           <p><Link className="blue" to="exchange">Are you a Broker, Appraiser or Researcher?</Link></p>
           <form className="demo-request" onSubmit={this.submitForm}>
             <div className="input-wrap">
-              <label>
-                Name
-              </label>
-              <input type="text" ref="name" value={this.state.name} onChange={this.handleNameInput} placeholder="Name"/>
+              <label htmlFor="name"> Name </label>
+              <input
+                id="name" 
+                type="text" 
+                ref="name" 
+                value={this.state.name} 
+                onChange={this.handleNameInput} 
+                placeholder="Type your name"
+              />
             </div>
             <div className="input-wrap">
-              <label>
-                Email
-              </label>
-              <input type="text" ref="email" value={this.state.email} onChange={this.handleEmailInput} placeholder="Email Address"/> 
+              <label htmlFor="email"> Email Address </label>
+              <input 
+                id="email"
+                type="text" 
+                ref="email" 
+                value={this.state.email} 
+                onChange={this.handleEmailInput} 
+                placeholder="Type your email address"
+              /> 
             </div>
             <div className="input-wrap">
-              <label>
-                Business
-              </label>
-              <textarea ref="message" value={this.state.message}  onChange={this.handleMessageInput} placeholder="Describe Your Business"/>
+              <label htmlFor="message"> Business </label>
+              <textarea 
+                id="message"
+                ref="message" 
+                value={this.state.message}  
+                onChange={this.handleMessageInput} 
+                rows="3"
+                cols="50"
+                placeholder="Describe Your Business"
+              />
             </div>
             <div className="input-wrap">
-              <input type="checkbox" ref="agreedToSubscribe" defaultChecked={this.state.agreedToSubscribe} onChange={this.handleSubscribeInput}  />
-              <label>
-                Subscribe
-              </label>
+              <input 
+                type="checkbox" 
+                id="agreedToSubscribe" 
+                ref="agreedToSubscribe" 
+                className="checkbox" 
+                defaultChecked={this.state.agreedToSubscribe} 
+                onChange={this.handleSubscribeInput}  
+              />
+              <label htmlFor="agreedToSubscribe"> <span>Subscribe to CompStak newsletter</span> </label>
             </div>
             <button className="button">Schedule a Demo</button>
           </form>
@@ -166,6 +193,7 @@ var DemoRequest = React.createClass({
             <div className="message">
               <p className="h1">Thank You!</p>
               <p className="mid-grey">We will contact you shortly.</p>
+              <a onClick={this.goToHome} className="button">OK</a>
             </div>
           </div>
         </div>

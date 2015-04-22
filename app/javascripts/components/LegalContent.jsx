@@ -15,7 +15,7 @@ var LegalContent = React.createClass({
 
   render: function () {
     return (
-      <section>
+      <section className="default-page-section">
         <div className="container rich-text narrow">
           <h1>Quid in isto egregio tuo officio et tanta fide-sic enim existimo-ad corpus refers?</h1>
 

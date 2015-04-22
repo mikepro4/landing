@@ -13,7 +13,7 @@ var VideoModal = React.createClass({
     var video;
     if(this.props.videoPlaying) {
       video = 
-          <iframe src="https://player.vimeo.com/video/121464719?autoplay=1&title=0&byline=0&portrait=0" frameBorder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+          <iframe src="https://player.vimeo.com/video/121464719?autoplay=1&title=0&byline=0&portrait=0" frameBorder="0"></iframe> 
     }
     return (
       <div className={classnames({
@@ -21,8 +21,12 @@ var VideoModal = React.createClass({
           'visible':       this.props.videoPlaying
       })}>
         <i className="close-icon" onClick={this.props.toggleVideoModal}><Icons type="cross"/></i>
-        <div className="video_container">
-          {video}
+        <div className="video_container" onClick={this.props.toggleVideoModal}>
+          <div className="video">
+            <i className="close-icon" onClick={this.props.toggleVideoModal}><Icons type="cross"/></i>
+            {video}
+            <Link className="button button-hollow" to="demo-request">Schedule a Demo</Link>
+          </div> 
         </div>
       </div>
     )

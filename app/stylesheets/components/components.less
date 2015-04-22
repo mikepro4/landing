@@ -23,6 +23,11 @@ section {
 	.respond(@huge, {
 		padding: 100px 0;
 	});
+
+  &.default-page-section {
+    padding: 0 0 50px 0;
+  }
+
 	&.ui-block {
 		.row {
 			.block-info {
@@ -49,7 +54,7 @@ section {
 .default-page-title {
 	background-color: @dark-blue;
 	text-align: center;
-	padding: 5em 0 7em;
+	padding: 3em 0 5em;
 	h1, .h1 {
 		margin: 0;
 		color: @white;
@@ -185,6 +190,7 @@ form.sign-up {
       padding-left: 58px;
       font-size: 14px;
       letter-spacing: .5px;
+      color: @light-blue;
       &:focus {
         border: @input-border;
       }

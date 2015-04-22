@@ -14,11 +14,12 @@ input.checkbox {
 
     &:hover {
       &:before {
-        border: 1px solid lighten(#8A8E99, 10%);
+        border: 1px solid @light-blue;
       }
     }
 
     &:before {
+       .transition(all 0.2s ease-out);
       content: "";
       display: inline-block;
       position: relative;

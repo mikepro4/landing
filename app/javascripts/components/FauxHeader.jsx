@@ -11,7 +11,7 @@ var Header = React.createClass({
   mixins: [ Router.State, Router.Navigation ],
 
   componentDidMount: function () {
-    window.addEventListener('scroll', this.onScroll, true);
+    window.addEventListener('scroll', this.onScroll, false);
   },
 
   componentWillUnmount: function() {

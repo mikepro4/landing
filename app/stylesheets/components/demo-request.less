@@ -16,7 +16,7 @@
       font-size: 16px;
     });
     &+p {
-      margin-bottom: 50px;
+      margin-bottom: 25px;
       a.blue {
         border-bottom: 1px solid transparent;
         padding-bottom: 5px;
@@ -30,8 +30,29 @@
     text-align: left;
     max-width: 430px;
     margin: 0 auto;
+
+    input, textarea {
+      color: @light-blue;
+    }
+
     button {
       max-width: none;
+      margin: 17px 0 0 0;
+    }
+
+    .input-wrap {
+      label {
+        .transition(all @speed ease-in-out);
+        margin: 3px 0;
+        letter-spacing: .5px;
+        font-family: @font-gotham-light;
+        font-size: 12px;
+        cursor: pointer;
+
+        &:hover {
+          color: @light-blue;
+        }
+      }
     }
   }
   .container.contact {
@@ -51,14 +72,17 @@
     bottom: 0;
     background-color: rgba(40,48,64, .95);
     //background-color: rgba(40,48,64,.75);
-    padding-top: 15%;
+    padding-top: 10%;
     .loader {
+      .transition(all @speed ease-in-out);
       margin: 0 auto;
       width: 80px;
       height: 80px;
       position: relative;
-      .transition(all @speed ease-in-out);
+
       .spinner {
+        .animation(throb .75s linear infinite;);
+        .transition(all @speed ease-in-out);
         overflow: hidden;
         display: block;
         width: 100%;
@@ -67,9 +91,8 @@
         border: 2px solid rgba(255,255,255,.3);
         border-top: 2px solid @white;
         border-left: 2px solid @white;
-        .animation(throb .75s linear infinite;);
-        .transition(all @speed ease-in-out);
       }
+
       .check {
         .transition(all @speed ease-in-out);
         .transform(scale(0));
@@ -92,12 +115,18 @@
         }
       }
     }
+
     div.message {
+      .transition(all @speed ease-in-out);
+      .transform(translateY(25px));
+      margin-top: 30px;
+      opacity: 0;
+
       .h1 {
         margin: 0 0 10px 0;
-        font-family: @font-gotham-thin;
-        font-size: 60px;
-        letter-spacing: 1.7px;
+        font-family: @font-gotham-extra-light;
+        font-size: 50px;
+        letter-spacing: 1.2px;
       }
 
       .mid-grey {
@@ -105,10 +134,12 @@
         letter-spacing: .3px;
         font-size: 14px;
       }
-      .transition(all @speed ease-in-out);
-      margin-top: 25px;
-      .transform(translateY(25px));
-      opacity: 0;
+      
+      .button {
+        margin: 30px 0 0 0;
+        max-width: 220px;
+        color: #fff;
+      }
     }
   }
   &.loading {

@@ -14,12 +14,45 @@
   }
 
   .video_container {
-    .transition(all 1s ease-in-out);
-    .display(absolute);
-    .size(700px, 400px);
-    .topLeft(50%, 50%);
-    margin: -200px 0 0 -350px;
-    opacity: 0;
+    .flex-display();
+    .flex-direction(column);
+    .justify-content(center);
+    .align-items(center);
+    .topLeft(0, 0);
+    .bottomRight(0, 0);
+    position: absolute;
+
+    .video {
+      .display(relative);
+      .size(670px, 380px);
+      .transition(all 2s ease-in-out);
+      top: -20px;
+
+      .respond(@sm, {
+        .size(670px, 380px);
+      });
+
+      .respond(@md, {
+        .size(800px, 450px);
+      });
+
+      .respond(@huge, {
+        .size(1000px, 560px);
+      });
+
+      iframe {
+        .display(absolute);
+        .size(100%, 100%);
+      }
+
+      .button {
+        .display(relative);
+        top: 110%;
+        width: 250px;
+        margin: 0 auto;
+      }
+    }
+
   }
 
   i.close-icon {

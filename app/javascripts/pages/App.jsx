@@ -34,7 +34,7 @@ var App = React.createClass({
   },
 
   componentDidMount: function () {
-    window.addEventListener('scroll', this.onScroll, true);
+    window.addEventListener('scroll', this.onScroll, false);
 
     if(this.getQuery().market) {
       this.updateLocalStorage({
