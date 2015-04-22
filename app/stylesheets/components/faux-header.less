@@ -109,3 +109,24 @@ header.faux-header {
     });
   }
 }
+
+.faux-header-ie-fix {
+  header.faux-header {
+    top: 0px;
+    &.visible {
+      top: 100px;
+    }
+    .logo {
+      top: 13px;
+      bottom: 0px;
+    }
+  }
+}
+
+.ie9 {
+  .faux-header-ie-fix();
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .faux-header-ie-fix();
+}

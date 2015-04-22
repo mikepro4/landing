@@ -83,3 +83,27 @@
     }
   }
 }
+
+.on-page-splitter-ie-fix {
+  .on-page-splitter {
+    .container {
+      > div {
+        a {
+          .arrow {
+            top: 0;
+            margin-top: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ie9 {
+  .on-page-splitter-ie-fix();
+}
+
+// IE 10
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .on-page-splitter-ie-fix();
+}

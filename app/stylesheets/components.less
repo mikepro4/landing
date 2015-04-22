@@ -51,6 +51,22 @@ section {
 	}
 }
 
+.ie9 {
+  section {
+    &.ui-block {
+      .row {
+        .block-info {
+          .section-header {
+            .respond(@xlg, {
+              position: static;
+            });
+          }
+        }
+      }
+    }
+  }
+}
+
 .default-page-title {
 	background-color: @dark-blue;
 	text-align: center;
@@ -149,7 +165,8 @@ section {
 
 .checklist {
 	li {
-		margin-bottom: 1.25em;
+    line-height: 20px;
+		margin-bottom: 20px;
 		color: @mid-grey;
 		> span {
 			display: inline-block;
@@ -159,6 +176,7 @@ section {
 		}
 		svg.tick {
 			width: 26px;
+      height: 26px;
 			display: inline-block;
 			vertical-align: middle;
 			margin-right: 14px;
@@ -179,9 +197,10 @@ form.sign-up {
     label {
       left: 20px;
       top: 23px;
+      
       position: absolute;
       width: 22px;
-
+      display: block;
       path {
         fill: @light-blue;
       }
@@ -206,20 +225,32 @@ form.sign-up {
   }
 }
 
-@import "./splitter.less";
-@import "./header.less";
-@import "./slide-in-menu.less";
-@import "./faux-header.less";
-@import "./top-splash.less";
-@import "./logos.less";
-@import "./enterprise-intro.less";
-@import "./granular-data.less";
-@import "./sample-comp.less";
-@import "./national-coverage.less";
-@import "./coverage-map.less";
-@import "./bottom-sign-up.less";
-@import "./on-page-splitter.less";
-@import "./footer.less";
-@import "./demo-request.less";
-@import "./video-modal.less";
-@import "./checkbox.less";
+.ie9 {
+  form.sign-up {
+    max-width: 700px;
+    margin: 0 auto;
+    div.input-wrap {
+      label {
+        bottom: 35px;
+      }
+    }
+  }
+}
+
+@import "./components/splitter.less";
+@import "./components/header.less";
+@import "./components/slide-in-menu.less";
+@import "./components/faux-header.less";
+@import "./components/top-splash.less";
+@import "./components/logos.less";
+@import "./components/enterprise-intro.less";
+@import "./components/granular-data.less";
+@import "./components/sample-comp.less";
+@import "./components/national-coverage.less";
+@import "./components/coverage-map.less";
+@import "./components/bottom-sign-up.less";
+@import "./components/on-page-splitter.less";
+@import "./components/footer.less";
+@import "./components/demo-request.less";
+@import "./components/video-modal.less";
+@import "./components/checkbox.less";

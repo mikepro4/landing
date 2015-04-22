@@ -75,6 +75,8 @@
             width: 115px;
             height: 35px;
             line-height: 35px;
+            padding: 0 8px;
+            text-align: center;
             float: right;
             background-color: #2f7090;
             border-color: #2f7090;
@@ -84,6 +86,7 @@
             }
             > svg {
               width: 5px;
+              height: 8px;
               display: inline-block;
               margin-left: 7px;
             }
@@ -92,7 +95,6 @@
               background-color: #464d5e;
               border-color: #464d5e;
               color: @grey;
-              text-align: left;
               > span.checkbox {
                 .border-radius(3px);
                 .transition(opacity @speed ease-in-out);
@@ -194,7 +196,7 @@
         display: block;
         position: absolute;
         height: 20px;
-        bottom: -18px;
+        bottom: -16px;
         left: 0;
         right: 0;
         background-image: url(/images/deckle.svg);
@@ -313,6 +315,7 @@
         }
         svg.tick {
           width: 22px;
+          height: 22px;
           margin-right: 7px;
           margin-top: 1px;
         }
@@ -349,4 +352,65 @@
 0%   {}
 50%   {.transform(scale(1)); opacity: 0;}
 100%   {.transform(scale(1)); opacity: 0;}
+}
+
+.ie9 {
+  .sample-comp {
+    .comp {
+      .comp-map {
+        .tooltip {
+          .tooltip-buttons {
+            button {
+              line-height: 20px;
+            }
+          }
+        }
+        .comp-marker {
+          &:after {
+            display: none;
+          }
+        }
+      }
+      .comp-info {
+        &:after {
+          bottom: -14px;
+        }
+      }
+    }
+  }
+}
+
+.sample-comp-ie-fix {
+  .sample-comp {
+    .comp {
+      .comp-map {
+        .tooltip {
+          .tooltip-buttons {
+            button {
+              line-height: 20px;
+            }
+          }
+        }
+        .comp-marker {
+          &:after {
+            display: none;
+          }
+        }
+      }
+      .comp-info {
+        &:after {
+          bottom: -14px;
+        }
+      }
+    }
+  }
+}
+
+.ie9 {
+  .sample-comp-ie-fix();
+}
+
+// IE 10
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .sample-comp-ie-fix();
 }
