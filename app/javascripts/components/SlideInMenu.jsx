@@ -36,7 +36,7 @@ var SlideInMenu = React.createClass({
         </ul>
         <h6>Contact</h6>
         <ul onClick={this.props.toggleMenu}>
-          <li><Link to="enterprise">Sales@CompStak.com</Link></li>
+          <li><a href="mailto:help@compstak.com">help@compstak.com</a></li>
           <li><Link to="enterprise">1-646-926-6707</Link></li>
         </ul>
         <h6>Legal</h6>
