@@ -4,7 +4,8 @@ var Router = require('react-router');
 var Link = Router.Link;
 var Header = require('../components/Header.jsx');
 var FauxHeader = require('../components/FauxHeader.jsx');
-var LegalContent = require('../components/LegalContent.jsx');
+var TermsOfUse = require('../components/TermsOfUse.jsx');
+var PrivacyPolicy = require('../components/PrivacyPolicy.jsx');
 var OnPgSplitter = require('../components/OnPageSplitter.jsx');
 var DocumentTitle = require('react-document-title');
 
@@ -25,7 +26,8 @@ var Legal = React.createClass({
             mode="dark"
           />
           <div className="default-page-title"><h1>Legal</h1></div>
-          <LegalContent/>
+          <TermsOfUse/><hr/>
+          <PrivacyPolicy/>
           <OnPgSplitter/>
         </div>
       </DocumentTitle>
