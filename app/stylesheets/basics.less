@@ -87,10 +87,17 @@ h1, h2, h3, h4, h5, h6,
   .h1, .h2, .h3, .h4, .h5, .h6 {
     margin-top: 4rem;
   }
+  .underlined {
+    text-decoration: underline;
+    color: @black;
+  }
   p {
-    line-height: 2em;
+    line-height: 1.75em;
     margin-bottom: 1.5em;
     font-size: 1em;
+  }
+  li p {
+    margin-bottom: .5em;
   }
   ul {
     list-style: disc;
@@ -104,9 +111,22 @@ h1, h2, h3, h4, h5, h6,
     list-style: decimal-leading-zero;
     padding-left: 60px;
     margin: 1.5em 0 2em;
+    ol {
+      padding-left: 30px;
+    }
+    &.abc {
+      list-style: upper-alpha;
+    }
+    &.roman {
+      list-style: upper-roman;
+    }
     li {
       margin-bottom: .5em;
     }
+  }
+  b, strong {
+    font-family: @font-gotham-medium;
+    color: @black;
   }
 }
 
