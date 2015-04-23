@@ -22,8 +22,8 @@ var Footer = React.createClass({
             <div className="col three">
               <h6>Contact</h6>
               <ul>
-                <li><a href="mailto:help@compstak.com">help@compstak.com</a></li>
-                <li><Link to="enterprise">1-646-926-6707</Link></li>
+                <li><a href="mailto:sales@compstak.com">sales@compstak.com</a></li>
+                <li>1-646-926-6707</li>
               </ul>
             </div>
             <div className="col three">
