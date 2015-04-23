@@ -176,65 +176,12 @@ section {
 		}
 		svg.tick {
 			width: 26px;
-      height: 26px;
+            height: 26px;
 			display: inline-block;
 			vertical-align: middle;
 			margin-right: 14px;
 		}
 	}
-}
-
-form.sign-up {
-  max-width: 700px;
-  margin: 0 auto;
-  div.input-wrap {
-    .respond(@md, {
-      width: 55%;
-      display: inline-block;
-      margin-right: -.25em;
-    });
-    position: relative;
-    label {
-      left: 20px;
-      top: 23px;
-      
-      position: absolute;
-      width: 22px;
-      display: block;
-      path {
-        fill: @light-blue;
-      }
-    }
-    input[type="text"] {
-      padding-left: 58px;
-      font-size: 14px;
-      letter-spacing: .5px;
-      color: @light-blue;
-      &:focus {
-        border: @input-border;
-      }
-    }
-  }
-  button {
-    .respond(@md, {
-      width: 37%;
-      display: inline-block;
-      margin-right: -.25em;
-      margin-left: 3%;
-    });
-  }
-}
-
-.ie9 {
-  form.sign-up {
-    max-width: 700px;
-    margin: 0 auto;
-    div.input-wrap {
-      label {
-        bottom: 35px;
-      }
-    }
-  }
 }
 
 @import "./components/splitter.less";
@@ -254,3 +201,5 @@ form.sign-up {
 @import "./components/demo-request.less";
 @import "./components/video-modal.less";
 @import "./components/checkbox.less";
+@import "./components/demo-email-form.less";
+@import "./components/icons.less";

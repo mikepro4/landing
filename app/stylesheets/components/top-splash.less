@@ -104,10 +104,7 @@
         .transition(all @speed ease-in-out);
         .size(708px, 436px);
         .topLeft(0, 0);
-        // background: linear-gradient(45deg, #092236, #1764a8);
-        -webkit-animation: AnimationName 6s ease infinite;
-        -moz-animation: AnimationName 6s ease infinite;
-        animation: AnimationName 6s ease infinite;
+         .animation(LaptopHoverEnterprise 6s ease-in-out infinite);
         background : -moz-linear-gradient(23.94% -22.08% -60deg,rgba(9, 40, 64, 0.9) 0%,rgba(23, 100, 168, 1) 98.9%);
         background : -webkit-linear-gradient(-60deg, rgba(9, 40, 64, 0.9) 0%, rgba(23, 100, 168, 1) 98.9%);
         background : -webkit-gradient(linear,23.94% -22.08% ,76.06% 122.08% ,color-stop(0,rgba(9, 40, 64, 0.9) ),color-stop(0.989,rgba(23, 100, 168, 1) ));
@@ -192,69 +189,5 @@
 
   :focus:-ms-input-placeholder {  
      color: @mid-grey 
-  }
-}
-
-@-webkit-keyframes AnimationName {
-    0%{background-position:33% 0%}
-    50%{background-position:68% 100%}
-    100%{background-position:33% 0%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:33% 0%}
-    50%{background-position:68% 100%}
-    100%{background-position:33% 0%}
-}
-@keyframes AnimationName { 
-    0%{background-position:33% 0%}
-    50%{background-position:68% 100%}
-    100%{background-position:33% 0%}
-}
-
-@keyframes buttonPulsate {
-  0% {
-    .scale(1);
-  }
-  50% {
-    .scale(1.05);
-  }
-  100% {
-    .scale(1);
-  }
-}
-
-@-webkit-keyframes buttonPulsate {
-  0% {
-    .scale(1);
-  }
-  50% {
-    .scale(1.05);
-  }
-  100% {
-    .scale(1);
-  }
-}
-
-@-moz-keyframes buttonPulsate {
-  0% {
-    .scale(1);
-  }
-  50% {
-    .scale(1.05);
-  }
-  100% {
-    .scale(1);
-  }
-}
-
-@-o-keyframes buttonPulsate {
-  0% {
-    .scale(1);
-  }
-  50% {
-    .scale(1.05);
-  }
-  100% {
-    .scale(1);
   }
 }

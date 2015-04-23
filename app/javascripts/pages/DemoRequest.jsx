@@ -5,16 +5,13 @@ var _ = require('underscore');
 var Header = require('../components/Header.jsx');
 var Icons = require('../components/Icons.jsx');
 var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
+var Validators = require('../mixins/Validators.jsx');
 var classnames = require('classnames');
 var Link = Router.Link;
 
-if(process.browser) {
-  var sweetAlert = require('sweetalert');
-}
-
 var DemoRequest = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation, HomePageRouterMixin ],
+  mixins: [ Router.State, Router.Navigation, HomePageRouterMixin, Validators ],
 
   goToHome: function() {
     this.selectHomePage(this.props.user)
@@ -27,22 +24,27 @@ var DemoRequest = React.createClass({
       name: null,
       email: this.getQuery().email ? this.getQuery().email : null,
       message: null,
-      agreedToSubscribe: true
+      agreedToSubscribe: true,
+      nameValid: true,
+      emailValid: true,
+      formInvalid: false
     }
   },
 
   componentDidMount: function() {
-    if(this.getQuery().email && this.isMounted()) {
+    if(this.isMounted()) {
       this.refs.name.getDOMNode().focus();       
     }
+
+    $(".js-velocity")
+      .velocity("transition.slideUpIn", { 
+        stagger: 50
+      })
   },
 
   submitForm: function (event) {
     event.preventDefault();
-    if(!_.isEmpty(this.state.name) && 
-       !_.isEmpty(this.state.email) &&
-       !_.isEmpty(this.state.message)
-    ) {
+    if(this.isNotEmpty(this.state.name) && this.validateEmail(this.state.email)) {
       this.sendEmail({
         name: this.state.name,
         email: this.state.email,
@@ -50,23 +52,31 @@ var DemoRequest = React.createClass({
         agreedToSubscribe: this.state.agreedToSubscribe ? "yes" : "no"
       });
     } else {
-      sweetAlert(
-        "Please fill in all fields.", 
-        "You must provide your name, valid email address and description of your business", 
-        "error"
-      );
+      this.setState({
+        formInvalid: true
+      })
+
+      _.delay(function () {
+        this.setState({
+          formInvalid: false
+        })
+      }.bind(this), 2000);
+
+      $('.demo-request').velocity('callout.shake');
     }
   },
 
   handleNameInput: function (event) {
     this.setState({
-      name: event.target.value
+      name: event.target.value,
+      nameValid: this.isNotEmpty(event.target.value)
     })
   },
 
   handleEmailInput: function (event) {
     this.setState({
-      email: event.target.value
+      email: event.target.value,
+      emailValid: this.validateEmail(event.target.value)
     })
   },
 
@@ -129,11 +139,19 @@ var DemoRequest = React.createClass({
           mode="dark"
         />
         <div className="container">
-          <h1 className="h2">Schedule a Demo</h1>
-          <h4 className="mid-grey">Please fill out your information and we will contact you to schedule your demonstation.</h4>
-          <p><Link className="blue" to="exchange">Are you a Broker, Appraiser or Researcher?</Link></p>
-          <form className="demo-request" onSubmit={this.submitForm}>
-            <div className="input-wrap">
+          <h1 className="js-velocity h2">Schedule a Demo</h1>
+          <h4 className="js-velocity mid-grey">Please fill out your information and we will contact you to schedule your demonstation.</h4>
+          <p className="js-velocity"><Link className="blue" to="exchange">Are you a Broker, Appraiser or Researcher?</Link></p>
+          <form className={classnames({
+            'demo-request':   true,
+            'form-invalid':   this.state.formInvalid
+          })} onSubmit={this.submitForm}>
+            <div className={classnames({
+              'js-velocity':    true,
+              'input-wrap':     true,
+              'valid-input':    this.isNotEmpty(this.state.name) && this.state.nameValid,
+              'invalid-input':  !this.state.nameValid
+            })}>
               <label htmlFor="name"> Name </label>
               <input
                 id="name" 
@@ -144,8 +162,13 @@ var DemoRequest = React.createClass({
                 placeholder="Type your name"
               />
             </div>
-            <div className="input-wrap">
-              <label htmlFor="email"> Email Address </label>
+            <div className={classnames({
+              'js-velocity':    true,
+              'input-wrap':     true,
+              'valid-input':    this.isNotEmpty(this.state.email) && this.state.emailValid,
+              'invalid-input':  !this.state.emailValid
+            })}>
+              <label htmlFor="email"> Email </label>
               <input 
                 id="email"
                 type="text" 
@@ -155,7 +178,7 @@ var DemoRequest = React.createClass({
                 placeholder="Type your email address"
               /> 
             </div>
-            <div className="input-wrap">
+            <div className="js-velocity input-wrap">
               <label htmlFor="message"> Business </label>
               <textarea 
                 id="message"
@@ -167,7 +190,7 @@ var DemoRequest = React.createClass({
                 placeholder="Describe Your Business"
               />
             </div>
-            <div className="input-wrap">
+            <div className="js-velocity input-wrap">
               <input 
                 type="checkbox" 
                 id="agreedToSubscribe" 
@@ -178,13 +201,18 @@ var DemoRequest = React.createClass({
               />
               <label htmlFor="agreedToSubscribe"> <span>Subscribe to CompStak newsletter</span> </label>
             </div>
-            <button className="button">Schedule a Demo</button>
+            <button className="js-velocity button">
+              <span className="demo-request-submit-label">Schedule a Demo</span>
+              <span className="demo-request-submit-error">Fill In Name And Email</span>
+            </button>
           </form>
           <div className="container contact">
-            <h6>Contact us to learn more</h6>
-            <a href="tel:16465203261">1.646.520.3261</a>
-            <a href="mailto:enterprise@compstak.com">Enterprise@CompStak.com</a>
+            <h6 className="js-velocity">Contact us to learn more</h6>
+
+            <div className="js-velocity">1.646.520.3261</div>
+            <a className="js-velocity" href="mailto:enterprise@compstak.com">Enterprise@CompStak.com</a>
           </div>
+
           <div className="success-alert">
             <div className="loader">
               <div className="spinner"></div>
