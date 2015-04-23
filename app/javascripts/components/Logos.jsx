@@ -17,11 +17,11 @@ var Logos = React.createClass({
             <li>
               <Icons type="logo_tishman" />
             </li>
-            <li>
-              <Icons type="logo_wells_fargo" />
+            <li className="small">
+              <Icons type="logo_ab" />
             </li>
             <li>
-              <Icons type="logo_wells_fargo" />
+              <Icons type="logo_cim" />
             </li>
             <li>
               <Icons type="logo_carlyle" />

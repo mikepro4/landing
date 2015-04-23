@@ -68,7 +68,7 @@ var FauxHeader = React.createClass({
                 </a>
               </li>
               <li className={classnames({ 'hidden': !this.state.haveAccount })}>
-                <a href={loginUrl} className="button button-hollow" target="_blank">
+                <a href={loginUrl} className="button button-hollow login" target="_blank">
                   <span>Have an account?</span>
                 </a>
               </li>

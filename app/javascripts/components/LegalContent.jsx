@@ -15,9 +15,9 @@ var LegalContent = React.createClass({
 
   render: function () {
     return (
-      <section className="default-page-section">
+      <section id="TermsOfUse" className="default-page-section">
         <div className="container rich-text narrow">
-          <h2 id="TermsOfUse" className="h1">CompStak Terms of Use</h2>
+          <h2 className="h1">CompStak Terms of Use</h2>
           <p className="h6">Effective Date: June 19, 2014</p>
           <h3>1. Introduction</h3>
           <p>Please carefully review these Terms of Use (“<b>TOU</b>” or “<b>Agreement</b>”), for CompStak, Inc. (“<b>CompStak</b>”, “<b>We</b>”, or “<b>Us</b>”) as they contain important information regarding your legal rights, remedies, and obligations. These TOU apply if you visit, view, use, or access (collectively, “<b>access</b>”) CompStak’s websites made available on CompStak.com (the “<b>Website</b>”), and/or (hereinafter, “<b>or</b>”) if, through any Internet-enabled mechanism (including, but not limited to a crawler or bot), you access data, information, products, services, or applications (collectively, with the Website, the “<b>Services</b>”) made available by or from CompStak.</p>

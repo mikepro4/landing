@@ -3,6 +3,7 @@ var React = require('react');
 var Router = require('react-router');
 var Link = Router.Link;
 var Header = require('../components/Header.jsx');
+var FauxHeader = require('../components/FauxHeader.jsx');
 var LegalContent = require('../components/LegalContent.jsx');
 var OnPgSplitter = require('../components/OnPageSplitter.jsx');
 var DocumentTitle = require('react-document-title');
@@ -15,6 +16,7 @@ var Legal = React.createClass({
     return (
       <DocumentTitle title="CompStak – Legal">
         <div className="page-legal">
+          <FauxHeader {...this.props}/>
           <Header 
             {...this.props}
             login={true}
