@@ -8,6 +8,9 @@
     .respond(@xlg, {
       margin-top: 4%;
     });
+    .respond(@max-site-width, {
+      margin-top: 7%;
+    });
     .h1 {
       max-width: 10em;
     }
@@ -53,10 +56,20 @@
   .map svg {
     .transition(all @speed ease-in-out);
     width: 100%;
-    .respond(@max-site-width, {
+    .respond(@md, {
+      width: 105%;
+      max-width: 105%;
+      margin-left: -5%;
+    });
+    .respond(@xlg, {
       width: 110%;
       max-width: 110%;
       margin-left: -10%;
+    });
+    .respond(@max-site-width, {
+      width: 120%;
+      max-width: 120%;
+      margin-left: -20%;
     });
   }
   .coverage-list {

@@ -12,7 +12,7 @@
     .fadeIn();
     
     svg {
-      max-width: 150px;
+      max-width: 170px;
       max-height: 50px;
       display: block;
       margin: 0 auto;
@@ -20,12 +20,24 @@
         fill: @white;
       }
     }
+    &.small {
+      svg {
+        max-height: 35px;
+      }
+    }
     .respond(@md, {
       width: 33.333%;
     });
     .respond(@lg, {
       width: 25%;
-      padding: 3.5% 5%;
+      padding: 2.5% 4%;
+    });
+    .respond(@max-site-width, {
+      width: 16.666%;
+      padding: 2.5% 3.5%;
+      svg {
+        max-width: 200px;
+      }
     });
   }
 }

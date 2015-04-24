@@ -22,16 +22,16 @@ var Footer = React.createClass({
             <div className="col three">
               <h6>Contact</h6>
               <ul>
-                <li><Link to="enterprise">Sales@CompStak.com</Link></li>
-                <li><Link to="enterprise">1-646-926-6707</Link></li>
+                <li><a href="mailto:sales@compstak.com">sales@compstak.com</a></li>
+                <li>1-646-926-6707</li>
               </ul>
             </div>
             <div className="col three">
               <h6>Legal</h6>
               <ul>
-                <li><Link to="enterprise">Terms of Use</Link></li>
-                <li><Link to="enterprise">Privacy Policy</Link></li>
-                <li><Link to="enterprise">Fair Info Statement</Link></li>
+                <li><Link to="legal">Terms of Use</Link></li>
+                <li><Link to="legal">Privacy Policy</Link></li>
+                <li><Link to="legal">Fair Info Statement</Link></li>
               </ul>
             </div>
             <div className="col one logo">

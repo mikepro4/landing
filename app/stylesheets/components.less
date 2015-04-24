@@ -36,13 +36,13 @@ section {
 					.respond(@xlg, {
 						position: absolute;
 						top: 0;
-					});
+					}, @short-height);
 				}
 				.respond(@xlg, {
 					.flex-display();
 					.align-items(center);
 					height: 600px;
-				});
+				}, @short-height);
 				> div {
 					
 				}
@@ -85,6 +85,10 @@ section {
 
 .grey-bg {
 	background-color: @light-grey;
+}
+
+.white-bg {
+  background-color: @light-grey;
 }
 
 
@@ -134,10 +138,10 @@ section {
 		.respond(@xlg, {
 			max-width: 900px;
       width: 900px;
-		});
+		}, @short-height);
 		.respond(@huge, {
 			//max-width: 100%;
-		});
+		}, @short-height);
 		.box-shadow(0 0px 20px rgba(40, 48, 64, 0.2));
 	}
 	&.left .screenshot-wrap {
@@ -203,3 +207,4 @@ section {
 @import "./components/checkbox.less";
 @import "./components/demo-email-form.less";
 @import "./components/icons.less";
+@import "./components/legal.less";

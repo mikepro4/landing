@@ -36,7 +36,7 @@ var DemoRequest = React.createClass({
       this.refs.name.getDOMNode().focus();       
     }
 
-    $(".js-velocity")
+    $(".page-demo-request .js-velocity")
       .velocity("transition.slideUpIn", { 
         stagger: 50
       })

@@ -62,6 +62,7 @@ var Header = React.createClass({
               <ul>
                 <li><a href="#sample-comp" onClick={this.scrollToElement}>CompStak Comps</a></li>
                 <li><a href="#coverage" onClick={this.scrollToElement}>National Coverage</a></li>
+                <li><a href="#TermsOfUse" onClick={this.scrollToElement}>Terms Of Use</a></li>
               </ul>
             </nav>
           </div>
