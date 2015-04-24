@@ -57,17 +57,18 @@
 
   i.close-icon {
     .display(absolute);
-    .topRight(40px, 40px);
+    .topRight(0px, -25px);
     .transition(all @speed ease-in-out);
-    opacity: .4;
     cursor: pointer;
+    opacity: .7;
 
     svg {
+      .display(absolute);
       .size(24px, 24px);
     }
 
     * {
-      fill: #fff;
+      fill: @light-blue;
     }
 
     &:hover {
@@ -79,10 +80,6 @@
     display: block;
     visibility: visible;
     opacity: 1;
-    background: rgba(40, 48, 64, .95);
-
-    .video_container {
-      opacity: 1;
-    }
+    background: rgba(40, 48, 64, .98);
   }
 }

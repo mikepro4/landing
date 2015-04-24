@@ -9,6 +9,13 @@ var TopSplash = React.createClass({
 
   mixins: [ Router.State, Router.Navigation ],
 
+
+  componentDidMount: function() {
+     if(this.getQuery().playVideo && this.isMounted()) {
+        this.props.toggleVideoModal();
+     }
+  },
+
   render: function () {
     var loopingVideo;
     if(!this.props.videoPlaying) {
@@ -20,10 +27,10 @@ var TopSplash = React.createClass({
     return (
       <div className="dark-blue top-splash">
         <div className="container">
-          <h1>Commercial Lease Comps On Demand</h1>
-          <h2 className="h4 blue">Verified Lease Data & Market Analytics For Major Markets Nationwide</h2>
-          <DemoEmailForm />
-          <div className="splash-ui">
+          <h1 className="fadeIn">Commercial Lease Comps On Demand</h1>
+          <h2 className="fadeIn h4 blue">Verified Lease Data & Market Analytics For Major Markets Nationwide</h2>
+          <div className="fadeIn"> <DemoEmailForm /> </div>
+          <div className="fadeIn splash-ui">
             <div className="ui-hover" onClick={this.props.toggleVideoModal}>
               <div className="play_button">
                 <svg  width="69px" height="69px" viewBox="0 0 69 69" >

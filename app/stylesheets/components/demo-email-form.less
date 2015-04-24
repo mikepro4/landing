@@ -1,0 +1,100 @@
+form.sign-up {
+  max-width: 700px;
+  margin: 0 auto;
+
+  .input-wrap {
+    .respond(@md, {
+      width: 55%;
+      display: inline-block;
+      margin-right: -.25em;
+    });
+    position: relative;
+
+    label {
+      left: 20px;
+      top: 23px;
+      position: absolute;
+      width: 22px;
+      display: block;
+      path {
+        fill: @light-blue;
+      }
+    }
+
+    input[type="text"] {
+      padding-left: 58px;
+      font-size: 14px;
+      letter-spacing: .5px;
+      color: @light-blue;
+      &:focus {
+        border: @input-border;
+      }
+    }
+  }
+
+  .button {
+    .respond(@md, {
+      width: 37%;
+      display: inline-block;
+      margin-right: -.25em;
+      margin-left: 3%;
+    });
+
+    span {
+      .display(absolute);
+      .topLeft(0, 0);
+      .bottomRight(0, 0);
+      .transition(all @speed ease-in-out);
+      text-align: center;
+
+      &.email-error-label {
+        opacity: 0;
+        .scale(0.5);
+      }
+    }
+  }
+
+  &.form-invalid {
+    .input-wrap {
+      label {
+        path {
+          fill: @red;
+        }
+      }
+
+      input[type="text"] {
+        color: @red;
+      }
+    }
+
+    .button {
+      background: @red;
+      border: 1px solid @red;
+
+      span {   
+        &.email-submit-label {
+          opacity: 0;
+          .scale(0.5);
+        }
+
+        &.email-error-label {
+          opacity: 1;
+          .scale(1);
+        }
+      }
+    }
+  }
+}
+
+.ie9 {
+  form.sign-up {
+    max-width: 700px;
+    margin: 0 auto;
+
+    div.input-wrap {
+      label {
+        bottom: 35px;
+      }
+    }
+  }
+}

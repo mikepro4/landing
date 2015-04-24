@@ -20,10 +20,9 @@ var VideoModal = React.createClass({
           'video-modal':   true,
           'visible':       this.props.videoPlaying
       })}>
-        <i className="close-icon" onClick={this.props.toggleVideoModal}><Icons type="cross"/></i>
         <div className="video_container" onClick={this.props.toggleVideoModal}>
-          <div className="video">
-            <i className="close-icon" onClick={this.props.toggleVideoModal}><Icons type="cross"/></i>
+          <div className="video fadeIn">
+            <i className="close-icon" onClick={this.props.toggleVideoModal}><Icons type="cross_circle"/></i>
             {video}
             <Link className="button button-hollow" to="demo-request">Schedule a Demo</Link>
           </div> 
