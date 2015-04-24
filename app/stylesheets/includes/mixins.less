@@ -1,6 +1,12 @@
 // Media Queries
-.respond(@minWidth; @rules) {
-  @media only screen and (min-width: @minWidth) {
+// .respond(@minWidth; @rules) {
+//   @media only screen and (min-width: @minWidth) {
+//     @rules();
+//   }
+// }
+
+.respond(@minWidth; @rules; @minHeight: 0;) {
+  @media only screen and (min-width: @minWidth) and (min-height: @minHeight) {
     @rules();
   }
 }

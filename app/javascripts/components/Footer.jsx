@@ -29,9 +29,9 @@ var Footer = React.createClass({
             <div className="col three">
               <h6>Legal</h6>
               <ul>
-                <li><Link to="enterprise">Terms of Use</Link></li>
-                <li><Link to="enterprise">Privacy Policy</Link></li>
-                <li><Link to="enterprise">Fair Info Statement</Link></li>
+                <li><Link to="legal">Terms of Use</Link></li>
+                <li><Link to="legal">Privacy Policy</Link></li>
+                <li><Link to="legal">Fair Info Statement</Link></li>
               </ul>
             </div>
             <div className="col one logo">
