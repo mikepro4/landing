@@ -7,7 +7,7 @@ var HomePageRouterMixin = {
     } else if (user.mode === "exchange") {
       this.transitionTo('exchange')
     } else {
-      this.transitionTo('home')
+      this.transitionTo('splitter')
     }
   }
 }

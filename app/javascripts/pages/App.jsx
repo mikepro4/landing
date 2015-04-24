@@ -23,7 +23,9 @@ var App = React.createClass({
 
   getInitialState: function () {
     return {
+      jobOptions: ["Broker", "Appraiser", "Researcher", "Landlord", "Lender", "Investor"],
       user: {
+        jobTitle: null,
         mode: null,
         market: null
       },
@@ -116,6 +118,9 @@ var App = React.createClass({
 
           <SlideInMenu 
             toggleMenu={this.toggleMenu}
+            user={this.state.user}
+            jobOptions={this.state.jobOptions}
+            updateLocalStorage={this.updateLocalStorage}
           />
 
           <VideoModal
