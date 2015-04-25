@@ -21,13 +21,25 @@ var SlideInMenu = React.createClass({
       jobSelectorOpen: !this.state.jobSelectorOpen
     }, function () {
       if(this.state.jobSelectorOpen) {
-        $(".slide-in-menu .js-velocity")
-          .stop()
-          .velocity("transition.slideDownIn", { 
-            stagger: 40
-          })
+       this.animateJobItems();
       }
     }.bind(this));
+  },
+
+  animateJobItems: function() {
+    $(".slide-in-menu .js-velocity")
+      .stop()
+      .velocity("transition.slideDownIn", { 
+        stagger: 40
+      })
+  },
+
+  openJobMenu: function() {
+    this.setState({
+      jobSelectorOpen: true
+    }, function () {
+      this.animateJobItems()
+    }.bind(this))
   },
 
   closeMenu: function() { 

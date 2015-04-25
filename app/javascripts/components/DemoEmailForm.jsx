@@ -48,8 +48,6 @@ var DemoEmailForm = React.createClass({
           emailInvalid: false
         })
       }.bind(this), 1300);
-
-      $('.sign-up').velocity('callout.shake');
     }
   },
 

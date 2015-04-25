@@ -9,6 +9,10 @@ var Validators = require('../mixins/Validators.jsx');
 var classnames = require('classnames');
 var Link = Router.Link;
 
+if(process.browser) {
+  var key = require('keymaster');
+}
+
 var DemoRequest = React.createClass({
 
   mixins: [ Router.State, Router.Navigation, HomePageRouterMixin, Validators ],
@@ -31,7 +35,15 @@ var DemoRequest = React.createClass({
     }
   },
 
+  proceedToNextScreen: function () {
+    if(this.state.loaded) {
+      this.goToHome();
+    }
+  },
+
   componentDidMount: function() {
+    key('enter, esc', this.proceedToNextScreen);
+
     if(this.isMounted()) {
       this.refs.name.getDOMNode().focus();       
     }
@@ -40,6 +52,10 @@ var DemoRequest = React.createClass({
       .velocity("transition.slideUpIn", { 
         stagger: 50
       })
+  },
+
+  componentWillUnmount: function() {
+    key.unbind('enter, esc');
   },
 
   submitForm: function (event) {
@@ -51,6 +67,7 @@ var DemoRequest = React.createClass({
         message: this.state.message,
         agreedToSubscribe: this.state.agreedToSubscribe ? "yes" : "no"
       });
+      $(':focus').blur();
     } else {
       this.setState({
         formInvalid: true
@@ -61,8 +78,6 @@ var DemoRequest = React.createClass({
           formInvalid: false
         })
       }.bind(this), 2000);
-
-      $('.demo-request').velocity('callout.shake');
     }
   },
 
@@ -130,7 +145,7 @@ var DemoRequest = React.createClass({
           'dark-blue':           true,
           'loading':             this.state.loading,
           'loaded':              this.state.loaded
-        })}>
+        })} onKeyDown={this.onKeyboardShortcut}>
         <Header 
           {...this.props}
           login={false}

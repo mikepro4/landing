@@ -27,6 +27,12 @@
         fill: @light-blue;
       }
     }
+
+    &:active {
+      svg * {
+        fill: darken(@light-blue, 10%);
+      }
+    }
   }
   .button-hollow.login {
     height: 30px;

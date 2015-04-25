@@ -87,6 +87,13 @@ var App = React.createClass({
     })
   },
 
+  toggleJobMenu: function() {
+    this.setState({
+      menuOpen: !this.state.menuOpen
+    })
+    this.refs.slideInMenu.openJobMenu();
+  },
+
   toggleVideoModal: function() {
     this.setState({
       videoPlaying: !this.state.videoPlaying
@@ -112,11 +119,13 @@ var App = React.createClass({
               scrollTop={this.state.scrollTop}
               updateLocalStorage={this.updateLocalStorage}
               toggleMenu={this.toggleMenu}
+              toggleJobMenu={this.toggleJobMenu}
               toggleVideoModal={this.toggleVideoModal}
             />
           </div>
 
           <SlideInMenu 
+            ref="slideInMenu"
             toggleMenu={this.toggleMenu}
             user={this.state.user}
             jobOptions={this.state.jobOptions}
