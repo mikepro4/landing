@@ -28,7 +28,26 @@ form.sign-up {
       color: @light-blue;
       &:focus {
         border: @input-border;
+
+        &::-webkit-input-placeholder {
+          color: lighten(@mid-grey, 15%);
+        }
+
+        &:-moz-placeholder { /* Firefox 18- */
+          color: lighten(@mid-grey, 15%);  
+        }
+
+        &::-moz-placeholder {  /* Firefox 19+ */
+          color: lighten(@mid-grey, 15%);  
+        }
+
+        &:-ms-input-placeholder {  
+          color: lighten(@mid-grey, 15%);  
+        }
       }
+
+     
+
     }
   }
 

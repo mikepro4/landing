@@ -174,7 +174,7 @@ var DemoRequest = React.createClass({
                 ref="name" 
                 value={this.state.name} 
                 onChange={this.handleNameInput} 
-                placeholder="Type your name"
+                placeholder="Type your full name"
               />
             </div>
             <div className={classnames({
@@ -202,7 +202,7 @@ var DemoRequest = React.createClass({
                 onChange={this.handleMessageInput} 
                 rows="3"
                 cols="50"
-                placeholder="Describe Your Business"
+                placeholder="How does your business use lease comps?"
               />
             </div>
             <div className="js-velocity input-wrap">

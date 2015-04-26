@@ -10,7 +10,6 @@ var FPSStats = require('react-stats').FPSStats;
 
 // Components
 var SlideInMenu = require('../components/SlideInMenu.jsx');
-var VideoModal = require('../components/VideoModal.jsx');
 var Footer = require('../components/Footer.jsx');
 
 
@@ -131,10 +130,6 @@ var App = React.createClass({
             updateLocalStorage={this.updateLocalStorage}
           />
 
-          <VideoModal
-            videoPlaying={this.state.videoPlaying}
-            toggleVideoModal={this.toggleVideoModal}
-          />
           <div className="overlay" onClick={this.toggleMenu}/>
           
         </div>

@@ -16,6 +16,7 @@ var CoverageMap = require('../components/CoverageMap.jsx');
 var OnPgSplitter = require('../components/OnPageSplitter.jsx');
 var BottomSignUp = require('../components/BottomSignUp.jsx');
 var Footer = require('../components/Footer.jsx');
+var VideoModal = require('../components/VideoModal.jsx');
 
 var Enterprise = React.createClass({
 
@@ -43,6 +44,7 @@ var Enterprise = React.createClass({
           <BottomSignUp {...this.props}/>
           <OnPgSplitter {...this.props}/>
           <Footer {...this.props}/>
+          <VideoModal {...this.props}/>
         </div>
       </DocumentTitle>
     )
