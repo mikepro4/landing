@@ -1,6 +1,15 @@
 .enterprise-intro {
+
+  .block-info {
+    .transition(all .4s ease-in-out);
+    opacity: 0;
+    .transform(translate3d(0, 10px, 0));
+  }
   .screenshot {
+    .transition(all .4s .3s ease-in-out);
     position: relative;
+    opacity: 0;
+    .transform(translate3d(0, 10px, 0));
     .respond(@xlg, {
       &:after {
         content: '';
@@ -22,6 +31,18 @@
         right: -293px;
       }
     });
+  }
+
+  &.visible {
+    .block-info {
+      .transform(translate3d(0, 0, 0));
+      opacity: 1
+    }
+
+    .screenshot {
+      .transform(translate3d(0, 0, 0));
+      opacity: 1
+    }
   }
 }
 

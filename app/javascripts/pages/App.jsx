@@ -37,6 +37,7 @@ var App = React.createClass({
 
   componentDidMount: function () {
     window.addEventListener('scroll', this.onScroll, false);
+    this.onScroll();
 
     if(this.getQuery().market) {
       this.updateLocalStorage({
@@ -107,8 +108,6 @@ var App = React.createClass({
           'application_wrapper':   true,
           'open-menu':             this.state.menuOpen
         })}>    
-
-         <FPSStats/>
 
           <div className="page-content">
             <RouteHandler 
