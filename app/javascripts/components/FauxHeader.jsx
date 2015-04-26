@@ -10,6 +10,16 @@ var Header = React.createClass({
 
   mixins: [ Router.State, Router.Navigation ],
 
+  getInitialState: function() {
+    return {
+      pages: {
+        enterprise: this.isActive('enterprise'),
+        exchange: this.isActive('exchange'),
+        legal: this.isActive('legal')
+      }
+    }
+  },
+
   componentDidMount: function () {
     window.addEventListener('scroll', this.onScroll, false);
   },
@@ -21,8 +31,16 @@ var Header = React.createClass({
   scrollToElement: function(e) {
     e.preventDefault();
     var destination = $(e.target).attr('href');
+
+    var scrollTop;
+    if($(destination).offset().top < 300) {
+      scrollTop = $(destination).offset().top
+    } else {
+      scrollTop = $(destination).offset().top - $('header').height()
+    }
+
     $('body').animate({
-      scrollTop: $(destination).offset().top - $('header').height()
+      scrollTop: scrollTop
     }, 750);
   },
 
@@ -34,9 +52,14 @@ var Header = React.createClass({
     var headerHeight = $('header').height() + 10;
     var scrollTop = this.props.scrollTop;
 
-    $('section').each(function(index, element) {
+    $('section').each(function() {
       var id = $(this).attr('id');
       var element = $('a[href="#'+id+'"]').parent('li');
+      if(scrollTop + 300 > $(this).offset().top) {
+        $(this).addClass('visible');
+      } else {
+        $(this).removeClass('visible');
+      }
 
       if(scrollTop + headerHeight > $(this).offset().top && 
          scrollTop + headerHeight <= $(this).offset().top + $(this).height()) {
@@ -45,6 +68,25 @@ var Header = React.createClass({
         element.removeClass('active');
       } 
     });
+  },
+
+  getHeaderLinks: function() {
+    var headerLinks;
+    if(this.state.pages.enterprise) {
+      return (
+        <ul>
+          <li><a href="#sample-comp" onClick={this.scrollToElement}>CompStak Comps</a></li>
+          <li><a href="#coverage" onClick={this.scrollToElement}>National Coverage</a></li>
+        </ul>
+      )
+    } else if(this.state.pages.legal) {
+      return (
+        <ul>
+          <li><a href="#TermsOfUse" onClick={this.scrollToElement}>Terms Of Use</a></li>
+          <li><a href="#PrivacyPolicy" onClick={this.scrollToElement}>Privacy Policy</a></li>
+        </ul>
+      )
+    }
   },
 
   render: function () {
@@ -59,11 +101,7 @@ var Header = React.createClass({
           </div>
           <div className="left">
             <nav>
-              <ul>
-                <li><a href="#sample-comp" onClick={this.scrollToElement}>CompStak Comps</a></li>
-                <li><a href="#coverage" onClick={this.scrollToElement}>National Coverage</a></li>
-                <li><a href="#TermsOfUse" onClick={this.scrollToElement}>Terms Of Use</a></li>
-              </ul>
+              {this.getHeaderLinks()}
             </nav>
           </div>
           <div className="right">

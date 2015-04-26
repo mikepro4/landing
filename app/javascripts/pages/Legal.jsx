@@ -8,6 +8,7 @@ var TermsOfUse = require('../components/TermsOfUse.jsx');
 var PrivacyPolicy = require('../components/PrivacyPolicy.jsx');
 var OnPgSplitter = require('../components/OnPageSplitter.jsx');
 var DocumentTitle = require('react-document-title');
+var Footer = require('../components/Footer.jsx');
 
 var Legal = React.createClass({
 
@@ -29,6 +30,7 @@ var Legal = React.createClass({
           <TermsOfUse/><hr/>
           <PrivacyPolicy/>
           <OnPgSplitter/>
+          <Footer/>
         </div>
       </DocumentTitle>
     )
