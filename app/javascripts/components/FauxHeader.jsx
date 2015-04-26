@@ -39,13 +39,13 @@ var Header = React.createClass({
       scrollTop = $(destination).offset().top - $('header').height()
     }
 
-    $('body').animate({
+    $('html, body').animate({
       scrollTop: scrollTop
     }, 750);
   },
 
   scrollToTop: function() {
-    $('body').animate({ scrollTop: 0 }, 750);
+    $('html,body').animate({ scrollTop: 0 }, 750);
   },
 
   onScroll: function () {

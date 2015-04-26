@@ -144,12 +144,21 @@
     visibility: hidden;
     opacity: 0;
 
+    h4 {
+      font-family: @font-gotham-book;
+      color: @light-blue;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 11px;
+      margin: 0 0 15px 0;
+    }
+
     li {
       opacity: 0;
 
       a {
         font-family: @font-gotham-extra-light;
-        margin: 15px 0 15px 0;
+        padding: 15px 0 15px 0;
         font-size: 27px;
         letter-spacing: .3px;
         display: inline-block;
@@ -164,7 +173,7 @@
             content: '';
             border-bottom: 2px solid @light-blue;
             .display(absolute);
-            top: 130%;
+            top: 85%;
             left: 2px;
             right: 2px;
           }
