@@ -32,6 +32,7 @@ var Enterprise = React.createClass({
             menu={true}
             haveAccount={false}
             mode="dark"
+            context="enterprise"
           />
           <FauxHeader {...this.props}/>
           <TopSplash {...this.props}/>

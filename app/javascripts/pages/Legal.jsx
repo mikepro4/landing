@@ -21,7 +21,7 @@ var Legal = React.createClass({
           <FauxHeader {...this.props}/>
           <Header 
             {...this.props}
-            login={true}
+            login={false}
             menu={true}
             haveAccount={false}
             mode="dark"

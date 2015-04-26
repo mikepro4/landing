@@ -10,7 +10,7 @@ var OnPageSplitter = React.createClass({
       <div className="dark-blue on-page-splitter">
         <div className="container row">
           <div  className="left">
-            <Link to="splitter">
+            <Link to="splitter" onClick={this.props.clearLocalStorage}>
               <h6>CompStak Enterprise</h6>
               <p className="h4 blue">For Lenders, Landlords, & Investors</p>
               <p>Unparelleled big data analytics for asset management and underwriting.</p>
@@ -18,7 +18,7 @@ var OnPageSplitter = React.createClass({
             </Link>
           </div>
           <div className="right">
-            <Link to="splitter">
+            <Link to="splitter" onClick={this.props.clearLocalStorage}>
               <h6>CompStak Exchange</h6>
               <p className="h4 blue">For Brokers, Appraisers, & Researchers</p>
               <p>The worlds largest, free, annoymous lease comp trading platform.</p>

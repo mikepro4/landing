@@ -20,7 +20,7 @@ var App = React.createClass({
 
   mixins: [ Router.State, Router.Navigation, HomePageRouterMixin ],
 
-  getInitialState: function () {
+  getInitialState: function() {
     return {
       jobOptions: ["Broker", "Appraiser", "Researcher", "Landlord", "Lender", "Investor"],
       user: {
@@ -34,7 +34,7 @@ var App = React.createClass({
     }
   },
 
-  componentDidMount: function () {
+  componentDidMount: function() {
     window.addEventListener('scroll', this.onScroll, false);
     this.onScroll();
 
@@ -52,20 +52,20 @@ var App = React.createClass({
       window.removeEventListener('scroll', this.onScroll, false);
   },
 
-  onScroll: function (event) {
+  onScroll: function(event) {
     this.setState({
       scrollTop: $(window).scrollTop()
     })
   },
 
-  showInitialPage: function () {
+  showInitialPage: function() {
     var user = JSON.parse(localStorage.getItem('user'));
     if(this.isActive('home') && user) {
       this.selectHomePage(user)
     }
   },
 
-  updateLocalStorage: function (data) {
+  updateLocalStorage: function(data) {
     var user
     localStorage.getItem('user') ? user = JSON.parse(localStorage.getItem('user')) : user = {}
     localStorage.clear();
@@ -77,6 +77,11 @@ var App = React.createClass({
     this.setState({
       user: JSON.parse(localStorage.getItem('user'))
     })
+  },
+
+  clearLocalStorage: function() {
+    localStorage.clear();
+    this.updateLocalStorage();
   },
 
   toggleMenu: function() {
@@ -98,9 +103,9 @@ var App = React.createClass({
     })
   },
 
-  render: function () {
+  render: function() {
     return (
-      <DocumentTitle title="CompStak">
+      <DocumentTitle title="CompStak – Massive Commercial Lease Comps Database – Accurate, searchable, nationwide.">
         <div className={classnames({
           'application_wrapper':   true,
           'open-menu':             this.state.menuOpen
@@ -114,6 +119,7 @@ var App = React.createClass({
               videoPlaying={this.state.videoPlaying}
               scrollTop={this.state.scrollTop}
               updateLocalStorage={this.updateLocalStorage}
+              clearLocalStorage={this.clearLocalStorage}
               toggleMenu={this.toggleMenu}
               toggleJobMenu={this.toggleJobMenu}
               toggleVideoModal={this.toggleVideoModal}
@@ -126,6 +132,7 @@ var App = React.createClass({
             user={this.state.user}
             jobOptions={this.state.jobOptions}
             updateLocalStorage={this.updateLocalStorage}
+            clearLocalStorage={this.clearLocalStorage}
           />
 
           <div className="overlay" onClick={this.toggleMenu}/>

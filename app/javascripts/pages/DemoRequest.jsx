@@ -146,12 +146,14 @@ var DemoRequest = React.createClass({
           'loading':             this.state.loading,
           'loaded':              this.state.loaded
         })} onKeyDown={this.onKeyboardShortcut}>
+      
         <Header 
           {...this.props}
           login={false}
           menu={false}
           haveAccount={true}
           mode="dark"
+          context="enterprise"
         />
         <div className="container">
           <h1 className="js-velocity h2">Schedule a Demo</h1>
