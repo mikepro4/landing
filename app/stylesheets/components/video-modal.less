@@ -84,7 +84,7 @@
   }
 }
 
-.ie9 {
+.ie-video-fix {
   .video-modal {
     iframe {
       .size(670px, 380px);
@@ -102,4 +102,12 @@
       }
     }
   }
+}
+
+.ie9 {
+  .ie-video-fix();
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .ie-video-fix();
 }
