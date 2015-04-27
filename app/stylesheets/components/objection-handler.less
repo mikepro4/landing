@@ -1,0 +1,70 @@
+.objection-handler {
+  text-align: center;
+
+  .container {
+    max-width: 1200px;
+    .col {
+      .icon {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        svg {
+          width: 40px;
+          height: 40px;
+          path {
+            fill: @mid-grey;
+          }
+        }
+      }
+      padding: 15px 0 75px;
+      .h6 {
+        font-size: 14px;
+      }
+      p {
+        font-size: 13px;
+        max-width: 250px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &.light {
+    .container {
+      .icon {
+        svg {
+          path {
+          }
+        }
+      }
+      .col {
+        .h6 {
+          color: @light-blue;
+        }
+        p {
+          color: @black;
+        }
+      }
+    }
+  }
+
+  &.blue-bg {
+    .container {
+      .icon {
+        svg {
+          path {
+            fill: @white;
+          }
+        }
+      }
+      .col {
+        .h6 {
+          color: @white;
+        }
+        p {
+          color: @white;
+        }
+      }
+    }
+  }
+}

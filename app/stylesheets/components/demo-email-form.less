@@ -106,6 +106,81 @@ form.sign-up {
   }
 }
 
+.page-exchange {
+  form.sign-up {
+    .input-wrap {
+      label {
+
+      }
+      input[type=text] {
+        border: 1px solid @light-blue;
+      }
+    }
+  }
+  .bottom-sign-up {
+    form.sign-up {
+      .input-wrap {
+        label {
+          path {
+            fill: @white;
+          }
+        }
+        input[type=text] {
+          background-color: @light-blue;
+          border: 1px solid @white;
+          color: @white;
+          &::-webkit-input-placeholder {
+            color: #93cdfd;
+          }
+
+          &:-moz-placeholder { /* Firefox 18- */
+            color: #93cdfd;  
+          }
+
+          &::-moz-placeholder {  /* Firefox 19+ */
+            color: #93cdfd;  
+          }
+
+          &:-ms-input-placeholder {  
+            color: #93cdfd;  
+          }
+          &:focus {
+            border: @input-border;
+
+            &::-webkit-input-placeholder {
+              color: @white;
+            }
+
+            &:-moz-placeholder { /* Firefox 18- */
+              color: @white;  
+            }
+
+            &::-moz-placeholder {  /* Firefox 19+ */
+              color: @white;  
+            }
+
+            &:-ms-input-placeholder {  
+              color: @white;  
+            }
+          }
+        }
+      }
+      .button {
+        background-color: @white;
+        color: @light-blue;
+        border-color: @white;
+        &:hover,
+        &:active {
+          opacity: .75;
+          background-color: @white;
+          border-color: @white;
+          color: @light-blue;
+        }
+      }
+    }
+  }
+}
+
 .ie9 {
   form.sign-up {
     max-width: 700px;
@@ -115,6 +190,10 @@ form.sign-up {
       label {
         bottom: 35px;
       }
+    }
+
+    .button {
+
     }
   }
 }

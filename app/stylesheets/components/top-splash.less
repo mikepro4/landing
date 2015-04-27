@@ -1,6 +1,9 @@
 .top-splash {
   text-align: center;
   padding-top: 2em;
+  &.light {
+    background-color: @white;
+  }
 
   h1 {
     margin-bottom: .25em;
@@ -54,6 +57,7 @@
         opacity: 0;
         .transform(translate3d(0, 20px, 0));
         height: 18px;
+        color: @white;
       }
 
       aside {
