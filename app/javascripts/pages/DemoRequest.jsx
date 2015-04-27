@@ -69,13 +69,50 @@ var DemoRequest = React.createClass({
   submitForm: function (event) {
     event.preventDefault();
     if(this.isNotEmpty(this.state.name) && this.validateEmail(this.state.email)) {
-      this.sendEmail({
+      this.setLoadingState();
+
+      var dataForCompstakEmail = {
         name: this.state.name,
         email: this.state.email,
         message: this.state.message,
-        agreedToSubscribe: this.state.agreedToSubscribe ? "yes" : "no"
-      });
-      $(':focus').blur();
+        market: this.props.user.market,
+        agreedToSubscribe: this.state.agreedToSubscribe ? "yes" : "no",
+        position: this.props.user.jobTitle
+      }
+
+      var dataForUserEmail = {
+        name: this.state.name,
+        email: this.state.email
+      }
+
+      var dataForHubspot = {
+        firstName: this.state.name.split(' ').slice(0, -1).join(' '),
+        lastName: this.state.name.split(' ').slice(-1).join(' '),
+        email: this.state.email,
+        message: this.state.message,
+        agreedToSubscribe: this.state.agreedToSubscribe,
+        position: this.props.user.jobTitle,
+        market: this.props.user.market,
+      }
+
+      this.sendCompstakEmail(dataForCompstakEmail)
+        .done(function() {
+
+          this.sendUserEmail(dataForUserEmail)
+            .done(function() {
+              
+              this.setSuccessState();
+
+              this.sendHubspotEvent(dataForHubspot)
+                .done(function() {
+                  console.log('hubspot event sent');
+                  this.setSuccessState();
+                }.bind(this))
+              
+            }.bind(this))
+          
+        }.bind(this))
+
     } else {
       this.setState({
         formInvalid: true
@@ -87,6 +124,22 @@ var DemoRequest = React.createClass({
         })
       }.bind(this), 2000);
     }
+  },
+
+  setLoadingState: function() {
+    // set loading state with a throbber
+    this.setState({
+      loading: true,
+      loaded: false
+    })
+    $(':focus').blur();
+  },
+
+  setSuccessState: function() {
+    this.setState({
+      loading: false,
+      loaded: true
+    })
   },
 
   handleNameInput: function (event) {
@@ -115,35 +168,47 @@ var DemoRequest = React.createClass({
     })
   },
 
-  sendEmail: function (data) {
-    // set loading state with a throbber
-    this.setState({
-      loading: true,
-      loaded: false
-    })
-
-    $.ajax({
-      url: '/api/demoRequest',
+  sendCompstakEmail: function (data) {
+    return $.ajax({
+      url: '/api/compstakEmail',
       type: 'POST',
       data: JSON.stringify(data),
       contentType: 'application/json',
       success: function(data) {
-
-        // set loaded state with a tick
-        this.setState({
-          loading: false,
-          loaded: true
-        })
-
-      }.bind(this),
-      error: function(err) {
-        sweetAlert(
-          "Sorry there was an error", 
-          err, 
-          "error"
-        );
+        console.log('email to compstak sent')
+      },
+      error: function(xhr, status, err) {
+        console.error("email to compstak failed to be sent");
       }
-    });
+    })
+  },
+
+  sendUserEmail: function (data) {
+    return $.ajax({
+      url: '/api/userEmail',
+      type: 'POST',
+      data: JSON.stringify(data),
+      contentType: 'application/json',
+      success: function(data) {
+        console.log('email to user sent')
+      },
+      error: function(xhr, status, err) {
+        console.error("email to user failed to be sent");
+      }
+    })
+  },
+
+  sendHubspotEvent: function (data) {
+    return $.ajax({
+      url: 'http://track.hubspot.com/v1/event?_n=000000260381&_a=460566&firstname=' + data.firstName + '&lastname=' + data.lastName + '&message=' + data.message + '&email=' + data.email + '&jobtitle=' + data.jobTitle + '&market__c=' + data.market + '&subscriber='+ data.agreedToSubscribe + '',
+      type: 'POST',
+      success: function(data) {
+        console.log('hubspot event')
+      },
+      error: function(xhr, status, err) {
+        console.error("hubspot event didn't sync");
+      }
+    })
   },
 
   render: function () {

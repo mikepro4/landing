@@ -65,13 +65,15 @@ var SlideInMenu = React.createClass({
       );
     }.bind(this));
 
+    var jobTitle = this.props.user.jobTitle ? this.props.user.jobTitle : 'Select Job Title';
+
     return (
       <div className="slide-in-menu">
         <div className={classnames({
           "job-selector-toggle": true,
           "job-toggle-active": this.state.jobSelectorOpen 
         })} onClick={this.toggleJobMenu}>
-          <span className="selected-job-title">{this.props.user.jobTitle}</span>
+          <span className="selected-job-title">{jobTitle}</span>
         </div>
 
         <div className={classnames({
@@ -124,6 +126,23 @@ var SlideInMenu = React.createClass({
             <li><Link to="legal" query={{scrollTo: "PrivacyPolicy"}}>Privacy Policy</Link></li>
             <li><Link to="legal" query={{scrollTo: "FairStatement"}}>Fair Info Statement</Link></li>
           </ul>
+
+          <a onClick={this.toggleJobMenu} className={classnames({
+              "choose-your-job-title": true,
+              "hidden": !this.props.user.mode ? true : false
+            })}>
+            <span className={classnames({
+              "hidden": (this.props.user.mode === "exchange") ? true : false
+            })}>
+              Are You A Broker, Appraiser <br/> or Researcher?
+            </span>
+
+            <span className={classnames({
+              "hidden": (this.props.user.mode === "enterprise") ? true : false
+            })}>
+              Are You Landlord, Lender <br/> or Investor?
+            </span>
+          </a>
 
         </div> 
       </div>

@@ -40,13 +40,13 @@ if (app.get('env') === 'development') {
 // });
 
 app.use('/api', router);
-router.route('/demoRequest')
+router.route('/compstakEmail')
 
   .post(function(req, res) {
 
     sendwithus.send({
       email_id: "tem_seCspv6hAhyUhStS7FoqQT",
-      recipient: { address: 'mikhail@compstak.com'},
+      recipient: { address: req.body.email},
       email_data: { 
         email: req.body.email, 
         name: req.body.name, 
@@ -54,8 +54,30 @@ router.route('/demoRequest')
         agreedToSubscribe:  req.body.agreedToSubscribe
       },
       sender: {
-          address: 'help@compstak.com',
-          name: 'CompStak'
+        address: 'sales@compstak.com',
+        name: 'CompStak'
+      }
+    }, function (err, data) {
+      if (err)
+          res.send(err);
+      res.json(data);
+    });
+             
+  });
+
+router.route('/userEmail')
+
+  .post(function(req, res) {
+
+    sendwithus.send({
+      email_id: "tem_5S9PLDNdUQGHmRupKCzstX",
+      recipient: { address: req.body.email},
+      email_data: { 
+        name: req.body.name
+      },
+      sender: {
+        address: 'sales@compstak.com',
+        name: 'CompStak'
       }
     }, function (err, data) {
       if (err)
