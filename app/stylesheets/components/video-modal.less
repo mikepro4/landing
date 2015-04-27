@@ -24,9 +24,9 @@
 
     .video {
       .display(relative);
-      .size(670px, 380px);
-      .transition(all 2s ease-in-out);
+      .transition(all .2s ease-in-out);
       top: -20px;
+      .size(280px, 180px);
 
       .respond(@sm, {
         .size(670px, 380px);
@@ -57,10 +57,14 @@
 
   i.close-icon {
     .display(absolute);
-    .topRight(0px, -25px);
+    .topRight(-80px, 20px);
     .transition(all @speed ease-in-out);
     cursor: pointer;
     opacity: .7;
+
+    .respond(@sm, {
+      .topRight(0px, -25px);
+    });
 
     svg {
       .display(absolute);

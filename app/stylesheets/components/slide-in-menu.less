@@ -158,11 +158,21 @@
 
       a {
         font-family: @font-gotham-extra-light;
-        padding: 15px 0 15px 0;
-        font-size: 27px;
+        padding: 8px 0 8px 0;
+        font-size: 20px;
         letter-spacing: .3px;
         display: inline-block;
         position: relative;
+
+        .respond(@sm, {
+          padding: 12px 0 12px 0;
+          font-size: 24px;
+        });
+
+        .respond(@md, {
+          padding: 17px 0 17px 0;
+          font-size: 27px;
+        });
 
         &:hover {
           color: @light-blue;

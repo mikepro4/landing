@@ -11,10 +11,10 @@
   }
   .splash-ui {
     margin:  auto;
-    display: none;
+    display: block;
     position: relative;
     padding: 30px 0 0 0;
-    width: 952px;
+    max-width: 952px;
 
     .respond(@lg, {
       display: block;
@@ -23,25 +23,27 @@
     .laptop {
       .display(relative);
       .topLeft(0,0);
-      .size(952px, 535px);
+      max-width: 952px;
       z-index: @layer1;
       background: url('/images/laptop.png') top left no-repeat;
-      background-size: 952px 535px;
+      background-size: 100% auto;
+      padding-bottom: 60%;
     }
 
     .ui-hover {
       display: block;
       position: absolute;
-      .size(698px, 436px);
       z-index: @layer3;
-      .topLeft(72px, 125px);
       overflow: hidden;
       cursor: pointer;
+      .topLeft(0, 0);
+      .bottomRight(0, 0);
 
       p {
         .display(absolute);
         width: 100%;
-        .topLeft(250px, 0);
+        .topLeft(50%, 00%);
+        margin: 35px 0 0 0;
         text-align: center;
         z-index: @layer3;
         font-size: 13px;
@@ -51,12 +53,15 @@
         .transition(all @speed .15s ease-in-out);
         opacity: 0;
         .transform(translate3d(0, 20px, 0));
+        height: 18px;
       }
 
       aside {
-        .display(absolute);
+        display: none;
+        position: absolute;
         .bottomLeft(30px, 0px);
         .transition(all .4s 1s ease-in-out);
+        .transform(translate3d(0, 5px, 0));
         width: 100%;
         text-align: center;
         text-transform: uppercase;
@@ -66,21 +71,30 @@
         opacity: 0;
         letter-spacing: 3px;
         color: #fff;
-        .transform(translate3d(0, 5px, 0));
+
+        .respond(@sm, {
+          display: block;
+        });
       }
 
       .play_button {
         .display(absolute);
-        top: 200px;
-        left: 0;
-        right: 0;
+        .topLeft(50%, 50%);
+        margin: -30px 0 0 -35px;
         z-index: @layer3;
         .transition(all @speed .15s ease-in-out);
 
         svg {
           margin: 0 auto;
+          .size(50px, 50px);
           .display(relative);
+          .topLeft(10px, 10px);
           .animation(buttonPulsate 1.4s ease-in-out infinite);
+
+          .respond(@sm, {
+            .topLeft(0px, 0px);
+            .size(70px, 70px);
+          });
 
           * {
             .transition(all @speed ease-in-out);
@@ -102,9 +116,9 @@
         content: '';
         position: absolute;
         .transition(all @speed ease-in-out);
-        .size(708px, 436px);
+        .size(100%, 100%);
         .topLeft(0, 0);
-         .animation(LaptopHoverEnterprise 6s ease-in-out infinite);
+        .animation(LaptopHoverEnterprise 6s ease-in-out infinite);
         background : -moz-linear-gradient(23.94% -22.08% -60deg,rgba(9, 40, 64, 0.9) 0%,rgba(23, 100, 168, 1) 98.9%);
         background : -webkit-linear-gradient(-60deg, rgba(9, 40, 64, 0.9) 0%, rgba(23, 100, 168, 1) 98.9%);
         background : -webkit-gradient(linear,23.94% -22.08% ,76.06% 122.08% ,color-stop(0,rgba(9, 40, 64, 0.9) ),color-stop(0.989,rgba(23, 100, 168, 1) ));
@@ -124,7 +138,7 @@
         }
 
         .play_button {
-          .transform(translate3d(0, -40px, 0));
+          .transform(translate3d(0, -20px, 0));
         }
 
         aside {
@@ -150,23 +164,41 @@
       }
       
     }
-    img.macbook {
-      display: none;
-      .respond(@lg, {
-        display: block;
-      });
-    }
+
     .ui {
       .border-radius(3px);
+      .size(74%, auto);
+      .topLeft(19%, 13%);
+      .display(absolute);
       overflow: hidden;
-      .size(707px, 435px);
-      .respond(@lg, {
-        display: block;
-        position: absolute;
-        .topLeft(72px, 120px);
-        z-index: @layer2;
+      max-width: 707px;
+      max-height: 435px;
+      z-index: @layer2;
+
+      @media only screen and (min-width: 450px) {
+        top: 16%;
+      }
+
+      @media only screen and (min-width: 500px) {
+        top: 15%;
+      }
+
+      .respond(@sm, {
+        top: 12%;
       });
 
+      .respond(@md, {
+        top: 12%;
+      });
+
+      video {
+        width: 100%;
+        max-width: 100%;
+
+        &::-webkit-media-controls {
+          display:none !important;
+        }
+      }
     }
 
     frame {
