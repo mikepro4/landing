@@ -10,7 +10,6 @@ var FPSStats = require('react-stats').FPSStats;
 
 // Components
 var SlideInMenu = require('../components/SlideInMenu.jsx');
-var VideoModal = require('../components/VideoModal.jsx');
 var Footer = require('../components/Footer.jsx');
 
 
@@ -19,11 +18,17 @@ var Link = Router.Link;
 
 var App = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation, HomePageRouterMixin ],
+  mixins: [ HomePageRouterMixin ],
 
-  getInitialState: function () {
+  contextTypes: {
+    router: React.PropTypes.func
+  },
+
+  getInitialState: function() {
     return {
+      jobOptions: ["Broker", "Appraiser", "Researcher", "Landlord", "Lender", "Investor"],
       user: {
+        jobTitle: null,
         mode: null,
         market: null
       },
@@ -33,12 +38,14 @@ var App = React.createClass({
     }
   },
 
-  componentDidMount: function () {
+  componentDidMount: function() {
     window.addEventListener('scroll', this.onScroll, false);
+    this.onScroll();
 
-    if(this.getQuery().market) {
+    var market = this.context.router.getCurrentQuery().market;
+    if(market) {
       this.updateLocalStorage({
-        market: this.getQuery().market
+        market: market
       })
     }
 
@@ -50,22 +57,20 @@ var App = React.createClass({
       window.removeEventListener('scroll', this.onScroll, false);
   },
 
-  onScroll: function (event) {
-    // get scrollTop of the body
-    var node = this.getDOMNode().parentNode;
+  onScroll: function(event) {
     this.setState({
-      scrollTop: node.scrollTop
+      scrollTop: $(window).scrollTop()
     })
   },
 
-  showInitialPage: function () {
+  showInitialPage: function() {
     var user = JSON.parse(localStorage.getItem('user'));
-    if(this.isActive('home') && user) {
+    if(this.context.router.isActive('home') && user) {
       this.selectHomePage(user)
     }
   },
 
-  updateLocalStorage: function (data) {
+  updateLocalStorage: function(data) {
     var user
     localStorage.getItem('user') ? user = JSON.parse(localStorage.getItem('user')) : user = {}
     localStorage.clear();
@@ -79,10 +84,22 @@ var App = React.createClass({
     })
   },
 
+  clearLocalStorage: function() {
+    localStorage.clear();
+    this.updateLocalStorage();
+  },
+
   toggleMenu: function() {
     this.setState({
       menuOpen: !this.state.menuOpen
     })
+  },
+
+  toggleJobMenu: function() {
+    this.setState({
+      menuOpen: !this.state.menuOpen
+    })
+    this.refs.slideInMenu.openJobMenu();
   },
 
   toggleVideoModal: function() {
@@ -91,15 +108,13 @@ var App = React.createClass({
     })
   },
 
-  render: function () {
+  render: function() {
     return (
-      <DocumentTitle title="CompStak">
+      <DocumentTitle title="CompStak – Massive Commercial Lease Comps Database – Accurate, searchable, nationwide.">
         <div className={classnames({
           'application_wrapper':   true,
           'open-menu':             this.state.menuOpen
         })}>    
-
-         <FPSStats/>
 
           <div className="page-content">
             <RouteHandler 
@@ -109,19 +124,22 @@ var App = React.createClass({
               videoPlaying={this.state.videoPlaying}
               scrollTop={this.state.scrollTop}
               updateLocalStorage={this.updateLocalStorage}
+              clearLocalStorage={this.clearLocalStorage}
               toggleMenu={this.toggleMenu}
+              toggleJobMenu={this.toggleJobMenu}
               toggleVideoModal={this.toggleVideoModal}
             />
           </div>
 
           <SlideInMenu 
+            ref="slideInMenu"
             toggleMenu={this.toggleMenu}
+            user={this.state.user}
+            jobOptions={this.state.jobOptions}
+            updateLocalStorage={this.updateLocalStorage}
+            clearLocalStorage={this.clearLocalStorage}
           />
 
-          <VideoModal
-            videoPlaying={this.state.videoPlaying}
-            toggleVideoModal={this.toggleVideoModal}
-          />
           <div className="overlay" onClick={this.toggleMenu}/>
           
         </div>

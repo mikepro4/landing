@@ -18,6 +18,7 @@
   "dependencies": {
     "ui": "compstak/fed-ui#^2.2.0",
     "jquery-cycle2": "~2.1.6",
-    "sweetalert": "~0.5.0"
+    "sweetalert": "~0.5.0",
+    "keymaster": "~1.6.3"
   }
 }

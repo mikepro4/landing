@@ -5,9 +5,25 @@ var Icons = require('../components/Icons.jsx');
 var classnames = require('classnames');
 var Link = Router.Link;
 
+if(process.browser) {
+  var key = require('keymaster');
+}
+
 var VideoModal = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation ],
+  closeVideoModal: function() {
+    if(this.props.videoPlaying) {
+      this.props.toggleVideoModal()
+    }
+  },
+
+  componentDidMount: function() {
+    key('esc', this.closeVideoModal);
+  },
+
+  componentWillUnmount: function() {
+    key.unbind('esc', this.closeVideoModal);
+  },
 
   render: function () {
     var video;

@@ -7,13 +7,13 @@ var _ = require('underscore');
 var classnames = require('classnames');
 var Link = Router.Link;
 
-if(process.browser) {
-  console.log(process)
-}
-
 var DemoEmailForm = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation, Validators ],
+  mixins: [ Validators ],
+
+  contextTypes: {
+    router: React.PropTypes.func
+  },
 
   getInitialState: function() {
     return {
@@ -23,10 +23,10 @@ var DemoEmailForm = React.createClass({
   }, 
 
   componentDidMount: function() {
-    console.log(this.context)
-    if(this.getQuery().email) {
+    var email = this.context.router.getCurrentQuery().email;
+    if(email) {
       this.setState({
-        email: this.getQuery().email
+        email: email
       })
     }
   },
@@ -37,7 +37,7 @@ var DemoEmailForm = React.createClass({
       this.setState({
         emailInvalid: false
       })
-      this.transitionTo('demo-request', {}, {email: this.state.email});
+      this.context.router.transitionTo('demo-request', {}, {email: this.state.email});
     } else {
       this.setState({
         emailInvalid: true
@@ -48,8 +48,6 @@ var DemoEmailForm = React.createClass({
           emailInvalid: false
         })
       }.bind(this), 1300);
-
-      $('.sign-up').velocity('callout.shake');
     }
   },
 

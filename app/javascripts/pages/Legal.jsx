@@ -8,19 +8,18 @@ var TermsOfUse = require('../components/TermsOfUse.jsx');
 var PrivacyPolicy = require('../components/PrivacyPolicy.jsx');
 var OnPgSplitter = require('../components/OnPageSplitter.jsx');
 var DocumentTitle = require('react-document-title');
+var Footer = require('../components/Footer.jsx');
 
 var Legal = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation ],
-
   render: function () {
     return (
-      <DocumentTitle title="CompStak – Legal">
+      <DocumentTitle title="CompStak – Terms of Use, Privacy Policy, Fair Statement">
         <div className="page-legal">
           <FauxHeader {...this.props}/>
           <Header 
             {...this.props}
-            login={true}
+            login={false}
             menu={true}
             haveAccount={false}
             mode="dark"
@@ -29,6 +28,7 @@ var Legal = React.createClass({
           <TermsOfUse/><hr/>
           <PrivacyPolicy/>
           <OnPgSplitter/>
+          <Footer/>
         </div>
       </DocumentTitle>
     )

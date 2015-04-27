@@ -229,7 +229,6 @@ textarea {
   padding: @input-padding;
   width: 100%;
   margin: 0px 0 1em 0;
-  line-height: @input-line-height;
   .border-radius (@input-border-radius);
   .transition(all @speed ease-in-out);
   resize: none;
@@ -264,39 +263,39 @@ svg * {
 
 ::-webkit-input-placeholder {
   .transition(color @speed ease-in-out);
-   color: @mid-grey;
+   color: lighten(@mid-grey, 5%);
 }
 
 :-moz-placeholder { /* Firefox 18- */
   .transition(color @speed ease-in-out);
-   color: @mid-grey;  
+   color: lighten(@mid-grey, 5%);  
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
   .transition(color @speed ease-in-out);
-   color: @mid-grey;  
+   color: lighten(@mid-grey, 5%);  
 }
 
 :-ms-input-placeholder {  
   .transition(color @speed ease-in-out);
-   color: @mid-grey;  
+   color: lighten(@mid-grey, 5%);  
 }
 
-// :focus::-webkit-input-placeholder {
-//    color: @dark-blue;
-// }
+:focus::-webkit-input-placeholder {
+   color: lighten(@mid-grey, 20%);
+}
 
-// :focus:-moz-placeholder { /* Firefox 18- */
-//    color: @dark-blue;  
-// }
+:focus:-moz-placeholder { /* Firefox 18- */
+   color: lighten(@mid-grey, 20%);  
+}
 
-// :focus::-moz-placeholder {  /* Firefox 19+ */
-//    color: @dark-blue;  
-// }
+:focus::-moz-placeholder {  /* Firefox 19+ */
+   color: lighten(@mid-grey, 20%);  
+}
 
-// :focus:-ms-input-placeholder {  
-//    color: @dark-blue;  
-// }
+:focus:-ms-input-placeholder {  
+   color: lighten(@mid-grey, 20%);  
+}
 
 .hidden {
   display: none;

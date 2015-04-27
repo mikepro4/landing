@@ -6,13 +6,6 @@ var Icons = require('../components/Icons.jsx');
 var Link = Router.Link;
 
 var SampleComp = React.createClass({
-
-  mixins: [ Router.State, Router.Navigation, HomePageRouterMixin ],
-
-  goToHome: function () {
-    this.selectHomePage(this.props.user)
-  },
-
   render: function () {
     return (
       <section id="sample-comp" className="grey-bg sample-comp">

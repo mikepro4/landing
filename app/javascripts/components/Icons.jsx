@@ -148,7 +148,7 @@ var Icons = React.createClass({
         )
       case 'cross_circle':
         return (
-          <svg width="23px" height="23px" viewBox="0 0 23 23">
+          <svg width="24px" height="24px" viewBox="0 0 24 24">
             <path d="M11.5,23C5.2,23,0,17.8,0,11.5S5.2,0,11.5,0S23,5.2,23,11.5S17.8,23,11.5,23z M11.5,1C5.7,1,1,5.7,1,11.5S5.7,22,11.5,22
               S22,17.3,22,11.5S17.3,1,11.5,1z M7.5,14.8l0.7,0.7l7.3-7.3l-0.7-0.7L7.5,14.8z M7.5,8.2l7.3,7.3l0.7-0.7L8.2,7.5L7.5,8.2z"/>
           </svg>

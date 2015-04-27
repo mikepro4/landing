@@ -1,18 +1,22 @@
 .main-header {
   padding: .5em 0 0;
+
   .respond(@md, {
     padding: 2.5em 0 0;
   });
+
   .respond(@xlg, {
     padding: 3em 0 0;
   });
+
   .logo {
     float: left;
     cursor: pointer;
+    width: 115px;
     
     svg {
-      margin-top: 16px;
-      height: 28px;
+      margin-top: 20px;
+      height: 24px;
       .respond(@md, {
         margin-top: 15px;
         height: 32px;
@@ -27,7 +31,14 @@
         fill: @light-blue;
       }
     }
+
+    &:active {
+      svg * {
+        fill: darken(@light-blue, 10%);
+      }
+    }
   }
+
   .button-hollow.login {
     height: 30px;
     line-height: 30px;
@@ -43,11 +54,14 @@
       margin-top: auto;
     });
   }
+
   .right-links {
     text-align: right;
     float: right;
+
     ul li {
       display: inline-block;
+
       a.nav-url {
         display: block;
         padding: 20px 0 20px 30px;
@@ -56,6 +70,7 @@
         font-size: 11px;
         font-family: @font-gotham-book;
         cursor: pointer;
+
         .respond(@md, {
           padding: 20px 0 20px 40px;
           font-size: 13px;
@@ -76,6 +91,50 @@
             * {
               fill: #fff;
             }
+          }
+        }
+      }
+    }
+  }
+
+  &.light {
+    background: #fff;
+
+    .logo {
+      svg {
+        * {
+          fill: @dark-blue;
+        }
+      }
+
+      &:hover {
+        svg * {
+          fill: darken(@light-blue, 20%);
+        }
+      }
+
+      &:active {
+        svg * {
+          fill: lighten(@light-blue, 10%);
+        }
+      }
+    }
+
+    a {
+      color: @dark-blue;
+
+      i {
+        * {
+          fill: @dark-blue;
+        }
+      }
+
+      &:hover {
+        color: @light-blue !important;
+
+        i {
+          * {
+            fill: @light-blue !important;
           }
         }
       }

@@ -1,23 +1,5 @@
 @speed : .2s;
 
-@import "includes.less";
-@import "basics.less";
-@import "./includes/mixins.less";
-
-.cols();
-
-html,
-body,
-.application_wrapper,
-.page-content,
-.page-demo-request {
-  min-height: 100%;
-}
-
-.page-content {
-  height: 100%;
-}
-
 html {
   .size(100%, 100%);
 }
@@ -57,9 +39,11 @@ body {
   	width: @site-width;
   	max-width: @max-site-width;
     min-width: 290px;
+
     &.narrow {
       max-width: 800px;
     }
+
     .respond(@huge, {
       &.push-right {
         padding-left: 300px;
@@ -69,7 +53,17 @@ body {
       }
     }, @short-height);
   }
-  @import "./pages/exchange.less";
+
+  .page-content {
+    position: relative;
+    height: 100%;
+    .transition(all @speed ease-in-out);
+  }
 }
 
+
+// ALL MAJOR COMPONENTS AND RESUSABLE ELEMENTS
+// ===============================================================
+@import "includes.less";
 @import "./components.less";
+.cols();

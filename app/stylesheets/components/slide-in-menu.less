@@ -10,7 +10,9 @@
   z-index: @layer-top;
   color: @mid-grey;
   overflow-y: visible;
+  padding: 80px 50px;
   overflow-x: hidden;
+
   h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: @white;
     &.grey {
@@ -23,37 +25,44 @@
       color: @dark-grey;
     }
   }
+
   .blue {
     color: @light-blue;
   }
+
   p {
     color: @mid-grey;
   }
+
   .h1, .h2, .h3, .h4 {
     letter-spacing: .015em;
   }
+
   a {
     color: @mid-grey;
     &:hover {
       color: @white;
     }
   }
-  padding: 80px 50px;
+
   .button-wrap {
     button {
       height: 40px;
       line-height: 40px;
       width: 100%;
       display: inline-block;
+
       .respond(@md, {
         height: 45px;
         line-height: 45px;
       });
     }
   }
+
   h6 {
     margin-top: 50px;
   }
+
   li a {
     display: block;
   }
@@ -73,10 +82,149 @@
       opacity: 1;
     }
   }
-}
 
-.page-content {
-  .transition(all @speed ease-in-out);
+  .job-selector-toggle {
+    .display(absolute);
+    .topLeft(30px, 50px);
+    .transition(all @speed ease-in-out);
+    .user-select(none);
+    cursor: pointer;
+    letter-spacing: .3px;
+
+    &:after {
+      .transition(opacity @speed ease-in-out);
+      opacity: .3;
+      content: "";
+      width: 0;
+      height: 14px;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 4px solid #fff;
+      position: relative;
+      top: 10px;
+      left: 8px;
+    }
+
+  
+    &:hover {
+      color: #fff;
+
+      &:after {
+        opacity: 1
+      }
+    }
+
+    &.job-toggle-active {
+      &:after{
+        top: -10px;
+        border-top: 4px solid transparent;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-bottom: 4px solid #fff;
+      }
+    }
+  }
+
+  .slide-in-menu-content {
+    .display(relative);
+    .transition(all @speed ease-in-out);
+    z-index: @layer1;
+    opacity: 0;
+
+    &.menu-content-active {
+      opacity: 1
+    }
+  }
+
+  .job-titles-list {
+    .transition(all @speed ease-in-out);
+    .display(absolute);
+    .topLeft(80px, 48px);
+    z-index: @layer2;
+    visibility: hidden;
+    opacity: 0;
+
+    h4 {
+      font-family: @font-gotham-book;
+      color: @light-blue;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 11px;
+      margin: 0 0 15px 0;
+    }
+
+    li {
+      opacity: 0;
+
+      a {
+        font-family: @font-gotham-extra-light;
+        padding: 8px 0 8px 0;
+        font-size: 20px;
+        letter-spacing: .3px;
+        display: inline-block;
+        position: relative;
+
+        .respond(@sm, {
+          padding: 12px 0 12px 0;
+          font-size: 24px;
+        });
+
+        .respond(@md, {
+          padding: 17px 0 17px 0;
+          font-size: 27px;
+        });
+
+        &:hover {
+          color: @light-blue;
+        }
+
+        &.job-title-active {
+          &:after {
+            content: '';
+            border-bottom: 2px solid @light-blue;
+            .display(absolute);
+            top: 85%;
+            left: 2px;
+            right: 2px;
+          }
+        }
+      }
+    }
+
+    &.job-menu-active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  .choose-your-job-title {
+    color: @light-blue;
+    font-size: 12px;
+    .display(relative);
+    margin: 40px 0 0 0;
+    cursor: pointer;
+    line-height: 18px;
+  }
+
+  .customized-experience-message {
+    .display(absolute);
+    .bottomLeft(30px, 50px);
+    .transition(all @speed ease-in-out);
+    visibility: hidden;
+    opacity: 0;
+
+    p {
+      font-family: @font-gotham-light;
+      font-size: 11px;
+      line-height: 16px;
+      letter-spacing: .3px;
+    }
+
+    &.message-active {
+      visibility: visible;
+      .animation(fadeIn .6s .4s ease-in forwards);
+    }
+  }
 }
 
 .application_wrapper.open-menu {
@@ -96,5 +244,27 @@
   .overlay {
     opacity: .75;
     visibility: visible;
+  }
+}
+
+.ie9 {
+  .application_wrapper.open-menu {
+    .display(absolute);
+    .topLeft(0, 0);
+    .bottomRight(0, 0);
+    overflow: hidden;
+    
+    .page-content {
+      left: -300px;
+    }
+
+    .slide-in-menu {
+      right: 00;
+    }
+
+    .overlay {
+      opacity: .75;
+      visibility: visible;
+    }
   }
 }

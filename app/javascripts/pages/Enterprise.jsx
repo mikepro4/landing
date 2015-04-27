@@ -16,14 +16,13 @@ var CoverageMap = require('../components/CoverageMap.jsx');
 var OnPgSplitter = require('../components/OnPageSplitter.jsx');
 var BottomSignUp = require('../components/BottomSignUp.jsx');
 var Footer = require('../components/Footer.jsx');
+var VideoModal = require('../components/VideoModal.jsx');
 
 var Enterprise = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation ],
-
   render: function () {
     return (
-      <DocumentTitle title="CompStak – Enterprise">
+      <DocumentTitle title="CompStak – Enterprise – Commercial Lease Comps On Demand for Landlords, Lenders and Investors">
         <div className="page-enterprise">
           <Header 
             {...this.props}
@@ -31,6 +30,7 @@ var Enterprise = React.createClass({
             menu={true}
             haveAccount={false}
             mode="dark"
+            context="enterprise"
           />
           <FauxHeader {...this.props}/>
           <TopSplash {...this.props}/>
@@ -43,6 +43,7 @@ var Enterprise = React.createClass({
           <BottomSignUp {...this.props}/>
           <OnPgSplitter {...this.props}/>
           <Footer {...this.props}/>
+          <VideoModal {...this.props}/>
         </div>
       </DocumentTitle>
     )

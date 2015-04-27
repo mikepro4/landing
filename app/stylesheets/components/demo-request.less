@@ -60,6 +60,7 @@
     }
 
     &.form-invalid {
+      .animation(shake 1s ease-in forwards);
       .input-wrap.invalid-input {
         input[type="text"] {
           color: @red;
@@ -89,7 +90,10 @@
       margin: 0 0 1em 0;
 
       &:before {
+        content: '';
         opacity: 0;
+        .display(absolute);
+        .bottomRight(20px, 15px);
         .transition(all @speed ease-in-out);
       }
 
@@ -107,22 +111,18 @@
       }
 
       &.invalid-input {
-          &:before {
-            content: '';
-            .display(absolute);
-            .bottomRight(20px, 15px);
-            .icon-circle_error();
-            opacity: 1;
-          }
+        &:before {
+          .icon-circle_error();
+          content: '';
+          opacity: 1;
+        }
       }
 
       &.valid-input {
-          &:before {
-            content: '';
-            .display(absolute);
-            .bottomRight(20px, 15px);
-            .icon-circle_tick();
-            opacity: 1;
+        &:before {
+          .icon-circle_tick();
+          content: '';
+          opacity: 1;
         }
       }
     }
