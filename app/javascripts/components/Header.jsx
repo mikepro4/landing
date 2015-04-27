@@ -2,12 +2,13 @@
 var React = require('react');
 var Router = require('react-router');
 var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
+var LoginUrlMixin = require('../mixins/LoginUrl.jsx');
 var Icons = require('../components/Icons.jsx');
 var classnames = require('classnames');
 
 var FauxHeader = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation, HomePageRouterMixin ],
+  mixins: [ HomePageRouterMixin, LoginUrlMixin ],
 
   getInitialState: function() {
     return {
@@ -28,19 +29,8 @@ var FauxHeader = React.createClass({
     })
   },
 
-  getLoginUrl: function(mode) {
-    switch(mode){
-      case "enterprise": 
-        return "https://enterprise.compstak.com/"
-        break
-      case "exchange":
-        return "https://exchange.compstak.com/"
-        break
-    }
-  },
-
   render: function() {
-    var loginUrl = this.getLoginUrl(this.props.user.mode);
+    var loginUrl = this.getLoginUrl(this.props.context);
 
     return (
       <div className={classnames({

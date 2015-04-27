@@ -8,7 +8,7 @@ var Link = Router.Link;
 
 var Enterprise = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation, UpdateUserMixin ],
+  mixins: [ UpdateUserMixin ],
   
   render: function () {
     return (

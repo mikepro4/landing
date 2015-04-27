@@ -12,11 +12,9 @@ var Footer = require('../components/Footer.jsx');
 
 var Legal = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation ],
-
   render: function () {
     return (
-      <DocumentTitle title="CompStak – Legal">
+      <DocumentTitle title="CompStak – Terms of Use, Privacy Policy, Fair Statement">
         <div className="page-legal">
           <FauxHeader {...this.props}/>
           <Header 

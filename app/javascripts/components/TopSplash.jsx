@@ -7,11 +7,12 @@ var Link = Router.Link;
 
 var TopSplash = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation ],
-
+  contextTypes: {
+    router: React.PropTypes.func
+  },
 
   componentDidMount: function() {
-     if(this.getQuery().playVideo && this.isMounted()) {
+     if(this.context.router.getCurrentQuery().playVideo && this.isMounted()) {
         this.props.toggleVideoModal();
      }
   },

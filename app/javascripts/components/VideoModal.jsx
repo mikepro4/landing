@@ -11,8 +11,6 @@ if(process.browser) {
 
 var VideoModal = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation ],
-
   closeVideoModal: function() {
     if(this.props.videoPlaying) {
       this.props.toggleVideoModal()

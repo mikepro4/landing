@@ -12,8 +12,6 @@ var Link = Router.Link;
 
 var NationalCoverage = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation ],
-
   componentDidMount: function () {
     $('.slideshow').cycle({
         speed: 500,

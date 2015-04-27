@@ -11,8 +11,6 @@ var Footer = require('../components/Footer.jsx');
 
 var Exchange = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation ],
-  
   render: function () {
     return (
       <DocumentTitle title="CompStak – Exchange">

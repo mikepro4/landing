@@ -1,6 +1,7 @@
 'use strict';
 var React = require('react');
 var Router = require('react-router');
+var _ = require('underscore');
 var classnames = require('classnames');
 var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
 var Icons = require('../components/Icons.jsx');
@@ -8,30 +9,50 @@ var Link = Router.Link;
 
 var Header = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation ],
+  contextTypes: {
+    router: React.PropTypes.func
+  },
 
   getInitialState: function() {
     return {
       pages: {
-        enterprise: this.isActive('enterprise'),
-        exchange: this.isActive('exchange'),
-        legal: this.isActive('legal')
+        enterprise: this.context.router.isActive('enterprise'),
+        exchange: this.context.router.isActive('exchange'),
+        legal: this.context.router.isActive('legal')
       }
     }
   },
 
-  componentDidMount: function () {
+  componentDidMount: function() {
     window.addEventListener('scroll', this.onScroll, false);
+    this.initialScrollToElement();
+  },
+
+  componentWillReceiveProps: function() {
+    this.initialScrollToElement();
   },
 
   componentWillUnmount: function() {
     window.removeEventListener('scroll', this.onScroll, false);
   },
 
+  initialScrollToElement: function() {
+    var element = this.context.router.getCurrentQuery().scrollTo;
+    _.delay(function(){
+      if(element){
+        this.scrollPage('#' + element);
+        this.context.router.replaceWith(this.context.router.getCurrentPathname());
+      }
+    }.bind(this), 400)
+  },
+
   scrollToElement: function(e) {
     e.preventDefault();
     var destination = $(e.target).attr('href');
+    this.scrollPage(destination)  
+  },
 
+  scrollPage: function(destination) {
     var scrollTop;
     if($(destination).offset().top < 300) {
       scrollTop = $(destination).offset().top

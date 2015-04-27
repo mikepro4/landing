@@ -4,8 +4,6 @@ var Router = require('react-router');
 
 var Underwriting = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation ],
-
   render: function () {
     return(
       <div>

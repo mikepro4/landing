@@ -1,8 +1,6 @@
 @speed : .2s;
 
 @import "includes.less";
-@import "basics.less";
-@import "./includes/mixins.less";
 
 .cols();
 
@@ -69,7 +67,11 @@ body {
       }
     }, @short-height);
   }
-  @import "./pages/exchange.less";
+
+  .page-content {
+    position: relative;
+    .transition(all @speed ease-in-out);
+  }
 }
 
 @import "./components.less";

@@ -20,11 +20,9 @@ var VideoModal = require('../components/VideoModal.jsx');
 
 var Enterprise = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation ],
-
   render: function () {
     return (
-      <DocumentTitle title="CompStak – Enterprise">
+      <DocumentTitle title="CompStak – Enterprise – Commercial Lease Comps On Demand for Landlords, Lenders and Investors">
         <div className="page-enterprise">
           <Header 
             {...this.props}

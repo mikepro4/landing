@@ -7,7 +7,7 @@ var Link = Router.Link;
 
 var EntGranularData = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation, HomePageRouterMixin ],
+  mixins: [ HomePageRouterMixin ],
 
   goToHome: function () {
     this.selectHomePage(this.props.user)

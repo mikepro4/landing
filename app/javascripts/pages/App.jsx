@@ -18,7 +18,11 @@ var Link = Router.Link;
 
 var App = React.createClass({
 
-  mixins: [ Router.State, Router.Navigation, HomePageRouterMixin ],
+  mixins: [ HomePageRouterMixin ],
+
+  contextTypes: {
+    router: React.PropTypes.func
+  },
 
   getInitialState: function() {
     return {
@@ -38,9 +42,10 @@ var App = React.createClass({
     window.addEventListener('scroll', this.onScroll, false);
     this.onScroll();
 
-    if(this.getQuery().market) {
+    var market = this.context.router.getCurrentQuery().market;
+    if(market) {
       this.updateLocalStorage({
-        market: this.getQuery().market
+        market: market
       })
     }
 
@@ -60,7 +65,7 @@ var App = React.createClass({
 
   showInitialPage: function() {
     var user = JSON.parse(localStorage.getItem('user'));
-    if(this.isActive('home') && user) {
+    if(this.context.router.isActive('home') && user) {
       this.selectHomePage(user)
     }
   },
