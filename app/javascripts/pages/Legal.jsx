@@ -6,6 +6,7 @@ var Header = require('../components/Header.jsx');
 var FauxHeader = require('../components/FauxHeader.jsx');
 var TermsOfUse = require('../components/TermsOfUse.jsx');
 var PrivacyPolicy = require('../components/PrivacyPolicy.jsx');
+var FairInformation = require('../components/FairInformation.jsx');
 var OnPgSplitter = require('../components/OnPageSplitter.jsx');
 var DocumentTitle = require('react-document-title');
 var Footer = require('../components/Footer.jsx');
@@ -25,8 +26,11 @@ var Legal = React.createClass({
             mode="dark"
           />
           <div className="default-page-title"><h1>Legal</h1></div>
-          <TermsOfUse/><hr/>
+          <TermsOfUse/>
+          <hr/>
           <PrivacyPolicy/>
+          <hr/>
+          <FairInformation/>
           <OnPgSplitter/>
           <Footer/>
         </div>
