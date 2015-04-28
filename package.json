@@ -43,6 +43,7 @@
     "gulp-ruby-sass": "^0.7.1",
     "gulp-util": "^3.0.1",
     "jsx-loader": "^0.12.2",
+    "less-loader": "^2.2.0",
     "livereload": "^0.3.4",
     "node-notifier": "^4.0.2",
     "nodemon": "^1.2.1",
