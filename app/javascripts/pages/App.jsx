@@ -26,7 +26,7 @@ var App = React.createClass({
 
   getInitialState: function() {
     return {
-      jobOptions: ["Broker", "Appraiser", "Researcher", "Landlord", "Lender", "Investor"],
+      jobOptions: ["Tenant/Landlord Rep", "Appraiser", "Researcher", "Landlord", "Lender", "Investor"],
       user: {
         jobTitle: null,
         mode: null,
@@ -123,6 +123,7 @@ var App = React.createClass({
               menuOpen={this.state.menuOpen}
               videoPlaying={this.state.videoPlaying}
               scrollTop={this.state.scrollTop}
+              jobOptions={this.state.jobOptions}
               updateLocalStorage={this.updateLocalStorage}
               clearLocalStorage={this.clearLocalStorage}
               toggleMenu={this.toggleMenu}

@@ -55,26 +55,18 @@ var SlideInMenu = React.createClass({
     var jobTitleNodes = this.props.jobOptions.map(function (title, i) {
       return (
         <li className="single-job-title-container js-velocity" key={i} onClick={this.closeMenu}>
-          <Link to={this.getUserMode(title)} className={classnames({
+          <Link to={this.getUserMode(i)} className={classnames({
             "job-title": true,
             "job-title-active": (title === this.props.user.jobTitle) ? true : false
-          })} onClick={this.updateUser}>
+          })} onClick={this.updateUser} data-position={i}>
             {title}
           </Link>
         </li>
       );
     }.bind(this));
 
-    var jobTitle = this.props.user.jobTitle ? this.props.user.jobTitle : 'Select Job Title';
-
     return (
       <div className="slide-in-menu">
-        <div className={classnames({
-          "job-selector-toggle": true,
-          "job-toggle-active": this.state.jobSelectorOpen 
-        })} onClick={this.toggleJobMenu}>
-          <span className="selected-job-title">{jobTitle}</span>
-        </div>
 
         <div className={classnames({
           "job-titles-list": true,

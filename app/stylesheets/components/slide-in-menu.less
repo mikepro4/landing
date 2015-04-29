@@ -139,7 +139,7 @@
   .job-titles-list {
     .transition(all @speed ease-in-out);
     .display(absolute);
-    .topLeft(80px, 48px);
+    .topLeft(36px, 48px);
     z-index: @layer2;
     visibility: hidden;
     opacity: 0;
@@ -158,21 +158,11 @@
 
       a {
         font-family: @font-gotham-extra-light;
-        padding: 8px 0 8px 0;
-        font-size: 20px;
+        padding: 10px 0 10px 0;
+        font-size: 18px;
         letter-spacing: .3px;
         display: inline-block;
         position: relative;
-
-        .respond(@sm, {
-          padding: 12px 0 12px 0;
-          font-size: 24px;
-        });
-
-        .respond(@md, {
-          padding: 17px 0 17px 0;
-          font-size: 27px;
-        });
 
         &:hover {
           color: @light-blue;

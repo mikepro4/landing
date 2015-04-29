@@ -11,6 +11,16 @@ var Enterprise = React.createClass({
   mixins: [ UpdateUserMixin ],
   
   render: function () {
+
+    var jobTitles = this.props.jobOptions.map(function (title, i) {
+      return (
+        <Link to={this.getUserMode(i)} className="button" data-position={i} onClick={this.updateUser}>
+          {title}
+        </Link>
+      );
+    }.bind(this));
+
+
     return (
       <div className="splitter">
         <div className="top">
@@ -22,12 +32,7 @@ var Enterprise = React.createClass({
             <p className="h6 grey">Nationwide • Accurate • Searchable</p>
             <div className="buttons">
               <h1 className="h6">Which are you?</h1>
-              <Link className="button" to="exchange" onClick={this.updateUser}>Broker</Link>
-              <Link className="button" to="exchange" onClick={this.updateUser}>Appraiser</Link>
-              <Link className="button" to="exchange" onClick={this.updateUser}>Researcher</Link>
-              <Link className="button" to="enterprise" onClick={this.updateUser}>Landlord</Link>
-              <Link className="button" to="enterprise" onClick={this.updateUser}>Lender</Link>
-              <Link className="button" to="enterprise" onClick={this.updateUser}>Investor</Link>
+              {jobTitles}
             </div>
           </div>
         </div>
