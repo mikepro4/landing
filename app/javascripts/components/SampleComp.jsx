@@ -6,6 +6,41 @@ var Icons = require('../components/Icons.jsx');
 var Link = Router.Link;
 
 var SampleComp = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.func
+  },
+
+  getInitialState: function() {
+    return {
+      sampleCompIntro: null,
+      searchByListItem: null,
+      atrListTitle: null
+    }
+  },
+
+  componentDidMount: function() {
+    this.sampleCompContent();
+  },
+
+  sampleCompContent: function() {
+    switch(this.props.context) {
+        case "enterprise":
+          this.setState({
+            sampleCompIntro: "Complete, accurate, deal-level data directly from brokers and appraisers on the ground, doing deals.",
+            searchByListItem: "Search & filter by 24 details",
+            atrListTitle: "24 Hard-to-Source Details"
+          })
+          break
+        case "exchange":
+          this.setState({
+            sampleCompIntro: "Complete, accurate data directly from brokers, researchers and appraisers.",
+            searchByListItem: "Search comps by 24 attributes",
+            atrListTitle: "24 Hard-to-Find Details"
+          })
+          break  
+    }
+  },
+
   render: function () {
     return (
       <section id="sample-comp" className="grey-bg sample-comp">
@@ -14,7 +49,7 @@ var SampleComp = React.createClass({
             <div className="col six block-info">
               <div>
                 <h3 className="h1">Complete Comps</h3>
-                <p>Complete, accurate, deal-level data directly from brokers and appraisers on the ground, doing deals.</p>
+                <p>{this.state.sampleCompIntro}</p>
               </div>
             </div>
             <div className="col six right">
@@ -92,7 +127,7 @@ var SampleComp = React.createClass({
             </div>
             <div className="col six left comp-callouts">
               <ul className="checklist">
-                <li><Icons type="tick" /><span> Search & filter by 24 details</span></li>
+                <li><Icons type="tick" /><span> {this.state.searchByListItem}</span></li>
                 <li><Icons type="tick" /><span> Powerful, interactive maps</span></li>
               </ul>
               <ul className="checklist export">
@@ -106,7 +141,7 @@ var SampleComp = React.createClass({
             </div>
           </div>
           <div className="row comp-details">
-            <h5>24 Hard-to-Source Details</h5>
+            <h5>{this.state.atrListTitle}</h5>
             <ul className="checklist">
               <li><Icons type="tick" /><span> Street Address</span></li>
               <li><Icons type="tick" /><span> Submarket</span></li>

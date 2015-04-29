@@ -33,14 +33,40 @@ var Enterprise = React.createClass({
             context="enterprise"
           />
           <FauxHeader {...this.props}/>
-          <TopSplash {...this.props}/>
-          <Logos {...this.props}/>
-          <Entintro {...this.props}/>
-          <EntGranularData {...this.props}/>
-          <SampleComp {...this.props}/>
-          <NationalCoverage {...this.props}/>
-          <CoverageMap {...this.props}/>
-          <BottomSignUp {...this.props}/>
+          <TopSplash 
+            {...this.props}
+            context="enterprise"
+            mode="dark"
+          />
+          <Logos 
+            {...this.props}
+            context="enterprise"
+          />
+          <Entintro 
+            {...this.props}
+            context="enterprise"
+          />
+          <EntGranularData 
+            {...this.props}
+            context="enterprise"
+          />
+          <SampleComp 
+            {...this.props}
+            context="enterprise"
+          />
+          <NationalCoverage 
+            {...this.props}
+            context="enterprise"
+          />
+          <CoverageMap 
+            {...this.props}
+            context="enterprise"
+          />
+          <BottomSignUp 
+            {...this.props}
+            context="enterprise"
+            mode="dark"
+          />
           <OnPgSplitter {...this.props}/>
           <Footer {...this.props}/>
           <VideoModal {...this.props}/>

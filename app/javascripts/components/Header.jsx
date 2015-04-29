@@ -36,7 +36,7 @@ var FauxHeader = React.createClass({
       <div className={classnames({
         'main-header': true,
         'dark-blue': (this.state.mode == "dark") ? true : false,
-        'light': (this.state.mode == "light") ? true : false,
+        'light': (this.state.mode == "light") ? true : false
       })}>
         <div className="container row">
           <div className="logo" onClick={this.goToHome}>

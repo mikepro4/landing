@@ -91,6 +91,10 @@ section {
   background-color: @light-grey;
 }
 
+.light {
+  background-color: @white; 
+}
+
 
 .dark-blue {
   background-color: @dark-blue;
@@ -124,6 +128,67 @@ section {
   }
 }
 
+.black {
+  background-color: @black;
+  color: @mid-grey;
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: @white;
+    &.grey {
+      color: @grey;
+    }
+    &.mid-grey {
+      color: @mid-grey;
+    }
+    &.dark-grey {
+      color: @dark-grey;
+    }
+  }
+  .blue {
+    color: @light-blue;
+  }
+  p {
+    color: @mid-grey;
+  }
+  .h1, .h2, .h3, .h4 {
+    letter-spacing: .015em;
+  }
+  a {
+    color: @mid-grey;
+    &:hover {
+      color: @white;
+    }
+  }
+}
+
+.blue-bg {
+  background-color: @light-blue;
+  color: @white;
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: @white;
+    &.grey {
+      color: @grey;
+    }
+    &.mid-grey {
+      color: @mid-grey;
+    }
+    &.dark-grey {
+      color: @dark-grey;
+    }
+  }
+  p {
+    color: @white;
+  }
+  .h1, .h2, .h3, .h4 {
+    letter-spacing: .015em;
+  }
+  a {
+    color: @mid-grey;
+    &:hover {
+      color: @white;
+    }
+  }
+}
+
 .screenshot {
 	.screenshot-wrap {
 		margin-left: $gutter;
@@ -151,12 +216,15 @@ section {
 .block-info {
 	> div {
 		max-width: 475px;
+    p {
+      max-width: 31em;
+    }
 	}
 	.respond(@md, {
-		padding-right: 10%;
+		padding-right: 70px;
 		&.right {
 			padding-right: 0;
-			padding-left: 10%;
+			padding-left: 70px;
 		}
 	});
 	.h1 + ul.checklist {
@@ -187,6 +255,8 @@ section {
 
 @import "./components/splitter.less";
 @import "./components/header.less";
+@import "./components/objection-handler.less";
+@import "./components/testimonials.less";
 @import "./components/slide-in-menu.less";
 @import "./components/faux-header.less";
 @import "./components/top-splash.less";

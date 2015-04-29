@@ -1,0 +1,96 @@
+.objection-handler {
+  text-align: center;
+  padding: 60px 0 65px;
+  .respond(@xlg, {
+    padding: 75px 0 80px;
+  });
+  .container {
+    max-width: 1200px;
+    .col {
+      padding: 20px 20px;
+      .icon {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        &.small {
+          width: 25px;
+          height: 25px;
+        }
+        svg {
+          width: 100%;
+          height: 100%;
+          * {
+            fill: @mid-grey;
+          }
+        }
+      }
+      .h6 {
+        font-size: 14px;
+      }
+      p {
+        font-size: 13px;
+        max-width: 250px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &.light {
+    .container {
+      .icon {
+        svg {
+          * {
+          }
+        }
+      }
+      .col {
+        .h6 {
+          color: @light-blue;
+        }
+        p {
+          color: @black;
+        }
+      }
+    }
+  }
+
+  &.blue-bg {
+    .container {
+      .icon {
+        svg {
+          * {
+            fill: @black;
+          }
+        }
+      }
+      .col {
+        .h6 {
+          color: @white;
+        }
+        p {
+          color: @white;
+        }
+      }
+    }
+  }
+
+  &.black {
+    .container {
+      .icon {
+        svg {
+          * {
+            fill: @light-blue;
+          }
+        }
+      }
+      .col {
+        .h6 {
+          color: @white;
+        }
+        p {
+        }
+      }
+    }
+  }
+}

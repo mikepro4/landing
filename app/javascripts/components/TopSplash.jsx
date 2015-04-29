@@ -3,7 +3,9 @@ var React = require('react');
 var Router = require('react-router');
 var Icons = require('../components/Icons.jsx');
 var DemoEmailForm = require('../components/DemoEmailForm.jsx');
+var _ = require('underscore');
 var Link = Router.Link;
+var classnames = require('classnames');
 
 var TopSplash = React.createClass({
 
@@ -11,10 +13,36 @@ var TopSplash = React.createClass({
     router: React.PropTypes.func
   },
 
+  getInitialState: function() {
+    return {
+      mainHeadline: null,
+      subHeadline: null
+    }
+  },
+
   componentDidMount: function() {
      if(this.context.router.getCurrentQuery().playVideo && this.isMounted()) {
         this.props.toggleVideoModal();
      }
+
+     this.setHeadlines();
+  },
+
+  setHeadlines: function() {
+    switch(this.props.context) {
+        case "enterprise":
+          this.setState({
+            mainHeadline: "Commercial Lease Comps On Demand",
+            subHeadline: "Verified Lease Data & Market Analytics For Major Markets Nationwide"
+          })
+          break
+        case "exchange":
+          this.setState({
+            mainHeadline: "Trade the comps you have. Find the comps you need. ",
+            subHeadline: ""
+          })
+          break  
+    }
   },
 
   render: function () {
@@ -26,10 +54,27 @@ var TopSplash = React.createClass({
         </video> 
     }
     return (
-      <div className="dark-blue top-splash">
+      <div className={classnames({
+        'top-splash': true,
+        'dark-blue': (this.props.mode == "dark") ? true : false,
+        'light': (this.props.mode == "light") ? true : false
+      })}>
         <div className="container">
-          <h1 className="fadeIn">Commercial Lease Comps On Demand</h1>
-          <h2 className="fadeIn h4 blue">Verified Lease Data & Market Analytics For Major Markets Nationwide</h2>
+          <h1 className={classnames({
+            'fadeIn': true,
+            'hidden': (this.props.context == "exchange") ? true : false
+          })}>Commercial Lease Comps On Demand</h1>
+          <h1 className={classnames({
+            'fadeIn': true,
+            'h2': true,
+            'hidden': (this.props.context == "enterprise") ? true : false
+          })}>Trade the comps you have. Find the comps you need.</h1>
+          <h2 className={classnames({
+            'fadeIn': true,
+            'h4': true,
+            'blue': (this.props.mode === "dark") ? true : true,
+            'hidden': _.isEmpty(this.state.subHeadline) ? true : false
+          })}>{this.state.subHeadline}</h2>
           <div className="fadeIn"> <DemoEmailForm /> </div>
           <div className="fadeIn splash-ui">
             <div className="ui">

@@ -18,3 +18,25 @@
     max-width: 700px;
   }
 }
+
+.page-exchange {
+  .bottom-sign-up {
+    .respond(@md, {
+      padding: 8em 0 0;
+    });
+    .respond(@lg, {
+      padding: 10em 0 0;
+    });
+  }
+}
+
+.bottom-sign-up + .objection-handler {
+  padding-top: 0;
+  .respond(@md, {
+      padding-top: 2em;
+      padding-bottom: 6em;
+    });
+    .respond(@lg, {
+      padding-bottom: 9em;
+    });
+}
