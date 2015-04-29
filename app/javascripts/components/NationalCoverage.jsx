@@ -3,6 +3,8 @@ var React = require('react');
 var Router = require('react-router');
 var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
 var Icons = require('../components/Icons.jsx');
+var _ = require('underscore');
+var classnames = require('classnames');
 
 if(process.browser) {
   require('jquery-cycle2');
@@ -18,8 +20,6 @@ var NationalCoverage = React.createClass({
 
   getInitialState: function() {
     return {
-      nationalCoverageHeadline: null,
-      nationalCoverageContent: null
     }
   },
 
@@ -34,29 +34,32 @@ var NationalCoverage = React.createClass({
         prev : '.prev',
         swipe : true
     });
-    this.setHeadlines();
-  },
-
-  setHeadlines: function() {
-    switch(this.props.context) {
-        case "enterprise":
-          this.setState({
-            nationalCoverageHeadline: "1000s of lease comps per market",
-            nationalCoverageContent: "Explore market and submarket trends for rents, concessions, terms and more. Build better models, make better investment and asset decisions."
-          })
-          break
-        case "exchange":
-          this.setState({
-            nationalCoverageHeadline: "Thousands of lease comps in your city",
-            nationalCoverageContent: "Gain market knowledge, secure clients and close deals faster with immediate access to actual rents and concessions."
-          })
-          break  
-    }
   },
 
   render: function () {
+    var headline;
+    var content;
+    if(this.props.context === "enterprise") {
+      headline = 
+        "1000s of lease comps per market"
+      content = 
+        <p>Explore market and submarket trends for rents, concessions, terms and more. Build better models, make better investment and asset decisions.</p>
+    } else if(this.props.context === "exchange") {
+      headline = 
+        "Thousands of lease comps in your city"
+      content = 
+        <p>Gain market knowledge, secure clients and close deals faster with immediate access to actual rents and concessions.</p>
+    }
     return (
-      <section id="coverage" className="ui-block national-coverage">   
+      <section id="coverage" className={classnames({
+        'ui-block': true,
+        'national-coverage': true,
+        'dark-blue': (this.props.mode == "dark-blue") ? true : false,
+        'black': (this.props.mode == "black") ? true : false,
+        'grey-bg': (this.props.mode == "grey") ? true : false,
+        'blue-bg': (this.props.mode == "blue") ? true : false,
+        'white': (this.props.mode == "white") ? true : false,
+      })}>
         <div className="container push-right">
           <div className="row">
             <div className="col six left screenshot">
@@ -74,8 +77,8 @@ var NationalCoverage = React.createClass({
             <div className="col six right block-info">
               <div>
                 <h5 className="section-header">National Coverage</h5>
-                <h3 className="h1">{this.state.nationalCoverageHeadline}</h3>
-                <p>{this.state.nationalCoverageContent}</p>
+                <h3 className="h1">{headline}</h3>
+                <p>{content}</p>
                 <ul className="numbers">
                   <li><span className="number">3,500,000,000</span> SqFt Indexed</li>
                   <li><span className="number">50,000</span> Buildings Covered</li>

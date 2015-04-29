@@ -9,78 +9,35 @@ var Link = Router.Link;
 
 var Header = React.createClass({
 
-  contextTypes: {
-    router: React.PropTypes.func
-  },
+  mixins: [ Router.State, Router.Navigation ],
 
-  getInitialState: function() {
-    return {
-      pages: {
-        enterprise: this.context.router.isActive('enterprise'),
-        exchange: this.context.router.isActive('exchange'),
-        legal: this.context.router.isActive('legal')
-      }
-    }
-  },
-
-  componentDidMount: function() {
+  componentDidMount: function () {
     window.addEventListener('scroll', this.onScroll, false);
-    this.initialScrollToElement();
-  },
-
-  componentWillReceiveProps: function() {
-    this.initialScrollToElement();
   },
 
   componentWillUnmount: function() {
     window.removeEventListener('scroll', this.onScroll, false);
   },
 
-  initialScrollToElement: function() {
-    var element = this.context.router.getCurrentQuery().scrollTo;
-    _.delay(function(){
-      if(element){
-        this.scrollPage('#' + element);
-        this.context.router.replaceWith(this.context.router.getCurrentPathname());
-      }
-    }.bind(this), 400)
-  },
-
   scrollToElement: function(e) {
     e.preventDefault();
     var destination = $(e.target).attr('href');
-    this.scrollPage(destination)  
-  },
-
-  scrollPage: function(destination) {
-    var scrollTop;
-    if($(destination).offset().top < 300) {
-      scrollTop = $(destination).offset().top
-    } else {
-      scrollTop = $(destination).offset().top - $('header').height()
-    }
-
-    $('html, body').animate({
-      scrollTop: scrollTop
+    $('body').animate({
+      scrollTop: $(destination).offset().top - $('header').height()
     }, 750);
   },
 
   scrollToTop: function() {
-    $('html,body').animate({ scrollTop: 0 }, 750);
+    $('body').animate({ scrollTop: 0 }, 750);
   },
 
   onScroll: function () {
     var headerHeight = $('header').height() + 10;
     var scrollTop = this.props.scrollTop;
 
-    $('section').each(function() {
+    $('section').each(function(index, element) {
       var id = $(this).attr('id');
       var element = $('a[href="#'+id+'"]').parent('li');
-      if(scrollTop + 500 > $(this).offset().top) {
-        $(this).addClass('visible');
-      } else {
-        $(this).removeClass('visible');
-      }
 
       if(scrollTop + headerHeight > $(this).offset().top && 
          scrollTop + headerHeight <= $(this).offset().top + $(this).height()) {
@@ -89,25 +46,6 @@ var Header = React.createClass({
         element.removeClass('active');
       } 
     });
-  },
-
-  getHeaderLinks: function() {
-    var headerLinks;
-    if(this.state.pages.enterprise) {
-      return (
-        <ul>
-          <li><a href="#sample-comp" onClick={this.scrollToElement}>CompStak Comps</a></li>
-          <li><a href="#coverage" onClick={this.scrollToElement}>National Coverage</a></li>
-        </ul>
-      )
-    } else if(this.state.pages.legal) {
-      return (
-        <ul>
-          <li><a href="#TermsOfUse" onClick={this.scrollToElement}>Terms Of Use</a></li>
-          <li><a href="#PrivacyPolicy" onClick={this.scrollToElement}>Privacy Policy</a></li>
-        </ul>
-      )
-    }
   },
 
   render: function () {
@@ -122,7 +60,14 @@ var Header = React.createClass({
           </div>
           <div className="left">
             <nav>
-              {this.getHeaderLinks()}
+              <ul>
+                <li><a href="#sample-comp" onClick={this.scrollToElement}>CompStak Comps</a></li>
+                <li><a href="#coverage" onClick={this.scrollToElement}>National Coverage</a></li>
+
+                <li><a href="#TermsOfUse" onClick={this.scrollToElement}>Terms Of Use</a></li>
+                <li><a href="#TermsOfUse" onClick={this.scrollToElement}>Terms Of Use</a></li>
+                <li><a href="#TermsOfUse" onClick={this.scrollToElement}>Terms Of Use</a></li>
+              </ul>
             </nav>
           </div>
           <div className="right">

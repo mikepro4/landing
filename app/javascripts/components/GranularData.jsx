@@ -21,38 +21,49 @@ var EntGranularData = React.createClass({
 
   getInitialState: function() {
     return {
-      sectionHeader: null,
-      searchableListItem: null,
-      propertyInfoListItem: null
     }
   },
 
   componentDidMount: function() {
-    this.granularDataInfo();
-  },
-
-  granularDataInfo: function() {
-    switch(this.props.context) {
-        case "enterprise":
-          this.setState({
-            sectionHeader: "",
-            searchableListItem: "Inifinitely & Instantly Searchable",
-            propertyInfoListItem: "Lease & Property Information"
-          })
-          break
-        case "exchange":
-          this.setState({
-            sectionHeader: "Detailed Comps",
-            searchableListItem: "Instantly Searchable",
-            propertyInfoListItem: ""
-          })
-          break  
-    }
   },
 
   render: function () {
+    var headline;
+    var content;
+    var sectionHeader;
+    if(this.props.context === "enterprise") {
+      sectionHeader = ""
+      headline = 
+        <h3 className="h1">Granular, accurate, deal-level lease data</h3>;
+      content = 
+        <ul className="checklist">
+          <li><Icons type="tick" /><span> Actual Transaction Data</span></li>
+          <li><Icons type="tick" /><span> Accurate & Detailed</span></li>
+          <li><Icons type="tick" /><span> Inifinitely & Instantly Searchable</span></li>
+          <li><Icons type="tick" /><span> Lease & Property Information</span></li>
+        </ul>
+    } else if(this.props.context === "exchange") {
+      sectionHeader = 
+        <h5 className="section-header">Detailed Comps</h5>
+      headline = 
+        <h3 className="h1">Granular, accurate, deal-level lease data</h3>;
+      content = 
+        <ul className="checklist">
+          <li><Icons type="tick" /><span> Actual Transaction Data</span></li>
+          <li><Icons type="tick" /><span> Accurate & Detailed</span></li>
+          <li><Icons type="tick" /><span> Instantly Searchable</span></li>
+        </ul>
+    }
     return (
-      <section className="ui-block granular-data">
+      <section className={classnames({
+        'ui-block': true,
+        'granular-data': true,
+        'dark-blue': (this.props.mode == "dark-blue") ? true : false,
+        'black': (this.props.mode == "black") ? true : false,
+        'grey-bg': (this.props.mode == "grey") ? true : false,
+        'blue-bg': (this.props.mode == "blue") ? true : false,
+        'white': (this.props.mode == "white") ? true : false,
+      })}>
         <div className="container push-right">
           <div className="row">
             <div className="col six left screenshot">
@@ -67,19 +78,9 @@ var EntGranularData = React.createClass({
             </div>
             <div className="col six right block-info">
               <div>
-                <h5 className={classnames({
-                  'section-header': true,
-                  'hidden': _.isEmpty(this.state.sectionHeader) ? true : false
-                })}>{this.state.sectionHeader}</h5>
-                <h3 className="h1">Granular, accurate, deal-level lease data</h3>
-                <ul className="checklist">
-                  <li><Icons type="tick" /><span> Actual Transaction Data</span></li>
-                  <li><Icons type="tick" /><span> Accurate & Detailed</span></li>
-                  <li><Icons type="tick" /><span> {this.state.searchableListItem}</span></li>
-                  <li className={classnames({
-                    'hidden': _.isEmpty(this.state.propertyInfoListItem) ? true : false
-                  })}><Icons type="tick" /><span> {this.state.propertyInfoListItem}</span></li>
-                </ul>
+                {sectionHeader}
+                <h3 className="h1">{headline}</h3>
+                {content}
               </div>
             </div>
           </div>

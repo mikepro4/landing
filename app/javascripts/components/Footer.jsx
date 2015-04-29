@@ -2,6 +2,8 @@
 var React = require('react');
 var Router = require('react-router');
 var Link = Router.Link;
+var _ = require('underscore');
+var classnames = require('classnames');
 
 var Footer = React.createClass({
   render: function () {

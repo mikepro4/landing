@@ -3,9 +3,21 @@ var React = require('react');
 var Router = require('react-router');
 var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
 var Icons = require('../components/Icons.jsx');
+var _ = require('underscore');
+var classnames = require('classnames');
 var Link = Router.Link;
 
 var TermsOfUse = React.createClass({
+
+  contextTypes: {
+    router: React.PropTypes.func
+  },
+
+  getInitialState: function() {
+    return {
+    }
+  },
+  
   render: function () {
     return (
       <section id="TermsOfUse" className="default-page-section">

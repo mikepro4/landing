@@ -12,6 +12,8 @@ var ObjectionHandler2 = require('../components/ObjectionHandler2.jsx');
 var Testimonials = require('../components/Testimonials.jsx');
 var Logos = require('../components/Logos.jsx');
 var Entintro = require('../components/EnterpriseIntro.jsx');
+var HowItWorks = require('../components/HowItWorks.jsx');
+var AccurateComps = require('../components/AccurateComps.jsx');
 var EntGranularData = require('../components/GranularData.jsx');
 var SampleComp = require('../components/SampleComp.jsx');
 var NationalCoverage = require('../components/NationalCoverage.jsx');
@@ -32,51 +34,64 @@ var Exchange = React.createClass({
             login={true}
             menu={true}
             haveAccount={false}
-            mode="light"
+            mode="white"
             context="exchange"
           />
           <FauxHeader {...this.props}/>
           <TopSplash 
             {...this.props}
             context="exchange"
-            mode="light"
+            mode="white"
           />
           <ObjectionHandler 
             {...this.props}
             context="exchange"
-            mode="light"
+            mode="white"
           />
           <Testimonials
             {...this.props}
             context="exchange"
+            mode="black"
           />
           <Entintro 
             {...this.props}
             context="exchange"
+            mode="grey"
+          />
+          <HowItWorks 
+            {...this.props}
+            context="exchange"
+            mode="white"
           />
           <ObjectionHandler2 
             {...this.props}
             context="exchange"
             mode="black"
           />
-          <section className="dark-blue">
-            <h1>Vertification Block</h1>
-          </section>
+          <AccurateComps 
+            {...this.props}
+            context="exchange"
+            mode="grey"
+          />
           <EntGranularData 
             {...this.props}
             context="exchange"
+            mode="white"
           />
           <SampleComp
             {...this.props}
             context="exchange"
+            mode="grey"
           />
           <NationalCoverage 
             {...this.props}
             context="exchange"
+            mode="white"
           />
           <CoverageMap
             {...this.props}
             context="exchange"
+            mode="grey"
           />
           <BottomSignUp
             {...this.props}
@@ -88,9 +103,10 @@ var Exchange = React.createClass({
             context="exchange"
             mode="blue"
           />
-          <OnPgSplitter
+          <OnPgSplitter 
             {...this.props}
-            context="exchange"
+            context="enterprise"
+            mode="dark-blue"
           />
           <Footer
             {...this.props}
