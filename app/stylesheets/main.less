@@ -54,10 +54,10 @@ body {
     });
     .respond(@huge, {
       &.push-right {
-        padding-left: 300px;
+        padding-left: @container-offset;
       }
       &.push-left {
-        padding-right: 300px;
+        padding-right: @container-offset;
       }
     }, @short-height);
   }

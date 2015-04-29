@@ -8,6 +8,7 @@ var FauxHeader = require('../components/FauxHeader.jsx');
 var Header = require('../components/Header.jsx');
 var TopSplash = require('../components/TopSplash.jsx');
 var ObjectionHandler = require('../components/ObjectionHandler.jsx');
+var ObjectionHandler2 = require('../components/ObjectionHandler2.jsx');
 var Testimonials = require('../components/Testimonials.jsx');
 var Logos = require('../components/Logos.jsx');
 var Entintro = require('../components/EnterpriseIntro.jsx');
@@ -52,6 +53,11 @@ var Exchange = React.createClass({
           <Entintro 
             {...this.props}
             context="exchange"
+          />
+          <ObjectionHandler2 
+            {...this.props}
+            context="exchange"
+            mode="black"
           />
           <section className="dark-blue">
             <h1>Vertification Block</h1>

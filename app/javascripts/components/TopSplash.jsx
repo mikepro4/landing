@@ -39,7 +39,7 @@ var TopSplash = React.createClass({
         case "exchange":
           this.setState({
             mainHeadline: "Trade the comps you have. Find the comps you need. ",
-            subHeadline: "Verified Lease Data & Market Analytics For Major Markets Nationwide"
+            subHeadline: ""
           })
           break  
     }
@@ -60,7 +60,15 @@ var TopSplash = React.createClass({
         'light': (this.props.mode == "light") ? true : false
       })}>
         <div className="container">
-          <h1 className="fadeIn">{this.state.mainHeadline}</h1>
+          <h1 className={classnames({
+            'fadeIn': true,
+            'hidden': (this.props.context == "exchange") ? true : false
+          })}>Commercial Lease Comps On Demand</h1>
+          <h1 className={classnames({
+            'fadeIn': true,
+            'h2': true,
+            'hidden': (this.props.context == "enterprise") ? true : false
+          })}>Trade the comps you have. Find the comps you need.</h1>
           <h2 className={classnames({
             'fadeIn': true,
             'h4': true,

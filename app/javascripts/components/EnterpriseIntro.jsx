@@ -20,7 +20,8 @@ var EntIntro = React.createClass({
 
   getInitialState: function() {
     return {
-      sectionHeader: null
+      sectionHeader: null,
+      headline: null
     }
   },
 
@@ -32,12 +33,14 @@ var EntIntro = React.createClass({
     switch(this.props.context) {
         case "enterprise":
           this.setState({
-            sectionHeader: "CompStak Comps"
+            sectionHeader: "CompStak Comps",
+            headline: "Office, retail & industrial lease comps",
           })
           break
         case "exchange":
           this.setState({
-            sectionHeader: null
+            sectionHeader: null,
+            headline: "Thousands of office, retail, and industrial lease comps",
           })
           break  
     }
@@ -59,8 +62,19 @@ var EntIntro = React.createClass({
                   'section-header': true,
                   'hidden': _.isEmpty(this.state.sectionHeader) ? true : false
                 })}>{this.state.sectionHeader}</h5>
-                <h3 className="h1">Office, retail & industrial lease comps.</h3>
-                <p>We collect and verify actual, deal-level transaction records reported directly to us by brokers on the ground. Our comps are recent, accurate and searchable.</p>
+                <h3 className="h1">{this.state.headline}</h3>
+                <div className={classnames({
+                  'hidden': (this.props.context === "exchange") ? true : false
+                })}>
+                  <p>We collect and verify actual, deal-level transaction records reported directly to us by brokers on the ground. Our comps are recent, accurate and searchable.</p>
+                </div>
+                <div className={classnames({
+                  'hidden': (this.props.context === "enterprise") ? true : false
+                })}>
+                  <p>Brokers, appraisers and researchers use CompStak Exchange to trade actual, deal-level transaction records.</p>
+                  <p>CompStak can complement your existing database, or fully replace it.</p>
+                  <p>Our comps are: <b>Recent</b>, <b>accurate</b>, <b>searchable</b> and <b>100% free</b>.</p>
+                </div>
               </div>
             </div>
           </div>

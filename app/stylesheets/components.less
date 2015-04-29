@@ -216,12 +216,15 @@ section {
 .block-info {
 	> div {
 		max-width: 475px;
+    p {
+      max-width: 31em;
+    }
 	}
 	.respond(@md, {
-		padding-right: 10%;
+		padding-right: 70px;
 		&.right {
 			padding-right: 0;
-			padding-left: 10%;
+			padding-left: 70px;
 		}
 	});
 	.h1 + ul.checklist {

@@ -58,7 +58,10 @@ var Enterprise = React.createClass({
             {...this.props}
             context="enterprise"
           />
-          <CoverageMap {...this.props}/>
+          <CoverageMap 
+            {...this.props}
+            context="enterprise"
+          />
           <BottomSignUp 
             {...this.props}
             context="enterprise"

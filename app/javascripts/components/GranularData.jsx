@@ -43,7 +43,7 @@ var EntGranularData = React.createClass({
         case "exchange":
           this.setState({
             sectionHeader: "Detailed Comps",
-            searchableListItem: "Inifinitely Searchable",
+            searchableListItem: "Instantly Searchable",
             propertyInfoListItem: ""
           })
           break  
@@ -71,13 +71,12 @@ var EntGranularData = React.createClass({
                   'section-header': true,
                   'hidden': _.isEmpty(this.state.sectionHeader) ? true : false
                 })}>{this.state.sectionHeader}</h5>
-                <h3 className="h1">Granular, Accurate, Deal-level Lease Data</h3>
+                <h3 className="h1">Granular, accurate, deal-level lease data</h3>
                 <ul className="checklist">
                   <li><Icons type="tick" /><span> Actual Transaction Data</span></li>
                   <li><Icons type="tick" /><span> Accurate & Detailed</span></li>
                   <li><Icons type="tick" /><span> {this.state.searchableListItem}</span></li>
                   <li className={classnames({
-                    'section-header': true,
                     'hidden': _.isEmpty(this.state.propertyInfoListItem) ? true : false
                   })}><Icons type="tick" /><span> {this.state.propertyInfoListItem}</span></li>
                 </ul>

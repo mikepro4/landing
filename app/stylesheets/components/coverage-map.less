@@ -61,15 +61,10 @@
       max-width: 105%;
       margin-left: -5%;
     });
-    .respond(@xlg, {
+    .respond(@huge, {
       width: 110%;
       max-width: 110%;
       margin-left: -10%;
-    });
-    .respond(@max-site-width, {
-      width: 120%;
-      max-width: 120%;
-      margin-left: -20%;
     });
   }
   .coverage-list {
@@ -105,6 +100,50 @@
             fill: @light-blue;
           }
         }  
+      }
+    }
+  }
+  .coverage-links {
+    padding-top: 7%;
+    margin-left: -3%;
+    > ul li {
+      .respond(@sm, {
+        display: inline-block;
+        width: 47%;
+        margin-left: 3%;
+        margin-bottom: 12px;
+      });
+      .respond(@lg, {
+        width: 30.333%;
+      });
+      .respond(@huge, {
+        width: 22%;
+      });
+      font-size: 16px;
+      a {
+        .border-radius(3px);
+        display: block;
+        padding: 15px 14px 13px;
+        background-color: #e4e5e6;
+        &:hover {
+          background-color: @white;
+          color: @light-blue;
+          svg {
+            * {
+              fill: @light-blue;
+            }
+          }
+        }
+        svg {
+          float: right;
+          display: block;
+          height: 10px;
+          width: 6px;
+          margin-top: 7px;
+          * {
+            fill: @white;
+          }
+        }
       }
     }
   }

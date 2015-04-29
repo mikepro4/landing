@@ -30,7 +30,7 @@ var NationalCoverage = React.createClass({
         pager : '.pager',
         pagerTemplate : '<li><span>•</span></li>',
         pagerActiveClass : 'active',
-        next : '.next, .next-slide, .slides ul li',
+        next : '.next, img',
         prev : '.prev',
         swipe : true
     });
@@ -47,8 +47,8 @@ var NationalCoverage = React.createClass({
           break
         case "exchange":
           this.setState({
-            nationalCoverageHeadline: "Thousands of Lease Comps in Your City. Hundreds of Thousands nationwide.",
-            nationalCoverageContent: "Gain market knowledge, secure clients and close deals faster with Immediate access to actual rents and concessions."
+            nationalCoverageHeadline: "Thousands of lease comps in your city",
+            nationalCoverageContent: "Gain market knowledge, secure clients and close deals faster with immediate access to actual rents and concessions."
           })
           break  
     }

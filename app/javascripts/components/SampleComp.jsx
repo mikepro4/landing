@@ -35,7 +35,7 @@ var SampleComp = React.createClass({
           this.setState({
             sampleCompIntro: "Complete, accurate data directly from brokers, researchers and appraisers.",
             searchByListItem: "Search comps by 24 attributes",
-            atrListTitle: " 24 Uniquely Sourced Attributes"
+            atrListTitle: "24 Hard-to-Find Details"
           })
           break  
     }
