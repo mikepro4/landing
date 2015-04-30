@@ -50,6 +50,10 @@ body {
     }
 
     .respond(@huge, {
+      max-width: 1500px;
+    });
+
+    .respond(@huge, {
       &.push-right {
         padding-left: 196px;
       }
@@ -60,9 +64,11 @@ body {
     .respond(@huge, {
       &.push-right {
         padding-left: @container-offset;
+        padding-left: 300px;
       }
       &.push-left {
         padding-right: @container-offset;
+        padding-right: 300px;
       }
     }, @short-height);
   }
