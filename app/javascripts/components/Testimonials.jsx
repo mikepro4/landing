@@ -14,15 +14,16 @@ var Testimonials = React.createClass({
 
   componentDidMount: function() {
     $('.testimonials-block').cycle({
-        speed: 500,
+        speed: 0,
+        fx: 'carousel',
+        carouselFluid: true,
+        carouselVisible : 3,
         manualSpeed: 500,
-        pager : '.pager2',
-        pagerTemplate : '<li><span>•</span></li>',
-        pagerActiveClass : 'active',
-        next : '.next',
-        prev : '.prev',
+        next : '.next-arrow',
+        prev : '.prev-arrow',
         slides : '> li',
         swipe : true
+        //slide-active-class : 'active'
     });
   },
 
@@ -37,10 +38,18 @@ var Testimonials = React.createClass({
         'white': (this.props.mode == "white") ? true : false
       })}>
         <ul className="testimonials-block">
-          <li>luqrglajhd</li>
-          <li>slide 2</li>
+          <li><p>Compstak is on the bleeding edge of bringing big data and scale in an innovative way to help T3's clients get better deals all across the country.</p></li>
+          <li><p>Compstak is on the bleeding edge of bringing big data and scale in an innovative way to help T3's clients get better deals all across the country.</p></li>
+          <li><p>Compstak is on the bleeding edge of bringing big data and scale in an innovative way to help T3's clients get better deals all across the country.</p></li>
+          <li><p>Compstak is on the bleeding edge of bringing big data and scale in an innovative way to help T3's clients get better deals all across the country.</p></li>
+          <li><p>Compstak is on the bleeding edge of bringing big data and scale in an innovative way to help T3's clients get better deals all across the country.</p></li>
+          <li><p>Compstak is on the bleeding edge of bringing big data and scale in an innovative way to help T3's clients get better deals all across the country.</p></li>
+          <li><p>Compstak is on the bleeding edge of bringing big data and scale in an innovative way to help T3's clients get better deals all across the country.</p></li>
+          <li><p>Compstak is on the bleeding edge of bringing big data and scale in an innovative way to help T3's clients get better deals all across the country.</p></li>
         </ul>
-        <ul className="pager2"></ul>
+
+        <div className="prev-arrow">Prev</div>
+        <div className="next-arrow">Next</div>
       </section>
     )
   }

@@ -76,10 +76,8 @@ var Header = React.createClass({
     $('section').each(function() {
       var id = $(this).attr('id');
       var element = $('a[href="#'+id+'"]').parent('li');
-      if(scrollTop + 500 > $(this).offset().top) {
+      if(scrollTop + ($(window).height() - 100) > $(this).offset().top) {
         $(this).addClass('visible');
-      } else {
-        $(this).removeClass('visible');
       }
 
       if(scrollTop + headerHeight > $(this).offset().top && 
