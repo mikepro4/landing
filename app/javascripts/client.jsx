@@ -6,6 +6,7 @@ if(process.browser) {
   window.$ = require('jquery');
   require('velocity-animate');
   require('velocity-animate/velocity.ui')
+  require('jquery-cycle2');
 }
 
 var React  = require('react');

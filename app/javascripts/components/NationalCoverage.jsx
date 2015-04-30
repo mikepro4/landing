@@ -6,10 +6,6 @@ var Icons = require('../components/Icons.jsx');
 var _ = require('underscore');
 var classnames = require('classnames');
 
-if(process.browser) {
-  require('jquery-cycle2');
-}
-
 var Link = Router.Link;
 
 var NationalCoverage = React.createClass({

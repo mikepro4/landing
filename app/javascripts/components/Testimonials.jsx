@@ -6,27 +6,22 @@ var _ = require('underscore');
 var classnames = require('classnames');
 var Link = Router.Link;
 
-if(process.browser) {
-  require('jquery-cycle2');
-}
-
 var Testimonials = React.createClass({
 
   contextTypes: {
     router: React.PropTypes.func
   },
 
-  getInitialState: function() {
-    return {
-    }
-  },
-
   componentDidMount: function() {
-    $('.slideshow').cycle({
+    $('.testimonials-block').cycle({
         speed: 500,
         manualSpeed: 500,
+        pager : '.pager2',
+        pagerTemplate : '<li><span>•</span></li>',
+        pagerActiveClass : 'active',
         next : '.next',
         prev : '.prev',
+        slides : '> li',
         swipe : true
     });
   },
@@ -39,19 +34,13 @@ var Testimonials = React.createClass({
         'black': (this.props.mode == "black") ? true : false,
         'grey-bg': (this.props.mode == "grey") ? true : false,
         'blue-bg': (this.props.mode == "blue") ? true : false,
-        'white': (this.props.mode == "white") ? true : false,
+        'white': (this.props.mode == "white") ? true : false
       })}>
-        <ul className="slideshow">
-          <li>
-            <p>Compstak is on the bleeding edge of bringing big data and scale in an innovative way to help T3's clients get better deals all across the country.</p>
-            <span></span>
-          </li>
-          <li>
-            <p>Another Quote</p>
-            <span></span>
-          </li>
+        <ul className="testimonials-block">
+          <li>luqrglajhd</li>
+          <li>slide 2</li>
         </ul>
-        <div className="next blue">Next</div>
+        <ul className="pager2"></ul>
       </section>
     )
   }
