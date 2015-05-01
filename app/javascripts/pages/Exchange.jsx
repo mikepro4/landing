@@ -11,7 +11,7 @@ var ObjectionHandler = require('../components/ObjectionHandler.jsx');
 var ObjectionHandler2 = require('../components/ObjectionHandler2.jsx');
 var Testimonials = require('../components/Testimonials.jsx');
 var Logos = require('../components/Logos.jsx');
-var Entintro = require('../components/EnterpriseIntro.jsx');
+var Intro = require('../components/Intro.jsx');
 var HowItWorks = require('../components/HowItWorks.jsx');
 var AccurateComps = require('../components/AccurateComps.jsx');
 var EntGranularData = require('../components/GranularData.jsx');
@@ -53,7 +53,7 @@ var Exchange = React.createClass({
             context="exchange"
             mode="black"
           />
-          <Entintro 
+          <Intro 
             {...this.props}
             context="exchange"
             mode="grey"

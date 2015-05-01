@@ -40,9 +40,9 @@ var AccurateComps = React.createClass({
       })}>
         <div className="container push-left">
           <div className="row">
-            <div className="col six right screenshot">
+            <div className="col six right analysts">
               <div className="img-wrap">
-                <img src="/images/ent-granular-screenshot.png"/>
+                <img src="/images/analysts.png"/>
               </div>
             </div>
             <div className="col six left block-info">

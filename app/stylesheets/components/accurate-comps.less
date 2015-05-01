@@ -1,20 +1,32 @@
 .accurate-comps {
   padding-bottom: 0;
-  .screenshot {
+  .block-info {
+    padding-bottom: 12%;
+    .respond(@lg, {
+      padding-bottom: 100px;
+    });
+  }
+  .analysts {
+    margin-bottom: 0;
+    .respond(@md, {
+      position: absolute;
+      bottom: 0px;
+      right: 0;
+    });
     .img-wrap {
       margin-left: $gutter;
-      margin-bottom: 10%; 
+      max-width: 700px;
       .border-radius(3px);
       .respond(@md, {
         .border-radius(5px);
-        max-width: 130%;
+        //max-width: 130%;
         width: 130%;
         margin-bottom: 0;
       });
-      .respond(@xlg, {
-        max-width: 900px;
-        width: 900px;
-      }, @short-height);
+      // .respond(@huge, {
+      //   max-width: 900px;
+      //   width: 900px;
+      // }, @short-height);
       .box-shadow(none);
     }
     &.left .img-wrap {
