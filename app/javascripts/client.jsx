@@ -5,7 +5,9 @@ if(process.browser) {
   window.jQuery = require('jquery');
   window.$ = require('jquery');
   require('velocity-animate');
-  require('velocity-animate/velocity.ui')
+  require('velocity-animate/velocity.ui');
+  require('jquery-cycle2');
+  require('jquery-cycle2/build/plugin/jquery.cycle2.carousel.min');
 }
 
 var React  = require('react');

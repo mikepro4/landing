@@ -3,6 +3,7 @@ var React = require('react');
 var Router = require('react-router');
 var Icons = require('../components/Icons.jsx');
 var DemoEmailForm = require('../components/DemoEmailForm.jsx');
+var _ = require('underscore');
 var classnames = require('classnames');
 var Link = Router.Link;
 
@@ -44,9 +45,11 @@ var BottomSignUp = React.createClass({
     return (
       <div className={classnames({
         'bottom-sign-up': true,
-        'dark-blue': (this.props.mode == "dark") ? true : false,
-        'light': (this.props.mode == "light") ? true : false,
-        'blue-bg': (this.props.mode == "blue") ? true : false
+        'dark-blue': (this.props.mode == "dark-blue") ? true : false,
+        'black': (this.props.mode == "black") ? true : false,
+        'grey-bg': (this.props.mode == "grey") ? true : false,
+        'blue-bg': (this.props.mode == "blue") ? true : false,
+        'white': (this.props.mode == "white") ? true : false,
       })}>
         <div className="container">
           <p className="h3">{this.state.signUpHeadline}</p>

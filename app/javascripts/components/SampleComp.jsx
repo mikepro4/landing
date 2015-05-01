@@ -3,6 +3,8 @@ var React = require('react');
 var Router = require('react-router');
 var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
 var Icons = require('../components/Icons.jsx');
+var _ = require('underscore');
+var classnames = require('classnames');
 var Link = Router.Link;
 
 var SampleComp = React.createClass({
@@ -10,46 +12,44 @@ var SampleComp = React.createClass({
     router: React.PropTypes.func
   },
 
-  getInitialState: function() {
-    return {
-      sampleCompIntro: null,
-      searchByListItem: null,
-      atrListTitle: null
-    }
-  },
-
   componentDidMount: function() {
-    this.sampleCompContent();
-  },
-
-  sampleCompContent: function() {
-    switch(this.props.context) {
-        case "enterprise":
-          this.setState({
-            sampleCompIntro: "Complete, accurate, deal-level data directly from brokers and appraisers on the ground, doing deals.",
-            searchByListItem: "Search & filter by 24 details",
-            atrListTitle: "24 Hard-to-Source Details"
-          })
-          break
-        case "exchange":
-          this.setState({
-            sampleCompIntro: "Complete, accurate data directly from brokers, researchers and appraisers.",
-            searchByListItem: "Search comps by 24 attributes",
-            atrListTitle: "24 Hard-to-Find Details"
-          })
-          break  
-    }
   },
 
   render: function () {
+    var headline;
+    var introText;
+    var searchByText;
+    var listTitle;
+    if(this.props.context === "enterprise") {
+      introText = 
+        <p>Complete, accurate, deal-level data directly from brokers and appraisers on the ground, doing deals.</p>        
+      searchByText = 
+        "Search & filter by 24 details"
+      listTitle = 
+        <h5>24 Hard-to-Source Details</h5>
+    } else if(this.props.context === "exchange") {
+      introText = 
+        <p>Complete, accurate data directly from brokers, researchers and appraisers.</p>
+      searchByText = 
+        "Search comps by 24 attributes"
+      listTitle = 
+        <h5>24 Hard-to-Find Details</h5>
+    }
     return (
-      <section id="sample-comp" className="grey-bg sample-comp">
+      <section id="sample-comp" className={classnames({
+        'sample-comp': true,
+        'dark-blue': (this.props.mode == "dark-blue") ? true : false,
+        'black': (this.props.mode == "black") ? true : false,
+        'grey-bg': (this.props.mode == "grey") ? true : false,
+        'blue-bg': (this.props.mode == "blue") ? true : false,
+        'white': (this.props.mode == "white") ? true : false,
+      })}>
         <div className="container">
           <div className="row">
             <div className="col six block-info">
               <div>
                 <h3 className="h1">Complete Comps</h3>
-                <p>{this.state.sampleCompIntro}</p>
+                {introText}
               </div>
             </div>
             <div className="col six right">
@@ -127,7 +127,7 @@ var SampleComp = React.createClass({
             </div>
             <div className="col six left comp-callouts">
               <ul className="checklist">
-                <li><Icons type="tick" /><span> {this.state.searchByListItem}</span></li>
+                <li><Icons type="tick" /><span> {searchByText}</span></li>
                 <li><Icons type="tick" /><span> Powerful, interactive maps</span></li>
               </ul>
               <ul className="checklist export">
@@ -141,7 +141,7 @@ var SampleComp = React.createClass({
             </div>
           </div>
           <div className="row comp-details">
-            <h5>{this.state.atrListTitle}</h5>
+            {listTitle}
             <ul className="checklist">
               <li><Icons type="tick" /><span> Street Address</span></li>
               <li><Icons type="tick" /><span> Submarket</span></li>

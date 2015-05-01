@@ -1,15 +1,15 @@
 .enterprise-intro {
 
   .block-info {
-    .transition(all .4s ease-in-out);
-    opacity: 0;
-    .transform(translate3d(0, 10px, 0));
+    // .transition(all .3s ease-in-out);
+    // opacity: 0;
+    // .transform(translate3d(0, 10px, 0));
   }
   .screenshot {
-    .transition(all .4s .3s ease-in-out);
+    // .transition(all .3s .3s ease-in-out);
     position: relative;
-    opacity: 0;
-    .transform(translate3d(0, 10px, 0));
+    // opacity: 0;
+    // .transform(translate3d(0, 10px, 0));
     .respond(@xlg, {
       &:after {
         content: '';
@@ -26,24 +26,24 @@
         -o-animation: highlight 2.5s steps(14, end) infinite; /* Opera */
       }
     }, @short-height);
-    .respond(@huge, {
+    .respond(@xlg, {
       &:after {
         right: -293px;
       }
     });
   }
 
-  &.visible {
-    .block-info {
-      .transform(translate3d(0, 0, 0));
-      opacity: 1
-    }
+  // &.visible {
+  //   .block-info {
+  //     .transform(translate3d(0, 0, 0));
+  //     opacity: 1
+  //   }
 
-    .screenshot {
-      .transform(translate3d(0, 0, 0));
-      opacity: 1
-    }
-  }
+  //   .screenshot {
+  //     .transform(translate3d(0, 0, 0));
+  //     opacity: 1
+  //   }
+  // }
 }
 
 // Row Highlight

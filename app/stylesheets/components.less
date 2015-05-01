@@ -87,11 +87,7 @@ section {
 	background-color: @light-grey;
 }
 
-.white-bg {
-  background-color: @light-grey;
-}
-
-.light {
+.white {
   background-color: @white; 
 }
 
@@ -218,6 +214,9 @@ section {
 		max-width: 475px;
     p {
       max-width: 31em;
+      & + .checklist {
+        margin-top: 2.25em;
+      }
     }
 	}
 	.respond(@md, {
@@ -258,6 +257,7 @@ section {
 @import "./components/objection-handler.less";
 @import "./components/testimonials.less";
 @import "./components/slide-in-menu.less";
+@import "./components/accurate-comps.less";
 @import "./components/faux-header.less";
 @import "./components/top-splash.less";
 @import "./components/logos.less";
@@ -265,6 +265,7 @@ section {
 @import "./components/granular-data.less";
 @import "./components/sample-comp.less";
 @import "./components/national-coverage.less";
+@import "./components/how-it-works.less";
 @import "./components/coverage-map.less";
 @import "./components/bottom-sign-up.less";
 @import "./components/on-page-splitter.less";

@@ -21,7 +21,6 @@ var EntIntro = React.createClass({
   getInitialState: function() {
     return {
       sectionHeader: null,
-      headline: null
     }
   },
 
@@ -34,21 +33,44 @@ var EntIntro = React.createClass({
         case "enterprise":
           this.setState({
             sectionHeader: "CompStak Comps",
-            headline: "Office, retail & industrial lease comps",
           })
           break
         case "exchange":
           this.setState({
             sectionHeader: null,
-            headline: "Thousands of office, retail, and industrial lease comps",
           })
           break  
     }
   },
 
   render: function () {
+    var headline;
+    var content;
+    if(this.props.context === "enterprise") {
+      headline = 
+        <h3 className="h1">Office, retail & industrial lease comps</h3>;
+      content = 
+        <p>We collect and verify actual, deal-level transaction records reported directly to us by brokers on the ground. Our comps are recent, accurate and searchable.</p>
+    } else if(this.props.context === "exchange") {
+      headline = 
+        <h3 className="h1">Thousands of office, retail, and industrial lease comps</h3>;
+      content = 
+        <div>
+          <p>Brokers, appraisers and researchers use CompStak Exchange to trade actual, deal-level transaction records.</p>
+          <p>CompStak can complement your existing database, or fully replace it.</p>
+          <p>Our comps are: <b>Recent</b>, <b>accurate</b>, <b>searchable</b> and <b>100% free</b>.</p>
+        </div>
+    }
     return (
-      <section className="ui-block grey-bg enterprise-intro">
+      <section className={classnames({
+        'ui-block': true,
+        'enterprise-intro': true,
+        'dark-blue': (this.props.mode == "dark-blue") ? true : false,
+        'black': (this.props.mode == "black") ? true : false,
+        'grey-bg': (this.props.mode == "grey") ? true : false,
+        'blue-bg': (this.props.mode == "blue") ? true : false,
+        'white': (this.props.mode == "white") ? true : false,
+      })}>
         <div className="container push-left">
           <div className="row">
             <div className="col six right screenshot">
@@ -62,19 +84,8 @@ var EntIntro = React.createClass({
                   'section-header': true,
                   'hidden': _.isEmpty(this.state.sectionHeader) ? true : false
                 })}>{this.state.sectionHeader}</h5>
-                <h3 className="h1">{this.state.headline}</h3>
-                <div className={classnames({
-                  'hidden': (this.props.context === "exchange") ? true : false
-                })}>
-                  <p>We collect and verify actual, deal-level transaction records reported directly to us by brokers on the ground. Our comps are recent, accurate and searchable.</p>
-                </div>
-                <div className={classnames({
-                  'hidden': (this.props.context === "enterprise") ? true : false
-                })}>
-                  <p>Brokers, appraisers and researchers use CompStak Exchange to trade actual, deal-level transaction records.</p>
-                  <p>CompStak can complement your existing database, or fully replace it.</p>
-                  <p>Our comps are: <b>Recent</b>, <b>accurate</b>, <b>searchable</b> and <b>100% free</b>.</p>
-                </div>
+                {headline}
+                {content}
               </div>
             </div>
           </div>

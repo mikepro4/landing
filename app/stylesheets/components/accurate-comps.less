@@ -1,0 +1,26 @@
+.accurate-comps {
+  padding-bottom: 0;
+  .screenshot {
+    .img-wrap {
+      margin-left: $gutter;
+      margin-bottom: 10%; 
+      .border-radius(3px);
+      .respond(@md, {
+        .border-radius(5px);
+        max-width: 130%;
+        width: 130%;
+        margin-bottom: 0;
+      });
+      .respond(@xlg, {
+        max-width: 900px;
+        width: 900px;
+      }, @short-height);
+      .box-shadow(none);
+    }
+    &.left .img-wrap {
+      .respond(@md, {
+        float: right;
+      });
+    }
+  }
+}

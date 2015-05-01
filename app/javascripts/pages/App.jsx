@@ -114,7 +114,7 @@ var App = React.createClass({
         <div className={classnames({
           'application_wrapper':   true,
           'open-menu':             this.state.menuOpen
-        })}>    
+        })}>  
 
           <div className="page-content">
             <RouteHandler 

@@ -29,45 +29,55 @@ var Enterprise = React.createClass({
             login={true}
             menu={true}
             haveAccount={false}
-            mode="dark"
+            mode="dark-blue"
             context="enterprise"
           />
           <FauxHeader {...this.props}/>
           <TopSplash 
             {...this.props}
             context="enterprise"
-            mode="dark"
+            mode="dark-blue"
           />
           <Logos 
             {...this.props}
             context="enterprise"
+            mode="dark-blue"
           />
           <Entintro 
             {...this.props}
             context="enterprise"
+            mode="grey"
           />
           <EntGranularData 
             {...this.props}
             context="enterprise"
+            mode="white"
           />
           <SampleComp 
             {...this.props}
             context="enterprise"
+            mode="grey"
           />
           <NationalCoverage 
             {...this.props}
             context="enterprise"
+            mode="white"
           />
           <CoverageMap 
             {...this.props}
             context="enterprise"
+            mode="grey"
           />
           <BottomSignUp 
             {...this.props}
             context="enterprise"
-            mode="dark"
+            mode="dark-blue"
           />
-          <OnPgSplitter {...this.props}/>
+          <OnPgSplitter 
+            {...this.props}
+            context="enterprise"
+            mode="dark-blue"
+          />
           <Footer {...this.props}/>
           <VideoModal {...this.props}/>
         </div>

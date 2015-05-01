@@ -1,17 +1,22 @@
+// ALL MAJOR COMPONENTS AND RESUSABLE ELEMENTS
+// ===============================================================
+@import "includes.less";
+@import "./components.less";
+.cols();
+
 @speed : .2s;
 
 html {
-  .size(100%, 100%);
 }
 
 body {
-  .size(100%, 100%);
   -webkit-font-smoothing: subpixel-antialiased;
   background: @dark-blue;
   font: normal normal normal @font-size-base/@line-height-base @font-gotham-book;
   -webkit-overflow-scrolling: touch;
   display: block;
   color: @dark-blue;
+  height: auto;
 }
 
 .application_wrapper {
@@ -45,6 +50,10 @@ body {
     }
 
     .respond(@huge, {
+      max-width: 1500px;
+    });
+
+    .respond(@huge, {
       &.push-right {
         padding-left: 196px;
       }
@@ -55,9 +64,11 @@ body {
     .respond(@huge, {
       &.push-right {
         padding-left: @container-offset;
+        padding-left: 300px;
       }
       &.push-left {
         padding-right: @container-offset;
+        padding-right: 300px;
       }
     }, @short-height);
   }
@@ -68,10 +79,3 @@ body {
     .transition(all @speed ease-in-out);
   }
 }
-
-
-// ALL MAJOR COMPONENTS AND RESUSABLE ELEMENTS
-// ===============================================================
-@import "includes.less";
-@import "./components.less";
-.cols();

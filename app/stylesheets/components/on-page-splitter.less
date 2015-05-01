@@ -2,8 +2,8 @@
 	border-top: 1px solid @dark-line-blue;
   border-bottom: 1px solid @dark-line-blue;
   .container {
-    width: 100%;
-    max-width: none;
+    width: 100% !important;
+    max-width: none !important;
     > div {
       .respond(@lg, {
       });
@@ -57,6 +57,9 @@
         .respond(@xlg, {
           height: auto;
           height: 225px;
+        });
+        .respond(@huge, {
+          max-width: 1500px/2;
         });
         h6 {
           margin-bottom: 1em;

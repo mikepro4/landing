@@ -4,8 +4,8 @@ var Router = require('react-router');
 var Icons = require('../components/Icons.jsx');
 var DemoEmailForm = require('../components/DemoEmailForm.jsx');
 var _ = require('underscore');
-var Link = Router.Link;
 var classnames = require('classnames');
+var Link = Router.Link;
 
 var TopSplash = React.createClass({
 
@@ -45,19 +45,34 @@ var TopSplash = React.createClass({
     }
   },
 
-  render: function () {
-    var loopingVideo;
+  getVideo: function() {
     if(!this.props.videoPlaying) {
-      loopingVideo = 
-        <video preload="auto" autoPlay loop muted className="enterprise_video" controls= "false" poster="/images/video_poster.png">
-          <source src="https://s3.amazonaws.com/compstak/static/landing_pages/enterprise.mp4" type="video/mp4" />
-        </video> 
-    }
+      switch(this.props.context) {
+        case "enterprise":
+          return (
+            <video preload="auto" autoPlay loop muted className="enterprise_video" controls= "false" poster="/images/video_poster.png">
+              <source src="https://s3.amazonaws.com/compstak/static/landing_pages/enterprise.mp4" type="video/mp4" />
+            </video>
+          )
+        case "exchange":
+          return (
+            <video preload="auto" autoPlay loop muted className="exchange_video" controls= "false" poster="/images/video_poster.png">
+              <source src="https://s3.amazonaws.com/compstak/static/landing_pages/exchange.mp4" type="video/mp4" />
+            </video>
+          )
+      }
+    } 
+  },
+
+  render: function() {
     return (
       <div className={classnames({
         'top-splash': true,
-        'dark-blue': (this.props.mode == "dark") ? true : false,
-        'light': (this.props.mode == "light") ? true : false
+        'dark-blue': (this.props.mode == "dark-blue") ? true : false,
+        'black': (this.props.mode == "black") ? true : false,
+        'grey-bg': (this.props.mode == "grey") ? true : false,
+        'blue-bg': (this.props.mode == "blue") ? true : false,
+        'white': (this.props.mode == "white") ? true : false,
       })}>
         <div className="container">
           <h1 className={classnames({
@@ -88,7 +103,7 @@ var TopSplash = React.createClass({
                 <p className="h4">WATCH OUR VIDEO</p>
                 <aside>ONLY 60 sec</aside>   
               </div>
-              {loopingVideo}
+              {this.getVideo()}
             </div> 
             <div className="laptop"></div>
           </div>
