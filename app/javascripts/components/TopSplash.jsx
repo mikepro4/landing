@@ -45,14 +45,26 @@ var TopSplash = React.createClass({
     }
   },
 
-  render: function () {
-    var loopingVideo;
+  getVideo: function() {
     if(!this.props.videoPlaying) {
-      loopingVideo = 
-        <video preload="auto" autoPlay loop muted className="enterprise_video" controls= "false" poster="/images/video_poster.png">
-          <source src="https://s3.amazonaws.com/compstak/static/landing_pages/enterprise.mp4" type="video/mp4" />
-        </video> 
-    }
+      switch(this.props.context) {
+        case "enterprise":
+          return (
+            <video preload="auto" autoPlay loop muted className="enterprise_video" controls= "false" poster="/images/video_poster.png">
+              <source src="https://s3.amazonaws.com/compstak/static/landing_pages/enterprise.mp4" type="video/mp4" />
+            </video>
+          )
+        case "exchange":
+          return (
+            <video preload="auto" autoPlay loop muted className="exchange_video" controls= "false" poster="/images/video_poster.png">
+              <source src="https://s3.amazonaws.com/compstak/static/landing_pages/exchange.mp4" type="video/mp4" />
+            </video>
+          )
+      }
+    } 
+  },
+
+  render: function() {
     return (
       <div className={classnames({
         'top-splash': true,
@@ -91,7 +103,7 @@ var TopSplash = React.createClass({
                 <p className="h4">WATCH OUR VIDEO</p>
                 <aside>ONLY 60 sec</aside>   
               </div>
-              {loopingVideo}
+              {this.getVideo()}
             </div> 
             <div className="laptop"></div>
           </div>

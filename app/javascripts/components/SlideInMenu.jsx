@@ -13,86 +13,13 @@ var SlideInMenu = React.createClass({
 
   mixins: [ UpdateUserMixin, LoginUrlMixin ],
 
-  getInitialState: function() {
-    return {
-      jobSelectorOpen: false
-    }
-  },
-
-  toggleJobMenu: function() {
-    this.setState({
-      jobSelectorOpen: !this.state.jobSelectorOpen
-    }, function () {
-      if(this.state.jobSelectorOpen) {
-       this.animateJobItems();
-      }
-    }.bind(this));
-  },
-
-  animateJobItems: function() {
-    $(".slide-in-menu .js-velocity")
-      .stop()
-      .velocity("transition.slideDownIn", { 
-        stagger: 40
-      })
-  },
-
-  openJobMenu: function() {
-    this.setState({
-      jobSelectorOpen: true
-    }, function () {
-      this.animateJobItems()
-    }.bind(this))
-  },
-
-  closeMenu: function() { 
-    this.props.toggleMenu();
-    this.setState({
-      jobSelectorOpen: false
-    });
-  },
-
   render: function () {
-    var jobTitleNodes = this.props.jobOptions.map(function (title, i) {
-      return (
-        <li className="single-job-title-container js-velocity" key={i} onClick={this.closeMenu}>
-          <Link to={this.getUserMode(i)} className={classnames({
-            "job-title": true,
-            "job-title-active": (title === this.props.user.jobTitle) ? true : false
-          })} onClick={this.updateUser} data-position={i}>
-            {title}
-          </Link>
-        </li>
-      );
-    }.bind(this));
-
     return (
       <div className="slide-in-menu">
 
-        <div className={classnames({
-          "job-titles-list": true,
-          "job-menu-active": this.state.jobSelectorOpen 
-        })}>
-          <h4 className="js-velocity">Which Are you?</h4>
-          <ul>
-            {jobTitleNodes}
-          </ul>
-        </div>
+        <i className="close-icon" onClick={this.props.toggleMenu}><Icons type="cross"/></i>
 
-        <div className={classnames({
-          "customized-experience-message": true,
-          "message-active": this.state.jobSelectorOpen 
-        })}>
-          <p>Please select your job title for <br/>
-          customized CompStak experience.</p>
-        </div>
-
-        <i className="close-icon" onClick={this.closeMenu}><Icons type="cross"/></i>
-
-        <div className={classnames({
-          "slide-in-menu-content": true,
-          "menu-content-active": !this.state.jobSelectorOpen
-        })}>
+        <div className="slide-in-menu-content">
 
           <div className="button-wrap" onClick={this.props.toggleMenu}>
             <Link to="demo-request"><button className="button">Schedule a Demo</button></Link>
@@ -120,22 +47,22 @@ var SlideInMenu = React.createClass({
             <li><Link to="legal" query={{scrollTo: "FairStatement"}}>Fair Info Statement</Link></li>
           </ul>
 
-          <a onClick={this.toggleJobMenu} className={classnames({
-              "choose-your-job-title": true,
-              "hidden": !this.props.user.mode ? true : false
-            })}>
-            <span className={classnames({
-              "hidden": (this.props.user.mode === "exchange") ? true : false
-            })}>
-              Are You A Broker, Appraiser <br/> or Researcher?
-            </span>
+          <Link to="splitter" onClick={this.props.toggleMenu} className={classnames({
+            "choose-your-job-title": true,
+            "hidden": !this.props.user.mode ? true : false
+          })}>
+              <span className={classnames({
+                "hidden": (this.props.user.mode === "exchange") ? true : false
+              })}>
+                Are You A Broker, Appraiser <br/> or Researcher?
+              </span>
 
-            <span className={classnames({
-              "hidden": (this.props.user.mode === "enterprise") ? true : false
-            })}>
-              Are You Landlord, Lender <br/> or Investor?
-            </span>
-          </a>
+              <span className={classnames({
+                "hidden": (this.props.user.mode === "enterprise") ? true : false
+              })}>
+                Are You A Landlord, Lender <br/> or Investor?
+              </span>
+          </Link>
 
         </div> 
       </div>

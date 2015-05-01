@@ -12,10 +12,6 @@ var OnPageSplitter = React.createClass({
     router: React.PropTypes.func
   },
 
-  getInitialState: function() {
-    return {
-    }
-  },
   render: function () {
     return (
       <div className={classnames({

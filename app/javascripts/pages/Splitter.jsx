@@ -9,6 +9,10 @@ var Link = Router.Link;
 var Enterprise = React.createClass({
 
   mixins: [ UpdateUserMixin ],
+
+  componentDidMount: function() {
+    this.props.clearLocalStorage();
+  },
   
   render: function () {
 
