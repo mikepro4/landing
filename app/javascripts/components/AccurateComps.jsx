@@ -42,7 +42,7 @@ var AccurateComps = React.createClass({
           <div className="row">
             <div className="col six right screenshot">
               <div className="img-wrap">
-                <img src="/images/how-it-works.svg"/>
+                <img src="/images/ent-granular-screenshot.png"/>
               </div>
             </div>
             <div className="col six left block-info">
