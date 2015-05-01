@@ -104,7 +104,22 @@ var Header = React.createClass({
           <li><a href="#TermsOfUse" onClick={this.scrollToElement}>Terms Of Use</a></li>
           <li><a href="#PrivacyPolicy" onClick={this.scrollToElement}>Privacy Policy</a></li>
         </ul>
-      )
+      ) 
+    } else if(this.state.pages.exchange) {
+      return (
+        <ul>
+          <li><a href="#" onClick={this.scrollToElement}>EXCHANGE</a></li>
+        </ul>
+      ) 
+    }
+  },
+
+  getCta: function() {
+    switch(this.props.context) {
+      case "enterprise":
+        return <Link to="demo-request"><button className="button">{this.props.ctaLabels.enterprise}</button></Link>
+      case "exchange":
+        return <a><button className="button">{this.props.ctaLabels.exchange}</button></a>
     }
   },
 
@@ -124,7 +139,7 @@ var Header = React.createClass({
             </nav>
           </div>
           <div className="right">
-            <Link to="demo-request"><button className="button">Schedule a Demo</button></Link>
+            {this.getCta()}
           </div>
         </div>
       </header>

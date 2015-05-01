@@ -27,6 +27,10 @@ var App = React.createClass({
   getInitialState: function() {
     return {
       jobOptions: ["Tenant/Landlord Rep", "Appraiser", "Researcher", "Landlord", "Lender", "Investor"],
+      ctaLabels: {
+        enterprise: "Schedule a Demo",
+        exchange: "Join Free"
+      },
       user: {
         jobTitle: null,
         mode: null,
@@ -124,6 +128,7 @@ var App = React.createClass({
               videoPlaying={this.state.videoPlaying}
               scrollTop={this.state.scrollTop}
               jobOptions={this.state.jobOptions}
+              ctaLabels={this.state.ctaLabels}
               updateLocalStorage={this.updateLocalStorage}
               clearLocalStorage={this.clearLocalStorage}
               toggleMenu={this.toggleMenu}
@@ -137,6 +142,7 @@ var App = React.createClass({
             toggleMenu={this.toggleMenu}
             user={this.state.user}
             jobOptions={this.state.jobOptions}
+            ctaLabels={this.state.ctaLabels}
             updateLocalStorage={this.updateLocalStorage}
             clearLocalStorage={this.clearLocalStorage}
           />

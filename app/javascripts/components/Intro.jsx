@@ -46,6 +46,7 @@ var EntIntro = React.createClass({
   render: function () {
     var headline;
     var content;
+    var screenshot;
     if(this.props.context === "enterprise") {
       screenshot = 
         <img src="/images/ent-intro-screenshot.png"/>

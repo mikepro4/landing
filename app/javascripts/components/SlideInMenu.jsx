@@ -13,6 +13,15 @@ var SlideInMenu = React.createClass({
 
   mixins: [ UpdateUserMixin, LoginUrlMixin ],
 
+  getCtaLabel: function() {
+    switch(this.props.context) {
+      case "enterprise":
+        return this.props.ctaLabels.enterprise
+      case "exchange":
+        return this.props.ctaLabels.exchange
+    }
+  },
+
   render: function () {
     return (
       <div className="slide-in-menu">
@@ -22,7 +31,7 @@ var SlideInMenu = React.createClass({
         <div className="slide-in-menu-content">
 
           <div className="button-wrap" onClick={this.props.toggleMenu}>
-            <Link to="demo-request"><button className="button">Schedule a Demo</button></Link>
+            <Link to="demo-request"><button className="button">{this.getCtaLabel()}</button></Link>
           </div>
 
           <h6>Enterprise</h6>

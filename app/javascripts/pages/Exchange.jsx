@@ -37,7 +37,10 @@ var Exchange = React.createClass({
             mode="white"
             context="exchange"
           />
-          <FauxHeader {...this.props}/>
+          <FauxHeader
+           {...this.props}
+            context="exchange"
+          />
           <TopSplash 
             {...this.props}
             context="exchange"

@@ -142,8 +142,8 @@ var Testimonials = React.createClass({
 
   componentDidMount: function() {
     $('.testimonials-block').cycle({
-        speed: 500,
-        timeout: 0,
+        speed: 300,
+        timeout: 3000,
         fx: 'carousel',
         carouselFluid: true,
         carouselVisible : 3,
