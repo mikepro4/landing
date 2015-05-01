@@ -41,7 +41,7 @@ var AccurateComps = React.createClass({
         <div className="container push-left">
           <div className="row">
             <div className="col six right screenshot">
-              <div className="screenshot-wrap">
+              <div className="img-wrap">
                 <img src="/images/how-it-works.svg"/>
               </div>
             </div>
