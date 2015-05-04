@@ -80,41 +80,44 @@ var CoverageMap = React.createClass({
       content = 
         "Thousands of comps in most major markets, with new markets launching each quarter."
       exMarketList =
-        <div className="coverage-links">
-          <ul>
-            <li><a href="#">Atlanta <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Chicago <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Dallas / Fort Worth <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Houston <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Los Angeles <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Minneapolis / St. Paul <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">New York City <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Northern New Jersey <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Sacramento <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">San Fancisco <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Bay Area <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Washington DC <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Denver <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">San Diego <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Austin <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Baltimore <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Boston <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Charlotte <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Jacksonville <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">London <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Miami <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Nashville <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Philadelphia <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Phoenix <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Portland <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Raleigh / Durham <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">San Antonio <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Seattle <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Tampa <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Toronto <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Westchester <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-            <li><a href="#">Your city! <span class="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
-          </ul>
+        <div>
+          <h5 className="coverage-links-header">Choose Your Market to Get Started</h5>
+          <div className="coverage-links">        
+            <ul>
+              <li><a href="#">Atlanta <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Chicago <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Dallas / Fort Worth <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Houston <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Los Angeles <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Minneapolis / St. Paul <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">New York City <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Northern New Jersey <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Sacramento <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">San Fancisco <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Bay Area <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Washington DC <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Denver <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">San Diego <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Austin <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Baltimore <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Boston <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Charlotte <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Jacksonville <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">London <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Miami <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Nashville <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Philadelphia <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Phoenix <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Portland <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Raleigh / Durham <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">San Antonio <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Seattle <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Tampa <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Toronto <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Westchester <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+              <li><a href="#">Your city! <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+            </ul>
+          </div>
         </div>
     }
     return (

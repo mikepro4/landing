@@ -54,7 +54,7 @@ var Logos = React.createClass({
               <Icons type="logo_davis" />
             </li>
             <li>
-              <Icons type="logo_comfort" />
+              <Icons type="logo_eq" />
             </li>
           </ul>
         </div>

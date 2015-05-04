@@ -103,8 +103,11 @@
       }
     }
   }
+  .coverage-links-header {
+    margin-top: 40px;
+  }
   .coverage-links {
-    padding-top: 7%;
+    padding-top: 30px;
     .respond(@sm, {
       margin-left: -3%;
     });
@@ -124,15 +127,15 @@
       font-size: 16px;
       a {
         .border-radius(3px);
+        border: 1px solid @light-blue;
         display: block;
         padding: 15px 14px 13px;
-        background-color: #e4e5e6;
         &:hover {
-          background-color: @white;
-          color: @light-blue;
+          color: @white;
+          background-color: @light-blue;
           svg {
             * {
-              fill: @light-blue;
+              fill: @white;
             }
           }
         }
@@ -143,7 +146,7 @@
           width: 6px;
           margin-top: 7px;
           * {
-            fill: @white;
+            fill: @light-blue;
           }
         }
       }

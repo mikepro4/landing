@@ -42,14 +42,14 @@ var AccurateComps = React.createClass({
           <div className="row">
             <div className="col six right analysts">
               <div className="img-wrap">
-                <img src="/images/analysts.png"/>
+                <img src="/images/analysts2.png"/>
               </div>
             </div>
             <div className="col six left block-info">
               <div>
                 <h5 className="section-header">How It Works</h5>
-                <h3 className="h1">Trade the comps you have. Find the comps you need.</h3>
-                <p>CompStak Exchange is a private professional network - Anonymously trade commercial lease comps with thousands of brokers, appraisers and researchers.</p>
+                <h3 className="h1">CompStak analysts verify each and every comp.</h3>
+                <p>Our team of qualified Real Estate Analysts and Data Scientists employs a combination of manual review and statistical anomaly detection to ensure quality.</p>
                 <ul className="checklist">
                   <li><Icons type="tick" /><span> Verified CRE professionals only</span></li>
                   <li><Icons type="tick" /><span> Trade: 1–for–1: Give a comp. Get a comp</span></li>
