@@ -57,12 +57,6 @@ var DemoEmailForm = React.createClass({
     })
   },
 
-
-
-
-
-
-
   render: function () {
     return (
       <form className={classnames({

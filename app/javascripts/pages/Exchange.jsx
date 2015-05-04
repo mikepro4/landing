@@ -25,6 +25,12 @@ var VideoModal = require('../components/VideoModal.jsx');
 
 var Exchange = React.createClass({
 
+  getInitialState: function() {
+    return {
+      context: "exchange"
+    }
+  },
+
   render: function () {
     return (
       <DocumentTitle title="CompStak – Exchange">
@@ -35,89 +41,89 @@ var Exchange = React.createClass({
             menu={true}
             haveAccount={false}
             mode="white"
-            context="exchange"
+            context={this.state.context}
           />
           <FauxHeader
            {...this.props}
-            context="exchange"
+           context={this.state.context}
           />
           <TopSplash 
             {...this.props}
-            context="exchange"
             mode="white"
+            context={this.state.context}
           />
           <ObjectionHandler 
             {...this.props}
-            context="exchange"
             mode="white"
+            context={this.state.context}
           />
           <Testimonials
             {...this.props}
-            context="exchange"
             mode="black"
+            context={this.state.context}
           />
           <Intro 
             {...this.props}
-            context="exchange"
             mode="grey"
+            context={this.state.context}
           />
           <HowItWorks 
             {...this.props}
-            context="exchange"
             mode="white"
+            context={this.state.context}
           />
           <ObjectionHandler2 
             {...this.props}
-            context="exchange"
             mode="black"
+            context={this.state.context}
           />
           <AccurateComps 
             {...this.props}
-            context="exchange"
             mode="grey"
+            context={this.state.context}
           />
           <EntGranularData 
             {...this.props}
-            context="exchange"
             mode="white"
+            context={this.state.context}
           />
           <SampleComp
             {...this.props}
-            context="exchange"
             mode="grey"
+            context={this.state.context}
           />
           <NationalCoverage 
             {...this.props}
-            context="exchange"
             mode="white"
+            context={this.state.context}
           />
           <CoverageMap
             {...this.props}
-            context="exchange"
             mode="grey"
+            context={this.state.context}
           />
           <BottomSignUp
             {...this.props}
-            context="exchange"
             mode="blue"
+            context={this.state.context}
           />
           <ObjectionHandler 
             {...this.props}
-            context="exchange"
             mode="blue"
+            context={this.state.context}
           />
           <OnPgSplitter 
             {...this.props}
-            context="enterprise"
             mode="dark-blue"
+            context={this.state.context}
           />
           <Footer
             {...this.props}
-            context="exchange"
+            context={this.state.context}
           />
           <VideoModal
             {...this.props}
-            context="exchange"
+            context={this.state.context}
           />
         </div>
       </DocumentTitle>

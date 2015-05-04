@@ -56,7 +56,7 @@
     border: 1px solid @btn-active-bg;
   }
 
-  &.button-hollow{
+  &.button-hollow {
     background: none;
     color: @light-blue;
 
@@ -67,6 +67,23 @@
 
     &:active {
       background-color: @btn-active-bg;
+    }
+  }
+
+  &.button-white {
+    background: #fff;
+    border: 1px solid #fff;
+    color: @light-blue;
+
+    &:hover {
+      color: #fff;
+      background-color: @btn-hover-bg;
+      border: 1px solid @btn-hover-bg;
+    }
+
+    &:active {
+      background-color: @btn-active-bg;
+      border: 1px solid @btn-active-bg;
     }
   }
 }
