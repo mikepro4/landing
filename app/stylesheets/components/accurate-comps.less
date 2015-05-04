@@ -6,17 +6,6 @@
       padding-bottom: 100px;
     });
   }
-  .verification-chart {
-    .respond(@md, {
-      width: 700px;
-    });
-    .respond(@xlg, {
-      width: 900px;
-    });
-    .respond(@huge, {
-      margin-right: 300px;
-    });
-  }
   .analysts {
     margin-bottom: 0;
     .respond(@md, {
@@ -24,6 +13,21 @@
       bottom: 0px;
       right: 0;
     });
+    .verification-chart {
+      margin-bottom: 2.5em;
+      .respond(@md, {
+        width: 700px;
+        padding-left: 15%;
+        margin-bottom: -10px;
+      });
+      .respond(@xlg, {
+        width: 900px;
+        padding-left: 18%;
+      });
+      .respond(@huge, {
+        margin-left: -150px;
+      });
+    }
     .img-wrap {
       margin-left: $gutter;
       .border-radius(3px);
