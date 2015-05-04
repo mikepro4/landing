@@ -119,7 +119,7 @@ var Header = React.createClass({
       case "enterprise":
         return <Link to="demo-request"><button className="button">{this.props.ctaLabels.enterprise}</button></Link>
       case "exchange":
-        return <a><button className="button">{this.props.ctaLabels.exchange}</button></a>
+        return <a href="https://signup.compstak.com/" className="button">{this.props.ctaLabels.exchange}</a>
     }
   },
 
