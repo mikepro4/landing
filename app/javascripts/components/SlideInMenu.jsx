@@ -33,7 +33,6 @@ var SlideInMenu = React.createClass({
           <div className="button-wrap" onClick={this.props.toggleMenu}>
             <Link to="demo-request"><button className="button">{this.getCtaLabel()}</button></Link>
           </div>
-
           <h6>Enterprise</h6>
           <ul onClick={this.props.toggleMenu}>
             <li><Link to="enterprise">Learn More</Link></li>

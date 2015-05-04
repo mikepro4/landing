@@ -15,7 +15,14 @@ var Testimonials = React.createClass({
 
   getInitialState: function() {
     return {
+      init: false,
       quotes: [
+        // Last one must be first
+        {
+          text: "CompStak is a great resource both to verify my current rental comps information, as well as identify potential new comps",
+          name: "Valuation professional",
+          company: "Santa Clara"
+        },
         {
           text: "CompStak is my go to resource...complete data on lease comparables and is thorough in maintaining their database.",
           name: "Scott Amoson",
@@ -130,30 +137,37 @@ var Testimonials = React.createClass({
           text: "CompStak is the first place I go to when I’m looking for fresh rents for any property type. They have the most current and accurate info available for commercial real estate.",
           name: "Valuation professional",
           company: "Sacramento"
-        },
-        {
-          text: "CompStak is a great resource both to verify my current rental comps information, as well as identify potential new comps",
-          name: "Valuation professional",
-          company: "Santa Clara"
         }
       ]
     }
   },
 
-  componentDidMount: function() {
+  componentDidUpdate: function() {
+    var testimonials = $('section.testimonials');
+    if(this.props.scrollTop + ($(window).height() - 50) > testimonials.offset().top) {
+      if(!this.state.init) {
+        this.startCycle();
+      } 
+    }
+  },
+
+  startCycle: function() {
     $('.testimonials-block').cycle({
-        speed: 300,
-        timeout: 3000,
-        fx: 'carousel',
-        carouselFluid: true,
-        carouselVisible : 3,
-        manualSpeed: 500,
-        next : '.next-arrow',
-        prev : '.prev-arrow',
-        slides : '.slide',
-        swipe : true,
-        slideActiveClass : 'active'
-    });
+      speed: 300,
+      timeout: 4000,
+      fx: 'carousel',
+      carouselFluid: true,
+      carouselVisible : 3,
+      manualSpeed: 500,
+      next : '.next-arrow',
+      prev : '.prev-arrow',
+      slides : '.slide',
+      swipe : true,
+      slideActiveClass : 'active'
+    }); 
+    this.setState({
+      init: true
+    })
   },
 
   render: function () {
@@ -179,14 +193,15 @@ var Testimonials = React.createClass({
         'blue-bg': (this.props.mode == "blue") ? true : false,
         'white': (this.props.mode == "white") ? true : false
       })}>
-
-        <div className="quotes">”</div>
-        <div className="testimonials-block">
-          {quotes}
-        </div>
-        <div className="controls">
-          <div className="prev-arrow"><Icons type="left_arrow_circled"/></div>
-          <div className="next-arrow"><Icons type="right_arrow_circled"/></div>
+        <div className="testimonials-wrap">
+          <div className="quotes">”</div>
+          <div className="testimonials-block">
+            {quotes}
+          </div>
+          <div className="controls">
+            <div className="prev-arrow"><Icons type="left_arrow_circled"/></div>
+            <div className="next-arrow"><Icons type="right_arrow_circled"/></div>
+          </div>
         </div>
       </section>
     )
