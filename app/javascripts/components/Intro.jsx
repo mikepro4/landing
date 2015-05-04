@@ -51,9 +51,9 @@ var EntIntro = React.createClass({
       screenshot = 
         <img src="/images/ent-intro-screenshot.png"/>
       headline = 
-        <h3 className="h1">Office, retail & industrial lease comps</h3>;
+        <h3 className="h1">Office, retail & industrial comps</h3>;
       content = 
-        <p>We collect and verify actual, deal-level transaction records reported directly to us by brokers on the ground. Our comps are recent, accurate and searchable.</p>
+        <p>We collect and verify actual, deal-level transaction records reported directly to us by brokers on the ground. We combine those records with critical property-level details. Our lease and property comps are recent, accurate and searchable.</p>
     } else if(this.props.context === "exchange") {
       screenshot = 
         <img src="/images/ex-intro-screenshot.png"/>

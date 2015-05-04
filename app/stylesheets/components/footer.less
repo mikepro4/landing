@@ -8,9 +8,26 @@ footer {
       max-width: 750px;
     }
   }
+  .col.nine .three {
+    width: 100%;
+    .respond(@lg, {
+      .nestedcolumns(3, 9);
+    });
+  }
 	ul {
 		margin-bottom: 40px;
-    .respond(@md, {
+    + h6 {
+      margin-top: 40px;
+      + ul {
+        padding-bottom: 35px;
+        border-bottom: 1px solid @dark-line-blue;
+        .respond(@lg, {
+          padding-bottom: 0;
+          border-bottom: none;
+        });
+      }
+    }
+    .respond(@xlg, {
       margin-bottom: 0px;
     });
 	}

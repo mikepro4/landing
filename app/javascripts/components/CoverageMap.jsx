@@ -37,7 +37,7 @@ var CoverageMap = React.createClass({
       mapImage = 
         <img src="/images/ent-coverage-map.svg"/>
       content = 
-        "1000s of comps in most major markets, with new markets launching each quarter."
+        "1000s of lease comps in most major markets, with new markets launching each quarter."
       entMarketList = 
         <div className="coverage-list">
           <ul className="checklist">

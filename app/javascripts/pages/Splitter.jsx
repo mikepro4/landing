@@ -32,7 +32,7 @@ var Enterprise = React.createClass({
             <Icons type="cs_logo" />
           </div>
           <div className="container">
-            <h2 className="h3">A Massive Commercial Lease Comps Database</h2>
+            <h2 className="h3">A Massive Commercial Lease Comp Database</h2>
             <p className="h6 grey">Nationwide • Accurate • Searchable</p>
             <div className="buttons">
               <h1 className="h6">Which are you?</h1>

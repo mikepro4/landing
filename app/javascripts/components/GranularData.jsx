@@ -42,7 +42,7 @@ var EntGranularData = React.createClass({
         <ul className="checklist">
           <li><Icons type="tick" /><span> Actual Transaction Data</span></li>
           <li><Icons type="tick" /><span> Accurate & Detailed</span></li>
-          <li><Icons type="tick" /><span> Inifinitely & Instantly Searchable</span></li>
+          <li><Icons type="tick" /><span> Instantly Searchable</span></li>
           <li><Icons type="tick" /><span> Lease & Property Information</span></li>
         </ul>
     } else if(this.props.context === "exchange") {

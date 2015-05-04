@@ -33,7 +33,7 @@ var TopSplash = React.createClass({
         case "enterprise":
           this.setState({
             mainHeadline: "Commercial Lease Comps On Demand",
-            subHeadline: "Verified Lease Data & Market Analytics For Major Markets Nationwide"
+            subHeadline: "Verified Lease Data & Market Analytics for Major Markets Nationwide"
           })
           break
         case "exchange":

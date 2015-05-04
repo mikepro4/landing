@@ -103,6 +103,7 @@ var Header = React.createClass({
         <ul>
           <li><a href="#TermsOfUse" onClick={this.scrollToElement}>Terms Of Use</a></li>
           <li><a href="#PrivacyPolicy" onClick={this.scrollToElement}>Privacy Policy</a></li>
+          <li><a href="#FairInformation" onClick={this.scrollToElement}>Fair Information Statement</a></li>
         </ul>
       ) 
     } else if(this.state.pages.exchange) {

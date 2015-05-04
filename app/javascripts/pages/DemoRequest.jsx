@@ -290,7 +290,7 @@ var DemoRequest = React.createClass({
                   defaultChecked={this.state.agreedToSubscribe} 
                   onChange={this.handleSubscribeInput}  
                 />
-                <label htmlFor="agreedToSubscribe"> <span>Subscribe to CompStak newsletter</span> </label>
+                <label htmlFor="agreedToSubscribe"> <span>Subscribe to the CompStak Newsletter</span> </label>
               </div>
               <button className="js-velocity button">
                 <span className="demo-request-submit-label">Schedule a Demo</span>

@@ -29,12 +29,12 @@ var Testimonials = React.createClass({
           company: "Colliers International"
         },
         {
-          text: "My valuation teams are continually surprised by both the amount and quality of data available on Compstak Exchange in the Chicagoland area.",
+          text: "My valuation teams are continually surprised by both the amount and quality of data available on CompStak Exchange in the Chicagoland area.",
           name: "Brandon Nunnink",
           company: "Integra Realty Resources"
         },
         {
-          text: "Compstak's data is so good that I literally save my clients money on EVERY deal since I started using it.",
+          text: "CompStak's data is so good that I literally save my clients money on EVERY deal since I started using it.",
           name: "Benjamin Osgood",
           company: "Dunhill Partners West"
         },
@@ -54,7 +54,7 @@ var Testimonials = React.createClass({
           company: "Cresa"
         },
         {
-          text: "Not a day goes by where CompStak isn’t being utilized by our office. Compstak helps to better service our clients, making our brokers more productive.",
+          text: "Not a day goes by where CompStak isn’t being utilized by our office. CompStak helps to better service our clients, making our brokers more productive.",
           name: "Brad Cohen",
           company: "Eastern Consolidated"
         },
@@ -69,7 +69,7 @@ var Testimonials = React.createClass({
           company: "Colliers International"
         },
         {
-          text: "I combine Compstak with other research methods for almost every appraisal now...gives me the quantitative ammunition to go with my qualitative insight.",
+          text: "I combine CompStak with other research methods for almost every appraisal now...gives me the quantitative ammunition to go with my qualitative insight.",
           name: "Nathaniel Stubblefield",
           company: "Valbridge Property Advisors"
         },
@@ -79,7 +79,7 @@ var Testimonials = React.createClass({
           company: "Colliers International"
         },
         {
-          text: "In our industry, information is king and Compstak has put that right at our fingertips...If you’re not using it, you’re a step behind the rest of us.",
+          text: "In our industry, information is king and CompStak has put that right at our fingertips...If you’re not using it, you’re a step behind the rest of us.",
           name: "Tenant Rep Broker",
           company: "Chicago"
         },
@@ -89,7 +89,7 @@ var Testimonials = React.createClass({
           company: "CM Commercial"
         },
         {
-          text: "Compstak is on the bleeding edge of bringing big data and scale in an innovative way to help our clients get better deals all across the country.",
+          text: "CompStak is on the bleeding edge of bringing big data and scale in an innovative way to help our clients get better deals all across the country.",
           name: "David Bergeron",
           company: "T3 Advisors"
         },
@@ -99,7 +99,7 @@ var Testimonials = React.createClass({
           company: "Valbridge Property Advisors"
         },
         {
-          text: "Compstak has been a godsend... fills the gap that existed previously because no other platform really focused on lease comps.",
+          text: "CompStak has been a godsend... fills the gap that existed previously because no other platform really focused on lease comps.",
           name: "Bob Gibbons",
           company: "REATA Commercial Realty"
         },

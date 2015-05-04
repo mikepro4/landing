@@ -35,16 +35,33 @@ var NationalCoverage = React.createClass({
   render: function () {
     var headline;
     var content;
+    var slideshow;
     if(this.props.context === "enterprise") {
       headline = 
         "1000s of lease comps per market"
       content = 
-        <p>Explore market and submarket trends for rents, concessions, terms and more. Build better models, make better investment and asset decisions.</p>
+        <p>Explore market and submarket trends for rents, concessions, lease terms, and more. Build better models. Make better investment and asset decisions.</p>
+      slideshow =
+        <div className="slideshow">
+          <img src="/images/ui-coverage-ny.png"/>
+          <img src="/images/ui-coverage-chi.png"/>
+          <img src="/images/ui-coverage-dc.png"/>
+          <img src="/images/ui-coverage-dallas.png"/>
+          <img src="/images/ui-coverage-bay.png"/>
+        </div>
     } else if(this.props.context === "exchange") {
       headline = 
         "Thousands of lease comps in your city"
       content = 
         <p>Gain market knowledge, secure clients and close deals faster with immediate access to actual rents and concessions.</p>
+      slideshow =
+        <div className="slideshow">
+          <img src="/images/ex-ui-coverage-ny.png"/>
+          <img src="/images/ex-ui-coverage-chi.png"/>
+          <img src="/images/ex-ui-coverage-dc.png"/>
+          <img src="/images/ex-ui-coverage-dallas.png"/>
+          <img src="/images/ex-ui-coverage-bay.png"/>
+        </div>
     }
     return (
       <section id="coverage" className={classnames({
@@ -60,13 +77,7 @@ var NationalCoverage = React.createClass({
           <div className="row">
             <div className="col six left screenshot">
               <div className="screenshot-wrap">
-                <div className="slideshow">
-                  <img src="/images/ui-coverage-ny.png"/>
-                  <img src="/images/ui-coverage-chi.png"/>
-                  <img src="/images/ui-coverage-dc.png"/>
-                  <img src="/images/ui-coverage-dallas.png"/>
-                  <img src="/images/ui-coverage-bay.png"/>
-                </div>
+                {slideshow}
               </div>
               <ul className="pager"></ul>
             </div>

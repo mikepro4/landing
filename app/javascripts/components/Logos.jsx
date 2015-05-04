@@ -21,6 +21,9 @@ var Logos = React.createClass({
           <p className="h6 mid-grey">Proudly Trusted By</p>
           <ul className="row">
             <li>
+              <Icons type="logo_eq" />
+            </li>
+            <li>
               <Icons type="logo_wells_fargo" />
             </li>
             <li>
@@ -52,9 +55,6 @@ var Logos = React.createClass({
             </li>
             <li>
               <Icons type="logo_davis" />
-            </li>
-            <li>
-              <Icons type="logo_eq" />
             </li>
           </ul>
         </div>
