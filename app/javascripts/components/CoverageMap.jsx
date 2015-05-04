@@ -34,7 +34,7 @@ var CoverageMap = React.createClass({
         this.setState({
           allMarkets: allMarkets,
           activeMarkets: _.where(allMarkets, {publiclyAvailable: true}),
-          launchingMarkets: _.where(allMarkets, {publiclyAvailable: true})
+          launchingMarkets: _.where(allMarkets, {publiclyAvailable: false})
         })
       }.bind(this),
       error: function(xhr, status, err) {
