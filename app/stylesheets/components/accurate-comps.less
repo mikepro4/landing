@@ -38,10 +38,14 @@
         width: 130%;
         margin-bottom: 0;
       });
-      // .respond(@huge, {
-      //   max-width: 900px;
-      //   width: 900px;
-      // }, @short-height);
+      img {
+        .respond(@md, {
+          margin-left: -10%;
+        });
+        .respond(@huge, {
+          margin-left: -25%;
+        });
+      }
       .box-shadow(none);
     }
     &.left .img-wrap {
