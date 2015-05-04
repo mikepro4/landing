@@ -25,106 +25,85 @@ var VideoModal = require('../components/VideoModal.jsx');
 
 var Exchange = React.createClass({
 
-  getInitialState: function() {
+  getDefaultProps: function() {
     return {
       context: "exchange"
-    }
+    }    
   },
 
   render: function () {
     return (
-      <DocumentTitle title="CompStak – Exchange">
+      <DocumentTitle title="CompStak – Exchange – Free lease comps exchange for CRE brokers, appraisers and researchers.">
         <div className="page-exchange">
+
          <Header 
             {...this.props}
             login={true}
             menu={true}
             haveAccount={false}
             mode="white"
-            context={this.state.context}
           />
-          <FauxHeader
-           {...this.props}
-           context={this.state.context}
-          />
-          <TopSplash 
-            {...this.props}
+
+          <FauxHeader {...this.props}/>
+
+          <TopSplash {...this.props}
             mode="white"
-            context={this.state.context}
           />
-          <ObjectionHandler 
-            {...this.props}
+
+          <ObjectionHandler {...this.props}
             mode="white"
-            context={this.state.context}
           />
-          <Testimonials
-            {...this.props}
+
+          <Testimonials {...this.props}
             mode="black"
-            context={this.state.context}
           />
-          <Intro 
-            {...this.props}
+
+          <Intro {...this.props}
             mode="grey"
-            context={this.state.context}
           />
-          <HowItWorks 
-            {...this.props}
+
+          <HowItWorks {...this.props}
             mode="white"
-            context={this.state.context}
           />
-          <ObjectionHandler2 
-            {...this.props}
+
+          <ObjectionHandler2 {...this.props}
             mode="black"
-            context={this.state.context}
           />
-          <AccurateComps 
-            {...this.props}
+
+          <AccurateComps {...this.props}
             mode="grey"
-            context={this.state.context}
           />
-          <EntGranularData 
-            {...this.props}
+
+          <EntGranularData {...this.props}
             mode="white"
-            context={this.state.context}
           />
-          <SampleComp
-            {...this.props}
+
+          <SampleComp {...this.props}
             mode="grey"
-            context={this.state.context}
           />
-          <NationalCoverage 
-            {...this.props}
+
+          <NationalCoverage {...this.props}
             mode="white"
-            context={this.state.context}
           />
-          <CoverageMap
-            {...this.props}
+
+          <CoverageMap {...this.props}
             mode="grey"
-            context={this.state.context}
           />
-          <BottomSignUp
-            {...this.props}
+
+          <BottomSignUp {...this.props}
             mode="blue"
-            context={this.state.context}
           />
-          <ObjectionHandler 
-            {...this.props}
+
+          <ObjectionHandler {...this.props}
             mode="blue"
-            context={this.state.context}
           />
-          <OnPgSplitter 
-            {...this.props}
+
+          <OnPgSplitter {...this.props}
             mode="dark-blue"
-            context={this.state.context}
           />
-          <Footer
-            {...this.props}
-            context={this.state.context}
-          />
-          <VideoModal
-            {...this.props}
-            context={this.state.context}
-          />
+
+          <Footer {...this.props} />
+          
         </div>
       </DocumentTitle>
     )

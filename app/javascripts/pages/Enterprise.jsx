@@ -20,66 +20,66 @@ var VideoModal = require('../components/VideoModal.jsx');
 
 var Enterprise = React.createClass({
 
+  getDefaultProps: function() {
+    return {
+      context: "enterprise"
+    }    
+  },
+
   render: function () {
     return (
       <DocumentTitle title="CompStak – Enterprise – Commercial Lease Comps On Demand for Landlords, Lenders and Investors">
         <div className="page-enterprise">
-          <Header 
-            {...this.props}
+
+          <Header {...this.props}
             login={true}
             menu={true}
             haveAccount={false}
             mode="dark-blue"
-            context="enterprise"
           />
-          <FauxHeader {...this.props}/>
-          <TopSplash 
-            {...this.props}
-            context="enterprise"
+
+          <FauxHeader {...this.props} />
+
+          <TopSplash {...this.props}
             mode="dark-blue"
           />
-          <Logos 
-            {...this.props}
-            context="enterprise"
+
+          <Logos {...this.props}
             mode="dark-blue"
           />
-          <Intro 
-            {...this.props}
-            context="enterprise"
+
+          <Intro {...this.props}
             mode="grey"
           />
-          <EntGranularData 
-            {...this.props}
-            context="enterprise"
+
+          <EntGranularData {...this.props}
             mode="white"
           />
-          <SampleComp 
-            {...this.props}
-            context="enterprise"
+
+          <SampleComp {...this.props}
             mode="grey"
           />
-          <NationalCoverage 
-            {...this.props}
-            context="enterprise"
+
+          <NationalCoverage {...this.props}
             mode="white"
           />
-          <CoverageMap 
-            {...this.props}
-            context="enterprise"
+
+          <CoverageMap {...this.props}
             mode="grey"
           />
-          <BottomSignUp 
-            {...this.props}
-            context="enterprise"
+
+          <BottomSignUp {...this.props}
             mode="dark-blue"
           />
-          <OnPgSplitter 
-            {...this.props}
-            context="enterprise"
+
+          <OnPgSplitter {...this.props}
             mode="dark-blue"
           />
-          <Footer {...this.props}/>
-          <VideoModal {...this.props}/>
+
+          <Footer {...this.props} />
+
+          <VideoModal {...this.props} />
+          
         </div>
       </DocumentTitle>
     )
