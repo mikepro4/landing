@@ -1,18 +1,15 @@
 .objection-handler {
   text-align: center;
-  padding: 60px 0 65px;
-  .respond(@xlg, {
-    padding: 75px 0 80px;
-  });
+  padding: 35px 0 65px;
   .container {
     max-width: 1200px;
     .col {
       padding: 20px 20px;
       .icon {
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
         margin: 0 auto;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
         &.small {
           width: 25px;
           height: 25px;
@@ -21,17 +18,20 @@
           width: 100%;
           height: 100%;
           * {
-            fill: @mid-grey;
+            fill: @green;
           }
         }
       }
       .h6 {
-        font-size: 14px;
+        font-size: 15px;
+        margin: 0 0 15px 0;
       }
       p {
         font-size: 13px;
-        max-width: 250px;
+        letter-spacing: .4px;
+        max-width: 240px;
         margin: 0 auto;
+        line-height: 18px;
       }
     }
   }
@@ -41,15 +41,16 @@
       .icon {
         svg {
           * {
+
           }
         }
       }
       .col {
         .h6 {
-          color: @light-blue;
+          color: @black;
         }
         p {
-          color: @black;
+          color: @mid-grey;
         }
       }
     }
