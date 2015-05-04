@@ -170,7 +170,7 @@ var DemoRequest = React.createClass({
 
   sendCompstakEmail: function (data) {
     return $.ajax({
-      url: '/api/compstakEmail',
+      url: '/nodeApi/compstakEmail',
       type: 'POST',
       data: JSON.stringify(data),
       contentType: 'application/json',
@@ -185,7 +185,7 @@ var DemoRequest = React.createClass({
 
   sendUserEmail: function (data) {
     return $.ajax({
-      url: '/api/userEmail',
+      url: '/nodeApi/userEmail',
       type: 'POST',
       data: JSON.stringify(data),
       contentType: 'application/json',

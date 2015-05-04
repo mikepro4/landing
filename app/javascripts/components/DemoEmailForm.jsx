@@ -34,14 +34,16 @@ var DemoEmailForm = React.createClass({
   handleFormSubmit: function(event) {
     event.preventDefault();
 
-    switch(this.props.context) {
-      case "enterprise":
-        this.showDemoRequestForm();
-        break
-      case "exchange":
-        this.showSignupForm();
-        break
-    }
+    if(!this.state.emailInvalid) {
+      switch(this.props.context) {
+        case "enterprise":
+          this.showDemoRequestForm();
+          break
+        case "exchange":
+          this.showSignupForm();
+          break
+      }
+    } 
   },
 
   showDemoRequestForm: function(event) {
