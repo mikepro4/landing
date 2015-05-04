@@ -22,9 +22,9 @@ var CoverageMap = React.createClass({
   },
 
   componentDidMount: function() {
-    this.loadMarkets();
+    //this.loadMarkets();
   },
-  
+
   loadMarkets: function() {
     $.ajax({
       url: '/api/markets/all',

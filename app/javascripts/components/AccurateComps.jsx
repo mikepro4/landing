@@ -40,14 +40,14 @@ var AccurateComps = React.createClass({
       })}>
         <div className="container push-left">
           <div className="row">
-            <div className="col six right analysts">
-              <div className="img-wrap">
-                <img src="/images/analysts2.png"/>
+            <div className="col six right">
+              <div className="verification-chart">
+                <img src="/images/verification-chart.png"/>
               </div>
             </div>
             <div className="col six left block-info">
               <div>
-                <h5 className="section-header">How It Works</h5>
+                <h5 className="section-header">Accurate Comps</h5>
                 <h3 className="h1">CompStak analysts verify each and every comp.</h3>
                 <p>Our team of qualified Real Estate Analysts and Data Scientists employs a combination of manual review and statistical anomaly detection to ensure quality.</p>
                 <ul className="checklist">
@@ -55,6 +55,11 @@ var AccurateComps = React.createClass({
                   <li><Icons type="tick" /><span> Trade: 1–for–1: Give a comp. Get a comp</span></li>
                   <li><Icons type="tick" /><span> Remain completely annoymous</span></li>
                 </ul>
+              </div>
+            </div>
+            <div className="col six right analysts">
+              <div className="img-wrap">
+                <img src="/images/analysts.png"/>
               </div>
             </div>
           </div>

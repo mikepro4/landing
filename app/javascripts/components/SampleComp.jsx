@@ -20,7 +20,7 @@ var SampleComp = React.createClass({
     var introText;
     var searchByText;
     var listTitle;
-    var atrList;
+    var attrList;
     if(this.props.context === "enterprise") {
       headline = 
         <h3 className="h3">CompStak Lease Comps</h3>
