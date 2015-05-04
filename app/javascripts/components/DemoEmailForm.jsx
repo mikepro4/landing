@@ -31,13 +31,44 @@ var DemoEmailForm = React.createClass({
     }
   },
 
-  showDemoRequestForm: function(event) {
+  handleFormSubmit: function(event) {
     event.preventDefault();
+
+    switch(this.props.context) {
+      case "enterprise":
+        this.showDemoRequestForm();
+        break
+      case "exchange":
+        this.showSignupForm();
+        break
+    }
+  },
+
+  showDemoRequestForm: function(event) {
     if(this.isNotEmpty(this.state.email) && this.validateEmail(this.state.email)) {
       this.setState({
         emailInvalid: false
       })
       this.context.router.transitionTo('demo-request', {}, {email: this.state.email});
+    } else {
+      this.setState({
+        emailInvalid: true
+      })
+
+      _.delay(function () {
+        this.setState({
+          emailInvalid: false
+        })
+      }.bind(this), 1300);
+    }
+  },
+
+  showSignupForm: function(event) {
+    if(this.isNotEmpty(this.state.email) && this.validateEmail(this.state.email)) {
+      this.setState({
+        emailInvalid: false
+      })
+      window.open("https://signup.compstak.com/?email=" + this.state.email,"_self");  
     } else {
       this.setState({
         emailInvalid: true
@@ -57,18 +88,27 @@ var DemoEmailForm = React.createClass({
     })
   },
 
+  getCtaLabel: function() {
+    switch(this.props.context) {
+      case "enterprise":
+        return this.props.ctaLabels.enterprise
+      case "exchange":
+        return this.props.ctaLabels.exchange
+    }
+  },
+
   render: function () {
     return (
       <form className={classnames({
         'sign-up':   true,
         'form-invalid':   this.state.emailInvalid
-      })} onSubmit={this.showDemoRequestForm}>
+      })} onSubmit={this.handleFormSubmit}>
         <div className="input-wrap">
           <input type="text" ref="email" value={this.state.email} onChange={this.handleEmailInput} placeholder="Email Address"/>
           <label> <Icons type="mail_icon" /> </label>
         </div>
         <button className="button">
-          <span className="email-submit-label">Schedule a Demo</span>
+          <span className="email-submit-label">{this.getCtaLabel()}</span>
           <span className="email-error-label">Email is Invalid</span>
         </button>
       </form>
