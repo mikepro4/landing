@@ -54,9 +54,9 @@ var AccurateComps = React.createClass({
             </div>
             <div className="col six right analysts">
               <div className="img-wrap">
-                <img src="/images/analysts2.png"/>
+                <img src="/images/analysts.png"/>
                 <div className="label analyst-one">
-                  <p className="h6">Wayne Yau</p>
+                  <p className="h6">Wayne Yu</p>
                   <p>Real Estate Science</p>
                 </div>
                 <div className="label analyst-two">
