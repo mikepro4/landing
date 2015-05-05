@@ -51,7 +51,7 @@ var Logos = React.createClass({
               <Icons type="logo_empire" />
             </li>
             <li>
-              <Icons type="logo_ar_capital" />
+              <Icons type="logo_silverstein" />
             </li>
             <li>
               <Icons type="logo_davis" />

@@ -89,7 +89,7 @@ var NavigationLinks = React.createClass({
             </ul>
           </div>
 
-          <div className="col six">
+          <div className="col three">
             <h6>Legal</h6>
             <ul>
               <li><Link to="legal">Terms of Use</Link></li>
