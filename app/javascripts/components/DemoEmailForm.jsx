@@ -70,7 +70,7 @@ var DemoEmailForm = React.createClass({
       this.setState({
         emailInvalid: false
       })
-      window.open("https://signup.compstak.com/?email=" + this.state.email,"_self");  
+      window.open(this.props.signupUrl + "?email=" + this.state.email,"_self");  
     } else {
       this.setState({
         emailInvalid: true
