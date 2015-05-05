@@ -23,9 +23,8 @@ var Legal = React.createClass({
             login={false}
             menu={true}
             haveAccount={false}
-            mode="dark-blue"
+            mode="white"
           />
-          <div className="default-page-title"><h1>Legal</h1></div>
           <TermsOfUse {...this.props}/>
           <hr {...this.props}/>
           <PrivacyPolicy {...this.props}/>

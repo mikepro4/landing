@@ -23,7 +23,7 @@ var SampleComp = React.createClass({
     var attrList;
     if(this.props.context === "enterprise") {
       headline = 
-        <h3 className="h3">CompStak Lease Comps</h3>
+        <h3 className="h3">Complete Lease Comps</h3>
       introText = 
         <p>Complete, accurate, commercial lease terms directly from brokers and appraisers on the ground</p>        
       searchByText = 
@@ -58,7 +58,7 @@ var SampleComp = React.createClass({
       </ul>  
     } else if(this.props.context === "exchange") {
       headline = 
-        <h3 className="h1">CompStak Comps</h3>
+        <h3 className="h1">Complete Comps</h3>
       introText = 
         <p>Complete, accurate data directly from brokers, researchers and appraisers.</p>
       searchByText = 

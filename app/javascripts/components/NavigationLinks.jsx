@@ -72,14 +72,6 @@ var NavigationLinks = React.createClass({
       return (
         <div className="row">
           <div className="col three">
-            <h6>Exchange</h6>
-            <ul>
-              <li><Link to="demo-request">Join Free</Link></li>
-              <li><a href="https://exchange.compstak.com/" target="_blank">Login</a></li>
-              <li><a href="https://compstakenterprise.zendesk.com/hc/en-us" target="_blank" to="enterprise">Support</a></li>
-              <li><a href="https://compstakenterprise.zendesk.com/hc/en-us/sections/200624207-Frequently-Asked-Questions" target="_blank" to="enterprise">FAQ</a></li>
-            </ul>
-
             <h6>Contact</h6>
             <ul>
               <li><a href="mailto:info@compstak.com" target="_blank" title="Contact CompStak Enterpise Sales Representative">info@compstak.com</a></li>
@@ -87,16 +79,10 @@ var NavigationLinks = React.createClass({
             </ul>
           </div>
           <div className="col three">
-            <h6>Enterprise</h6>
+            <h6>Follow Us</h6>
             <ul>
-              <li><Link to="demo-request">Schedule A Demo</Link></li>
-              <li><a href="https://enterprise.compstak.com/" target="_blank">Login</a></li>
-            </ul>
-
-            <h6>Contact</h6>
-            <ul>
-              <li><a href="mailto:sales@compstak.com" target="_blank" title="Contact CompStak Enterpise Sales Representative">sales@compstak.com</a></li>
-              <li>1-646-926-6707</li>
+              <li><a href="https://www.facebook.com/CompStak" target="_blank" title="CompStak Facebook">Facebook</a></li>
+              <li><a href="https://twitter.com/CompStak" target="_blank" title="CompStak Twitter">Twitter</a></li>
             </ul>
           </div>
           <div className="col three">
@@ -105,12 +91,6 @@ var NavigationLinks = React.createClass({
               <li><Link to="legal">Terms of Use</Link></li>
               <li><Link to="legal" query={{scrollTo: "PrivacyPolicy"}}>Privacy Policy</Link></li>
               <li><Link to="legal" query={{scrollTo: "FairStatement"}}>Fair Info Statement</Link></li>
-            </ul>
-
-            <h6>Follow Us</h6>
-            <ul>
-              <li><a href="https://www.facebook.com/CompStak" target="_blank" title="CompStak Facebook">Facebook</a></li>
-              <li><a href="https://twitter.com/CompStak" target="_blank" title="CompStak Twitter">Twitter</a></li>
             </ul>
           </div>
         </div>

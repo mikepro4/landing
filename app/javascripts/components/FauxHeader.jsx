@@ -109,7 +109,9 @@ var Header = React.createClass({
     } else if(this.state.pages.exchange) {
       return (
         <ul>
-          <li><a href="#" onClick={this.scrollToElement}>EXCHANGE</a></li>
+          <li><a href="#how-it-works" onClick={this.scrollToElement}>How It Works</a></li>
+          <li><a href="#sample-comp" onClick={this.scrollToElement}>Sample Comp</a></li>
+          <li><a href="#coverage" onClick={this.scrollToElement}>National Coverage</a></li>
         </ul>
       ) 
     }

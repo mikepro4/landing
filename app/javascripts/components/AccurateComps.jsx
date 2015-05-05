@@ -29,7 +29,7 @@ var AccurateComps = React.createClass({
 
   render: function () {
     return (
-      <section className={classnames({
+      <section id="accurate-comps" className={classnames({
         'accurate-comps': true,
         'ui-block': true,
         'dark-blue': (this.props.mode == "dark-blue") ? true : false,
