@@ -14,11 +14,17 @@
       right: 0;
     });
     .verification-chart {
+      position: absolute;
+      bottom: -15%;
+      left: 0;
       margin-bottom: 2.5em;
+      display: block;
+      width: 100%;
+      z-index: @layer1;
       .respond(@md, {
+        position: absolute;
+        bottom: 0;
         width: 700px;
-        padding-left: 15%;
-        margin-bottom: -10px;
       });
       .respond(@xlg, {
         width: 900px;
@@ -30,23 +36,54 @@
     }
     .img-wrap {
       margin-left: $gutter;
+      position: relative;
+      z-index: @layer2;
       .border-radius(3px);
+      .box-shadow(none);
       .respond(@md, {
         max-width: 800px;
         .border-radius(5px);
         //max-width: 130%;
         width: 130%;
         margin-bottom: 0;
+        margin-left: -10%;
       });
-      img {
-        .respond(@md, {
-          margin-left: -10%;
-        });
-        .respond(@huge, {
-          margin-left: -25%;
+      .respond(@huge, {
+        margin-left: -25%;
+      });
+      .label {
+        display: none;
+        .respond(@sm, {
+          display: block;
+          position: absolute;
+          background-color: @dark-blue;
+          padding: 12px 12px 10px;
+          .h6 {
+            color: @white;
+            margin-bottom: 0;
+            font-size: 11px;
+          }
+          p {
+            color: @mid-grey;
+            margin-bottom: 0;
+            font-size: 13px;
+            line-height: 1.5em;
+          }
+
+          &.analyst-one {
+            bottom: 25px;
+            left: 0%;
+          }
+          &.analyst-two {
+            bottom: 25px;
+            left: 45%;
+          }
+          &.analyst-three {
+            bottom: 100px;
+            right: 1.7%;
+          }
         });
       }
-      .box-shadow(none);
     }
     &.left .img-wrap {
       .respond(@md, {

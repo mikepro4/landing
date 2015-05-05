@@ -40,11 +40,6 @@ var AccurateComps = React.createClass({
       })}>
         <div className="container push-left">
           <div className="row">
-            <div className="col six right analysts">
-              <div className="verification-chart">
-                <img src="/images/verification-chart.svg"/>
-              </div>
-            </div>
             <div className="col six left block-info">
               <div>
                 <h5 className="section-header">Accurate Comps</h5>
@@ -59,7 +54,22 @@ var AccurateComps = React.createClass({
             </div>
             <div className="col six right analysts">
               <div className="img-wrap">
-                <img src="/images/analysts.png"/>
+                <img src="/images/analysts2.png"/>
+                <div className="label analyst-one">
+                  <p className="h6">Wayne Yau</p>
+                  <p>Real Estate Science</p>
+                </div>
+                <div className="label analyst-two">
+                  <p className="h6">Diana Bishop</p>
+                  <p>Data Quality Management</p>
+                </div>
+                <div className="label analyst-three">
+                  <p className="h6">Alex Kass</p>
+                  <p>Data Science & Machine</p>
+                </div>
+              </div>
+              <div className="verification-chart">
+                <img src="/images/verification-chart.svg"/>
               </div>
             </div>
           </div>
