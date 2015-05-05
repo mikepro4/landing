@@ -23,6 +23,8 @@ var NavigationLinks = React.createClass({
             <ul>
               <li><a href="mailto:sales@compstak.com" target="_blank" title="Contact CompStak Enterpise Sales Representative">sales@compstak.com</a></li>
               <li>1-646-926-6707</li>
+              <li><a href="https://www.facebook.com/CompStak" target="_blank" title="CompStak Facebook">Facebook</a></li>
+              <li><a href="https://twitter.com/CompStak" target="_blank" title="CompStak Twitter">Twitter</a></li>
             </ul>
           </div>
           <div className="col three">
@@ -50,8 +52,10 @@ var NavigationLinks = React.createClass({
             <div className="col three">
               <h6>Contact</h6>
               <ul>
-                <li><a href="mailto:sales@compstak.com" target="_blank" title="Contact CompStak Enterpise Sales Representative">sales@compstak.com</a></li>
+                <li><a href="mailto:info@compstak.com" target="_blank" title="Contact CompStak Enterpise Sales Representative">info@compstak.com</a></li>
                 <li>1-646-926-6707</li>
+                <li><a href="https://www.facebook.com/CompStak" target="_blank" title="CompStak Facebook">Facebook</a></li>
+              <li><a href="https://twitter.com/CompStak" target="_blank" title="CompStak Twitter">Twitter</a></li>
               </ul>
             </div>
             <div className="col three">
@@ -78,7 +82,7 @@ var NavigationLinks = React.createClass({
 
             <h6>Contact</h6>
             <ul>
-              <li><a href="mailto:sales@compstak.com" target="_blank" title="Contact CompStak Enterpise Sales Representative">sales@compstak.com</a></li>
+              <li><a href="mailto:info@compstak.com" target="_blank" title="Contact CompStak Enterpise Sales Representative">info@compstak.com</a></li>
               <li>1-646-926-6707</li>
             </ul>
           </div>
@@ -101,6 +105,12 @@ var NavigationLinks = React.createClass({
               <li><Link to="legal">Terms of Use</Link></li>
               <li><Link to="legal" query={{scrollTo: "PrivacyPolicy"}}>Privacy Policy</Link></li>
               <li><Link to="legal" query={{scrollTo: "FairStatement"}}>Fair Info Statement</Link></li>
+            </ul>
+
+            <h6>Follow Us</h6>
+            <ul>
+              <li><a href="https://www.facebook.com/CompStak" target="_blank" title="CompStak Facebook">Facebook</a></li>
+              <li><a href="https://twitter.com/CompStak" target="_blank" title="CompStak Twitter">Twitter</a></li>
             </ul>
           </div>
         </div>

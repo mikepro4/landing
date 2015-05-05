@@ -19,9 +19,9 @@ var Testimonials = React.createClass({
       quotes: [
         // Last one must be first
         {
-          text: "CompStak is a great resource both to verify my current rental comps information, as well as identify potential new comps",
-          name: "Valuation professional",
-          company: "Santa Clara"
+          text: "Compstak has proven to be an invaluable research for me over the last couple years. The information is reliable and fresh, and the crowd sourced format is novel concept that has been a huge benefit to my research efforts.",
+          name: "Research Manager",
+          company: "San Francisco"
         },
         {
           text: "CompStak is my go to resource...complete data on lease comparables and is thorough in maintaining their database.",
@@ -137,6 +137,11 @@ var Testimonials = React.createClass({
           text: "CompStak is the first place I go to when I’m looking for fresh rents for any property type. They have the most current and accurate info available for commercial real estate.",
           name: "Valuation professional",
           company: "Sacramento"
+        },
+        {
+          text: "CompStak is a great resource both to verify my current rental comps information, as well as identify potential new comps",
+          name: "Valuation professional",
+          company: "Santa Clara"
         }
       ]
     }
