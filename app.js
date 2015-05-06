@@ -46,11 +46,12 @@ router.route('/compstakEmail')
 
     sendwithus.send({
       email_id: "tem_seCspv6hAhyUhStS7FoqQT",
-      recipient: { address: req.body.email},
+      recipient: { address: "sales@compstak.com"},
       email_data: { 
         email: req.body.email, 
-        name: req.body.name, 
-        message: req.body.message,
+        firstName: req.body.firstName, 
+        lastName: req.body.lastName, 
+        business: req.body.business, 
         agreedToSubscribe:  req.body.agreedToSubscribe
       },
       sender: {
@@ -73,7 +74,8 @@ router.route('/userEmail')
       email_id: "tem_5S9PLDNdUQGHmRupKCzstX",
       recipient: { address: req.body.email},
       email_data: { 
-        name: req.body.name
+        firstName: req.body.firstName, 
+        lastName: req.body.lastName
       },
       sender: {
         address: 'sales@compstak.com',

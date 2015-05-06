@@ -10,10 +10,6 @@ var Enterprise = React.createClass({
 
   mixins: [ UpdateUserMixin ],
 
-  componentDidMount: function() {
-    this.props.clearLocalStorage();
-  },
-  
   render: function () {
     var jobTitles = this.props.jobOptions.map(function (title, i) {
       return (
