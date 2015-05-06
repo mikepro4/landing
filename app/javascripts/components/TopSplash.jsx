@@ -39,7 +39,7 @@ var TopSplash = React.createClass({
       case "exchange":
         this.setState({
           mainHeadline: "Trade the comps you have. Find the comps you need. ",
-          subHeadline: "A free lease comps exchange for CRE brokers, appraisers and researchers."
+          subHeadline: "A free lease comp exchange for CRE brokers, appraisers and researchers."
         })
         break  
     }

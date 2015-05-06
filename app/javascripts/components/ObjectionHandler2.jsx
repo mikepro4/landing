@@ -31,7 +31,7 @@ var ObjectionHandler2 = React.createClass({
           <div className="col four">
             <div className="icon small"><Icons type="tick"/></div>
             <h4 className="h6">Share Any Comp</h4>
-            <p>You can share information about your own deals, or deals that others have shared with you.</p>
+            <p>You can share information about your own deals or deals that others have shared with you.</p>
           </div>
         </div>
       </div>

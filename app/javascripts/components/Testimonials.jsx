@@ -7,14 +7,9 @@ var Testimonials = React.createClass({
   getInitialState: function() {
     return {
       init: false,
-      scrollTop: $(window).scrollTop(),
+      scrollTop: null,
       quotes: [
         // Last one must be first
-        {
-          text: "CompStak has proven to be an invaluable research tool for me over the last couple years. The information is reliable and fresh, and the crowd sourced format is novel concept that has been a huge benefit to my research efforts.",
-          name: "Research Manager",
-          company: "San Francisco"
-        },
         {
           text: "CompStak is my go to resource...complete data on lease comparables and is thorough in maintaining their database.",
           name: "Scott Amoson",
@@ -86,7 +81,7 @@ var Testimonials = React.createClass({
           company: "T3 Advisors"
         },
         {
-          text: "CompStak is an extremely valuable resource for valuation professionals due to the reliability of data and ease of use. The excellent curtomer service also makes this a company I can get behind.",
+          text: "CompStak is an extremely valuable resource for valuation professionals due to the reliability of data and ease of use. The excellent Customer service also makes this a company I can get behind.",
           name: "Brian Spohr",
           company: "Valbridge Property Advisors"
         },
@@ -134,13 +129,19 @@ var Testimonials = React.createClass({
           text: "CompStak is a great resource both to verify my current rental comps information, as well as identify potential new comps",
           name: "Valuation professional",
           company: "Santa Clara"
-        }
+        },
+        {
+          text: "CompStak has proven to be an invaluable research tool for me over the last couple years. The information is reliable and fresh, and the crowd sourced format is novel concept that has been a huge benefit to my research efforts.",
+          name: "Research Manager",
+          company: "San Francisco"
+        },
       ]
     }
   },
 
   componentDidMount: function() {
     window.addEventListener('scroll', this.onScroll, false);
+    this.onScroll();
   },
 
   componentWillUnmount: function() {
@@ -163,8 +164,7 @@ var Testimonials = React.createClass({
   startCycle: function() {
     $('.testimonials-block').cycle({
       speed: 300,
-      //timeout: 4000,
-      timeout: 0,
+      timeout: 5000,
       fx: 'carousel',
       carouselFluid: true,
       carouselVisible : 3,

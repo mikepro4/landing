@@ -19,13 +19,14 @@ var FauxHeader = React.createClass({
         exchange: this.context.router.isActive('exchange'),
         legal: this.context.router.isActive('legal')
       },
-      scrollTop: $(window).scrollTop()
+      scrollTop: null
     }
   },
 
   componentDidMount: function() {
     window.addEventListener('scroll', this.onScroll, false);
     this.initialScrollToElement();
+    this.onScroll();
   },
 
   componentWillUnmount: function() {

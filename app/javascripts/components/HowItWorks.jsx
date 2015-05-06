@@ -27,11 +27,11 @@ var HowItWorks = React.createClass({
               <div>
                 <h5 className="section-header">How It Works</h5>
                 <h3 className="h1">Trade the comps you have. Find the comps you need.</h3>
-                <p>CompStak Exchange is a private professional network - Anonymously trade commercial lease comps with thousands of brokers, appraisers and researchers.</p>
+                <p>CompStak Exchange is a private professional network. Anonymously trade commercial lease comps with thousands of brokers, appraisers, and researchers.</p>
                 <ul className="checklist">
                   <li><Icons type="tick" /><span> Verified CRE professionals only</span></li>
-                  <li><Icons type="tick" /><span> Trade: 1–for–1: Give a comp. Get a comp</span></li>
-                  <li><Icons type="tick" /><span> Remain completely annoymous</span></li>
+                  <li><Icons type="tick" /><span> Trade 1–for–1: Give a comp. Get a comp</span></li>
+                  <li><Icons type="tick" /><span> Remain completely anonymous</span></li>
                 </ul>
               </div>
             </div>

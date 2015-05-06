@@ -16,7 +16,7 @@ var CoverageMap = React.createClass({
   },
 
   componentDidMount: function() {
-    this.loadMarkets();
+    // this.loadMarkets();
   },
 
   loadMarkets: function() {
@@ -49,9 +49,9 @@ var CoverageMap = React.createClass({
   getTextContent: function() {
     switch(this.props.context) {
       case "enterprise":
-        return ("1000s of comps in most major markets, with new markets launching each quarter.")
+        return ("Thousands of comps in most major markets with new markets launching each quarter")
       case "exchange":
-        return ("Thousands of comps in most major markets, with new markets launching each quarter.")
+        return ("Thousands of comps in most major markets with new markets launching each quarter")
     }
   },
 

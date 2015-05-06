@@ -29,13 +29,13 @@ var EntIntro = React.createClass({
         return <p>
           We collect and verify actual, deal-level transaction records reported directly to us by brokers on the ground. 
           We combine those records with critical property-level details. 
-          Our lease and property comps are recent, accurate and searchable.
+          Our lease and property comps are recent, accurate, and searchable.
         </p>
       case "exchange":
         return <div>
-          <p>Brokers, appraisers and researchers use CompStak Exchange to trade actual, deal-level transaction records.</p>
-          <p>CompStak can complement your existing database, or fully replace it.</p>
-          <p>Our comps are: <b>Recent</b>, <b>accurate</b>, <b>searchable</b> and <b>100% free</b>.</p>
+          <p>Brokers, appraisers, and researchers use CompStak Exchange to trade actual, deal-level transaction records.</p>
+          <p>CompStak can complement your existing database or fully replace it.</p>
+          <p>Our comps are: <b>recent</b>, <b>accurate</b>, <b>searchable</b>, and <b>100% free</b>.</p>
         </div>
     }
   },
