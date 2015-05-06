@@ -44,8 +44,7 @@ var NavigationLinks = React.createClass({
               <li><Link to="exchange">Overview</Link></li>
               <li><a href={this.props.signupUrl}>Join Free</a></li>
               <li><a href="https://exchange.compstak.com/" target="_blank">Login</a></li>
-              <li><a href="https://compstakenterprise.zendesk.com/hc/en-us" target="_blank" to="enterprise">Support</a></li>
-              <li><a href="https://compstakenterprise.zendesk.com/hc/en-us/sections/200624207-Frequently-Asked-Questions" target="_blank" to="enterprise">FAQ</a></li>
+              <li><a href="https://compstak.zendesk.com" target="_blank" to="enterprise">Support</a></li>
             </ul>
           </div>
           <div className="col three">

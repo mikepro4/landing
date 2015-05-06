@@ -11,7 +11,7 @@ var Testimonials = React.createClass({
       quotes: [
         // Last one must be first
         {
-          text: "Compstak has proven to be an invaluable research for me over the last couple years. The information is reliable and fresh, and the crowd sourced format is novel concept that has been a huge benefit to my research efforts.",
+          text: "CompStak has proven to be an invaluable research tool for me over the last couple years. The information is reliable and fresh, and the crowd sourced format is novel concept that has been a huge benefit to my research efforts.",
           name: "Research Manager",
           company: "San Francisco"
         },
@@ -163,7 +163,8 @@ var Testimonials = React.createClass({
   startCycle: function() {
     $('.testimonials-block').cycle({
       speed: 300,
-      timeout: 4000,
+      //timeout: 4000,
+      timeout: 0,
       fx: 'carousel',
       carouselFluid: true,
       carouselVisible : 3,
