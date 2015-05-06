@@ -44,9 +44,6 @@ var App = React.createClass({
   },
 
   componentDidMount: function() {
-    window.addEventListener('scroll', this.onScroll, false);
-    this.onScroll();
-
     var market = this.context.router.getCurrentQuery().market;
     if(market) {
       this.updateLocalStorage({
@@ -56,16 +53,6 @@ var App = React.createClass({
 
     this.showInitialPage();
     this.updateLocalStorage();
-  },
-
-  componentWillUnmount: function() {
-      window.removeEventListener('scroll', this.onScroll, false);
-  },
-
-  onScroll: function(event) {
-    this.setState({
-      scrollTop: $(window).scrollTop()
-    })
   },
 
   showInitialPage: function() {

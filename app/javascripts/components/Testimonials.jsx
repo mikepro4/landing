@@ -1,21 +1,13 @@
 'use strict';
 var React = require('react');
-var Router = require('react-router');
 var Icons = require('../components/Icons.jsx');
-var _ = require('underscore');
 var classnames = require('classnames');
-var Link = Router.Link;
 
 var Testimonials = React.createClass({
-
-  contextTypes: {
-    router: React.PropTypes.func
-  },
-
-
   getInitialState: function() {
     return {
       init: false,
+      scrollTop: $(window).scrollTop(),
       quotes: [
         // Last one must be first
         {
@@ -147,12 +139,24 @@ var Testimonials = React.createClass({
     }
   },
 
+  componentDidMount: function() {
+    window.addEventListener('scroll', this.onScroll, false);
+  },
+
+  componentWillUnmount: function() {
+    window.removeEventListener('scroll', this.onScroll, false);
+  },
+
+  onScroll: function () {
+    this.setState({
+      scrollTop: $(window).scrollTop()
+    })
+  },
+  
   componentDidUpdate: function() {
     var testimonials = $('section.testimonials');
-    if(this.props.scrollTop + ($(window).height() - 50) > testimonials.offset().top) {
-      if(!this.state.init) {
-        this.startCycle();
-      } 
+    if(this.state.scrollTop + ($(window).height() - 50) > testimonials.offset().top) {
+      if(!this.state.init) this.startCycle()
     }
   },
 
@@ -176,7 +180,6 @@ var Testimonials = React.createClass({
   },
 
   render: function () {
-
     var quotes = this.state.quotes.map(function (quote, i) {
       return (
         <div className="slide">
@@ -191,12 +194,12 @@ var Testimonials = React.createClass({
 
     return (
       <section className={classnames({
-        'testimonials': true,
-        'dark-blue': (this.props.mode == "dark-blue") ? true : false,
-        'black': (this.props.mode == "black") ? true : false,
-        'grey-bg': (this.props.mode == "grey") ? true : false,
-        'blue-bg': (this.props.mode == "blue") ? true : false,
-        'white': (this.props.mode == "white") ? true : false
+        'testimonials':   true,
+        'dark-blue':      (this.props.mode == "dark-blue") ? true : false,
+        'black':          (this.props.mode == "black") ? true : false,
+        'grey-bg':        (this.props.mode == "grey") ? true : false,
+        'blue-bg':        (this.props.mode == "blue") ? true : false,
+        'white':          (this.props.mode == "white") ? true : false
       })}>
         <div className="testimonials-wrap">
           <div className="quotes">”</div>

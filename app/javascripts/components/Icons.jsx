@@ -131,9 +131,7 @@ var Icons = React.createClass({
       case 'tiny_right_arrow':
         return (
           <svg viewBox="0 0 4.5 7.5">
-            <g>
-              <polygon fill="#FFFFFF" points="0.7,7.6 0,6.8 3.1,3.8 0,0.7 0.7,0 4.5,3.8"/>
-            </g>
+            <polygon fill="#FFFFFF" points="0.7,7.6 0,6.8 3.1,3.8 0,0.7 0.7,0 4.5,3.8"/>
           </svg>
         )
       case 'right_arrow':
@@ -209,8 +207,6 @@ var Icons = React.createClass({
           </svg>
 
         )    
-
-
     }
   }
 });

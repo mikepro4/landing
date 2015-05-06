@@ -1,42 +1,19 @@
 'use strict';
 var React = require('react');
-var Router = require('react-router');
-var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
-var Icons = require('../components/Icons.jsx');
-var _ = require('underscore');
 var classnames = require('classnames');
-var Link = Router.Link;
+var Icons = require('../components/Icons.jsx');
 
 var AccurateComps = React.createClass({
-
-  mixins: [ HomePageRouterMixin ],
-
-  goToHome: function () {
-    this.selectHomePage(this.props.user)
-  },
-
-  contextTypes: {
-    router: React.PropTypes.func
-  },
-
-  getInitialState: function() {
-    return {
-    }
-  },
-
-  componentDidMount: function() {
-  },
-
-  render: function () {
+  render: function() {
     return (
       <section id="accurate-comps" className={classnames({
         'accurate-comps': true,
-        'ui-block': true,
-        'dark-blue': (this.props.mode == "dark-blue") ? true : false,
-        'black': (this.props.mode == "black") ? true : false,
-        'grey-bg': (this.props.mode == "grey") ? true : false,
-        'blue-bg': (this.props.mode == "blue") ? true : false,
-        'white': (this.props.mode == "white") ? true : false,
+        'ui-block':       true,
+        'dark-blue':      (this.props.mode == "dark-blue") ? true : false,
+        'black':          (this.props.mode == "black") ? true : false,
+        'grey-bg':        (this.props.mode == "grey") ? true : false,
+        'blue-bg':        (this.props.mode == "blue") ? true : false,
+        'white':          (this.props.mode == "white") ? true : false
       })}>
         <div className="container push-left">
           <div className="row">
@@ -44,7 +21,8 @@ var AccurateComps = React.createClass({
               <div>
                 <h5 className="section-header">Accurate Comps</h5>
                 <h3 className="h1">CompStak analysts verify each and every comp.</h3>
-                <p>Our team of qualified Real Estate Analysts and Data Scientists employs a combination of manual review and statistical anomaly detection to ensure quality.</p>
+                <p>Our team of qualified Real Estate Analysts and Data Scientists employs a combination of manual review 
+                and statistical anomaly detection to ensure quality.</p>
                 <ul className="checklist">
                   <li><Icons type="tick" /><span> Verified CRE professionals only</span></li>
                   <li><Icons type="tick" /><span> Trade: 1–for–1: Give a comp. Get a comp</span></li>

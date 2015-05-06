@@ -3,11 +3,10 @@ var React = require('react');
 var Router = require('react-router');
 var _ = require('underscore');
 var classnames = require('classnames');
-var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
 var Icons = require('../components/Icons.jsx');
 var Link = Router.Link;
 
-var Header = React.createClass({
+var FauxHeader = React.createClass({
 
   contextTypes: {
     router: React.PropTypes.func
@@ -19,7 +18,8 @@ var Header = React.createClass({
         enterprise: this.context.router.isActive('enterprise'),
         exchange: this.context.router.isActive('exchange'),
         legal: this.context.router.isActive('legal')
-      }
+      },
+      scrollTop: $(window).scrollTop()
     }
   },
 
@@ -28,12 +28,12 @@ var Header = React.createClass({
     this.initialScrollToElement();
   },
 
-  componentWillReceiveProps: function() {
-    this.initialScrollToElement();
-  },
-
   componentWillUnmount: function() {
     window.removeEventListener('scroll', this.onScroll, false);
+  },
+
+  componentWillReceiveProps: function() {
+    this.initialScrollToElement();
   },
 
   initialScrollToElement: function() {
@@ -49,7 +49,7 @@ var Header = React.createClass({
   scrollToElement: function(e) {
     e.preventDefault();
     var destination = $(e.target).attr('href');
-    this.scrollPage(destination)  
+    this.scrollPage(destination);
   },
 
   scrollPage: function(destination) {
@@ -66,16 +66,23 @@ var Header = React.createClass({
   },
 
   scrollToTop: function() {
-    $('html,body').animate({ scrollTop: 0 }, 750);
+    $('html, body').animate({ scrollTop: 0 }, 750);
   },
 
   onScroll: function () {
     var headerHeight = $('header').height() + 10;
-    var scrollTop = this.props.scrollTop;
+    var scrollTop;
+
+    this.setState({
+      scrollTop: $(window).scrollTop()
+    }, function() {
+      scrollTop = this.state.scrollTop
+    })
 
     $('section').each(function() {
       var id = $(this).attr('id');
       var element = $('a[href="#'+id+'"]').parent('li');
+      
       if(scrollTop + ($(window).height() - 100) > $(this).offset().top) {
         $(this).addClass('visible');
       }
@@ -90,7 +97,6 @@ var Header = React.createClass({
   },
 
   getHeaderLinks: function() {
-    var headerLinks;
     if(this.state.pages.enterprise) {
       return (
         <ul>
@@ -122,16 +128,16 @@ var Header = React.createClass({
       case "enterprise":
         return <Link to="demo-request"><button className="button">{this.props.ctaLabels.enterprise}</button></Link>
       case "exchange":
-        return <a href="https://signup.compstak.com/" className="button">{this.props.ctaLabels.exchange}</a>
+        return <a href={this.props.signupUrl} className="button">{this.props.ctaLabels.exchange}</a>
     }
   },
 
-  render: function () {
+  render: function() {
     return (
       <header className={classnames({
-          'faux-header':   true,
-          'visible':       this.props.scrollTop > 450
-        })}>
+        'faux-header':   true,
+        'visible':       this.state.scrollTop > 450
+      })}>
         <div className="container">
           <div className="logo" onClick={this.scrollToTop}>
             <Icons type="cs_icon" />
@@ -150,4 +156,4 @@ var Header = React.createClass({
   }
 });
 
-module.exports = Header;
+module.exports = FauxHeader;

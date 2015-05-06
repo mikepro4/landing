@@ -1,20 +1,7 @@
 'use strict';
 var React = require('react');
-var Router = require('react-router');
-var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
-var Icons = require('../components/Icons.jsx');
-var _ = require('underscore');
-var classnames = require('classnames');
-var Link = Router.Link;
 
 var FairInformation = React.createClass({
-
-  mixins: [ Router.State, Router.Navigation, HomePageRouterMixin ],
-
-  goToHome: function () {
-    this.selectHomePage(this.props.user)
-  },
-
   render: function () {
     return (
       <section id="FairInformation" className="default-page-section">

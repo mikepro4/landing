@@ -1,42 +1,20 @@
 'use strict';
 var React = require('react');
-var Router = require('react-router');
-var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
 var Icons = require('../components/Icons.jsx');
 var _ = require('underscore');
 var classnames = require('classnames');
-var Link = Router.Link;
 
 var HowItWorks = React.createClass({
-
-  mixins: [ HomePageRouterMixin ],
-
-  goToHome: function () {
-    this.selectHomePage(this.props.user)
-  },
-
-  contextTypes: {
-    router: React.PropTypes.func
-  },
-
-  getInitialState: function() {
-    return {
-    }
-  },
-
-  componentDidMount: function() {
-  },
-
   render: function () {
     return (
       <section id="how-it-works" className={classnames({
-        'ui-block': true,
-        'how-it-works': true,
-        'dark-blue': (this.props.mode == "dark-blue") ? true : false,
-        'black': (this.props.mode == "black") ? true : false,
-        'grey-bg': (this.props.mode == "grey") ? true : false,
-        'blue-bg': (this.props.mode == "blue") ? true : false,
-        'white': (this.props.mode == "white") ? true : false,
+        'ui-block':      true,
+        'how-it-works':  true,
+        'dark-blue':     (this.props.mode == "dark-blue") ? true : false,
+        'black':         (this.props.mode == "black") ? true : false,
+        'grey-bg':       (this.props.mode == "grey") ? true : false,
+        'blue-bg':       (this.props.mode == "blue") ? true : false,
+        'white':         (this.props.mode == "white") ? true : false
       })}>
         <div className="container push-left">
           <div className="row">

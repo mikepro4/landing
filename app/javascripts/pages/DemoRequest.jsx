@@ -85,7 +85,6 @@ var DemoRequest = React.createClass({
         lastName: this.state.lastName,
         email: this.state.email,
         business: this.state.business,
-        market: this.props.user.market,
         agreedToSubscribe: this.state.agreedToSubscribe ? "yes" : "no"
       }
 
@@ -103,7 +102,6 @@ var DemoRequest = React.createClass({
         email: this.state.email,
         subscriber: this.state.agreedToSubscribe,
         jobtitle: this.state.business,
-        market__c: this.props.user.market,
         requested_demo: true
       }
 

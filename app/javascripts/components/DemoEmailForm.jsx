@@ -1,11 +1,10 @@
 'use strict';
 var React = require('react');
 var Router = require('react-router');
-var Icons = require('../components/Icons.jsx');
-var Validators = require('../mixins/Validators.jsx');
 var _ = require('underscore');
 var classnames = require('classnames');
-var Link = Router.Link;
+var Icons = require('../components/Icons.jsx');
+var Validators = require('../mixins/Validators.jsx');
 
 var DemoEmailForm = React.createClass({
 
@@ -102,11 +101,17 @@ var DemoEmailForm = React.createClass({
   render: function () {
     return (
       <form className={classnames({
-        'sign-up':   true,
+        'sign-up':        true,
         'form-invalid':   this.state.emailInvalid
       })} onSubmit={this.handleFormSubmit}>
         <div className="input-wrap">
-          <input type="text" ref="email" value={this.state.email} onChange={this.handleEmailInput} placeholder="Email Address"/>
+          <input 
+            type="text" 
+            ref="email" 
+            value={this.state.email} 
+            onChange={this.handleEmailInput} 
+            placeholder="Email Address"
+          />
           <label> <Icons type="mail_icon" /> </label>
         </div>
         <button className="button">

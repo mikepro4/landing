@@ -13,9 +13,7 @@ if(process.browser) {
 var VideoModal = React.createClass({
 
   closeVideoModal: function() {
-    if(this.props.videoPlaying) {
-      this.props.toggleVideoModal()
-    }
+    if(this.props.videoPlaying) this.props.toggleVideoModal()
   },
 
   componentDidMount: function() {
@@ -30,12 +28,12 @@ var VideoModal = React.createClass({
     var video;
     if(this.props.videoPlaying) {
       video = 
-          <iframe src="https://player.vimeo.com/video/121464719?autoplay=1&title=0&byline=0&portrait=0" frameBorder="0"></iframe> 
+        <iframe src="https://player.vimeo.com/video/121464719?autoplay=1&title=0&byline=0&portrait=0" frameBorder="0"></iframe> 
     }
     return (
       <div className={classnames({
-          'video-modal':   true,
-          'visible':       this.props.videoPlaying
+        'video-modal':   true,
+        'visible':       this.props.videoPlaying
       })}>
         <div className="video_container" onClick={this.props.toggleVideoModal}>
           <div className="video fadeIn">
