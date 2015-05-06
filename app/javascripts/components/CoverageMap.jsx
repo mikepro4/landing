@@ -22,7 +22,7 @@ var CoverageMap = React.createClass({
   },
 
   componentDidMount: function() {
-    //this.loadMarkets();
+    this.loadMarkets();
   },
 
   loadMarkets: function() {
@@ -103,7 +103,7 @@ var CoverageMap = React.createClass({
             <div className="coverage-links">        
               <ul>
                 {markets}
-                <li><a href="#">Your city! <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+                <li><a href="https://signup.compstak.com/?noMarket=true">Your city! <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
               </ul>
             </div>
           </div>
