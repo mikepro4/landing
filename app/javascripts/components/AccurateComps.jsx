@@ -29,7 +29,7 @@ var AccurateComps = React.createClass({
 
   render: function () {
     return (
-      <section className={classnames({
+      <section id="accurate-comps" className={classnames({
         'accurate-comps': true,
         'ui-block': true,
         'dark-blue': (this.props.mode == "dark-blue") ? true : false,
@@ -40,21 +40,36 @@ var AccurateComps = React.createClass({
       })}>
         <div className="container push-left">
           <div className="row">
-            <div className="col six right screenshot">
-              <div className="img-wrap">
-                <img src="/images/ent-granular-screenshot.png"/>
-              </div>
-            </div>
             <div className="col six left block-info">
               <div>
-                <h5 className="section-header">How It Works</h5>
-                <h3 className="h1">Trade the comps you have. Find the comps you need.</h3>
-                <p>CompStak Exchange is a private professional network - Anonymously trade commercial lease comps with thousands of brokers, appraisers and researchers.</p>
+                <h5 className="section-header">Accurate Comps</h5>
+                <h3 className="h1">CompStak analysts verify each and every comp.</h3>
+                <p>Our team of qualified Real Estate Analysts and Data Scientists employs a combination of manual review and statistical anomaly detection to ensure quality.</p>
                 <ul className="checklist">
                   <li><Icons type="tick" /><span> Verified CRE professionals only</span></li>
                   <li><Icons type="tick" /><span> Trade: 1–for–1: Give a comp. Get a comp</span></li>
                   <li><Icons type="tick" /><span> Remain completely annoymous</span></li>
                 </ul>
+              </div>
+            </div>
+            <div className="col six right analysts">
+              <div className="img-wrap">
+                <img src="/images/analysts.png"/>
+                <div className="label analyst-one">
+                  <p className="h6">Wayne Yu</p>
+                  <p>Real Estate Science</p>
+                </div>
+                <div className="label analyst-two">
+                  <p className="h6">Diana Bishop</p>
+                  <p>Data Quality Management</p>
+                </div>
+                <div className="label analyst-three">
+                  <p className="h6">Alex Kass</p>
+                  <p>Data Science & Machine</p>
+                </div>
+              </div>
+              <div className="verification-chart">
+                <img src="/images/verification-chart.svg"/>
               </div>
             </div>
           </div>

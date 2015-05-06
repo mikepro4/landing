@@ -11,7 +11,7 @@ var ObjectionHandler = require('../components/ObjectionHandler.jsx');
 var ObjectionHandler2 = require('../components/ObjectionHandler2.jsx');
 var Testimonials = require('../components/Testimonials.jsx');
 var Logos = require('../components/Logos.jsx');
-var Entintro = require('../components/EnterpriseIntro.jsx');
+var Intro = require('../components/Intro.jsx');
 var HowItWorks = require('../components/HowItWorks.jsx');
 var AccurateComps = require('../components/AccurateComps.jsx');
 var EntGranularData = require('../components/GranularData.jsx');
@@ -25,97 +25,85 @@ var VideoModal = require('../components/VideoModal.jsx');
 
 var Exchange = React.createClass({
 
+  getDefaultProps: function() {
+    return {
+      context: "exchange"
+    }    
+  },
+
   render: function () {
     return (
-      <DocumentTitle title="CompStak – Exchange">
+      <DocumentTitle title="CompStak – Exchange – Free lease comps exchange for CRE brokers, appraisers and researchers.">
         <div className="page-exchange">
+
          <Header 
             {...this.props}
             login={true}
             menu={true}
             haveAccount={false}
             mode="white"
-            context="exchange"
           />
+
           <FauxHeader {...this.props}/>
-          <TopSplash 
-            {...this.props}
-            context="exchange"
+
+          <TopSplash {...this.props}
             mode="white"
           />
-          <ObjectionHandler 
-            {...this.props}
-            context="exchange"
+
+          <ObjectionHandler {...this.props}
             mode="white"
           />
-          <Testimonials
-            {...this.props}
-            context="exchange"
+
+          <Testimonials {...this.props}
             mode="black"
           />
-          <Entintro 
-            {...this.props}
-            context="exchange"
+
+          <Intro {...this.props}
             mode="grey"
           />
-          <HowItWorks 
-            {...this.props}
-            context="exchange"
+
+          <HowItWorks {...this.props}
             mode="white"
           />
-          <ObjectionHandler2 
-            {...this.props}
-            context="exchange"
+
+          <ObjectionHandler2 {...this.props}
             mode="black"
           />
-          <AccurateComps 
-            {...this.props}
-            context="exchange"
+
+          <AccurateComps {...this.props}
             mode="grey"
           />
-          <EntGranularData 
-            {...this.props}
-            context="exchange"
+
+          <EntGranularData {...this.props}
             mode="white"
           />
-          <SampleComp
-            {...this.props}
-            context="exchange"
+
+          <SampleComp {...this.props}
             mode="grey"
           />
-          <NationalCoverage 
-            {...this.props}
-            context="exchange"
+
+          <NationalCoverage {...this.props}
             mode="white"
           />
-          <CoverageMap
-            {...this.props}
-            context="exchange"
+
+          <CoverageMap {...this.props}
             mode="grey"
           />
-          <BottomSignUp
-            {...this.props}
-            context="exchange"
+
+          <BottomSignUp {...this.props}
             mode="blue"
           />
-          <ObjectionHandler 
-            {...this.props}
-            context="exchange"
+
+          <ObjectionHandler {...this.props}
             mode="blue"
           />
-          <OnPgSplitter 
-            {...this.props}
-            context="enterprise"
+
+          <OnPgSplitter {...this.props}
             mode="dark-blue"
           />
-          <Footer
-            {...this.props}
-            context="exchange"
-          />
-          <VideoModal
-            {...this.props}
-            context="exchange"
-          />
+
+          <Footer {...this.props} />
+          
         </div>
       </DocumentTitle>
     )

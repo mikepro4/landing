@@ -20,20 +20,78 @@ var SampleComp = React.createClass({
     var introText;
     var searchByText;
     var listTitle;
+    var attrList;
     if(this.props.context === "enterprise") {
+      headline = 
+        <h3 className="h3">Complete Lease Comps</h3>
       introText = 
-        <p>Complete, accurate, deal-level data directly from brokers and appraisers on the ground, doing deals.</p>        
+        <p>Complete, accurate, commercial lease terms directly from brokers and appraisers on the ground</p>        
       searchByText = 
         "Search & filter by 24 details"
       listTitle = 
         <h5>24 Hard-to-Source Details</h5>
+      attrList = 
+      <ul className="checklist">
+        <li><Icons type="tick" /><span> Street Address</span></li>
+        <li><Icons type="tick" /><span> Submarket</span></li>
+        <li><Icons type="tick" /><span> Tenant Name</span></li>
+        <li><Icons type="tick" /><span> Transaction Date</span></li>
+        <li><Icons type="tick" /><span> Lease Term</span></li>
+        <li><Icons type="tick" /><span> Expiration Date</span></li>
+        <li><Icons type="tick" /><span> Transaction Size</span></li>
+        <li><Icons type="tick" /><span> Starting Rent</span></li>
+        <li><Icons type="tick" /><span> Escalations</span></li>
+        <li><Icons type="tick" /><span> TI Allowance</span></li>
+        <li><Icons type="tick" /><span> Free Rent</span></li>
+        <li><Icons type="tick" /><span> Net Effective Rent</span></li>
+        <li><Icons type="tick" /><span> Space Type</span></li>
+        <li><Icons type="tick" /><span> Floors Occupied</span></li>
+        <li><Icons type="tick" /><span> Building Name</span></li>
+        <li><Icons type="tick" /><span> Property Type</span></li>
+        <li><Icons type="tick" /><span> Building Class</span></li>
+        <li><Icons type="tick" /><span> Year Built</span></li>
+        <li><Icons type="tick" /><span> Building Size</span></li>
+        <li><Icons type="tick" /><span> Landlord</span></li>
+        <li><Icons type="tick" /><span> Landlord Brokers</span></li>
+        <li><Icons type="tick" /><span> Tenant Brokers</span></li>
+        <li><Icons type="tick" /><span> Lease Notes</span></li>
+      </ul>  
     } else if(this.props.context === "exchange") {
+      headline = 
+        <h3 className="h1">Complete Comps</h3>
       introText = 
         <p>Complete, accurate data directly from brokers, researchers and appraisers.</p>
       searchByText = 
         "Search comps by 24 attributes"
       listTitle = 
         <h5>24 Hard-to-Find Details</h5>
+      attrList = 
+      <ul className="checklist">
+        <li><Icons type="tick" /><span> Street Address</span></li>
+        <li><Icons type="tick" /><span> Submarket</span></li>
+        <li><Icons type="tick" /><span> Tenant</span></li>
+        <li><Icons type="tick" /><span> Tenant Industry</span></li>
+        <li><Icons type="tick" /><span> Transaction Date</span></li>
+        <li><Icons type="tick" /><span> Lease Term</span></li>
+        <li><Icons type="tick" /><span> Expiration Date</span></li>
+        <li><Icons type="tick" /><span> Transaction Size</span></li>
+        <li><Icons type="tick" /><span> Starting Rent</span></li>
+        <li><Icons type="tick" /><span> Escalations</span></li>
+        <li><Icons type="tick" /><span> TI Allowance</span></li>
+        <li><Icons type="tick" /><span> Free Rent</span></li>
+        <li><Icons type="tick" /><span> Net Effective Rent</span></li>
+        <li><Icons type="tick" /><span> Space Type</span></li>
+        <li><Icons type="tick" /><span> Floors Occupied</span></li>
+        <li><Icons type="tick" /><span> Building Name</span></li>
+        <li><Icons type="tick" /><span> Property Type</span></li>
+        <li><Icons type="tick" /><span> Building Class</span></li>
+        <li><Icons type="tick" /><span> Year Built</span></li>
+        <li><Icons type="tick" /><span> Building Size</span></li>
+        <li><Icons type="tick" /><span> Landlord</span></li>
+        <li><Icons type="tick" /><span> Landlord Brokers</span></li>
+        <li><Icons type="tick" /><span> Tenant Brokers</span></li>
+        <li><Icons type="tick" /><span> Lease Notes</span></li>
+      </ul>
     }
     return (
       <section id="sample-comp" className={classnames({
@@ -48,7 +106,7 @@ var SampleComp = React.createClass({
           <div className="row">
             <div className="col six block-info">
               <div>
-                <h3 className="h1">Complete Comps</h3>
+                {headline}
                 {introText}
               </div>
             </div>
@@ -131,7 +189,7 @@ var SampleComp = React.createClass({
                 <li><Icons type="tick" /><span> Powerful, interactive maps</span></li>
               </ul>
               <ul className="checklist export">
-                <li><Icons type="tick" /><span> Easily port data to Excel or PDF</span></li>
+                <li><Icons type="tick" /><span> Easily export data to Excel or PDF</span></li>
               </ul>
               <ul className="checklist list-items">
                 <li><Icons type="tick" /><span> Starting rents <span className="grey">(not asking rents)</span></span></li>
@@ -142,32 +200,7 @@ var SampleComp = React.createClass({
           </div>
           <div className="row comp-details">
             {listTitle}
-            <ul className="checklist">
-              <li><Icons type="tick" /><span> Street Address</span></li>
-              <li><Icons type="tick" /><span> Submarket</span></li>
-              <li><Icons type="tick" /><span> Tenant</span></li>
-              <li><Icons type="tick" /><span> Tenant Industry</span></li>
-              <li><Icons type="tick" /><span> Transaction Date</span></li>
-              <li><Icons type="tick" /><span> Lease Term</span></li>
-              <li><Icons type="tick" /><span> Expiration Date</span></li>
-              <li><Icons type="tick" /><span> Transaction Size</span></li>
-              <li><Icons type="tick" /><span> Starting Rent</span></li>
-              <li><Icons type="tick" /><span> Escalations</span></li>
-              <li><Icons type="tick" /><span> TI Allowance</span></li>
-              <li><Icons type="tick" /><span> Free Rent</span></li>
-              <li><Icons type="tick" /><span> Net Effective Rent</span></li>
-              <li><Icons type="tick" /><span> Space Type</span></li>
-              <li><Icons type="tick" /><span> Floors Occupied</span></li>
-              <li><Icons type="tick" /><span> Building Name</span></li>
-              <li><Icons type="tick" /><span> Property Type</span></li>
-              <li><Icons type="tick" /><span> Building Class</span></li>
-              <li><Icons type="tick" /><span> Year Built</span></li>
-              <li><Icons type="tick" /><span> Building Size</span></li>
-              <li><Icons type="tick" /><span> Landlord</span></li>
-              <li><Icons type="tick" /><span> Landlord Brokers</span></li>
-              <li><Icons type="tick" /><span> Tenant Brokers</span></li>
-              <li><Icons type="tick" /><span> Lease Notes</span></li>
-            </ul>
+            {attrList}
           </div>
         </div>
       </section>

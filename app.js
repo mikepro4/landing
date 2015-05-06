@@ -35,11 +35,11 @@ if (app.get('env') === 'development') {
   require('./dev-tools');
 }
 
-// app.all('/api/*', function (req, res) {
-//   proxy.web(req, res, {target: 'http://local.exchange.compstak.com/'});
-// });
+app.all('/api/*', function (req, res) {
+  proxy.web(req, res, {target: 'http://localhost/'});
+});
 
-app.use('/api', router);
+app.use('/nodeApi', router);
 router.route('/compstakEmail')
 
   .post(function(req, res) {

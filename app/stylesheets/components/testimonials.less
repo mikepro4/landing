@@ -1,113 +1,123 @@
 .testimonials {
-  .quotes {
-    color: @light-blue;
-    display: block;
-    margin: 75px auto 10px;
-    text-align: center;
-    font-size: 250px;
-    font-family: @font-gotham-thin;
-    height: 0;
-  }
-  .testimonials-block {
-    text-align: center;
-    width: 300%;
-    margin-left: -100%;
-    height: 300px;
-    position: relative;
-    .respond(@md, {
-      width: 150%;
-      margin-left: -25%;
-      margin-right: -25%;
-    });
-    .cycle-carousel-wrap {
-      div.slide {
-        text-align: center;
-        vertical-align: middle;
-        padding: 0 30px;
-        opacity: .5 !important;
-        position: relative !important;
-        .transition(opacity @speed ease-in-out);
-        .box-sizing(border-box);
-        .respond(@lg, {
-          padding: 0 50px;
-        });
-        &.active + div.slide {
-          opacity: 1 !important;
+  .testimonials-wrap {
+    opacity: 0;
+
+    .quotes {
+      color: @light-blue;
+      display: block;
+      margin: 75px auto 10px;
+      text-align: center;
+      font-size: 250px;
+      font-family: @font-gotham-thin;
+      height: 0;
+    }
+    .testimonials-block {
+      text-align: center;
+      width: 300%;
+      margin-left: -100%;
+      height: 300px;
+      position: relative;
+      .respond(@md, {
+        width: 150%;
+        margin-left: -25%;
+        margin-right: -25%;
+      });
+      .cycle-carousel-wrap {
+        div.slide {
+          text-align: center;
+          vertical-align: middle;
+          padding: 0 30px;
+          opacity: .5 !important;
+          position: relative !important;
+          .transition(opacity @speed ease-in-out);
+          .box-sizing(border-box);
+          .respond(@lg, {
+            padding: 0 50px;
+          });
+          &.active + div.slide {
+            opacity: 1 !important;
+            .quote-info {
+              animation: quoteinfo .2s .5s ease-in-out forwards;
+              -moz-animation: quoteinfo .2s .5s ease-in-out forwards; /* Firefox */
+              -webkit-animation: quoteinfo .2s .5s ease-in-out forwards; /* Safari and Chrome */
+              -o-animation: quoteinfo .2s .5s ease-in-out forwards; /* Opera */
+              position: absolute;
+              left: 0;
+              right: 0;
+            }
+          }
+          > p {
+            .flex-display();
+            .align-items(center);
+            .justify-content(center);
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            //display: block;
+            color: @white;
+            font-family: @font-gotham-extra-light;
+            letter-spacing: .02em;
+            font-size: 18px;
+            line-height: 1.5em;
+            white-space: normal;
+            height: 155px;
+            .respond(@sm, {
+              font-size: 22px;
+            });
+            .respond(@xlg, {
+              font-size: 24px;
+            });
+          }
           .quote-info {
-            animation: quoteinfo .2s .5s ease-in-out forwards;
-            -moz-animation: quoteinfo .2s .5s ease-in-out forwards; /* Firefox */
-            -webkit-animation: quoteinfo .2s .5s ease-in-out forwards; /* Safari and Chrome */
-            -o-animation: quoteinfo .2s .5s ease-in-out forwards; /* Opera */
             position: absolute;
+            opacity: 0;
+            top: 255px;
             left: 0;
             right: 0;
+            .name {
+              margin-bottom: 5px;
+            }
+            .company {
+              font-size: 14px;
+              letter-spacing: .15em;
+              text-transform: uppercase;
+              color: @grey;
+              font-family: @font-gotham-light;
+              .respond(@md, {
+                font-size: 16px;
+              });
+            }
           }
         }
-        > p {
-          .flex-display();
-          .align-items(center);
-          .justify-content(center);
-          max-width: 800px;
-          margin: 0 auto;
-          text-align: center;
-          //display: block;
-          color: @white;
-          font-family: @font-gotham-extra-light;
-          letter-spacing: .02em;
-          font-size: 18px;
-          line-height: 1.5em;
-          white-space: normal;
-          height: 155px;
-          .respond(@sm, {
-            font-size: 22px;
-          });
-          .respond(@xlg, {
-            font-size: 24px;
-          });
-        }
-        .quote-info {
-          position: absolute;
-          opacity: 0;
-          top: 255px;
-          left: 0;
-          right: 0;
-          .name {
-            margin-bottom: 5px;
+      }
+    }
+    .controls {
+      margin: 0 auto;
+      text-align: center;
+      > div {
+        cursor: pointer;
+        display: inline-block;
+        padding: 15px 15px 0px 15px;
+        svg {
+          width: 28px;
+          height: 28px;
+          * {
+            .transition(fill @speed ease-in-out);
+            fill: @mid-grey;
           }
-          .company {
-            font-size: 14px;
-            letter-spacing: .15em;
-            text-transform: uppercase;
-            color: @grey;
-            font-family: @font-gotham-light;
-            .respond(@md, {
-              font-size: 16px;
-            });
+        }
+        &:hover {
+          svg * {
+            fill: @white;
           }
         }
       }
     }
   }
-  .controls {
-    margin: 0 auto;
-    text-align: center;
-    > div {
-      cursor: pointer;
-      display: inline-block;
-      padding: 15px 15px 0px 15px;
-      svg {
-        width: 28px;
-        height: 28px;
-        * {
-          .transition(fill @speed ease-in-out);
-          fill: @mid-grey;
-        }
-      }
-      &:hover {
-        svg * {
-          fill: @white;
-        }
-      }
+
+  &.visible {
+    .testimonials-wrap {
+      .fadeIn(.3s);
     }
   }
 }
@@ -116,24 +126,24 @@
 // Scrollbar Keyframes
 @keyframes quoteinfo
 {
-0%   {top: 255px;}
+0%   {top: 210px;}
 100% {top: 200px; opacity: 1;}
 }
 
 @-moz-keyframes quoteinfo /* Firefox */
 {
-0%   {top: 255px;}
+0%   {top: 210px;}
 100% {top: 200px; opacity: 1;}
 }
 
 @-webkit-keyframes quoteinfo /* Safari and Chrome */
 {
-0%   {top: 255px;}
+0%   {top: 210px;}
 100% {top: 200px; opacity: 1;}
 }
 
 @-o-keyframes quoteinfo /* Opera */
 {
-0%   {top: 255px;}
+0%   {top: 210px;}
 100% {top: 200px; opacity: 1;}
 }

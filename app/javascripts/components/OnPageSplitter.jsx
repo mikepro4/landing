@@ -35,7 +35,7 @@ var OnPageSplitter = React.createClass({
             <Link to="splitter" onClick={this.props.clearLocalStorage}>
               <h6>CompStak Exchange</h6>
               <p className="h4 blue">For Brokers, Appraisers, & Researchers</p>
-              <p>The worlds largest, free, annoymous lease comp trading platform.</p>
+              <p>The world's largest, free, anonymous lease comp trading platform</p>
               <div className="arrow"><Icons type="right_arrow" /></div>
             </Link>
           </div>

@@ -23,16 +23,17 @@ var Legal = React.createClass({
             login={false}
             menu={true}
             haveAccount={false}
+            mode="white"
+          />
+          <TermsOfUse {...this.props}/>
+          <hr {...this.props}/>
+          <PrivacyPolicy {...this.props}/>
+          <hr {...this.props}/>
+          <FairInformation {...this.props}/>
+          <OnPgSplitter {...this.props}
             mode="dark-blue"
           />
-          <div className="default-page-title"><h1>Legal</h1></div>
-          <TermsOfUse/>
-          <hr/>
-          <PrivacyPolicy/>
-          <hr/>
-          <FairInformation/>
-          <OnPgSplitter/>
-          <Footer/>
+          <Footer {...this.props}/>
         </div>
       </DocumentTitle>
     )

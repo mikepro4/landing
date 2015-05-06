@@ -31,22 +31,27 @@ var EntGranularData = React.createClass({
     var headline;
     var content;
     var sectionHeader;
+    var screenshot;
     if(this.props.context === "enterprise") {
+      screenshot = 
+        <img src="/images/ent-granular-screenshot.png"/>;
       sectionHeader = ""
       headline = 
-        <h3 className="h1">Granular, accurate, deal-level lease data</h3>;
+        <h3 className="h1">Granular, accurate, deal-level lease data</h3>
       content = 
         <ul className="checklist">
           <li><Icons type="tick" /><span> Actual Transaction Data</span></li>
           <li><Icons type="tick" /><span> Accurate & Detailed</span></li>
-          <li><Icons type="tick" /><span> Inifinitely & Instantly Searchable</span></li>
+          <li><Icons type="tick" /><span> Instantly Searchable</span></li>
           <li><Icons type="tick" /><span> Lease & Property Information</span></li>
         </ul>
     } else if(this.props.context === "exchange") {
+      screenshot = 
+        <img src="/images/ex-granular-screenshot.png"/>
       sectionHeader = 
         <h5 className="section-header">Detailed Comps</h5>
       headline = 
-        <h3 className="h1">Granular, accurate, deal-level lease data</h3>;
+        <h3 className="h1">Granular, accurate, deal-level lease data</h3>
       content = 
         <ul className="checklist">
           <li><Icons type="tick" /><span> Actual Transaction Data</span></li>
@@ -68,7 +73,7 @@ var EntGranularData = React.createClass({
           <div className="row">
             <div className="col six left screenshot">
               <div className="screenshot-wrap">
-                <img src="/images/ent-granular-screenshot.png"/>
+                {screenshot}
                 <div className="granular-animation">
                   <div className="header"></div>
                   <div className="list"></div>

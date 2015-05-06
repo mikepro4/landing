@@ -60,6 +60,12 @@
     float: right;
 
     ul li {
+      &.mobile-hide {
+        display: none;
+        .respond(@lg, {
+          display: inline-block;
+        });
+      }
       display: inline-block;
 
       a.nav-url {
@@ -109,7 +115,7 @@
 
       &:hover {
         svg * {
-          fill: darken(@light-blue, 20%);
+          fill: @light-blue;
         }
       }
 

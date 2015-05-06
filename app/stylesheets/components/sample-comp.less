@@ -1,6 +1,19 @@
 .sample-comp {
   .block-info {
-    padding-right: 5%;
+    > div {
+      .respond(@xlg, {
+        max-width: none;
+      });
+    }
+    .h3 {
+      .respond(@xlg, {
+        font-size: 36px;
+      });
+      .respond(@huge, {
+        font-size: @font-size-h2;
+      });
+    }
+    padding-right: 3%;
     height: 152px;
   }
   .comp {

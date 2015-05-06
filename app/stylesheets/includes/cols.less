@@ -80,9 +80,33 @@
 		});
 	}
 
+	.five {
+		.respond(@md, {
+			.columns(5);
+		});
+	}
+
 	.six {
 		.respond(@md, {
 			.columns(6);
+		});
+	}
+
+	.seven {
+		.respond(@md, {
+			.columns(7);
+		});
+	}
+
+	.eight {
+		.respond(@md, {
+			.columns(8);
+		});
+	}
+
+	.nine {
+		.respond(@md, {
+			.columns(9);
 		});
 	}
 
@@ -97,6 +121,10 @@
 
 	.six .four {
 		.nestedcolumns(4, 6);
+	}
+
+	.nine .three {
+		.nestedcolumns(3, 9);
 	}
 
 }

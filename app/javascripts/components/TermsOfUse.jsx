@@ -132,11 +132,6 @@ var TermsOfUse = React.createClass({
           <p>As the provider of the Services, CompStak is only a forum and is not liable for any statements, representations, or omissions made through Your (or other Visitors’) Creative Content. Any opinions, advice, purported facts, or recommendations expressed therein are those of the Visitors who make them, and not those of CompStak; CompStak does not endorse any opinion, purported fact, recommendation or advice expressed therein. Likewise, it is your responsibility to exercise due care and caution (for your privacy, safety, and identity, among other concerns) when posting your Creative Content or accessing the Services.</p>
           <h3>10. The Commercial Real Estate Data and Information Available On the Servies</h3>
           <ol className="abc">
-            <li><p><span className="underlined">Statement of Principles</span></p>
-              <ol className="roman">
-                <li><p></p></li>
-              </ol>
-            </li>
             <li><p><span className="underlined">Statement of Principles</span>.</p>
               <ol className="roman">
                 <li><p>We are open, transparent and fair about our practices and policies with respect to the collection and use of information.</p></li>

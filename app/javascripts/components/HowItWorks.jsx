@@ -29,7 +29,7 @@ var HowItWorks = React.createClass({
 
   render: function () {
     return (
-      <section className={classnames({
+      <section id="how-it-works" className={classnames({
         'ui-block': true,
         'how-it-works': true,
         'dark-blue': (this.props.mode == "dark-blue") ? true : false,

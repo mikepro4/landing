@@ -48,9 +48,6 @@ form.sign-up {
           color: lighten(@mid-grey, 15%);  
         }
       }
-
-     
-
     }
   }
 
@@ -118,6 +115,14 @@ form.sign-up {
       }
       input[type=text] {
         border: 1px solid @light-blue;
+      }
+    }
+
+    &.form-invalid {
+      .input-wrap {
+        input[type=text] {
+          border: 1px solid @red;
+        }
       }
     }
   }

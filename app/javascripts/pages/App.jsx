@@ -26,7 +26,12 @@ var App = React.createClass({
 
   getInitialState: function() {
     return {
+      signupUrl: "https://signup.compstak.com/",
       jobOptions: ["Tenant/Landlord Rep", "Appraiser", "Researcher", "Landlord", "Lender", "Investor"],
+      ctaLabels: {
+        enterprise: "Schedule a Demo",
+        exchange: "Join Free"
+      },
       user: {
         jobTitle: null,
         mode: null,
@@ -95,13 +100,6 @@ var App = React.createClass({
     })
   },
 
-  toggleJobMenu: function() {
-    this.setState({
-      menuOpen: !this.state.menuOpen
-    })
-    this.refs.slideInMenu.openJobMenu();
-  },
-
   toggleVideoModal: function() {
     this.setState({
       videoPlaying: !this.state.videoPlaying
@@ -109,6 +107,13 @@ var App = React.createClass({
   },
 
   render: function() {
+    var methods = {
+      updateLocalStorage: this.updateLocalStorage,
+      clearLocalStorage: this.clearLocalStorage,
+      toggleVideoModal: this.toggleVideoModal,
+      toggleMenu: this.toggleMenu
+    }
+
     return (
       <DocumentTitle title="CompStak – Massive Commercial Lease Comps Database – Accurate, searchable, nationwide.">
         <div className={classnames({
@@ -118,31 +123,18 @@ var App = React.createClass({
 
           <div className="page-content">
             <RouteHandler 
-              {...this.props}
-              user={this.state.user}
-              menuOpen={this.state.menuOpen}
-              videoPlaying={this.state.videoPlaying}
-              scrollTop={this.state.scrollTop}
-              jobOptions={this.state.jobOptions}
-              updateLocalStorage={this.updateLocalStorage}
-              clearLocalStorage={this.clearLocalStorage}
-              toggleMenu={this.toggleMenu}
-              toggleJobMenu={this.toggleJobMenu}
-              toggleVideoModal={this.toggleVideoModal}
+              {...this.state}
+              {...methods}
             />
           </div>
 
           <SlideInMenu 
-            ref="slideInMenu"
-            toggleMenu={this.toggleMenu}
-            user={this.state.user}
-            jobOptions={this.state.jobOptions}
-            updateLocalStorage={this.updateLocalStorage}
-            clearLocalStorage={this.clearLocalStorage}
+            {...this.state}
+            {...methods}
           />
 
-          <div className="overlay" onClick={this.toggleMenu}/>
-          
+          <div className="overlay" onClick={this.toggleMenu} />
+
         </div>
       </DocumentTitle>
     );

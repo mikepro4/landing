@@ -46,12 +46,17 @@ var EntIntro = React.createClass({
   render: function () {
     var headline;
     var content;
+    var screenshot;
     if(this.props.context === "enterprise") {
+      screenshot = 
+        <img src="/images/ent-intro-screenshot.png"/>
       headline = 
-        <h3 className="h1">Office, retail & industrial lease comps</h3>;
+        <h3 className="h1">Office, retail & industrial comps</h3>;
       content = 
-        <p>We collect and verify actual, deal-level transaction records reported directly to us by brokers on the ground. Our comps are recent, accurate and searchable.</p>
+        <p>We collect and verify actual, deal-level transaction records reported directly to us by brokers on the ground. We combine those records with critical property-level details. Our lease and property comps are recent, accurate and searchable.</p>
     } else if(this.props.context === "exchange") {
+      screenshot = 
+        <img src="/images/ex-intro-screenshot.png"/>
       headline = 
         <h3 className="h1">Thousands of office, retail, and industrial lease comps</h3>;
       content = 
@@ -64,7 +69,9 @@ var EntIntro = React.createClass({
     return (
       <section className={classnames({
         'ui-block': true,
-        'enterprise-intro': true,
+        'intro': true,
+        'enterprise': (this.props.context == "enterprise") ? true : false,
+        'exchange': (this.props.context == "exchange") ? true : false,
         'dark-blue': (this.props.mode == "dark-blue") ? true : false,
         'black': (this.props.mode == "black") ? true : false,
         'grey-bg': (this.props.mode == "grey") ? true : false,
@@ -75,7 +82,7 @@ var EntIntro = React.createClass({
           <div className="row">
             <div className="col six right screenshot">
               <div className="screenshot-wrap">
-                <img src="/images/ent-intro-screenshot.png"/>
+                {screenshot}
               </div>
             </div>
             <div className="col six left block-info">

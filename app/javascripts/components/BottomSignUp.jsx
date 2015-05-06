@@ -53,7 +53,7 @@ var BottomSignUp = React.createClass({
       })}>
         <div className="container">
           <p className="h3">{this.state.signUpHeadline}</p>
-          <DemoEmailForm/>
+          <DemoEmailForm {...this.props}/>
         </div>
       </div>
     )
