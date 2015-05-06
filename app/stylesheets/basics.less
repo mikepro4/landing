@@ -240,6 +240,23 @@ textarea {
   height: @btn-height;
 }
 
+select {
+  background: @input-bg;
+  border: @input-border;
+  box-shadow: none;
+  outline: none;
+  font-size: 1em;
+  padding: @input-padding;
+  width: 100%;
+  margin: 0px 0 1em 0;
+  .border-radius (@input-border-radius);
+  .transition(all @speed ease-in-out);
+  resize: none;
+  vertical-align: top;
+  text-indent: 0px;
+  height: @btn-height;
+}
+
 textarea {
   line-height: @line-height-base;
   padding-top: 7px;
@@ -255,7 +272,7 @@ input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 input[type="search"]:focus,
-textarea:focus {
+textarea:focus, select:focus {
   background: @input-focus-bg;
   color: @input-focus-color;
 }

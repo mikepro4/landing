@@ -55,7 +55,7 @@ var NavigationLinks = React.createClass({
             <div className="col three">
               <h6>Contact</h6>
               <ul>
-                <li><a href="mailto:help@compstak.com" target="_blank" title="Contact CompStak Exchange Representative">sales@compstak.com</a></li>
+                <li><a href="mailto:help@compstak.com" target="_blank" title="Contact CompStak Exchange Representative">help@compstak.com</a></li>
                 <li>1-646-926-6707</li>
                 <li><a href="https://www.facebook.com/CompStak" target="_blank" title="CompStak Facebook">Facebook</a></li>
               <li><a href="https://twitter.com/CompStak" target="_blank" title="CompStak Twitter">Twitter</a></li>

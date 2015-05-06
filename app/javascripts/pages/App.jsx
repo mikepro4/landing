@@ -133,11 +133,8 @@ var App = React.createClass({
             {...methods}
           />
 
-          <div className="overlay" 
-            {...this.state}
-            {...methods}
-          />
-          
+          <div className="overlay" onClick={this.toggleMenu} />
+
         </div>
       </DocumentTitle>
     );

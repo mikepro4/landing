@@ -29,16 +29,20 @@ var DemoRequest = React.createClass({
   },
 
   getInitialState: function() {
-    var email = this.context.router.getCurrentQuery().email;
+    var emailQuery = this.context.router.getCurrentQuery().email;
     return {
+      businessTypes: ['Owner/Operator', 'Institutional Owner', 'Lender', 'Fund', 'Investor', 'Advisor', 'Other'],
       loading: false,
       loaded: false,
-      name: null,
-      email: email ? email : null,
-      message: null,
+      firstName: null,
+      lastName: null,
+      email: emailQuery ? emailQuery : null,
+      business: null,
       agreedToSubscribe: true,
-      nameValid: true,
+      firstNameValid: true,
+      lastNameValid: true,
       emailValid: true,
+      businessValid: true,
       formInvalid: false
     }
   },
@@ -53,7 +57,7 @@ var DemoRequest = React.createClass({
     key('enter, esc', this.proceedToNextScreen);
 
     if(this.isMounted() && !this.checkMobile()) {
-      this.refs.name.getDOMNode().focus();       
+      this.refs.firstName.getDOMNode().focus();       
     }
 
     $(".page-demo-request .js-velocity")
@@ -67,32 +71,40 @@ var DemoRequest = React.createClass({
   },
 
   submitForm: function (event) {
+    console.log(this.state)
     event.preventDefault();
-    if(this.isNotEmpty(this.state.name) && this.validateEmail(this.state.email)) {
+    if(this.isNotEmpty(this.state.firstName) 
+      && this.isNotEmpty(this.state.lastName)
+      && this.isNotEmpty(this.state.business) 
+      && this.validateEmail(this.state.email)
+    ) {
       this.setLoadingState();
 
       var dataForCompstakEmail = {
-        name: this.state.name,
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
         email: this.state.email,
-        message: this.state.message,
+        business: this.state.business,
         market: this.props.user.market,
-        agreedToSubscribe: this.state.agreedToSubscribe ? "yes" : "no",
-        position: this.props.user.jobTitle
+        agreedToSubscribe: this.state.agreedToSubscribe ? "yes" : "no"
       }
 
       var dataForUserEmail = {
-        name: this.state.name,
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
         email: this.state.email
       }
 
       var dataForHubspot = {
-        firstName: this.state.name.split(' ').slice(0, -1).join(' '),
-        lastName: this.state.name.split(' ').slice(-1).join(' '),
+        _n: '000000260381',
+        _a: '460566',
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
         email: this.state.email,
-        message: this.state.message,
-        agreedToSubscribe: this.state.agreedToSubscribe,
-        position: this.props.user.jobTitle,
-        market: this.props.user.market,
+        subscriber: this.state.agreedToSubscribe,
+        jobtitle: this.state.business,
+        market__c: this.props.user.market,
+        requested_demo: true
       }
 
       this.sendCompstakEmail(dataForCompstakEmail)
@@ -142,10 +154,17 @@ var DemoRequest = React.createClass({
     })
   },
 
-  handleNameInput: function (event) {
+  handleFirstNameInput: function (event) {
     this.setState({
-      name: event.target.value,
-      nameValid: this.isNotEmpty(event.target.value)
+      firstName: event.target.value,
+      firstNameValid: this.isNotEmpty(event.target.value)
+    })
+  },
+
+  handleLastNameInput: function (event) {
+    this.setState({
+      lastName: event.target.value,
+      lastNameValid: this.isNotEmpty(event.target.value)
     })
   },
 
@@ -156,16 +175,19 @@ var DemoRequest = React.createClass({
     })
   },
 
-  handleMessageInput: function (event) {
-    this.setState({
-      message: event.target.value
-    })
-  },
-
   handleSubscribeInput: function (event) {
     this.setState({
       agreedToSubscribe: event.target.checked
     })
+  },
+
+  handleBusinessInput: function (event) {
+    this.setState({
+      business: event.target.value,
+      businessValid: this.isNotEmpty(event.target.value)
+    }, function() {
+      console.log(this.state)
+    }.bind(this))
   },
 
   sendCompstakEmail: function (data) {
@@ -200,10 +222,12 @@ var DemoRequest = React.createClass({
 
   sendHubspotEvent: function (data) {
     return $.ajax({
-      url: 'http://track.hubspot.com/v1/event?_n=000000260381&_a=460566&firstname=' + data.firstName + '&lastname=' + data.lastName + '&message=' + data.message + '&email=' + data.email + '&jobtitle=' + data.jobTitle + '&market__c=' + data.market + '&subscriber='+ data.agreedToSubscribe + '',
+      url: 'http://track.hubspot.com/v1/event',
       type: 'POST',
+      data: JSON.stringify(data),
+      contentType: 'application/json',
       success: function(data) {
-        console.log('hubspot event')
+        console.log('hubspot event synced')
       },
       error: function(xhr, status, err) {
         console.error("hubspot event didn't sync");
@@ -212,6 +236,12 @@ var DemoRequest = React.createClass({
   },
 
   render: function () {
+    var businessNodes = this.state.businessTypes.map(function (business, i) {
+      return (
+        <option value={business}> {business} </option>
+      );
+    }.bind(this));
+
     return (
       <DocumentTitle title="CompStak – Demo Request for Enterprise – Commercial Lease Comps On Demand for Landlords, Lenders and Investors">
       <div className={classnames({
@@ -219,7 +249,7 @@ var DemoRequest = React.createClass({
           'dark-blue':           true,
           'loading':             this.state.loading,
           'loaded':              this.state.loaded
-        })} onKeyDown={this.onKeyboardShortcut}>
+      })} onKeyDown={this.onKeyboardShortcut}>
 
           <Header 
             {...this.props}
@@ -237,22 +267,41 @@ var DemoRequest = React.createClass({
               'demo-request':   true,
               'form-invalid':   this.state.formInvalid
             })} onSubmit={this.submitForm}>
+
               <div className={classnames({
                 'js-velocity':    true,
                 'input-wrap':     true,
-                'valid-input':    this.isNotEmpty(this.state.name) && this.state.nameValid,
-                'invalid-input':  !this.state.nameValid
+                'valid-input':    this.isNotEmpty(this.state.firstName) && this.state.firstNameValid,
+                'invalid-input':  !this.state.firstNameValid
               })}>
-                <label htmlFor="name"> Name </label>
+                <label htmlFor="firstName"> First Name </label>
                 <input
-                  id="name" 
+                  id="firstName" 
                   type="text" 
-                  ref="name" 
-                  value={this.state.name} 
-                  onChange={this.handleNameInput} 
-                  placeholder="Type your full name"
+                  ref="firstName" 
+                  value={this.state.firstName} 
+                  onChange={this.handleFirstNameInput} 
+                  placeholder="Type your first name"
                 />
               </div>
+
+              <div className={classnames({
+                'js-velocity':    true,
+                'input-wrap':     true,
+                'valid-input':    this.isNotEmpty(this.state.lastName) && this.state.lastNameValid,
+                'invalid-input':  !this.state.lastNameValid
+              })}>
+                <label htmlFor="lastName"> Last Name </label>
+                <input
+                  id="lastName" 
+                  type="text" 
+                  ref="lastName" 
+                  value={this.state.lastName} 
+                  onChange={this.handleLastNameInput} 
+                  placeholder="Type your last name"
+                />
+              </div>
+
               <div className={classnames({
                 'js-velocity':    true,
                 'input-wrap':     true,
@@ -269,17 +318,19 @@ var DemoRequest = React.createClass({
                   placeholder="Type your email address"
                 /> 
               </div>
-              <div className="js-velocity input-wrap">
+              <div className={classnames({
+                'js-velocity':    true,
+                'input-wrap':     true,
+                'valid-input':    this.isNotEmpty(this.state.business) && this.state.businessValid,
+                'invalid-input':  !this.state.businessValid
+              })}>
                 <label htmlFor="message"> Business </label>
-                <textarea 
-                  id="message"
-                  ref="message" 
-                  value={this.state.message}  
-                  onChange={this.handleMessageInput} 
-                  rows="3"
-                  cols="50"
-                  placeholder="How does your business use lease comps?"
-                />
+                <select 
+                  value={this.state.business} 
+                  onChange={this.handleBusinessInput}>
+                  <option disabled selected> -- Select Your Business Type -- </option>
+                  {businessNodes}
+                </select>
               </div>
               <div className="js-velocity input-wrap">
                 <input 
@@ -294,7 +345,7 @@ var DemoRequest = React.createClass({
               </div>
               <button className="js-velocity button">
                 <span className="demo-request-submit-label">Schedule a Demo</span>
-                <span className="demo-request-submit-error">Fill In Name And Email</span>
+                <span className="demo-request-submit-error">ALL FIELDS ARE REQUIRED</span>
               </button>
             </form>
             <div className="container contact">

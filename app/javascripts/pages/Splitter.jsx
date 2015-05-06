@@ -15,7 +15,6 @@ var Enterprise = React.createClass({
   },
   
   render: function () {
-
     var jobTitles = this.props.jobOptions.map(function (title, i) {
       return (
         <Link to={this.getUserMode(i)} className="button" data-position={i} onClick={this.updateUser}>
@@ -23,7 +22,6 @@ var Enterprise = React.createClass({
         </Link>
       );
     }.bind(this));
-
 
     return (
       <div className="splitter">
