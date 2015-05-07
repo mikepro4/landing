@@ -50,13 +50,13 @@ var TopSplash = React.createClass({
       switch(this.props.context) {
         case "enterprise":
           return (
-            <video preload="auto" autoPlay loop muted className="enterprise_video" controls= "false" poster="/images/video_poster.png">
+            <video preload="auto" autoPlay loop muted className="enterprise_video" controls= "false" poster="/images/ent-video-poster.png">
               <source src="https://s3.amazonaws.com/compstak/static/landing_pages/enterprise.mp4" type="video/mp4" />
             </video>
           )
         case "exchange":
           return (
-            <video preload="auto" autoPlay loop muted className="exchange_video" controls= "false" poster="/images/video_poster.png">
+            <video preload="auto" autoPlay loop muted className="exchange_video" controls= "false" poster="/images/ex-video-poster.png">
               <source src="https://s3.amazonaws.com/compstak/static/landing_pages/exchange.mp4" type="video/mp4" />
             </video>
           )

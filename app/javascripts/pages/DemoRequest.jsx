@@ -263,7 +263,7 @@ var DemoRequest = React.createClass({
             <form className={classnames({
               'demo-request':   true,
               'form-invalid':   this.state.formInvalid
-            })} onSubmit={this.submitForm}>
+            })} onSubmit={this.submitForm} autocomplete="off">
 
               <div className={classnames({
                 'js-velocity':    true,
@@ -318,10 +318,9 @@ var DemoRequest = React.createClass({
               <div className={classnames({
                 'js-velocity':    true,
                 'input-wrap':     true,
-                'valid-input':    this.isNotEmpty(this.state.business) && this.state.businessValid,
-                'invalid-input':  !this.state.businessValid
+                'select-empty':   !this.isNotEmpty(this.state.business) 
               })}>
-                <label htmlFor="message"> Business </label>
+                <label> Business </label>
                 <select 
                   value={this.state.business} 
                   onChange={this.handleBusinessInput}>
