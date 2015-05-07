@@ -91,17 +91,6 @@ var DemoRequest = React.createClass({
         email: this.state.email
       }
 
-      var dataForHubspot = {
-        _n: '000000260381',
-        _a: '460566',
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
-        email: this.state.email,
-        subscriber: this.state.agreedToSubscribe,
-        jobtitle: this.state.business,
-        requested_demo: true
-      }
-
       this.sendCompstakEmail(dataForCompstakEmail)
         .done(function() {
 
@@ -110,7 +99,7 @@ var DemoRequest = React.createClass({
               
               this.setSuccessState();
 
-              this.sendHubspotEvent(dataForHubspot)
+              this.sendHubspotEvent(dataForCompstakEmail)
                 .done(function() {
                   console.log('hubspot event sent');
                   this.setSuccessState();
@@ -216,11 +205,16 @@ var DemoRequest = React.createClass({
   },
 
   sendHubspotEvent: function(data) {
+    var hubspotString = 'firstname=' + data.firstName 
+      + '&lastname=' + data.lastName 
+      + '&email=' + data.email 
+      + '&jobtitle=' + data.business 
+      + '&subscriber=' + data.agreedToSubscribe 
+      + '&requested_demo=true';
+
     return $.ajax({
-      url: 'http://track.hubspot.com/v1/event',
+      url: 'http://track.hubspot.com/v1/event?_n=000000260381&_a=460566&' + hubspotString,
       type: 'POST',
-      data: JSON.stringify(data),
-      contentType: 'application/json',
       success: function(data) {
         console.log('hubspot event synced')
       },
