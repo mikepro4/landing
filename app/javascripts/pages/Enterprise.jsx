@@ -31,49 +31,50 @@ var Enterprise = React.createClass({
       <DocumentTitle title="CompStak – Enterprise – Commercial Lease Comps On Demand for Landlords, Lenders and Investors">
         <div className="page-enterprise">
 
-          <Header {...this.props}
+          <Header 
+            {...this.props}
             login={true}
             menu={true}
             haveAccount={false}
-            mode="dark-blue"
+            className="dark-blue-bg"
           />
 
           <FauxHeader {...this.props} />
 
           <TopSplash {...this.props}
-            mode="dark-blue"
+            className="dark-blue-bg"
           />
 
           <Logos {...this.props}
-            mode="dark-blue"
+            className="dark-blue-bg"
           />
 
           <Intro {...this.props}
-            mode="grey"
+            className="grey-bg"
           />
 
           <EntGranularData {...this.props}
-            mode="white"
+            className="white-bg"
           />
 
           <SampleComp {...this.props}
-            mode="grey"
+            className="grey-bg"
           />
 
           <NationalCoverage {...this.props}
-            mode="white"
+            className="white-bg"
           />
 
           <CoverageMap {...this.props}
-            mode="grey"
+            className="grey-bg"
           />
 
           <BottomSignUp {...this.props}
-            mode="dark-blue"
+            className="dark-blue-bg"
           />
 
           <OnPgSplitter {...this.props}
-            mode="dark-blue"
+            className="dark-blue-bg"
           />
 
           <Footer {...this.props} />

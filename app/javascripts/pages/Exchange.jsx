@@ -36,70 +36,70 @@ var Exchange = React.createClass({
       <DocumentTitle title="CompStak – Exchange – Free lease comps exchange for CRE brokers, appraisers and researchers.">
         <div className="page-exchange">
 
-         <Header 
+          <Header 
             {...this.props}
             login={true}
             menu={true}
             haveAccount={false}
-            mode="white"
+            className="white-bg"
           />
 
-          <FauxHeader {...this.props}/>
+          <FauxHeader {...this.props} />
 
           <TopSplash {...this.props}
-            mode="white"
+            className="white-bg"
           />
 
           <ObjectionHandler {...this.props}
-            mode="white"
+            className="white-bg"
           />
 
           <Testimonials {...this.props}
-            mode="black"
+            className="black-bg"
           />
 
           <Intro {...this.props}
-            mode="grey"
+            className="grey-bg"
           />
 
           <HowItWorks {...this.props}
-            mode="white"
+            className="white-bg"
           />
 
           <ObjectionHandler2 {...this.props}
-            mode="black"
+            className="black-bg"
           />
 
           <AccurateComps {...this.props}
-            mode="grey"
+            className="grey-bg"
           />
 
           <EntGranularData {...this.props}
-            mode="white"
+            className="white-bg"
           />
 
           <SampleComp {...this.props}
-            mode="grey"
+            className="grey-bg"
           />
 
           <NationalCoverage {...this.props}
-            mode="white"
+            className="white-bg"
           />
 
           <CoverageMap {...this.props}
-            mode="grey"
+            className="grey-bg"
           />
 
           <BottomSignUp {...this.props}
-            mode="blue"
+            className="blue-bg"
           />
 
           <ObjectionHandler {...this.props}
-            mode="blue"
+            className="blue-bg"
           />
 
           <OnPgSplitter {...this.props}
-            mode="dark-blue"
+            className="dark-blue-bg"
           />
 
           <Footer {...this.props} />

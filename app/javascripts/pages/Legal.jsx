@@ -2,6 +2,7 @@
 var React = require('react');
 var Router = require('react-router');
 var Link = Router.Link;
+
 var Header = require('../components/Header.jsx');
 var FauxHeader = require('../components/FauxHeader.jsx');
 var TermsOfUse = require('../components/TermsOfUse.jsx');
@@ -18,22 +19,30 @@ var Legal = React.createClass({
       <DocumentTitle title="CompStak – Terms of Use, Privacy Policy, Fair Statement">
         <div className="page-legal">
           <FauxHeader {...this.props}/>
+
           <Header 
             {...this.props}
             login={false}
             menu={true}
             haveAccount={false}
-            mode="white"
+            className="white-bg"
           />
-          <TermsOfUse {...this.props}/>
-          <hr {...this.props}/>
-          <PrivacyPolicy {...this.props}/>
-          <hr {...this.props}/>
-          <FairInformation {...this.props}/>
+
+          <TermsOfUse {...this.props} />
+
+          <hr/>
+
+          <PrivacyPolicy {...this.props} />
+
+          <hr/>
+
+          <FairInformation {...this.props} />
+
           <OnPgSplitter {...this.props}
-            mode="dark-blue"
+            className="dark-blue-bg"
           />
-          <Footer {...this.props}/>
+
+          <Footer {...this.props} />
         </div>
       </DocumentTitle>
     )

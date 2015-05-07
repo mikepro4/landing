@@ -71,7 +71,6 @@ var DemoRequest = React.createClass({
   },
 
   submitForm: function (event) {
-    console.log(this.state)
     event.preventDefault();
     if(this.isNotEmpty(this.state.firstName) 
       && this.isNotEmpty(this.state.lastName)
@@ -243,18 +242,18 @@ var DemoRequest = React.createClass({
     return (
       <DocumentTitle title="CompStak – Demo Request for Enterprise – Commercial Lease Comps On Demand for Landlords, Lenders and Investors">
       <div className={classnames({
-          'page-demo-request':   true,
-          'dark-blue':           true,
-          'loading':             this.state.loading,
-          'loaded':              this.state.loaded
-      })} onKeyDown={this.onKeyboardShortcut}>
+        'page-demo-request':  true,
+        'dark-blue-bg':       true,
+        'loading':            this.state.loading,
+        'loaded':             this.state.loaded
+      })}>
 
           <Header 
             {...this.props}
             login={false}
             menu={false}
             haveAccount={true}
-            mode="dark"
+            className="dark-blue-bg"
             context="enterprise"
           />
           <div className="container">

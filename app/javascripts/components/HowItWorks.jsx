@@ -9,13 +9,8 @@ var HowItWorks = React.createClass({
     return (
       <section id="how-it-works" className={classnames({
         'ui-block':      true,
-        'how-it-works':  true,
-        'dark-blue':     (this.props.mode == "dark-blue") ? true : false,
-        'black':         (this.props.mode == "black") ? true : false,
-        'grey-bg':       (this.props.mode == "grey") ? true : false,
-        'blue-bg':       (this.props.mode == "blue") ? true : false,
-        'white':         (this.props.mode == "white") ? true : false
-      })}>
+        'how-it-works':  true
+      }, this.props.className)}>
         <div className="container push-left">
           <div className="row">
             <div className="col six right screenshot">

@@ -8,13 +8,8 @@ var AccurateComps = React.createClass({
     return (
       <section id="accurate-comps" className={classnames({
         'accurate-comps': true,
-        'ui-block':       true,
-        'dark-blue':      (this.props.mode == "dark-blue") ? true : false,
-        'black':          (this.props.mode == "black") ? true : false,
-        'grey-bg':        (this.props.mode == "grey") ? true : false,
-        'blue-bg':        (this.props.mode == "blue") ? true : false,
-        'white':          (this.props.mode == "white") ? true : false
-      })}>
+        'ui-block':       true
+      }, this.props.className)}>
         <div className="container push-left">
           <div className="row">
             <div className="col six left block-info">

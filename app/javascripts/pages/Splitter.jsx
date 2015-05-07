@@ -36,7 +36,7 @@ var Enterprise = React.createClass({
         </div>
         <Logos 
           {...this.props}
-          mode="dark-blue"
+          className="dark-blue-bg"
         />
       </div>
     );
