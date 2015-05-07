@@ -37,11 +37,8 @@ var App = React.createClass({
     }
   },
 
-  componentWillMount: function() {
-    this.showInitialPage();
-  },
-
   componentDidMount: function() {
+    this.showInitialPage();
     this.updateMarket();
     this.updateLocalStorage();
   },
