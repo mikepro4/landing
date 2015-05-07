@@ -39,7 +39,7 @@ var TopSplash = React.createClass({
       case "exchange":
         this.setState({
           mainHeadline: "Trade the comps you have. Find the comps you need. ",
-          subHeadline: "A free lease comps exchange for CRE brokers, appraisers and researchers."
+          subHeadline: "A free lease comp exchange for CRE brokers, appraisers and researchers."
         })
         break  
     }
@@ -50,13 +50,13 @@ var TopSplash = React.createClass({
       switch(this.props.context) {
         case "enterprise":
           return (
-            <video preload="auto" autoPlay loop muted className="enterprise_video" controls= "false" poster="/images/video_poster.png">
+            <video preload="auto" autoPlay loop muted className="enterprise_video" controls= "false" poster="/images/ent-video-poster.png">
               <source src="https://s3.amazonaws.com/compstak/static/landing_pages/enterprise.mp4" type="video/mp4" />
             </video>
           )
         case "exchange":
           return (
-            <video preload="auto" autoPlay loop muted className="exchange_video" controls= "false" poster="/images/video_poster.png">
+            <video preload="auto" autoPlay loop muted className="exchange_video" controls= "false" poster="/images/ex-video-poster.png">
               <source src="https://s3.amazonaws.com/compstak/static/landing_pages/exchange.mp4" type="video/mp4" />
             </video>
           )
@@ -91,14 +91,9 @@ var TopSplash = React.createClass({
   render: function() {
     return (
       <div className={classnames({
-        'top-splash':   true,
-        'dark-blue':    (this.props.mode == "dark-blue") ? true : false,
-        'black':        (this.props.mode == "black") ? true : false,
-        'grey-bg':      (this.props.mode == "grey") ? true : false,
-        'blue-bg':      (this.props.mode == "blue") ? true : false,
-        'white':        (this.props.mode == "white") ? true : false,
-      })}>
-        <div className="container fadeIn">
+        'top-splash':  true
+      }, this.props.className)}>
+        <div className="container">
 
           <h1 className={classnames({
             'h2': (this.props.context == "exchange") ? true : false,
@@ -108,8 +103,7 @@ var TopSplash = React.createClass({
 
           <h2 className={classnames({
             'h4': true,
-            'blue': (this.props.mode === "dark") ? true : true,
-            'hidden': _.isEmpty(this.state.subHeadline) ? true : false
+            'blue': true
           })}>
             {this.state.subHeadline}
           </h2>

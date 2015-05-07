@@ -8,9 +8,9 @@ var SampleComp = React.createClass({
   getHeadline: function() {
     switch(this.props.context) {
       case "enterprise":
-        return "Complete Lease Comps"
+        return "Complete lease comps"
       case "exchange":
-        return "Complete Lease Comps"
+        return "Complete comps"
     }
   },
 
@@ -19,7 +19,7 @@ var SampleComp = React.createClass({
       case "enterprise":
         return "Complete, accurate, commercial lease terms directly from brokers and appraisers on the ground."  
       case "exchange":
-        return "Complete, accurate data directly from brokers, researchers and appraisers."
+        return "Complete, accurate data directly from brokers, researchers, and appraisers."
     }
   },
 
@@ -73,7 +73,7 @@ var SampleComp = React.createClass({
         return <ul className="checklist">
           <li><Icons type="tick" /><span> Street Address</span></li>
           <li><Icons type="tick" /><span> Submarket</span></li>
-          <li><Icons type="tick" /><span> Tenant</span></li>
+          <li><Icons type="tick" /><span> Tenant Name</span></li>
           <li><Icons type="tick" /><span> Tenant Industry</span></li>
           <li><Icons type="tick" /><span> Transaction Date</span></li>
           <li><Icons type="tick" /><span> Lease Term</span></li>
@@ -102,13 +102,8 @@ var SampleComp = React.createClass({
   render: function() {
     return (
       <section id="sample-comp" className={classnames({
-        'sample-comp':  true,
-        'dark-blue':    (this.props.mode == "dark-blue") ? true : false,
-        'black':        (this.props.mode == "black") ? true : false,
-        'grey-bg':      (this.props.mode == "grey") ? true : false,
-        'blue-bg':      (this.props.mode == "blue") ? true : false,
-        'white':        (this.props.mode == "white") ? true : false,
-      })}>
+        'sample-comp':  true
+      }, this.props.className)}>
         <div className="container">
           <div className="row">
             <div className="col six block-info">

@@ -13,10 +13,15 @@ var NotFound = React.createClass({
           login={true}
           menu={true}
           haveAccount={false}
-          mode="dark"
+          className="dark-blue-bg"
         />
         <div className="default-page-title"><h6>404</h6><h1>Page Not Found</h1></div>
-        <OnPgSplitter {...this.props}/>
+
+        <OnPgSplitter 
+          {...this.props}
+          className="dark-blue-bg"
+        />
+
         <Footer {...this.props}/>
       </div>
     )

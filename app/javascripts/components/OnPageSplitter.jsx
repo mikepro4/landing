@@ -9,13 +9,8 @@ var OnPageSplitter = React.createClass({
   render: function () {
     return (
       <div className={classnames({
-        'on-page-splitter': true,
-        'dark-blue':        (this.props.mode == "dark-blue") ? true : false,
-        'black':            (this.props.mode == "black") ? true : false,
-        'grey-bg':          (this.props.mode == "grey") ? true : false,
-        'blue-bg':          (this.props.mode == "blue") ? true : false,
-        'white':            (this.props.mode == "white") ? true : false
-      })}>
+        'on-page-splitter': true
+      }, this.props.className)}>
         <div className="container row">
           <div className="left">
             <Link to="splitter" onClick={this.props.clearLocalStorage}>

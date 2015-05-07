@@ -8,13 +8,8 @@ var AccurateComps = React.createClass({
     return (
       <section id="accurate-comps" className={classnames({
         'accurate-comps': true,
-        'ui-block':       true,
-        'dark-blue':      (this.props.mode == "dark-blue") ? true : false,
-        'black':          (this.props.mode == "black") ? true : false,
-        'grey-bg':        (this.props.mode == "grey") ? true : false,
-        'blue-bg':        (this.props.mode == "blue") ? true : false,
-        'white':          (this.props.mode == "white") ? true : false
-      })}>
+        'ui-block':       true
+      }, this.props.className)}>
         <div className="container push-left">
           <div className="row">
             <div className="col six left block-info">
@@ -25,8 +20,8 @@ var AccurateComps = React.createClass({
                 and statistical anomaly detection to ensure quality.</p>
                 <ul className="checklist">
                   <li><Icons type="tick" /><span> Verified CRE professionals only</span></li>
-                  <li><Icons type="tick" /><span> Trade: 1–for–1: Give a comp. Get a comp</span></li>
-                  <li><Icons type="tick" /><span> Remain completely annoymous</span></li>
+                  <li><Icons type="tick" /><span> Trade 1–for–1: Give a comp. Get a comp</span></li>
+                  <li><Icons type="tick" /><span> Remain completely anonymous</span></li>
                 </ul>
               </div>
             </div>
@@ -43,7 +38,7 @@ var AccurateComps = React.createClass({
                 </div>
                 <div className="label analyst-three">
                   <p className="h6">Alex Kass</p>
-                  <p>Data Science & Machine</p>
+                  <p>Data Science & Machine Learning</p>
                 </div>
               </div>
               <div className="verification-chart">

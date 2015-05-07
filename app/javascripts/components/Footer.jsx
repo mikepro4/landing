@@ -10,7 +10,7 @@ var NavigationLinks = require('../components/NavigationLinks.jsx');
 var Footer = React.createClass({
   render: function() {
     return (
-      <footer className="dark-blue">
+      <footer className="dark-blue-bg">
         <div className="container">
           <div className="row">
             <div className="col nine">

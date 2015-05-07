@@ -7,13 +7,8 @@ var ObjectionHandler2 = React.createClass({
   render: function () {
     return (
       <div className={classnames({
-        'objection-handler':  true,
-        'dark-blue':          (this.props.mode == "dark-blue") ? true : false,
-        'black':              (this.props.mode == "black") ? true : false,
-        'grey-bg':            (this.props.mode == "grey") ? true : false,
-        'blue-bg':            (this.props.mode == "blue") ? true : false,
-        'white':              (this.props.mode == "white") ? true : false,
-      })}>
+        'objection-handler':  true
+      }, this.props.className)}>
 
         <div className="container row">
           <div className="col four">
@@ -31,7 +26,7 @@ var ObjectionHandler2 = React.createClass({
           <div className="col four">
             <div className="icon small"><Icons type="tick"/></div>
             <h4 className="h6">Share Any Comp</h4>
-            <p>You can share information about your own deals, or deals that others have shared with you.</p>
+            <p>You can share information about your own deals or deals that others have shared with you.</p>
           </div>
         </div>
       </div>

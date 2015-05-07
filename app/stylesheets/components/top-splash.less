@@ -1,7 +1,8 @@
 .top-splash {
   text-align: center;
   padding-top: 2em;
-  &.white {
+
+  &.white-bg {
     background-color: @white;
     .splash-ui {
       .laptop {
@@ -84,7 +85,7 @@
           font-family: @font-gotham-medium;
           letter-spacing: 3px;
           .scale(0);
-          .transition(all @speed .15s ease-in-out);
+          .transition(all @speed ease-in-out);
           opacity: 0;
           .transform(translate3d(0, 20px, 0));
           height: 18px;
@@ -95,7 +96,7 @@
           display: none;
           position: absolute;
           .bottomLeft(30px, 0px);
-          .transition(all .4s 1s ease-in-out);
+          .transition(all .4s .5s ease-in-out);
           .transform(translate3d(0, 5px, 0));
           width: 100%;
           text-align: center;
@@ -117,7 +118,7 @@
           .topLeft(50%, 50%);
           margin: -30px 0 0 -35px;
           z-index: @layer3;
-          .transition(all @speed .15s ease-in-out);
+          .transition(all @speed ease-in-out);
 
           svg {
             margin: 0 auto;
@@ -156,7 +157,13 @@
           .border-radius(2px);
           opacity: 0;
           z-index: @layer1;
-          background: rgba(24, 108, 179, 0.8);
+          background : -moz-linear-gradient(97.14% 93.03% 148.18deg,rgba(40, 48, 64, 0.8) 0%,rgba(40, 48, 64, 0.95) 100%);
+          background : -webkit-linear-gradient(148.18deg, rgba(40, 48, 64, 0.8) 0%, rgba(40, 48, 64, 0.95) 100%);
+          background : -webkit-gradient(linear,97.14% 93.03% ,1.22% 5.47% ,color-stop(0,rgba(40, 48, 64, 0.8) ),color-stop(1,rgba(40, 48, 64, 0.95) ));
+          background : -o-linear-gradient(148.18deg, rgba(40, 48, 64, 0.8) 0%, rgba(40, 48, 64, 0.95) 100%);
+          background : -ms-linear-gradient(148.18deg, rgba(40, 48, 64, 0.8) 0%, rgba(40, 48, 64, 0.95) 100%);
+          -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#283040', endColorstr='#283040' ,GradientType=0)";
+          background : linear-gradient(-58.18deg, rgba(40, 48, 64, 0.8) 0%, rgba(40, 48, 64, 0.95) 100%);
         }
       }
 
