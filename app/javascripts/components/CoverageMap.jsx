@@ -40,18 +40,18 @@ var CoverageMap = React.createClass({
   getCoverageMap: function() {
     switch(this.props.context) {
       case "enterprise":
-        return (<img src="/images/ent-coverage-map.svg"/>)
+        return <img src="/images/ent-coverage-map.svg"/>
       case "exchange":
-        return (<img src="/images/ex-coverage-map.svg"/>)
+        return <img src="/images/ex-coverage-map.svg"/>
     }
   },
 
   getTextContent: function() {
     switch(this.props.context) {
       case "enterprise":
-        return ("Thousands of comps in most major markets with new markets launching each quarter")
+        return "Thousands of comps in most major markets with new markets launching each quarter"
       case "exchange":
-        return ("Thousands of comps in most major markets with new markets launching each quarter")
+        return "Thousands of comps in most major markets with new markets launching each quarter"
     }
   },
 
@@ -93,7 +93,7 @@ var CoverageMap = React.createClass({
 
   getExchangeMarkets: function() {
     var markets = this.state.allMarkets.map(function (market, i) {
-      var marketUrl = "https://signup.compstak.com/" + encodeURIComponent(market.displayName);
+      var marketUrl = this.props.signupUrl + encodeURIComponent(market.displayName);
       return (
         <li key={i}>
           <a href={marketUrl}> {market.displayName} <span className="arrow"><Icons type="tiny_right_arrow"/></span> </a>
@@ -101,20 +101,27 @@ var CoverageMap = React.createClass({
       );
     }.bind(this));
 
+    var noMarketUrl = this.props.signupUrl + '?noMarket=true';
+
     return (
       <div>
         <h5 className="coverage-links-header">Choose Your Market to Get Started</h5>
         <div className="coverage-links">        
           <ul>
             {markets}
-            <li><a href="https://signup.compstak.com/?noMarket=true">Your city! <span className="arrow"><Icons type="tiny_right_arrow"/></span></a></li>
+            <li>
+              <a href={noMarketUrl}>
+                Your city! 
+                <span className="arrow"><Icons type="tiny_right_arrow"/></span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
     )
   },
  
-  render: function () {
+  render: function() {
     return (
       <section className={classnames({
         'coverage-map': true

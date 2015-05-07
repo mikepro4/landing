@@ -21,11 +21,11 @@ var TopSplash = React.createClass({
   },
 
   componentDidMount: function() {
-     if(this.context.router.getCurrentQuery().playVideo && this.isMounted()) {
-        this.props.toggleVideoModal();
-     }
+    if(this.context.router.getCurrentQuery().playVideo && this.isMounted()) {
+      this.props.toggleVideoModal();
+    }
 
-     this.setHeadlines();
+    this.setHeadlines();
   },
 
   setHeadlines: function() {
@@ -39,7 +39,7 @@ var TopSplash = React.createClass({
       case "exchange":
         this.setState({
           mainHeadline: "Trade the comps you have. Find the comps you need. ",
-          subHeadline: "A free lease comp exchange for CRE brokers, appraisers and researchers."
+          subHeadline: "A free lease comp exchange for CRE brokers, appraisers, and researchers."
         })
         break  
     }

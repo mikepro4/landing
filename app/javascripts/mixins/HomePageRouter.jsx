@@ -8,12 +8,15 @@ var HomePageRouterMixin = {
   },
 
   selectHomePage: function (user) {
-    if (user.mode === "enterprise") {
-      this.context.router.transitionTo('enterprise')
-    } else if (user.mode === "exchange") {
-      this.context.router.transitionTo('exchange')
-    } else {
-      this.context.router.transitionTo('splitter')
+    switch(user.mode) {
+      case "enterprise":
+        this.context.router.transitionTo('enterprise')
+        break
+      case "exchange": 
+        this.context.router.transitionTo('exchange')
+        break
+      default: 
+        this.context.router.transitionTo('splitter')
     }
   }
 }

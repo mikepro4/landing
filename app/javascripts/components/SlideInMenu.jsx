@@ -100,7 +100,7 @@ var SlideInMenu = React.createClass({
     }
   },
 
-  render: function () {
+  render: function() {
     return (
       <div className="slide-in-menu" onClick={this.props.toggleMenu}>
 

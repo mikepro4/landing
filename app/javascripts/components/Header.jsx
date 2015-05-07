@@ -36,7 +36,7 @@ var FauxHeader = React.createClass({
             <ul>
               <li className={classnames({
                 'mobile-hide': true,
-                'hidden':       !this.props.login,
+                'hidden':      !this.props.login
               })}>
                 <a href={loginUrl} className="nav-url" target="_blank">
                   <span>Login</span>

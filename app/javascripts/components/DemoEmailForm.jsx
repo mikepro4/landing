@@ -75,7 +75,7 @@ var DemoEmailForm = React.createClass({
         emailInvalid: true
       })
 
-      _.delay(function () {
+      _.delay(function() {
         this.setState({
           emailInvalid: false
         })
@@ -98,7 +98,7 @@ var DemoEmailForm = React.createClass({
     }
   },
 
-  render: function () {
+  render: function() {
     return (
       <form className={classnames({
         'sign-up':        true,

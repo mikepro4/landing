@@ -48,9 +48,7 @@ var DemoRequest = React.createClass({
   },
 
   proceedToNextScreen: function () {
-    if(this.state.loaded) {
-      this.goToHome();
-    }
+    if(this.state.loaded) this.goToHome()
   },
 
   componentDidMount: function() {
@@ -151,34 +149,34 @@ var DemoRequest = React.createClass({
     })
   },
 
-  handleFirstNameInput: function (event) {
+  handleFirstNameInput: function(event) {
     this.setState({
       firstName: event.target.value,
       firstNameValid: this.isNotEmpty(event.target.value)
     })
   },
 
-  handleLastNameInput: function (event) {
+  handleLastNameInput: function(event) {
     this.setState({
       lastName: event.target.value,
       lastNameValid: this.isNotEmpty(event.target.value)
     })
   },
 
-  handleEmailInput: function (event) {
+  handleEmailInput: function(event) {
     this.setState({
       email: event.target.value,
       emailValid: this.validateEmail(event.target.value)
     })
   },
 
-  handleSubscribeInput: function (event) {
+  handleSubscribeInput: function(event) {
     this.setState({
       agreedToSubscribe: event.target.checked
     })
   },
 
-  handleBusinessInput: function (event) {
+  handleBusinessInput: function(event) {
     this.setState({
       business: event.target.value,
       businessValid: this.isNotEmpty(event.target.value)
@@ -187,7 +185,7 @@ var DemoRequest = React.createClass({
     }.bind(this))
   },
 
-  sendCompstakEmail: function (data) {
+  sendCompstakEmail: function(data) {
     return $.ajax({
       url: '/nodeApi/compstakEmail',
       type: 'POST',
@@ -202,7 +200,7 @@ var DemoRequest = React.createClass({
     })
   },
 
-  sendUserEmail: function (data) {
+  sendUserEmail: function(data) {
     return $.ajax({
       url: '/nodeApi/userEmail',
       type: 'POST',
@@ -217,7 +215,7 @@ var DemoRequest = React.createClass({
     })
   },
 
-  sendHubspotEvent: function (data) {
+  sendHubspotEvent: function(data) {
     return $.ajax({
       url: 'http://track.hubspot.com/v1/event',
       type: 'POST',
@@ -232,7 +230,7 @@ var DemoRequest = React.createClass({
     })
   },
 
-  render: function () {
+  render: function() {
     var businessNodes = this.state.businessTypes.map(function (business, i) {
       return (
         <option value={business}> {business} </option>
@@ -315,6 +313,7 @@ var DemoRequest = React.createClass({
                   placeholder="Type your email address"
                 /> 
               </div>
+
               <div className={classnames({
                 'js-velocity':    true,
                 'input-wrap':     true,
@@ -322,12 +321,14 @@ var DemoRequest = React.createClass({
               })}>
                 <label> Business </label>
                 <select 
+                  ref="busness"
                   value={this.state.business} 
                   onChange={this.handleBusinessInput}>
                   <option disabled selected> -- Select Your Business Type -- </option>
                   {businessNodes}
                 </select>
               </div>
+
               <div className="js-velocity input-wrap">
                 <input 
                   type="checkbox" 
@@ -344,11 +345,11 @@ var DemoRequest = React.createClass({
                 <span className="demo-request-submit-error">ALL FIELDS ARE REQUIRED</span>
               </button>
             </form>
+            
             <div className="container contact">
               <h6 className="js-velocity">Contact us to learn more</h6>
-
               <div className="js-velocity">1.646.520.3261</div>
-              <a className="js-velocity" href="mailto:enterprise@compstak.com">Enterprise@CompStak.com</a>
+              <a className="js-velocity" href="mailto:enterprise@compstak.com">enterprise@compstak.com</a>
             </div>
 
             <div className="success-alert">

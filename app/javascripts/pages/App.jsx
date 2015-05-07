@@ -1,20 +1,14 @@
 "use strict";
 var React = require('react');
 var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
 var _ = require('underscore');
 var DocumentTitle = require('react-document-title');
-var $ = require('jquery');
 var classnames = require('classnames');
-var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
-var FPSStats = require('react-stats').FPSStats;
 
-// Components
+var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
 var SlideInMenu = require('../components/SlideInMenu.jsx');
 var Footer = require('../components/Footer.jsx');
-
-
-var RouteHandler = Router.RouteHandler;
-var Link = Router.Link;
 
 var App = React.createClass({
 
@@ -43,15 +37,12 @@ var App = React.createClass({
     }
   },
 
-  componentDidMount: function() {
-    var market = this.context.router.getCurrentQuery().market;
-    if(market) {
-      this.updateLocalStorage({
-        market: market
-      })
-    }
-
+  componentWillMount: function() {
     this.showInitialPage();
+  },
+
+  componentDidMount: function() {
+    this.updateMarket();
     this.updateLocalStorage();
   },
 
@@ -59,6 +50,15 @@ var App = React.createClass({
     var user = JSON.parse(localStorage.getItem('user'));
     if(this.context.router.isActive('home') && user) {
       this.selectHomePage(user)
+    }
+  },
+
+  updateMarket: function() {
+    var market = this.context.router.getCurrentQuery().market;
+    if(market) {
+      this.updateLocalStorage({
+        market: market
+      })
     }
   },
 

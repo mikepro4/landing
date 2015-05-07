@@ -6,7 +6,7 @@ var Link = Router.Link;
 var Icons = require('../components/Icons.jsx');
 
 var OnPageSplitter = React.createClass({
-  render: function () {
+  render: function() {
     return (
       <div className={classnames({
         'on-page-splitter': true

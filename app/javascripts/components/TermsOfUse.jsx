@@ -2,7 +2,7 @@
 var React = require('react');
 
 var TermsOfUse = React.createClass({
-  render: function () {
+  render: function() {
     return (
       <section id="TermsOfUse" className="default-page-section">
         <div className="container rich-text narrow">

@@ -11,7 +11,6 @@ var NavigationLinks = React.createClass({
 
   render: function() {
     switch(this.props.context) {
-
       case "enterprise":
         return <div className="row">
           <div className="col three">
