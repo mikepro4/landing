@@ -4,6 +4,11 @@ var Router = require('react-router');
 var Link = Router.Link;
 
 var NavigationLinks = React.createClass({
+
+  scrollToTop: function() {
+    $('html, body').animate({ scrollTop: 0 }, 750);
+  },
+
   render: function() {
     switch(this.props.context) {
 
@@ -12,11 +17,12 @@ var NavigationLinks = React.createClass({
           <div className="col three">
             <h6>Enterprise</h6>
             <ul>
-              <li><Link to="enterprise">Overview</Link></li>
+              <li><Link to="enterprise" onClick={this.scrollToTop}>Overview</Link></li>
               <li><Link to="demo-request">Schedule A Demo</Link></li>
               <li><a href="https://enterprise.compstak.com/" target="_blank">Login</a></li>
             </ul>
           </div>
+
           <div className="col three">
             <h6>Contact</h6>
             <ul>
@@ -26,6 +32,7 @@ var NavigationLinks = React.createClass({
               <li><a href="https://twitter.com/CompStak" target="_blank" title="CompStak Twitter">Twitter</a></li>
             </ul>
           </div>
+          
           <div className="col three">
             <h6>Legal</h6>
             <ul>
@@ -41,12 +48,13 @@ var NavigationLinks = React.createClass({
           <div className="col three">
             <h6>Exchange</h6>
             <ul>
-              <li><Link to="exchange">Overview</Link></li>
+              <li><Link to="exchange" onClick={this.scrollToTop}>Overview</Link></li>
               <li><a href={this.props.signupUrl}>Join Free</a></li>
               <li><a href="https://exchange.compstak.com/" target="_blank">Login</a></li>
               <li><a href="https://compstak.zendesk.com" target="_blank" to="enterprise">Support</a></li>
             </ul>
           </div>
+
           <div className="col three">
             <h6>Contact</h6>
             <ul>
@@ -56,6 +64,7 @@ var NavigationLinks = React.createClass({
               <li><a href="https://twitter.com/CompStak" target="_blank" title="CompStak Twitter">Twitter</a></li>
             </ul>
           </div>
+
           <div className="col three">
             <h6>Legal</h6>
             <ul>
@@ -75,6 +84,7 @@ var NavigationLinks = React.createClass({
               <li>1-646-926-6707</li>
             </ul>
           </div>
+
           <div className="col three">
             <h6>Follow Us</h6>
             <ul>
