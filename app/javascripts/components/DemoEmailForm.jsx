@@ -50,6 +50,7 @@ var DemoEmailForm = React.createClass({
       this.setState({
         emailInvalid: false
       })
+      this.sendHubspotEvent();
       this.context.router.transitionTo('demo-request', {}, {email: this.state.email});
     } else {
       this.setState({
@@ -75,7 +76,7 @@ var DemoEmailForm = React.createClass({
         emailInvalid: true
       })
 
-      _.delay(function () {
+      _.delay(function() {
         this.setState({
           emailInvalid: false
         })
@@ -98,7 +99,20 @@ var DemoEmailForm = React.createClass({
     }
   },
 
-  render: function () {
+  sendHubspotEvent: function(data) {
+    $.ajax({
+      url: 'http://track.hubspot.com/v1/event?_n=000000260381&_a=460566&email=' + this.state.email + '&requested_demo=true',
+      type: 'POST',
+      success: function(data) {
+        console.log('hubspot event synced')
+      },
+      error: function(xhr, status, err) {
+        console.error("hubspot event didn't sync");
+      }
+    })
+  },
+
+  render: function() {
     return (
       <form className={classnames({
         'sign-up':        true,

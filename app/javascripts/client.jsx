@@ -1,6 +1,7 @@
 /* global document */
 "use strict";
 
+// Make jQuery and plugins available everywhere
 if(process.browser) {
   window.jQuery = require('jquery');
   window.$ = require('jquery');

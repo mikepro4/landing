@@ -134,7 +134,7 @@ var Testimonials = React.createClass({
           text: "CompStak has proven to be an invaluable research tool for me over the last couple years. The information is reliable and fresh, and the crowd sourced format is novel concept that has been a huge benefit to my research efforts.",
           name: "Research Manager",
           company: "San Francisco"
-        },
+        }
       ]
     }
   },
@@ -148,7 +148,7 @@ var Testimonials = React.createClass({
     window.removeEventListener('scroll', this.onScroll, false);
   },
 
-  onScroll: function () {
+  onScroll: function() {
     this.setState({
       scrollTop: $(window).scrollTop()
     })
@@ -180,7 +180,7 @@ var Testimonials = React.createClass({
     })
   },
 
-  render: function () {
+  render: function() {
     var quotes = this.state.quotes.map(function (quote, i) {
       return (
         <div className="slide">

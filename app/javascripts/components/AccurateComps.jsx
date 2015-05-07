@@ -20,7 +20,7 @@ var AccurateComps = React.createClass({
                 and statistical anomaly detection to ensure quality.</p>
                 <ul className="checklist">
                   <li><Icons type="tick" /><span> Verified CRE professionals only</span></li>
-                  <li><Icons type="tick" /><span> Trade 1–for–1: Give a comp. Get a comp</span></li>
+                  <li><Icons type="tick" /><span> Trade 1–for–1: Give a comp. Get a comp.</span></li>
                   <li><Icons type="tick" /><span> Remain completely anonymous</span></li>
                 </ul>
               </div>

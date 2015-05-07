@@ -24,7 +24,7 @@ var VideoModal = React.createClass({
     key.unbind('esc', this.closeVideoModal);
   },
 
-  render: function () {
+  render: function() {
     var video;
     if(this.props.videoPlaying) {
       video = 

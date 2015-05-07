@@ -22,7 +22,7 @@ var NationalCoverage = React.createClass({
   getHeadline: function() {
     switch(this.props.context) {
       case "enterprise":
-        return "1000's of lease comps per market"
+        return "1000s of lease comps per market"
       case "exchange":
         return "Thousands of lease comps in your city"
     }

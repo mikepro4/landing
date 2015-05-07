@@ -4,7 +4,7 @@ var Icons = require('../components/Icons.jsx');
 var classnames = require('classnames');
 
 var ObjectionHandler2 = React.createClass({
-  render: function () {
+  render: function() {
     return (
       <div className={classnames({
         'objection-handler':  true
@@ -20,7 +20,7 @@ var ObjectionHandler2 = React.createClass({
           <div className="col four">
             <div className="icon small"><Icons type="tick"/></div>
             <h4 className="h6">Anonymous</h4>
-            <p>Your membership is anonymous. We never reveal your identity, even when you share comps.</p>
+            <p>Your membership is anonymous. We never reveal your identity when you share comps with us.</p>
           </div>
           
           <div className="col four">

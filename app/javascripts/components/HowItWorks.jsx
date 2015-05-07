@@ -25,7 +25,7 @@ var HowItWorks = React.createClass({
                 <p>CompStak Exchange is a private professional network. Anonymously trade commercial lease comps with thousands of brokers, appraisers, and researchers.</p>
                 <ul className="checklist">
                   <li><Icons type="tick" /><span> Verified CRE professionals only</span></li>
-                  <li><Icons type="tick" /><span> Trade 1–for–1: Give a comp. Get a comp</span></li>
+                  <li><Icons type="tick" /><span> Trade 1–for–1: Give a comp. Get a comp.</span></li>
                   <li><Icons type="tick" /><span> Remain completely anonymous</span></li>
                 </ul>
               </div>

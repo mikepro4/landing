@@ -11,7 +11,6 @@ var NavigationLinks = React.createClass({
 
   render: function() {
     switch(this.props.context) {
-
       case "enterprise":
         return <div className="row">
           <div className="col three">
@@ -30,6 +29,8 @@ var NavigationLinks = React.createClass({
               <li>1-646-926-6707</li>
               <li><a href="https://www.facebook.com/CompStak" target="_blank" title="CompStak Facebook">Facebook</a></li>
               <li><a href="https://twitter.com/CompStak" target="_blank" title="CompStak Twitter">Twitter</a></li>
+              <li><a href="https://www.linkedin.com/company/compstak" target="_blank" title="CompStak Linkedin">Linkedin</a></li>
+              <li><a href="https://property.compstak.com/markets" target="_blank" title="CompStak Markets">Markets</a></li>
             </ul>
           </div>
           
@@ -62,6 +63,8 @@ var NavigationLinks = React.createClass({
               <li>1-646-926-6707</li>
               <li><a href="https://www.facebook.com/CompStak" target="_blank" title="CompStak Facebook">Facebook</a></li>
               <li><a href="https://twitter.com/CompStak" target="_blank" title="CompStak Twitter">Twitter</a></li>
+              <li><a href="https://www.linkedin.com/company/compstak" target="_blank" title="CompStak Linkedin">Linkedin</a></li>
+              <li><a href="https://property.compstak.com/markets" target="_blank" title="CompStak Markets">Markets</a></li>
             </ul>
           </div>
 
@@ -90,6 +93,7 @@ var NavigationLinks = React.createClass({
             <ul>
               <li><a href="https://www.facebook.com/CompStak" target="_blank" title="CompStak Facebook">Facebook</a></li>
               <li><a href="https://twitter.com/CompStak" target="_blank" title="CompStak Twitter">Twitter</a></li>
+              <li><a href="https://property.compstak.com/markets" target="_blank" title="CompStak Markets">Markets</a></li>
             </ul>
           </div>
 
