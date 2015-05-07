@@ -145,7 +145,7 @@ var SampleComp = React.createClass({
                         Transaction Size
                       </div>
                       <div className="align-right">
-                        79,998 SF
+                        7,700 SF
                       </div>
                     </li>
                     <li className="row">
@@ -153,7 +153,7 @@ var SampleComp = React.createClass({
                         Starting Rent
                       </div>
                       <div className="align-right">
-                        $105
+                        $45
                       </div>
                     </li>
                     <li className="row">
@@ -161,7 +161,7 @@ var SampleComp = React.createClass({
                         Rent Schedule
                       </div>
                       <div className="align-right">
-                        $0/1y, $105/4y
+                        $0/2m, $45/3y
                       </div>
                     </li>
                     <li className="row">
@@ -169,15 +169,15 @@ var SampleComp = React.createClass({
                         Free Rent
                       </div>
                       <div className="align-right">
-                        12 months
+                        2 months
                       </div>
                     </li>
                     <li className="row">
                       <div>
-                        TI Allowance
+                        Lease Term
                       </div>
                       <div className="align-right">
-                        $70/SF
+                        3 years, 2 months
                       </div>
                     </li>
                     <span className="pointer-line"></span>
