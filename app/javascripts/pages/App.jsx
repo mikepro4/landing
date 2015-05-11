@@ -7,12 +7,14 @@ var DocumentTitle = require('react-document-title');
 var classnames = require('classnames');
 
 var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
+var TouchMixin = require('../mixins/TouchMixin.jsx');
 var SlideInMenu = require('../components/SlideInMenu.jsx');
 var Footer = require('../components/Footer.jsx');
+React.initializeTouchEvents(true);
 
 var App = React.createClass({
 
-  mixins: [ HomePageRouterMixin ],
+  mixins: [ HomePageRouterMixin, TouchMixin ],
 
   contextTypes: {
     router: React.PropTypes.func
@@ -117,7 +119,10 @@ var App = React.createClass({
             {...methods}
           />
 
-          <div className="overlay" onClick={this.toggleMenu} />
+          <div className="overlay"
+            onClick={ this.handleClick.bind(this, 'toggleMenu') }  
+            onTouchEnd={ this.handleTouch.bind(this, 'toggleMenu') }
+          />
 
         </div>
       </DocumentTitle>

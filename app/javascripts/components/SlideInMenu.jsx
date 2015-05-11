@@ -7,12 +7,14 @@ var Link = Router.Link;
 
 var Icons = require('../components/Icons.jsx');
 var NavigationLinks = require('../components/NavigationLinks.jsx');
+var TouchMixin = require('../mixins/TouchMixin.jsx');
 var UpdateUserMixin = require('../mixins/UpdateUser.jsx');
 var LoginUrlMixin = require('../mixins/LoginUrl.jsx');
+React.initializeTouchEvents(true);
 
 var SlideInMenu = React.createClass({
 
-  mixins: [ UpdateUserMixin, LoginUrlMixin ],
+  mixins: [ UpdateUserMixin, LoginUrlMixin, TouchMixin ],
 
   contextTypes: {
     router: React.PropTypes.func
@@ -83,28 +85,32 @@ var SlideInMenu = React.createClass({
     }
   },  
 
-  getSplitterLink: function() {
+  getSplitterLinkText: function() {
     switch(this.state.context) {
       case "exchange":
-        return (
-          <Link to="splitter" onClick={this.props.clearLocalStorage} className="choose-your-job-title">
-            Are You A Landlord, Lender <br/> or Investor?
-          </Link>
-        )
+        return "Are You A Landlord, Lender or Investor?"
       case "enterprise":
-        return (
-          <Link to="splitter" onClick={this.props.clearLocalStorage} className="choose-your-job-title">
-            Are You A Broker, Appraiser <br/> or Researcher?
-          </Link>
-        )
+        return "Are You A Broker, Appraiser or Researcher?"
     }
+  },
+
+  handleClose: function(event) {
+    this.props.toggleMenu()
+  },
+
+  clearLocalStorage: function() {
+    this.props.clearLocalStorage();
+    this.props.toggleMenu()
   },
 
   render: function() {
     return (
-      <div className="slide-in-menu" onClick={this.props.toggleMenu}>
-
-        <i className="close-icon"><Icons type="cross"/></i>
+      <div className="slide-in-menu">
+        <i 
+          className="close-icon" 
+          onClick={ this.handleClick.bind(this, 'handleClose') }
+          onTouchStart={ this.handleTouch.bind(this, 'handleClose') }>
+        <Icons type="cross"/></i>
 
         <div className="slide-in-menu-content">
 
@@ -116,11 +122,19 @@ var SlideInMenu = React.createClass({
             <NavigationLinks 
               {...this.props}
               context={this.state.context}
+              onClick={ this.handleClick.bind(this, 'handleClose') }
             />
           </div>
 
-          <div className="slide-in-menu-splitter-link">
-            {this.getSplitterLink()}
+          <div 
+            className="slide-in-menu-splitter-link"
+            onClick={ this.handleClick.bind(this, 'clearLocalStorage') }  
+            onTouchEnd={ this.handleTouch.bind(this, 'clearLocalStorage') } >
+            <Link 
+              to="splitter"
+              className="choose-your-job-title">
+              {this.getSplitterLinkText()}
+            </Link>
           </div>
     
         </div> 
