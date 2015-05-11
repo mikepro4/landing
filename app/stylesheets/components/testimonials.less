@@ -34,18 +34,30 @@
           .respond(@lg, {
             padding: 0 50px;
           });
-          &.active + div.slide {
-            opacity: 1 !important;
-            .quote-info {
-              animation: quoteinfo .2s .5s ease-in-out forwards;
-              -moz-animation: quoteinfo .2s .5s ease-in-out forwards; /* Firefox */
-              -webkit-animation: quoteinfo .2s .5s ease-in-out forwards; /* Safari and Chrome */
-              -o-animation: quoteinfo .2s .5s ease-in-out forwards; /* Opera */
-              position: absolute;
-              left: 0;
-              right: 0;
+          &.active {
+            opacity: .5;
+            + div.slide {
+              opacity: 1 !important;
+              .quote-info {
+                animation: quoteinfo .2s .5s ease-in-out forwards;
+                -moz-animation: quoteinfo .2s .5s ease-in-out forwards; /* Firefox */
+                -webkit-animation: quoteinfo .2s .5s ease-in-out forwards; /* Safari and Chrome */
+                -o-animation: quoteinfo .2s .5s ease-in-out forwards; /* Opera */
+                position: absolute;
+                left: 0;
+                right: 0;
+              }
+              + div.slide {
+              opacity: .5 !important;
+                .quote-info {
+                  opacity: 0 !important;
+                  top: 285px;
+                  .animation(none);
+                }
+              }
             }
           }
+          
           > p {
             .flex-display();
             .align-items(center);

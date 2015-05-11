@@ -164,7 +164,8 @@ var Testimonials = React.createClass({
   startCycle: function() {
     $('.testimonials-block').cycle({
       speed: 300,
-      timeout: 5000,
+      // timeout: 5000,
+      timeout: 0,
       fx: 'carousel',
       carouselFluid: true,
       carouselVisible : 3,

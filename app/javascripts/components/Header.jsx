@@ -4,12 +4,14 @@ var Router = require('react-router');
 var _ = require('underscore');
 var classnames = require('classnames');
 var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
+var TouchMixin = require('../mixins/TouchMixin.jsx');
 var LoginUrlMixin = require('../mixins/LoginUrl.jsx');
 var Icons = require('../components/Icons.jsx');
+React.initializeTouchEvents(true);
 
 var FauxHeader = React.createClass({
 
-  mixins: [ HomePageRouterMixin, LoginUrlMixin ],
+  mixins: [ HomePageRouterMixin, LoginUrlMixin, TouchMixin ],
 
   goToHome: function() {
     this.selectHomePage(this.props.user);
@@ -19,6 +21,10 @@ var FauxHeader = React.createClass({
     this.setState({
       loginUrl: this.getLoginUrl()
     });
+  },
+
+  handleMenuClick: function(event) {
+    this.props.toggleMenu();
   },
 
   render: function() {
@@ -43,7 +49,10 @@ var FauxHeader = React.createClass({
                 </a>
               </li>
               <li className={classnames({ 'hidden': !this.props.menu })}>
-                <a className="nav-url" onClick={this.props.toggleMenu}>
+                <a 
+                  className="nav-url" 
+                  onClick={ this.handleClick.bind(this, 'handleMenuClick') }  
+                  onTouchStart={ this.handleTouch.bind(this, 'handleMenuClick') } >
                   <span>Menu</span>
                   <i className="icon-hamburger"> <Icons type="hamburger"/> </i>
                 </a>

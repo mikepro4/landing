@@ -40,7 +40,7 @@ var CoverageMap = React.createClass({
   getCoverageMap: function() {
     switch(this.props.context) {
       case "enterprise":
-        return <img src="/images/ent-coverage-map.svg"/>
+        return <img src="/images/ex-coverage-map.svg"/>
       case "exchange":
         return <img src="/images/ex-coverage-map.svg"/>
     }

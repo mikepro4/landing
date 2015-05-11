@@ -205,7 +205,8 @@ var DemoRequest = React.createClass({
   },
 
   sendHubspotEvent: function(data) {
-    var hubspotString = 'firstname=' + data.firstName 
+    var hubspotString = 
+      'firstname=' + data.firstName 
       + '&lastname=' + data.lastName 
       + '&email=' + data.email 
       + '&jobtitle=' + data.business 
