@@ -18,7 +18,11 @@
       max-width: 25em;
     }
     .key {
+      display: none;
       margin-top: 2.2em;
+      .respond(@sm, {
+        display: block;
+      });
       > div {
         display: inline-block;
         margin-right: 40px;

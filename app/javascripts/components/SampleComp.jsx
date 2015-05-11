@@ -124,7 +124,7 @@ var SampleComp = React.createClass({
                       </div>
                       <div className="secondary-info">
                         <span className="tenant">CompStak</span>
-                        <span className="lease-info">2014 - Q4 • Office • New Lease • Class B</span>
+                        <span className="lease-info">2014 - Q2 • Office • New Lease • Class B</span>
                         <div className="tooltip-buttons row">
                           <button className="button select"><span className="checkbox"></span>Select</button>
                           <button className="button">Details<Icons type="tiny_right_arrow" /></button>

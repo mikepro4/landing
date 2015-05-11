@@ -252,6 +252,22 @@ section {
 	}
 }
 
+.ie-components {
+  .section-header {
+    position: static !important;
+    top: 0;
+  }
+}
+
+.ie9 {
+  .ie-components();
+}
+
+// ie 10 and 11
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .ie-components();
+}
+
 @import "./components/splitter.less";
 @import "./components/header.less";
 @import "./components/objection-handler.less";

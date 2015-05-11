@@ -190,7 +190,7 @@ form.sign-up {
   }
 }
 
-.ie9 {
+.ie-form-fix {
   form.sign-up {
     max-width: 700px;
     margin: 0 auto;
@@ -205,4 +205,12 @@ form.sign-up {
 
     }
   }
+}
+
+.ie9 {
+  .ie-form-fix();
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .ie-form-fix();
 }
