@@ -114,7 +114,9 @@ var SlideInMenu = React.createClass({
 
         <div className="slide-in-menu-content">
 
-          <div className="button-wrap">
+          <div 
+            className="button-wrap"
+            onClick={ this.handleClick.bind(this, 'handleClose') } >
             {this.getCtaButton()}
           </div>
 
