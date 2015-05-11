@@ -3,3 +3,21 @@
     .box-shadow(none);
   }
 }
+
+.ie-how-it-works {
+  .how-it-works {
+    .screenshot-wrap {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.ie9 {
+  .ie-how-it-works();
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .ie-how-it-works();
+}

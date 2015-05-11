@@ -174,7 +174,8 @@ var Testimonials = React.createClass({
       prev : '.prev-arrow',
       slides : '.slide',
       swipe : true,
-      slideActiveClass : 'active'
+      slideActiveClass : 'active',
+      allowWrap: false
     }); 
     this.setState({
       init: true
@@ -185,7 +186,7 @@ var Testimonials = React.createClass({
     var quotes = this.state.quotes.map(function (quote, i) {
       return (
         <div className="slide">
-          <p>{quote.text}</p>
+          <div className="quote">{quote.text}</div>
           <div className="quote-info">
             <p className="h6 blue name">{quote.name}</p>
             <p className="company">{quote.company}</p>

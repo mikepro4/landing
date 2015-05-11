@@ -1,5 +1,11 @@
 .sample-comp {
   .block-info {
+    margin-bottom: 25px;
+    padding-right: 3%;
+    .respond(@lg, {
+      margin-bottom: 0;
+      height: 152px;
+    });
     > div {
       .respond(@xlg, {
         max-width: none;
@@ -13,8 +19,6 @@
         font-size: @font-size-h2;
       });
     }
-    padding-right: 3%;
-    height: 152px;
   }
   .comp {
     .box-shadow(0 10px 20px rgba(40, 48, 64, 0.15));
@@ -213,8 +217,8 @@
         left: 0;
         right: 0;
         background-image: url(/images/deckle.svg);
-        background-repeat: no-repeat;
-        background-size: 100% auto;
+        background-repeat: repeat-x;
+        //background-size: 100%;
       }    
     }
   }
