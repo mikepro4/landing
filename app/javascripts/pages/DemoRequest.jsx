@@ -214,7 +214,7 @@ var DemoRequest = React.createClass({
       + '&requested_demo=true';
 
     return $.ajax({
-      url: 'http://track.hubspot.com/v1/event?_n=000000260381&_a=460566&' + hubspotString,
+      url: '//track.hubspot.com/v1/event?_n=000000260381&_a=460566&' + hubspotString,
       type: 'POST',
       success: function(data) {
         console.log('hubspot event synced')

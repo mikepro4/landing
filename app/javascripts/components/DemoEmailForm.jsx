@@ -101,7 +101,7 @@ var DemoEmailForm = React.createClass({
 
   sendHubspotEvent: function(data) {
     $.ajax({
-      url: 'http://track.hubspot.com/v1/event?_n=000000260381&_a=460566&email=' + this.state.email + '&requested_demo=true',
+      url: '//track.hubspot.com/v1/event?_n=000000260381&_a=460566&email=' + this.state.email + '&requested_demo=true',
       type: 'POST',
       success: function(data) {
         console.log('hubspot event synced')

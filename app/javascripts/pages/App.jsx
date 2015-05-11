@@ -43,6 +43,7 @@ var App = React.createClass({
     this.showInitialPage();
     this.updateMarket();
     this.updateLocalStorage();
+    $('html').attr('data-useragent',  navigator.userAgent);
   },
 
   showInitialPage: function() {

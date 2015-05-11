@@ -164,8 +164,7 @@ var Testimonials = React.createClass({
   startCycle: function() {
     $('.testimonials-block').cycle({
       speed: 300,
-      // timeout: 5000,
-      timeout: 0,
+      timeout: 5000,
       fx: 'carousel',
       carouselFluid: true,
       carouselVisible : 3,
@@ -174,7 +173,8 @@ var Testimonials = React.createClass({
       prev : '.prev-arrow',
       slides : '.slide',
       swipe : true,
-      slideActiveClass : 'active'
+      slideActiveClass : 'active',
+      allowWrap: false
     }); 
     this.setState({
       init: true
@@ -184,8 +184,8 @@ var Testimonials = React.createClass({
   render: function() {
     var quotes = this.state.quotes.map(function (quote, i) {
       return (
-        <div className="slide">
-          <p>{quote.text}</p>
+        <div className="slide" key={i}>
+          <div className="quote">{quote.text}</div>
           <div className="quote-info">
             <p className="h6 blue name">{quote.name}</p>
             <p className="company">{quote.company}</p>

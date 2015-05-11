@@ -22,7 +22,7 @@
         margin-left: -25%;
         margin-right: -25%;
       });
-      .cycle-carousel-wrap {
+      //.cycle-carousel-wrap {
         div.slide {
           text-align: center;
           vertical-align: middle;
@@ -58,7 +58,7 @@
             }
           }
           
-          > p {
+          > div.quote {
             .flex-display();
             .align-items(center);
             .justify-content(center);
@@ -71,7 +71,9 @@
             letter-spacing: .02em;
             font-size: 18px;
             line-height: 1.5em;
-            white-space: normal;
+            overflow: hidden;
+            //white-space: normal !important;
+            white-space: initial !important;
             height: 220px;
             .respond(@sm, {
               font-size: 22px;
@@ -101,7 +103,7 @@
             }
           }
         }
-      }
+      //}
     }
     .controls {
       margin: 0 auto;
@@ -132,6 +134,24 @@
       .fadeIn(.3s);
     }
   }
+}
+
+.ie-testimonials {
+  .testimonials {
+    display: none;
+  }
+}
+
+.ie9 {
+  .ie-testimonials();
+}
+
+html[data-useragent*='MSIE 10.0'] body {
+  .ie-testimonials();
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .ie-testimonials();
 }
 
 
