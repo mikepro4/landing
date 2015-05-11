@@ -19,9 +19,9 @@ var AccurateComps = React.createClass({
                 <p>Our team of qualified Real Estate Analysts and Data Scientists employs a combination of manual review 
                 and statistical anomaly detection to ensure quality.</p>
                 <ul className="checklist">
-                  <li><Icons type="tick" /><span> Verified CRE professionals only</span></li>
-                  <li><Icons type="tick" /><span> Trade 1–for–1: Give a comp. Get a comp.</span></li>
-                  <li><Icons type="tick" /><span> Remain completely anonymous</span></li>
+                  <li><Icons type="tick" /><span> Only confirmed real estate professionals</span></li>
+                  <li><Icons type="tick" /><span> Standardized format for searching and analysis</span></li>
+                  <li><Icons type="tick" /><span> Each lease comp is verified by our analysts</span></li>
                 </ul>
               </div>
             </div>
