@@ -22,9 +22,7 @@ var Legal = React.createClass({
 
           <Header 
             {...this.props}
-            login={false}
             menu={true}
-            haveAccount={false}
             className="white-bg"
           />
 

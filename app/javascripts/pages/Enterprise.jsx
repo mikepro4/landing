@@ -35,7 +35,6 @@ var Enterprise = React.createClass({
             {...this.props}
             login={true}
             menu={true}
-            haveAccount={false}
             className="dark-blue-bg"
           />
 

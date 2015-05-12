@@ -12,7 +12,7 @@
   .logo {
     float: left;
     cursor: pointer;
-    width: 115px;
+    width: 165px;
     
     svg {
       margin-top: 20px;
@@ -146,4 +146,119 @@
       }
     }
   }
+
+  .hiring-tooltip {
+    float: left;
+    margin: 16px 0 0 0;
+    position: relative;
+    opacity: 0;
+    .animation(showHiring .3s 2s ease-in forwards);
+
+    .arrow {
+      top: 50%;
+      left: -11px;
+      margin-top: -6px;
+      border-color: transparent;
+      border-style: solid;
+      border-right-color: @light-blue;
+      border-left-width: 0;
+      border-width: 6px;
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+ 
+
+      &:after {
+        content: " ";
+        top: 1px;
+        left: -4px;
+        margin-top: -6px;
+        border-color: transparent;
+        border-style: solid;
+        border-right-color: @white;
+        border-left-width: 0;
+        border-width: 5px;
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        .transition(all @speed ease-in-out);
+      }
+    }
+
+    &.mobile-hide {
+      display: none;
+      .respond(@lg, {
+        display: block;
+      });
+    }
+
+    a {
+      display: block;
+      width: 130px;  
+      border: 1px solid @light-blue;
+      .border-radius(2px);
+      text-align: center;
+      height: 30px;
+      line-height: 29px;
+      font-family: @font-gotham-book;
+      letter-spacing: 1px;
+      color: @light-blue;
+      font-size: 11px;
+      text-transform: uppercase;
+
+      &:hover {
+        background: @light-blue;
+        color: #fff !important;
+      }
+    }
+
+    &:hover {
+      .arrow:after {
+        border-right-color: @light-blue;
+      }
+    }
+  }
+}
+
+.ie9 {
+  .main-header {
+    .hiring-tooltip {
+      display: none !important;
+    }
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .main-header {
+    .hiring-tooltip {
+      display: none !important;
+    }
+  }
+}
+
+// Thobbing
+@keyframes showHiring
+{
+0%   {.transform(translateX(-5px)); opacity: 0;}
+100% {.transform(translateX(0px)); opacity: 1}
+}
+
+@-moz-keyframes showHiring /* Firefox */
+{
+0%   {.transform(translateX(-5px)); opacity: 0}
+100% {.transform(translateX(0px)); opacity: 1}
+}
+
+@-webkit-keyframes showHiring /* Safari and Chrome */
+{
+0%   {.transform(translateX(-5px)); opacity: 0}
+100% {.transform(translateX(0px)); opacity: 1}
+}
+
+@-o-keyframes showHiring /* Opera */
+{
+0%   {.transform(translateX(-5px)); opacity: 0}
+100% {.transform(translateX(0px)); opacity: 1}
 }

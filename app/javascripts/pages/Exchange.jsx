@@ -40,7 +40,7 @@ var Exchange = React.createClass({
             {...this.props}
             login={true}
             menu={true}
-            haveAccount={false}
+            hiring={true}
             className="white-bg"
           />
 

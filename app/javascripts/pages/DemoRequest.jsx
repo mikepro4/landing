@@ -243,8 +243,6 @@ var DemoRequest = React.createClass({
 
           <Header 
             {...this.props}
-            login={false}
-            menu={false}
             haveAccount={true}
             className="dark-blue-bg"
             context="enterprise"

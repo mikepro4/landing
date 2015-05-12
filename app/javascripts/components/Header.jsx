@@ -13,14 +13,26 @@ var FauxHeader = React.createClass({
 
   mixins: [ HomePageRouterMixin, LoginUrlMixin, TouchMixin ],
 
-  goToHome: function() {
-    this.selectHomePage(this.props.user);
+  getDefaultsProps: function() {
+    return {
+      login: false,
+      hiring: false,
+      menu: false,
+      haveAccount: false
+    }
   },
 
-  componentDidMount: function() {
-    this.setState({
-      loginUrl: this.getLoginUrl()
-    });
+  getInitialState: function() {
+    return {
+      loginText: "Login",
+      hiringText: "We're hiring",
+      menuText: "Menu",
+      haveAccountText: "Have an account?"
+    }
+  },
+
+  goToHome: function() {
+    this.selectHomePage(this.props.user);
   },
 
   handleMenuClick: function(event) {
@@ -38,6 +50,18 @@ var FauxHeader = React.createClass({
           <div className="logo" onClick={this.goToHome}>
             <Icons type="cs_logo" />
           </div>
+
+          <div className={classnames({
+            'hiring-tooltip': true,
+            'mobile-hide':    true,
+            'hidden':         !this.props.hiring
+          })}>
+            <a href="https://compstak.recruiterbox.com/">
+              <i className="arrow"></i>
+              <span>{this.state.hiringText}</span>
+            </a>
+          </div>
+
           <div className="right-links">
             <ul>
               <li className={classnames({
@@ -45,7 +69,7 @@ var FauxHeader = React.createClass({
                 'hidden':      !this.props.login
               })}>
                 <a href={loginUrl} className="nav-url" target="_blank">
-                  <span>Login</span>
+                  <span>{this.state.loginText}</span>
                 </a>
               </li>
               <li className={classnames({ 'hidden': !this.props.menu })}>
@@ -59,7 +83,7 @@ var FauxHeader = React.createClass({
               </li>
               <li className={classnames({ 'hidden': !this.props.haveAccount })}>
                 <a href={loginUrl} className="button button-hollow login" target="_blank">
-                  <span>Have an account?</span>
+                  <span>{this.state.haveAccountText}</span>
                 </a>
               </li>
             </ul>

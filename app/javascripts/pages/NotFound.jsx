@@ -12,7 +12,6 @@ var NotFound = React.createClass({
           {...this.props}
           login={true}
           menu={true}
-          haveAccount={false}
           className="dark-blue-bg"
         />
         <div className="default-page-title"><h6>404</h6><h1>Page Not Found</h1></div>
