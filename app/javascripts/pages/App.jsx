@@ -125,6 +125,12 @@ var App = React.createClass({
             onTouchEnd={ this.handleTouch.bind(this, 'toggleMenu') }
           />
 
+          {/* Google Ad Tracking Pixel */}
+          <img 
+            height="1" 
+            width="1"
+            src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/936571871/?value=0&amp;guid=ON&amp;script=0"/>
+
         </div>
       </DocumentTitle>
     );
