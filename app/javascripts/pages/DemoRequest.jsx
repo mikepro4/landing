@@ -209,9 +209,9 @@ var DemoRequest = React.createClass({
       'firstname=' + data.firstName 
       + '&lastname=' + data.lastName 
       + '&email=' + data.email 
-      + '&jobtitle=' + data.business 
+      + '&industry=' + data.business 
       + '&subscriber=' + data.agreedToSubscribe 
-      + '&requested_demo=true';
+      + '&requested_demo=true&record_type=Enterprise Lead';
 
     return $.ajax({
       url: '//track.hubspot.com/v1/event?_n=000000260381&_a=460566&' + hubspotString,
