@@ -9,6 +9,7 @@ var Link = Router.Link;
 var Header = require('../components/Header.jsx');
 var Icons = require('../components/Icons.jsx');
 var HomePageRouterMixin = require('../mixins/HomePageRouter.jsx');
+var ReadCookiesMixin = require('../mixins/ReadCookies.jsx');
 var MobileCheckMixin = require('../mixins/MobileCheck.jsx');
 var Validators = require('../mixins/Validators.jsx');
 
@@ -18,7 +19,7 @@ if(process.browser) {
 
 var DemoRequest = React.createClass({
 
-  mixins: [ HomePageRouterMixin, MobileCheckMixin, Validators ],
+  mixins: [ HomePageRouterMixin, MobileCheckMixin, ReadCookiesMixin, Validators ],
 
   contextTypes: {
     router: React.PropTypes.func
@@ -205,17 +206,21 @@ var DemoRequest = React.createClass({
   },
 
   sendHubspotEvent: function(data) {
-    var hubspotString = 
-      'firstname=' + data.firstName 
-      + '&lastname=' + data.lastName 
-      + '&email=' + data.email 
-      + '&industry=' + data.business 
-      + '&subscriber=' + data.agreedToSubscribe 
-      + '&requested_demo=true&record_type=Enterprise Lead';
-
     return $.ajax({
-      url: '//track.hubspot.com/v1/event?_n=000000260381&_a=460566&' + hubspotString,
+      url: '//forms.hubspot.com/uploads/form/v2/460566/a745b83e-2f36-493c-91ea-2804a14dacc9',
       type: 'POST',
+      data: {
+        firstname: data.firstName,
+        lastname: data.lastName,
+        email: data.email,
+        industry:  data.business,
+        email_opt_in: data.agreedToSubscribe,
+        requested_demo: true,
+        record_type: 'Enterprise Lead',
+        hs_context: JSON.stringify({
+          hutk: this.readCookie('hubspotutk')
+        })
+      },  
       success: function(data) {
         console.log('hubspot event synced')
       },

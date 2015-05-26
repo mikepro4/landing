@@ -5,10 +5,11 @@ var _ = require('underscore');
 var classnames = require('classnames');
 var Icons = require('../components/Icons.jsx');
 var Validators = require('../mixins/Validators.jsx');
+var ReadCookiesMixin = require('../mixins/ReadCookies.jsx');
 
 var DemoEmailForm = React.createClass({
 
-  mixins: [ Validators ],
+  mixins: [ Validators, ReadCookiesMixin ],
 
   contextTypes: {
     router: React.PropTypes.func
@@ -100,9 +101,17 @@ var DemoEmailForm = React.createClass({
   },
 
   sendHubspotEvent: function(data) {
-    $.ajax({
-      url: '//track.hubspot.com/v1/event?_n=000000260381&_a=460566&email=' + this.state.email + '&requested_demo=true&record_type=Enterprise Lead',
+    return $.ajax({
+      url: '//forms.hubspot.com/uploads/form/v2/460566/a745b83e-2f36-493c-91ea-2804a14dacc9',
       type: 'POST',
+      data: {
+        email: this.state.email,
+        requested_demo: true,
+        record_type: 'Enterprise Lead',
+        hs_context: JSON.stringify({
+          hutk: this.readCookie('hubspotutk')
+        })
+      },  
       success: function(data) {
         console.log('hubspot event synced')
       },
