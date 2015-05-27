@@ -23,31 +23,11 @@ if(process.browser) {
     analytics.load(segmentIOKey);
     analytics.page();
   }}();
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-27210960-1']);
-  _gaq.push(['_setDomainName', 'compstak.com']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-  var google_conversion_id = 936571871;
-  var google_custom_params = window.google_tag_params;
-  var google_remarketing_only = true;  
 }
 
-// Google analytics and Segment tracking
+// Segment tracking
 function trackPageView() {
   if(process.browser) {
-    // GA
-    if(_gaq) {
-      _gaq.push(['_trackPageview', window.location.pathname])
-    }
-
     // Segment
     analytics.page();
   }
